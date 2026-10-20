@@ -116,59 +116,72 @@
       .wave2 { animation: wave 1.2s infinite ease-in-out 0.2s; }
       .wave3 { animation: wave 1.2s infinite ease-in-out 0.4s; }
       .bot-patrol {
-        animation: patrolMove 10s infinite linear;
+        animation: patrolMove 12s infinite linear;
       }
       .bot-turn {
-        animation: patrolTurn 10s infinite steps(1, end);
+        animation: patrolTurn 12s infinite steps(1, end);
       }
       .bot-gait-bob {
-        animation: humanBob 10s infinite ease-in-out;
+        animation: humanBob 12s infinite ease-in-out;
       }
       .bot-head {
-        animation: humanHeadNod 10s infinite ease-in-out;
+        animation: humanHeadNod 12s infinite ease-in-out;
         transform-origin: 0px 104px;
       }
       .bot-shadow {
-        animation: humanShadow 10s infinite ease-in-out;
+        animation: humanShadow 12s infinite ease-in-out;
         transform-origin: 0px 193px;
       }
       .thigh-front {
-        animation: thighFrontWalk 10s infinite linear;
+        animation: thighFrontWalk 12s infinite linear;
         transform-origin: 0px 148px;
       }
       .shin-front {
-        animation: shinFrontWalk 10s infinite linear;
+        animation: shinFrontWalk 12s infinite linear;
         transform-origin: 0px 168px;
       }
       .thigh-back {
-        animation: thighBackWalk 10s infinite linear;
+        animation: thighBackWalk 12s infinite linear;
         transform-origin: 0px 148px;
       }
       .shin-back {
-        animation: shinBackWalk 10s infinite linear;
+        animation: shinBackWalk 12s infinite linear;
         transform-origin: 0px 168px;
       }
       .arm-front {
-        animation: armFrontWalk 10s infinite ease-in-out;
+        animation: armFrontWalk 12s infinite ease-in-out;
         transform-origin: -1px 119px;
       }
       .forearm-front {
-        animation: forearmFrontWalk 10s infinite ease-in-out;
+        animation: forearmFrontWalk 12s infinite ease-in-out;
         transform-origin: -1px 135px;
       }
       .arm-back {
-        animation: armBackWalk 10s infinite ease-in-out;
+        animation: armBackWalk 12s infinite ease-in-out;
         transform-origin: 1px 119px;
       }
       .forearm-back {
-        animation: forearmBackWalk 10s infinite ease-in-out;
+        animation: forearmBackWalk 12s infinite ease-in-out;
         transform-origin: 1px 135px;
       }
       .point-beam {
-        animation: pointLaserShow 10s infinite ease-in-out;
+        animation: pointLaserShow 12s infinite ease-in-out;
       }
       .term-highlight {
-        animation: termRowHighlight 10s infinite ease-in-out;
+        animation: termRowHighlight 12s infinite ease-in-out;
+      }
+      .phat-spotlight {
+        animation: phatSpotlightShow 12s infinite ease-in-out;
+      }
+      .phat-speech {
+        animation: phatSpeechPop 12s infinite ease-in-out;
+        transform-origin: 608px 68px;
+      }
+      .eyes-normal {
+        animation: eyesNormalToggle 12s infinite steps(1, end);
+      }
+      .eyes-happy {
+        animation: eyesHappyToggle 12s infinite steps(1, end);
       }
       .bot-eyes {
         animation: eyeBlinkNatural 4.2s infinite ease-in-out;
@@ -212,140 +225,170 @@
         0%, 100% { opacity: 0.35; }
         50% { opacity: 1; }
       }
-      /* 10s Master Timeline:
-         0%..32%: Walk Right (3 full strides)
-         33%..58%: Stop at Terminal and Point at Code Lines
-         60%..92%: Turn Left and Walk Back to Phat (3 full strides)
-         93%..100%: Turn Right and Stand by Phat */
+      /* 12s Master Storyline:
+         0%..25%: Walk Right from Phat to Terminal (3 full strides)
+         26%..48%: Stop at Terminal and Point at Code Lines
+         49%..74%: Turn Left and Walk Back to Phat (3 full strides)
+         75%..98%: Stop Facing Phat, Joyful Eyes, Spotlight Name and Report Bubble */
       @keyframes patrolMove {
         0%        { transform: translateX(-72px); }
-        32%, 58%  { transform: translateX(68px); }
-        92%, 100% { transform: translateX(-72px); }
+        25%, 49%  { transform: translateX(68px); }
+        74%, 100% { transform: translateX(-72px); }
       }
       @keyframes patrolTurn {
-        0%, 58.9%  { transform: scaleX(1); }
-        59%, 92.9% { transform: scaleX(-1); }
-        93%, 100%  { transform: scaleX(1); }
+        0%, 48.9%  { transform: scaleX(1); }
+        49%, 98.9% { transform: scaleX(-1); }
+        99%, 100%  { transform: scaleX(1); }
       }
       @keyframes humanBob {
-        0%, 5%, 10.5%, 16%, 21.5%, 27%, 32% { transform: translateY(1.2px) rotate(2deg); }
-        2.5%, 8%, 13.5%, 19%, 24.5%, 29.5%  { transform: translateY(-2.6px) rotate(1deg); }
-        34%, 58%                             { transform: translateY(0px) rotate(0deg); }
-        60%, 65%, 70.5%, 76%, 81.5%, 87%, 92% { transform: translateY(1.2px) rotate(2deg); }
-        62.5%, 68%, 73.5%, 79%, 84.5%, 89.5%  { transform: translateY(-2.6px) rotate(1deg); }
-        93%, 100%                            { transform: translateY(0px) rotate(0deg); }
+        0%, 4.1%, 8.3%, 12.5%, 16.6%, 20.8%, 25% { transform: translateY(1.2px) rotate(2deg); }
+        2%, 6.2%, 10.4%, 14.5%, 18.7%, 22.9%     { transform: translateY(-2.6px) rotate(1deg); }
+        26%, 48%                                 { transform: translateY(0px) rotate(0deg); }
+        50%, 54.1%, 58.3%, 62.5%, 66.6%, 70.8%, 74% { transform: translateY(1.2px) rotate(2deg); }
+        52%, 56.2%, 60.4%, 64.5%, 68.7%, 72.5%      { transform: translateY(-2.6px) rotate(1deg); }
+        75%, 77%, 84%, 93%, 100%                 { transform: translateY(0px) rotate(0deg); }
+        80%, 89%                                 { transform: translateY(-4.5px) rotate(-2deg); }
       }
       @keyframes humanHeadNod {
-        0%, 32%  { transform: rotate(1.5deg); }
-        35%, 45% { transform: rotate(-4deg) translateY(-1px); }
-        46%, 57% { transform: rotate(3deg) translateY(1px); }
-        60%, 92% { transform: rotate(1.5deg); }
-        93%, 100% { transform: rotate(-2deg); }
+        0%, 25%   { transform: rotate(1.5deg); }
+        28%, 37%  { transform: rotate(-4deg) translateY(-1px); }
+        39%, 47%  { transform: rotate(3deg) translateY(1px); }
+        50%, 74%  { transform: rotate(1.5deg); }
+        77%, 85%  { transform: rotate(-6deg) translateY(-1.5px); }
+        86%, 96%  { transform: rotate(-3deg) translateY(-1px); }
+        98%, 100% { transform: rotate(0deg); }
       }
       @keyframes humanShadow {
-        0%, 32%, 60%, 92% { transform: scaleX(1); opacity: 0.55; }
-        34%, 58%, 93%, 100% { transform: scaleX(1.08); opacity: 0.65; }
+        0%, 25%, 50%, 74% { transform: scaleX(1); opacity: 0.55; }
+        26%, 48%, 75%, 77%, 84%, 93%, 100% { transform: scaleX(1.08); opacity: 0.65; }
+        80%, 89% { transform: scaleX(0.82); opacity: 0.38; }
       }
-      /* Front Thigh: 3 strides (0..32%), Planted Stance (33..58%), 3 strides (60..92%), Planted (93..100%) */
+      /* Front Thigh: 3 strides (0..25%), Planted (26..48%), 3 strides (50..74%), Planted (75..100%) */
       @keyframes thighFrontWalk {
-        0%, 10.6%, 21.3%, 32% { transform: rotate(-26deg); }
-        2.6%, 13.3%, 24%      { transform: rotate(-2deg); }
-        5.3%, 16%, 26.6%      { transform: rotate(22deg); }
-        8%, 18.6%, 29.3%      { transform: rotate(-10deg); }
-        34%, 58%              { transform: rotate(-9deg); }
-        60%, 70.6%, 81.3%, 92% { transform: rotate(-26deg); }
-        62.6%, 73.3%, 84%      { transform: rotate(-2deg); }
-        65.3%, 76%, 86.6%      { transform: rotate(22deg); }
-        68%, 78.6%, 89.3%      { transform: rotate(-10deg); }
-        94%, 100%             { transform: rotate(-6deg); }
+        0%, 8.3%, 16.6%, 25%   { transform: rotate(-26deg); }
+        2.1%, 10.4%, 18.7%     { transform: rotate(-2deg); }
+        4.2%, 12.5%, 20.8%     { transform: rotate(22deg); }
+        6.2%, 14.5%, 22.9%     { transform: rotate(-10deg); }
+        26%, 48%               { transform: rotate(-9deg); }
+        50%, 58.3%, 66.6%, 74% { transform: rotate(-26deg); }
+        52.1%, 60.4%, 68.7%    { transform: rotate(-2deg); }
+        54.2%, 62.5%, 70.8%    { transform: rotate(22deg); }
+        56.2%, 64.5%, 72.5%    { transform: rotate(-10deg); }
+        75%, 100%              { transform: rotate(-8deg); }
       }
       @keyframes shinFrontWalk {
-        0%, 10.6%, 21.3%, 32% { transform: rotate(4deg); }
-        2.6%, 13.3%, 24%      { transform: rotate(8deg); }
-        5.3%, 16%, 26.6%      { transform: rotate(18deg); }
-        8%, 18.6%, 29.3%      { transform: rotate(44deg); }
-        34%, 58%              { transform: rotate(8deg); }
-        60%, 70.6%, 81.3%, 92% { transform: rotate(4deg); }
-        62.6%, 73.3%, 84%      { transform: rotate(8deg); }
-        65.3%, 76%, 86.6%      { transform: rotate(18deg); }
-        68%, 78.6%, 89.3%      { transform: rotate(44deg); }
-        94%, 100%             { transform: rotate(6deg); }
+        0%, 8.3%, 16.6%, 25%   { transform: rotate(4deg); }
+        2.1%, 10.4%, 18.7%     { transform: rotate(8deg); }
+        4.2%, 12.5%, 20.8%     { transform: rotate(18deg); }
+        6.2%, 14.5%, 22.9%     { transform: rotate(44deg); }
+        26%, 48%               { transform: rotate(8deg); }
+        50%, 58.3%, 66.6%, 74% { transform: rotate(4deg); }
+        52.1%, 60.4%, 68.7%    { transform: rotate(8deg); }
+        54.2%, 62.5%, 70.8%    { transform: rotate(18deg); }
+        56.2%, 64.5%, 72.5%    { transform: rotate(44deg); }
+        75%, 100%              { transform: rotate(7deg); }
       }
       @keyframes thighBackWalk {
-        0%, 10.6%, 21.3%, 32% { transform: rotate(22deg); }
-        2.6%, 13.3%, 24%      { transform: rotate(-10deg); }
-        5.3%, 16%, 26.6%      { transform: rotate(-26deg); }
-        8%, 18.6%, 29.3%      { transform: rotate(-2deg); }
-        34%, 58%              { transform: rotate(11deg); }
-        60%, 70.6%, 81.3%, 92% { transform: rotate(22deg); }
-        62.6%, 73.3%, 84%      { transform: rotate(-10deg); }
-        65.3%, 76%, 86.6%      { transform: rotate(-26deg); }
-        68%, 78.6%, 89.3%      { transform: rotate(-2deg); }
-        94%, 100%             { transform: rotate(9deg); }
+        0%, 8.3%, 16.6%, 25%   { transform: rotate(22deg); }
+        2.1%, 10.4%, 18.7%     { transform: rotate(-10deg); }
+        4.2%, 12.5%, 20.8%     { transform: rotate(-26deg); }
+        6.2%, 14.5%, 22.9%     { transform: rotate(-2deg); }
+        26%, 48%               { transform: rotate(11deg); }
+        50%, 58.3%, 66.6%, 74% { transform: rotate(22deg); }
+        52.1%, 60.4%, 68.7%    { transform: rotate(-10deg); }
+        54.2%, 62.5%, 70.8%    { transform: rotate(-26deg); }
+        56.2%, 64.5%, 72.5%    { transform: rotate(-2deg); }
+        75%, 100%              { transform: rotate(10deg); }
       }
       @keyframes shinBackWalk {
-        0%, 10.6%, 21.3%, 32% { transform: rotate(18deg); }
-        2.6%, 13.3%, 24%      { transform: rotate(44deg); }
-        5.3%, 16%, 26.6%      { transform: rotate(4deg); }
-        8%, 18.6%, 29.3%      { transform: rotate(8deg); }
-        34%, 58%              { transform: rotate(4deg); }
-        60%, 70.6%, 81.3%, 92% { transform: rotate(18deg); }
-        62.6%, 73.3%, 84%      { transform: rotate(44deg); }
-        65.3%, 76%, 86.6%      { transform: rotate(4deg); }
-        68%, 78.6%, 89.3%      { transform: rotate(8deg); }
-        94%, 100%             { transform: rotate(4deg); }
+        0%, 8.3%, 16.6%, 25%   { transform: rotate(18deg); }
+        2.1%, 10.4%, 18.7%     { transform: rotate(44deg); }
+        4.2%, 12.5%, 20.8%     { transform: rotate(4deg); }
+        6.2%, 14.5%, 22.9%     { transform: rotate(8deg); }
+        26%, 48%               { transform: rotate(4deg); }
+        50%, 58.3%, 66.6%, 74% { transform: rotate(18deg); }
+        52.1%, 60.4%, 68.7%    { transform: rotate(44deg); }
+        54.2%, 62.5%, 70.8%    { transform: rotate(4deg); }
+        56.2%, 64.5%, 72.5%    { transform: rotate(8deg); }
+        75%, 100%              { transform: rotate(4deg); }
       }
-      /* Front Arm: Swings during walk, then RAISES and POINTS AT TERMINAL during 35%..57%! */
+      /* Front Arm:
+         - 0..25%: Natural walk swing
+         - 28..47%: Points at Terminal Code Lines 1 and 2
+         - 50..74%: Natural walk swing back to Phat
+         - 77..96%: Raises hand toward TRAN TAN PHAT to Spotlight Name and Wave! */
       @keyframes armFrontWalk {
-        0%, 10.6%, 21.3%, 32% { transform: rotate(20deg); }
-        5.3%, 16%, 26.6%      { transform: rotate(-22deg); }
-        /* Pointing at Terminal Line 1 and Line 2 */
-        36%, 45%              { transform: rotate(-88deg); }
-        47%, 56%              { transform: rotate(-72deg); }
-        60%, 70.6%, 81.3%, 92% { transform: rotate(20deg); }
-        65.3%, 76%, 86.6%      { transform: rotate(-22deg); }
-        /* Friendly Wave by Phat */
-        95%, 98%              { transform: rotate(-65deg); }
-        100%                  { transform: rotate(20deg); }
+        0%, 8.3%, 16.6%, 25%   { transform: rotate(20deg); }
+        4.2%, 12.5%, 20.8%     { transform: rotate(-22deg); }
+        28%, 37%               { transform: rotate(-88deg); }
+        39%, 47%               { transform: rotate(-72deg); }
+        50%, 58.3%, 66.6%, 74% { transform: rotate(20deg); }
+        54.2%, 62.5%, 70.8%    { transform: rotate(-22deg); }
+        77%, 84%               { transform: rotate(-92deg); }
+        88%                    { transform: rotate(-108deg); }
+        92%, 96%               { transform: rotate(-92deg); }
+        99%, 100%              { transform: rotate(20deg); }
       }
       @keyframes forearmFrontWalk {
-        0%, 10.6%, 21.3%, 32% { transform: rotate(-10deg); }
-        5.3%, 16%, 26.6%      { transform: rotate(-30deg); }
-        /* Straightened Forearm pointing directly into Terminal */
-        36%, 56%              { transform: rotate(-6deg); }
-        60%, 70.6%, 81.3%, 92% { transform: rotate(-10deg); }
-        65.3%, 76%, 86.6%      { transform: rotate(-30deg); }
-        95%, 98%              { transform: rotate(-35deg); }
-        100%                  { transform: rotate(-10deg); }
+        0%, 8.3%, 16.6%, 25%   { transform: rotate(-10deg); }
+        4.2%, 12.5%, 20.8%     { transform: rotate(-30deg); }
+        28%, 47%               { transform: rotate(-6deg); }
+        50%, 58.3%, 66.6%, 74% { transform: rotate(-10deg); }
+        54.2%, 62.5%, 70.8%    { transform: rotate(-30deg); }
+        77%, 96%               { transform: rotate(-8deg); }
+        99%, 100%              { transform: rotate(-10deg); }
       }
       @keyframes armBackWalk {
-        0%, 10.6%, 21.3%, 32% { transform: rotate(-22deg); }
-        5.3%, 16%, 26.6%      { transform: rotate(20deg); }
-        35%, 57%              { transform: rotate(14deg); }
-        60%, 70.6%, 81.3%, 92% { transform: rotate(-22deg); }
-        65.3%, 76%, 86.6%      { transform: rotate(20deg); }
-        94%, 100%             { transform: rotate(10deg); }
+        0%, 8.3%, 16.6%, 25%   { transform: rotate(-22deg); }
+        4.2%, 12.5%, 20.8%     { transform: rotate(20deg); }
+        27%, 47%               { transform: rotate(14deg); }
+        50%, 58.3%, 66.6%, 74% { transform: rotate(-22deg); }
+        54.2%, 62.5%, 70.8%    { transform: rotate(20deg); }
+        77%, 96%               { transform: rotate(-38deg); }
+        99%, 100%              { transform: rotate(-22deg); }
       }
       @keyframes forearmBackWalk {
-        0%, 10.6%, 21.3%, 32% { transform: rotate(-28deg); }
-        5.3%, 16%, 26.6%      { transform: rotate(-10deg); }
-        35%, 57%              { transform: rotate(-18deg); }
-        60%, 70.6%, 81.3%, 92% { transform: rotate(-28deg); }
-        65.3%, 76%, 86.6%      { transform: rotate(-10deg); }
-        94%, 100%             { transform: rotate(-15deg); }
+        0%, 8.3%, 16.6%, 25%   { transform: rotate(-28deg); }
+        4.2%, 12.5%, 20.8%     { transform: rotate(-10deg); }
+        27%, 47%               { transform: rotate(-18deg); }
+        50%, 58.3%, 66.6%, 74% { transform: rotate(-28deg); }
+        54.2%, 62.5%, 70.8%    { transform: rotate(-10deg); }
+        77%, 96%               { transform: rotate(-45deg); }
+        99%, 100%              { transform: rotate(-28deg); }
       }
-      /* Laser Pointer and Terminal Target Highlight when Agent points at Terminal (36%..56%) */
+      /* Terminal Laser Pointer and Row Highlight (28%..47%) */
       @keyframes pointLaserShow {
-        0%, 34%  { opacity: 0; transform: translateY(0px); }
-        36%, 45% { opacity: 1; transform: translateY(0px); }
-        47%, 56% { opacity: 1; transform: translateY(20px); }
-        58%, 100% { opacity: 0; transform: translateY(20px); }
+        0%, 26%  { opacity: 0; transform: translateY(0px); }
+        28%, 37% { opacity: 1; transform: translateY(0px); }
+        39%, 47% { opacity: 1; transform: translateY(20px); }
+        49%, 100% { opacity: 0; transform: translateY(20px); }
       }
       @keyframes termRowHighlight {
-        0%, 34%  { opacity: 0; transform: translateY(0px); }
-        36%, 45% { opacity: 0.95; transform: translateY(0px); }
-        47%, 56% { opacity: 0.95; transform: translateY(40px); }
-        58%, 100% { opacity: 0; transform: translateY(40px); }
+        0%, 26%  { opacity: 0; transform: translateY(0px); }
+        28%, 37% { opacity: 0.95; transform: translateY(0px); }
+        39%, 47% { opacity: 0.95; transform: translateY(40px); }
+        49%, 100% { opacity: 0; transform: translateY(40px); }
+      }
+      /* Return Interaction at TRAN TAN PHAT (77%..96%): Spotlight Name, Speech Bubble, Joyful Eyes */
+      @keyframes phatSpotlightShow {
+        0%, 75%   { opacity: 0; }
+        78%, 95%  { opacity: 1; }
+        97%, 100% { opacity: 0; }
+      }
+      @keyframes phatSpeechPop {
+        0%, 75%   { opacity: 0; transform: translateY(6px) scale(0.92); }
+        78%, 95%  { opacity: 1; transform: translateY(0px) scale(1); }
+        97%, 100% { opacity: 0; transform: translateY(4px) scale(0.95); }
+      }
+      @keyframes eyesNormalToggle {
+        0%, 75.9%  { opacity: 1; }
+        76%, 96.9% { opacity: 0; }
+        97%, 100%  { opacity: 1; }
+      }
+      @keyframes eyesHappyToggle {
+        0%, 75.9%  { opacity: 0; }
+        76%, 96.9% { opacity: 1; }
+        97%, 100%  { opacity: 0; }
       }
       @keyframes spinRing {
         0% { transform: rotate(0deg); }
@@ -536,21 +579,28 @@
             <rect x="-5" y="69" width="31" height="29" rx="13.5" fill="url(#botVisorGrad)" stroke="#232B3E" stroke-width="1.4" />
             <path d="M 0 73 Q 10 70 19 73 L 5 92 Q -2 86 0 73 Z" fill="#FFFFFF" fill-opacity="0.08" />
 
-            <!-- Expressive Glowing Eyes + Starlight Sparkles + Smile -->
+            <!-- Expressive Glowing Eyes (Normal Scanning vs Joyful ^ ^ Celebration) -->
             <g class="bot-eyes">
-              <!-- Near Eye -->
-              <rect x="2" y="77" width="8.5" height="12" rx="4.2" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
-              <circle cx="5" cy="81" r="2.3" fill="#FFFFFF" />
-              <circle cx="8" cy="85.5" r="1" fill="#FFFFFF" fill-opacity="0.85" />
-              <!-- Far Eye -->
-              <rect x="15" y="77.5" width="7" height="11" rx="3.5" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
-              <circle cx="17.5" cy="81" r="2" fill="#FFFFFF" />
-              <circle cx="20" cy="85" r="0.9" fill="#FFFFFF" fill-opacity="0.85" />
-              <!-- Rosy Digital Cheek Glow -->
-              <ellipse cx="1" cy="91.5" rx="2.8" ry="1.2" fill="#E5484D" fill-opacity="0.7" />
-              <ellipse cx="22.5" cy="91" rx="2.2" ry="1.1" fill="#E5484D" fill-opacity="0.7" />
-              <!-- Happy Smile -->
-              <path d="M 9 92 Q 12.5 95 16 92" fill="none" stroke="#FF9A9E" stroke-width="1.5" stroke-linecap="round" />
+              <!-- Normal Focused Eyes (0%..75%) -->
+              <g class="eyes-normal">
+                <rect x="2" y="77" width="8.5" height="12" rx="4.2" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
+                <circle cx="5" cy="81" r="2.3" fill="#FFFFFF" />
+                <circle cx="8" cy="85.5" r="1" fill="#FFFFFF" fill-opacity="0.85" />
+                <rect x="15" y="77.5" width="7" height="11" rx="3.5" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
+                <circle cx="17.5" cy="81" r="2" fill="#FFFFFF" />
+                <circle cx="20" cy="85" r="0.9" fill="#FFFFFF" fill-opacity="0.85" />
+                <ellipse cx="1" cy="91.5" rx="2.8" ry="1.2" fill="#E5484D" fill-opacity="0.7" />
+                <ellipse cx="22.5" cy="91" rx="2.2" ry="1.1" fill="#E5484D" fill-opacity="0.7" />
+                <path d="M 9 92 Q 12.5 95 16 92" fill="none" stroke="#FF9A9E" stroke-width="1.5" stroke-linecap="round" />
+              </g>
+              <!-- Joyful Curved Eyes ^ ^ when Reporting to TRAN TAN PHAT (76%..96%) -->
+              <g class="eyes-happy">
+                <path d="M 2 84 Q 6.2 76 10.5 84" fill="none" stroke="#FF9A9E" stroke-width="2.5" stroke-linecap="round" filter="url(#crimsonBloom)" />
+                <path d="M 14.5 84 Q 18.2 76.5 22 84" fill="none" stroke="#FF9A9E" stroke-width="2.3" stroke-linecap="round" filter="url(#crimsonBloom)" />
+                <ellipse cx="1" cy="90.5" rx="3.4" ry="1.5" fill="#E5484D" fill-opacity="0.95" />
+                <ellipse cx="22.5" cy="90" rx="2.8" ry="1.4" fill="#E5484D" fill-opacity="0.95" />
+                <path d="M 8 90.5 Q 12.5 96.5 17 90.5 Z" fill="#E5484D" stroke="#FF9A9E" stroke-width="1.2" />
+              </g>
             </g>
 
             <!-- Side Cyber-Headphone Hub -->
@@ -597,13 +647,43 @@
     </g>
   </g>
 
-  <!-- LASER POINTER BEAM & TARGET RETICLE (Active when Agent stops & points at Terminal: 36%..56%) -->
+  <!-- 1. RIGHT INTERACTION: LASER POINTER BEAM AT TERMINAL (Active at 28%..47%) -->
   <g class="point-beam">
-    <!-- Fingertip at x=778+40=818, y=114 pointing into Terminal x=852 -->
     <line x1="818" y1="114" x2="854" y2="112" stroke="#E5484D" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
     <circle cx="818" cy="114" r="3" fill="#F5F2EB" filter="url(#crimsonBloom)" />
     <circle cx="854" cy="112" r="4.5" fill="none" stroke="#E5484D" stroke-width="1.5" />
     <circle cx="854" cy="112" r="2" fill="#E5484D" />
+  </g>
+
+  <!-- 2. LEFT INTERACTION: SPOTLIGHT ON "TRAN TAN PHAT" & HOLOGRAPHIC REPORT BUBBLE (Active at 77%..96%) -->
+  <g class="phat-spotlight">
+    <!-- Holographic Spotlight Cone from Agent Hand (598, 108) onto TRAN TAN PHAT (x=564) -->
+    <polygon points="598,108 562,78 562,136" fill="url(#holoBeamGrad)" />
+    <line x1="598" y1="108" x2="564" y2="108" stroke="#E5484D" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
+    <circle cx="598" cy="108" r="3" fill="#F5F2EB" filter="url(#crimsonBloom)" />
+    <circle cx="564" cy="108" r="4.5" fill="none" stroke="#E5484D" stroke-width="1.5" />
+    <circle cx="564" cy="108" r="2" fill="#E5484D" />
+
+    <!-- Architectural Signature Underline & Framing Brackets Illuminating "TRAN TAN PHAT" -->
+    <line x1="72" y1="138" x2="564" y2="138" stroke="#E5484D" stroke-width="2" filter="url(#crimsonBloom)" />
+    <polygon points="564,134 568,138 564,142 560,138" fill="#F5F2EB" />
+    <path d="M 62 88 L 62 76 L 74 76" fill="none" stroke="#E5484D" stroke-width="1.8" stroke-linecap="round" />
+    <path d="M 554 76 L 566 76 L 566 88" fill="none" stroke="#E5484D" stroke-width="1.8" stroke-linecap="round" />
+
+    <!-- Celebratory 4-Point Cyber Sparkles Around Name -->
+    <polygon points="576,74 578,80 584,82 578,84 576,90 574,84 568,82 574,80" fill="#F5F2EB" filter="url(#crimsonBloom)" />
+    <polygon points="592,62 593.2,66 597,67.2 593.2,68.4 592,72.4 590.8,68.4 587,67.2 590.8,66" fill="#E5484D" filter="url(#crimsonBloom)" />
+    <polygon points="546,60 547,63.5 550.5,64.5 547,65.5 546,69 545,65.5 541.5,64.5 545,63.5" fill="#10B981" />
+  </g>
+
+  <!-- Floating Holographic Report Speech Bubble from Agent to Phat (Active at 77%..96%) -->
+  <g class="phat-speech">
+    <g transform="translate(420, 40)">
+      <rect width="196" height="24" rx="12" fill="#121722" stroke="#10B981" stroke-width="1.2" />
+      <polygon points="172,24 182,24 188,33" fill="#121722" stroke="#10B981" stroke-width="1.1" />
+      <circle cx="14" cy="12" r="3.5" fill="#10B981" class="pulse-dot" />
+      <text x="24" y="15.5" fill="#F5F2EB" font-size="8.5" font-weight="700" class="mono">✓ ALL SYSTEMS LIVE, PHAT!</text>
+    </g>
   </g>
 
   <!-- LIVE HOLOGRAPHIC WORKSTATION CONSOLE (x=842..1152, y=68..188) -->
