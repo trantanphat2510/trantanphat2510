@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 990" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1184" width="100%" height="100%">
   <defs>
     <!-- Master Surfaces -->
     <linearGradient id="canvasBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -29,13 +29,13 @@
     </linearGradient>
 
     <!-- Atmospheric Lighting -->
-    <radialGradient id="heroGlow" cx="80%" cy="14%" r="45%">
+    <radialGradient id="heroGlow" cx="80%" cy="12%" r="45%">
       <stop offset="0%" stop-color="#E5484D" stop-opacity="0.16" />
       <stop offset="55%" stop-color="#E5484D" stop-opacity="0.04" />
       <stop offset="100%" stop-color="#080A0F" stop-opacity="0" />
     </radialGradient>
 
-    <radialGradient id="centerGlow" cx="45%" cy="62%" r="45%">
+    <radialGradient id="centerGlow" cx="45%" cy="55%" r="45%">
       <stop offset="0%" stop-color="#E5484D" stop-opacity="0.06" />
       <stop offset="100%" stop-color="#080A0F" stop-opacity="0" />
     </radialGradient>
@@ -162,7 +162,7 @@
       }
       .pulse-dot { animation: pulse 2.4s infinite ease-in-out; }
       .pulse-ring { animation: ring 2.4s infinite ease-out; }
-      .spine-signal { animation: spineFlow 6.5s infinite linear; }
+      .spine-signal { animation: spineFlow 7.5s infinite linear; }
       .wave1 { animation: wave 1.2s infinite ease-in-out; }
       .wave2 { animation: wave 1.2s infinite ease-in-out 0.2s; }
       .wave3 { animation: wave 1.2s infinite ease-in-out 0.4s; }
@@ -209,7 +209,7 @@
         0% { transform: translateY(36px); opacity: 0; }
         10% { opacity: 1; }
         90% { opacity: 1; }
-        100% { transform: translateY(870px); opacity: 0; }
+        100% { transform: translateY(1060px); opacity: 0; }
       }
       @keyframes wave {
         0%, 100% { opacity: 0.35; }
@@ -224,11 +224,7 @@
         50% { transform: translateY(-5px) rotate(3deg); }
       }
 
-      /* 12s Master Storyline:
-         0%..25%: Walk Right from Phat (-62px) to Terminal (+62px)
-         26%..48%: Stop at Terminal, Tactical Cyan HUD Visor and Point at Code Lines
-         49%..74%: Turn Left and Walk Back to Phat (-62px)
-         75%..98%: Stop Facing Phat, Joyful Eyes + Heart, Blaze Full Name and Show Speech Bubble */
+      /* 12s Master Storyline */
       @keyframes patrolMove {
         0%        { transform: translateX(-62px); }
         25%, 49%  { transform: translateX(62px); }
@@ -420,35 +416,39 @@
   </defs>
 
   <!-- ===================================================================== -->
-  <!-- MASTER MONOLITH CANVAS (1200 x 990 — Sleek, Compact, High-Density)     -->
+  <!-- MASTER MONOLITH CANVAS (1200 x 1184)                                  -->
   <!-- ===================================================================== -->
-  <rect width="1200" height="990" rx="20" fill="url(#canvasBg)" />
-  <rect width="1200" height="990" rx="20" fill="url(#archGrid)" />
-  <rect width="1200" height="990" rx="20" fill="url(#heroGlow)" />
-  <rect width="1200" height="990" rx="20" fill="url(#centerGlow)" />
-  <rect x="0.75" y="0.75" width="1198.5" height="988.5" rx="19.25" fill="none" stroke="#1E2433" stroke-width="1.5" />
+  <rect width="1200" height="1184" rx="20" fill="url(#canvasBg)" />
+  <rect width="1200" height="1184" rx="20" fill="url(#archGrid)" />
+  <rect width="1200" height="1184" rx="20" fill="url(#heroGlow)" />
+  <rect width="1200" height="1184" rx="20" fill="url(#centerGlow)" />
+  <rect x="0.75" y="0.75" width="1198.5" height="1182.5" rx="19.25" fill="none" stroke="#1E2433" stroke-width="1.5" />
 
   <!-- ===================================================================== -->
-  <!-- CONTINUOUS ARCHITECTURAL SPINE (x=36, connects 01 -> 02 -> 03 -> 04)   -->
+  <!-- CONTINUOUS ARCHITECTURAL SPINE (x=36, connects 01 -> 02 -> 03 -> 04 -> 05) -->
   <!-- ===================================================================== -->
-  <line x1="36" y1="56" x2="36" y2="936" stroke="#22293A" stroke-width="1.5" />
-  <rect x="34.75" y="0" width="2.5" height="80" fill="url(#spinePulseGrad)" class="spine-signal" />
+  <line x1="36" y1="56" x2="36" y2="1128" stroke="#22293A" stroke-width="1.5" />
+  <rect x="34.75" y="0" width="2.5" height="85" fill="url(#spinePulseGrad)" class="spine-signal" />
 
   <!-- Node 01: Hero Command Deck -->
   <circle cx="36" cy="56" r="4.5" fill="#E5484D" />
   <line x1="36" y1="56" x2="64" y2="56" stroke="#E5484D" stroke-width="1.5" />
 
-  <!-- Node 02: Tech Stack Matrix -->
-  <circle cx="36" cy="324" r="4.5" fill="#E5484D" />
-  <line x1="36" y1="324" x2="64" y2="324" stroke="#E5484D" stroke-width="1.5" />
+  <!-- Node 02: Professional Experience -->
+  <circle cx="36" cy="320" r="4.5" fill="#E5484D" />
+  <line x1="36" y1="320" x2="64" y2="320" stroke="#E5484D" stroke-width="1.5" />
 
-  <!-- Node 03: Selected Systems -->
-  <circle cx="36" cy="532" r="4.5" fill="#E5484D" />
-  <line x1="36" y1="532" x2="64" y2="532" stroke="#E5484D" stroke-width="1.5" />
+  <!-- Node 03: Tech Stack Matrix -->
+  <circle cx="36" cy="524" r="4.5" fill="#E5484D" />
+  <line x1="36" y1="524" x2="64" y2="524" stroke="#E5484D" stroke-width="1.5" />
 
-  <!-- Node 04: Signature Footer -->
-  <circle cx="36" cy="936" r="4.5" fill="#E5484D" />
-  <line x1="36" y1="936" x2="64" y2="936" stroke="#E5484D" stroke-width="1.5" />
+  <!-- Node 04: Selected Systems -->
+  <circle cx="36" cy="728" r="4.5" fill="#E5484D" />
+  <line x1="36" y1="728" x2="64" y2="728" stroke="#E5484D" stroke-width="1.5" />
+
+  <!-- Node 05: Signature Footer -->
+  <circle cx="36" cy="1128" r="4.5" fill="#E5484D" />
+  <line x1="36" y1="1128" x2="64" y2="1128" stroke="#E5484D" stroke-width="1.5" />
 
   <!-- ===================================================================== -->
   <!-- 01 // EXECUTIVE HERO & INTERACTIVE AI CO-PILOT COMMAND DECK           -->
@@ -491,7 +491,7 @@
   <!-- Integrated Executive KPI Strip -->
   <g transform="translate(92, 202)">
     <rect width="292" height="58" rx="10" fill="url(#pillBg)" stroke="#232B3E" stroke-width="1" />
-    <text x="14" y="21" fill="#E5484D" font-size="8.5" font-weight="700" class="mono">EDUCATION // B.S. IT (2022–2026)</text>
+    <text x="14" y="21" fill="#E5484D" font-size="8.5" font-weight="700" class="mono">EDUCATION // B.S. IT (2021–2025)</text>
     <text x="14" y="42" fill="#F5F2EB" font-size="11.5" font-weight="700" class="sans">Ho Chi Minh City University of Technology</text>
   </g>
   <g transform="translate(394, 202)">
@@ -553,13 +553,10 @@
         </g>
 
         <g class="bot-gait-bob">
-          <!-- 1. ARTICULATED HOLOGRAPHIC SERAPH WINGS (3 Floating Energy Feathers) -->
+          <!-- 1. ARTICULATED HOLOGRAPHIC SERAPH WINGS -->
           <g class="bot-wing">
-            <!-- Upper Wing Feather -->
             <path d="M -10 112 L -36 92 L -30 103 L -12 118 Z" fill="url(#botWingGrad)" stroke="#FF9A9E" stroke-width="0.8" filter="url(#crimsonBloom)" />
-            <!-- Middle Wing Feather -->
             <path d="M -11 118 L -39 108 L -32 118 L -12 124 Z" fill="url(#botWingGrad)" stroke="#FF9A9E" stroke-width="0.7" />
-            <!-- Lower Wing Feather -->
             <path d="M -11 124 L -33 123 L -27 131 L -11 130 Z" fill="#38BDF8" fill-opacity="0.7" stroke="#7DD3FC" stroke-width="0.7" />
           </g>
 
@@ -586,48 +583,33 @@
           <!-- 4. SCULPTED 3D TORSO, MECHA-TASSETS & CHEST REACTOR -->
           <rect x="-15" y="115" width="7" height="23" rx="3.5" fill="#141926" stroke="#38435E" stroke-width="1" />
           <circle cx="-11.5" cy="122" r="1.8" fill="#38BDF8" class="pulse-dot" />
-          <!-- Mecha Hip Skirt / Tasset Armor -->
           <path d="M -12 140 L 12 140 L 15 149 L -14 149 Z" fill="#161D2B" stroke="#38435E" stroke-width="1.1" />
           <line x1="-6" y1="144" x2="8" y2="144" stroke="#E5484D" stroke-width="1.6" stroke-linecap="round" />
-          <!-- Porcelain-Titanium Chest Cuirass -->
           <path d="M -11 112 C -13 125, -11 137, -8 143 L 10 143 C 13 137, 15 125, 12 112 Z" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.9" />
-          <!-- Cyber Collar Scarf -->
           <path d="M -10 111 Q 1 118 12 111 L 10 119 Q 1 124 -8 119 Z" fill="#141926" stroke="#E5484D" stroke-width="1.1" />
-          <!-- Diamond Heart Reactor Core -->
           <polygon points="5,122 10,128 5,134 0,128" fill="#0B0E13" stroke="#38BDF8" stroke-width="1" />
           <polygon points="5,124 8,128 5,132 2,128" fill="#E5484D" filter="url(#crimsonBloom)" class="pulse-dot" />
           <circle cx="5" cy="128" r="1.2" fill="#FFFFFF" />
           <rect x="-4" y="105" width="9" height="8" rx="3.5" fill="#1E2536" stroke="#38435E" stroke-width="0.8" />
 
-          <!-- 5. 3/4 PROFILE SCULPTED HEAD (Dual Halo, Cyber-Ears & 3-State Visor) -->
+          <!-- 5. 3/4 PROFILE SCULPTED HEAD -->
           <g class="bot-head">
-            <!-- Dual-Ring Angelic Cyber Halo -->
             <ellipse cx="1" cy="49" rx="18" ry="3.5" fill="none" stroke="#E5484D" stroke-width="1.6" filter="url(#crimsonBloom)" />
             <ellipse cx="1" cy="49" rx="12" ry="1.8" fill="none" stroke="#38BDF8" stroke-width="0.9" stroke-dasharray="6 3" />
-
-            <!-- Far Mecha-Ear + Neon Core -->
             <path d="M 10 64 L 20 45 L 2 60 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.1" />
             <path d="M 10 61 L 17 49 L 4 59 Z" fill="#E5484D" />
-
-            <!-- Near Mecha-Ear + Neon Core -->
             <path d="M -8 68 L -22 47 L 2 62 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.2" />
             <path d="M -8 65 L -18 51 L 0 61 Z" fill="#E5484D" />
             <line x1="-8" y1="64" x2="-16" y2="53" stroke="#FF9A9E" stroke-width="1" />
-
-            <!-- 3D Porcelain-Titanium Helmet Dome -->
             <rect x="-23" y="58" width="50" height="49" rx="23.5" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="1" />
             <path d="M -11 63 Q 3 59 17 64" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" />
-            <!-- Forehead V-Fin Diadem -->
             <polygon points="11,60 4,67 11,65.5 18,67" fill="#E5484D" />
             <circle cx="11" cy="64" r="1.5" fill="#38BDF8" />
-
-            <!-- Curved Panoramic OLED Visor -->
             <rect x="-5" y="69" width="31" height="29" rx="13.5" fill="url(#botVisorGrad)" stroke="#2B354D" stroke-width="1.4" />
             <path d="M 0 73 Q 10 70 19 73 L 5 92 Q -2 86 0 73 Z" fill="#FFFFFF" fill-opacity="0.08" />
 
             <!-- 3-STATE DYNAMIC FACIAL EXPRESSIONS -->
             <g class="bot-eyes">
-              <!-- State 1: Normal Cute Starry Eyes (Walking) -->
               <g class="eyes-normal">
                 <rect x="2" y="77" width="8.5" height="12" rx="4.2" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
                 <circle cx="5" cy="80.5" r="2.4" fill="#FFFFFF" />
@@ -639,8 +621,6 @@
                 <ellipse cx="22.5" cy="91" rx="2.2" ry="1.1" fill="#E5484D" fill-opacity="0.75" />
                 <path d="M 9 92 Q 12.5 95 16 92" fill="none" stroke="#FF9A9E" stroke-width="1.5" stroke-linecap="round" />
               </g>
-
-              <!-- State 2: Tactical Cyan HUD Monocle Visor (Inspecting Terminal at 27%..48%) -->
               <g class="eyes-scan">
                 <rect x="2" y="79" width="8.5" height="8" rx="2.5" fill="#38BDF8" filter="url(#crimsonBloom)" />
                 <circle cx="6.2" cy="83" r="6.5" fill="none" stroke="#38BDF8" stroke-width="1" stroke-dasharray="3 2" />
@@ -648,20 +628,16 @@
                 <rect x="15" y="79.5" width="7" height="7.5" rx="2.5" fill="#38BDF8" />
                 <path d="M 9.5 92 L 15.5 92" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" />
               </g>
-
-              <!-- State 3: Joyful ^ ^ Eyes + Floating Heart (Reporting to Phat at 76%..96%) -->
               <g class="eyes-happy">
                 <path d="M 2 84 Q 6.2 76 10.5 84" fill="none" stroke="#FF9A9E" stroke-width="2.5" stroke-linecap="round" filter="url(#crimsonBloom)" />
                 <path d="M 14.5 84 Q 18.2 76.5 22 84" fill="none" stroke="#FF9A9E" stroke-width="2.3" stroke-linecap="round" filter="url(#crimsonBloom)" />
                 <ellipse cx="1" cy="90.5" rx="3.4" ry="1.5" fill="#E5484D" fill-opacity="0.95" />
                 <ellipse cx="22.5" cy="90" rx="2.8" ry="1.4" fill="#E5484D" fill-opacity="0.95" />
                 <path d="M 8 90.5 Q 12.5 96.5 17 90.5 Z" fill="#E5484D" stroke="#FF9A9E" stroke-width="1.2" />
-                <!-- Floating Cyber Heart Above Visor -->
                 <path d="M 18 42 C 18 39.5, 14.5 39.5, 14.5 42 C 14.5 39.5, 11 39.5, 11 42 C 11 45, 14.5 47.5, 14.5 49 C 14.5 47.5, 18 45, 18 42 Z" fill="#E5484D" filter="url(#crimsonBloom)" />
               </g>
             </g>
 
-            <!-- Side Cyber-Headphone Hub -->
             <circle cx="-10" cy="84" r="7.2" fill="#151B28" stroke="#38435E" stroke-width="1.3" />
             <circle cx="-10" cy="84" r="3.2" fill="#E5484D" filter="url(#crimsonBloom)" />
             <circle cx="-10" cy="84" r="1.3" fill="#38BDF8" />
@@ -677,12 +653,11 @@
               <path d="M -5.5 184 L 6 184 C 11 184, 14.5 187.5, 14.5 191.5 L -6.5 191.5 Z" fill="#F5F2EB" stroke="#38435E" stroke-width="1.1" />
               <path d="M -2 186.5 L 8.5 186.5" stroke="#E5484D" stroke-width="2" stroke-linecap="round" />
               <line x1="-5.5" y1="192" x2="14.5" y2="192" stroke="#E5484D" stroke-width="1.8" stroke-linecap="round" />
-              <!-- Heel Micro-Thruster Glow -->
               <circle cx="-6" cy="189" r="2" fill="#38BDF8" filter="url(#crimsonBloom)" />
             </g>
           </g>
 
-          <!-- 7. FRONT ARM (Pointing Hand + Dual Laser Node) -->
+          <!-- 7. FRONT ARM -->
           <g class="arm-front">
             <rect x="-4.5" y="116" width="7.5" height="20" rx="3.75" fill="#2F3952" stroke="#43506E" stroke-width="1" />
             <circle cx="-0.8" cy="119" r="4.6" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1" />
@@ -699,7 +674,7 @@
     </g>
   </g>
 
-  <!-- RIGHT INTERACTION: TACTICAL HOLOGRAM SCAN CONE & LASER RETICLE AT TERMINAL (Active at 28%..47%) -->
+  <!-- RIGHT INTERACTION: TACTICAL HOLOGRAM SCAN CONE & LASER RETICLE AT TERMINAL -->
   <g class="point-beam">
     <polygon points="832,146 862,120 862,144" fill="url(#scanBeamRight)" />
     <line x1="832" y1="146" x2="862" y2="132" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
@@ -708,7 +683,7 @@
     <circle cx="862" cy="132" r="2" fill="#E5484D" />
   </g>
 
-  <!-- LEFT INTERACTION: WIDE SPOTLIGHT CONE & BLAZING FRAME ON "TRAN TAN PHAT" (Active at 77%..96%) -->
+  <!-- LEFT INTERACTION: WIDE SPOTLIGHT CONE & BLAZING FRAME ON "TRAN TAN PHAT" -->
   <g class="phat-spotlight">
     <polygon points="628,142 88,74 88,148" fill="url(#holoBeamGrad)" opacity="0.45" />
     <polygon points="628,142 562,82 562,144" fill="url(#holoBeamGrad)" />
@@ -717,14 +692,12 @@
     <circle cx="564" cy="116" r="4.5" fill="none" stroke="#E5484D" stroke-width="1.5" />
     <circle cx="564" cy="116" r="2" fill="#E5484D" />
 
-    <!-- Architectural Laser Underline & Corner Brackets Around TRAN TAN PHAT -->
     <line x1="92" y1="144" x2="562" y2="144" stroke="#E5484D" stroke-width="2.2" filter="url(#crimsonBloom)" />
     <polygon points="562,140 566,144 562,148 558,144" fill="#F5F2EB" />
     <polygon points="92,140 96,144 92,148 88,144" fill="#F5F2EB" />
     <path d="M 82 94 L 82 80 L 96 80" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" filter="url(#crimsonBloom)" />
     <path d="M 548 80 L 562 80 L 562 94" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" filter="url(#crimsonBloom)" />
 
-    <!-- Celebratory 4-Point Cyber Sparkles Across Entire Name -->
     <polygon points="108,74 110,79 115,81 110,83 108,88 106,83 101,81 106,79" fill="#F5F2EB" filter="url(#crimsonBloom)" />
     <polygon points="260,70 261.5,74.5 266,76 261.5,77.5 260,82 258.5,77.5 254,76 258.5,74.5" fill="#E5484D" filter="url(#crimsonBloom)" />
     <polygon points="420,72 421.8,77 427,78.8 421.8,80.6 420,85.6 418.2,80.6 413,78.8 418.2,77" fill="#F5F2EB" filter="url(#crimsonBloom)" />
@@ -732,7 +705,7 @@
     <polygon points="552,66 553,69.5 556.5,70.5 553,71.5 552,75 551,71.5 547.5,70.5 551,69.5" fill="#10B981" />
   </g>
 
-  <!-- Floating Holographic Speech Bubble Inside Co-Pilot Stage (Active at 77%..96%) -->
+  <!-- Floating Holographic Speech Bubble Inside Co-Pilot Stage -->
   <g class="phat-speech">
     <g transform="translate(642, 68)">
       <rect width="186" height="22" rx="11" fill="#121824" stroke="#10B981" stroke-width="1.2" />
@@ -745,27 +718,21 @@
   <!-- LIVE HOLOGRAPHIC WORKSTATION CONSOLE (x=852..1128, y=88..236) -->
   <g transform="translate(852, 88)">
     <rect width="276" height="146" rx="10" fill="url(#holoScreenGrad)" stroke="#E5484D" stroke-opacity="0.5" stroke-width="1.2" />
-
-    <!-- Active Row Highlight Bar (Triggered when Agent points at Terminal!) -->
     <rect x="8" y="34" width="260" height="20" rx="4" fill="#38BDF8" fill-opacity="0.16" stroke="#38BDF8" stroke-opacity="0.65" stroke-width="0.9" class="term-highlight" />
 
-    <!-- Top Terminal Bar -->
     <rect x="1" y="1" width="274" height="24" rx="9" fill="#181218" />
     <circle cx="13" cy="13" r="3" fill="#E5484D" />
     <circle cx="23" cy="13" r="3" fill="#F59E0B" />
     <circle cx="33" cy="13" r="3" fill="#10B981" />
     <text x="45" y="16.5" fill="#F2B8B5" font-size="8.5" font-weight="700" class="mono">NOIR-AGENT // CO-PILOT</text>
 
-    <!-- Live Voice Equalizer -->
     <rect x="246" y="10" width="2" height="6" rx="1" fill="#10B981" class="wave1" />
     <rect x="250" y="7" width="2" height="12" rx="1" fill="#10B981" class="wave2" />
     <rect x="254" y="9" width="2" height="8" rx="1" fill="#10B981" class="wave3" />
     <rect x="258" y="8" width="2" height="10" rx="1" fill="#10B981" class="wave1" />
 
-    <!-- Animated Scanline -->
     <rect x="8" y="28" width="260" height="1.5" fill="#E5484D" fill-opacity="0.45" class="holo-scanline" />
 
-    <!-- Telemetry & Code Execution Lines -->
     <text x="14" y="48" fill="#8C94A4" font-size="9.5" class="code">
       <tspan fill="#E5484D" font-weight="700">$ </tspan>agent.orchestrate(<tspan fill="#F5F2EB">&quot;kaikai-cms&quot;</tspan>)
     </text>
@@ -785,26 +752,135 @@
   </g>
 
   <!-- ===================================================================== -->
-  <!-- 02 // ARCHITECTURE & TECH STACK MATRIX (36 Custom Vector Icon Badges) -->
+  <!-- 02 // PROFESSIONAL EXPERIENCE & CAREER TIMELINE                       -->
   <!-- ===================================================================== -->
-  <text x="64" y="328" fill="#E5484D" font-size="11" font-weight="700" class="mono">02 // ARCHITECTURE &amp; TECH STACK</text>
-  <text x="330" y="328" fill="#3B4252" font-size="11" class="mono">—</text>
-  <text x="350" y="328" fill="#8C94A4" font-size="11" font-weight="500" class="mono">36 PRODUCTION TECHNOLOGIES BY LAYER</text>
+  <text x="64" y="324" fill="#E5484D" font-size="11" font-weight="700" class="mono">02 // PROFESSIONAL EXPERIENCE</text>
+  <text x="312" y="324" fill="#3B4252" font-size="11" class="mono">—</text>
+  <text x="332" y="324" fill="#8C94A4" font-size="11" font-weight="500" class="mono">ENTERPRISE &amp; PRODUCT ENGINEERING TIMELINE</text>
+
+  <!-- Timeline Connector Bridge Between Experience Cards -->
+  <line x1="604" y1="416" x2="620" y2="416" stroke="#E5484D" stroke-width="1.5" />
+  <circle cx="612" cy="416" r="3.5" fill="#151B28" stroke="#E5484D" stroke-width="1.5" />
+
+  <!-- EXPERIENCE 01: VNDTS COMPANY (x=64, y=340, w=540, h=152) -->
+  <g transform="translate(64, 340)">
+    <rect width="540" height="152" rx="14" fill="url(#deckBg)" stroke="#E5484D" stroke-opacity="0.45" stroke-width="1.2" />
+    <!-- Top Header & Active Date Pill -->
+    <circle cx="30" cy="25" r="3.5" fill="#10B981" class="pulse-ring" />
+    <circle cx="30" cy="25" r="3.5" fill="#10B981" class="pulse-dot" />
+    <text x="42" y="29" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">01 // CURRENT ROLE · FULL-STACK DEVELOPER</text>
+
+    <rect x="372" y="13" width="144" height="22" rx="11" fill="#12211C" stroke="#10B981" stroke-opacity="0.55" />
+    <text x="444" y="27.5" text-anchor="middle" fill="#6EE7B7" font-size="8.5" font-weight="700" class="mono">NOV 2025 – PRESENT</text>
+
+    <!-- Company & Location -->
+    <text x="24" y="60" fill="#F5F2EB" font-size="22" font-weight="800" letter-spacing="-0.02em" class="sans">VNDTS Company</text>
+    <text x="208" y="60" fill="#8C94A4" font-size="13" font-weight="500" class="sans">— Enterprise Business Web Systems</text>
+
+    <!-- Concise Impact Bullets -->
+    <text x="24" y="83" fill="#C7CCD6" font-size="11.5" class="sans">• Develop responsive, performant enterprise business websites &amp; reusable UI architectures.</text>
+    <text x="24" y="101" fill="#9BA3B0" font-size="11.5" class="sans">• Translate Figma design systems into pixel-accurate frontends with strict Git/GitHub workflows.</text>
+
+    <line x1="24" y1="112" x2="516" y2="112" stroke="#1E2534" stroke-width="1" />
+    <!-- Tech Stack Icon Pills -->
+    <g transform="translate(24, 120)">
+      <rect width="62" height="22" rx="5" fill="#171E2E" stroke="#2B354D" />
+      <ellipse cx="12" cy="11" rx="6" ry="3.8" fill="#777BB4" />
+      <text x="12" y="13.2" text-anchor="middle" fill="#FFFFFF" font-size="5.5" font-weight="800" class="sans">php</text>
+      <text x="23" y="14.8" fill="#F5F2EB" font-size="9.5" font-weight="700" class="sans">PHP</text>
+    </g>
+    <g transform="translate(92, 120)">
+      <rect width="76" height="22" rx="5" fill="#171E2E" stroke="#2B354D" />
+      <circle cx="10" cy="8.5" r="2" fill="#F24E1E" />
+      <circle cx="14" cy="8.5" r="2" fill="#FF7262" />
+      <circle cx="10" cy="12.5" r="2" fill="#A259FF" />
+      <circle cx="14" cy="12.5" r="2" fill="#1ABCFE" />
+      <text x="21" y="14.8" fill="#F5F2EB" font-size="9.5" font-weight="700" class="sans">Figma UI</text>
+    </g>
+    <g transform="translate(174, 120)">
+      <rect width="62" height="22" rx="5" fill="#171E2E" stroke="#2B354D" />
+      <polygon points="11,6 16,11 11,16 6,11" fill="#F05032" />
+      <circle cx="11" cy="11" r="1.4" fill="#FFFFFF" />
+      <text x="21" y="14.8" fill="#F5F2EB" font-size="9.5" font-weight="700" class="sans">Git</text>
+    </g>
+    <g transform="translate(242, 120)">
+      <rect width="72" height="22" rx="5" fill="#171E2E" stroke="#2B354D" />
+      <circle cx="11" cy="11" r="4.5" fill="none" stroke="#A855F7" stroke-width="1.3" />
+      <circle cx="11" cy="11" r="1.6" fill="#A855F7" />
+      <text x="20" y="14.8" fill="#F5F2EB" font-size="9.5" font-weight="700" class="sans">GitHub</text>
+    </g>
+    <text x="516" y="135" text-anchor="end" fill="#E5484D" font-size="9" font-weight="700" class="mono">HO CHI MINH CITY, VN</text>
+  </g>
+
+  <!-- EXPERIENCE 02: HITEK SOLUTION (x=620, y=340, w=540, h=152) -->
+  <g transform="translate(620, 340)">
+    <rect width="540" height="152" rx="14" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1.2" />
+    <!-- Top Header & Date Pill -->
+    <text x="24" y="29" fill="#8C94A4" font-size="9.5" font-weight="700" class="mono">02 // PREVIOUS ROLE · FULL-STACK DEVELOPER</text>
+
+    <rect x="372" y="13" width="144" height="22" rx="11" fill="#141A26" stroke="#263044" />
+    <text x="444" y="27.5" text-anchor="middle" fill="#C7CCD6" font-size="8.5" font-weight="700" class="mono">APR 2025 – OCT 2025</text>
+
+    <!-- Company & Context -->
+    <text x="24" y="60" fill="#F5F2EB" font-size="22" font-weight="800" letter-spacing="-0.02em" class="sans">HITEK Solution</text>
+    <text x="190" y="60" fill="#8C94A4" font-size="13" font-weight="500" class="sans">— React &amp; Next.js Product Engineering</text>
+
+    <!-- Concise Impact Bullets -->
+    <text x="24" y="83" fill="#C7CCD6" font-size="11.5" class="sans">• Developed dynamic frontend features using React.js, Next.js, TypeScript &amp; Tailwind CSS.</text>
+    <text x="24" y="101" fill="#9BA3B0" font-size="11.5" class="sans">• Architected modular UI state with Redux Toolkit &amp; integrated external REST APIs.</text>
+
+    <line x1="24" y1="112" x2="516" y2="112" stroke="#1E2534" stroke-width="1" />
+    <!-- Tech Stack Icon Pills -->
+    <g transform="translate(24, 120)">
+      <rect width="70" height="22" rx="5" fill="#151B28" stroke="#252E42" />
+      <ellipse cx="11" cy="11" rx="5" ry="2" fill="none" stroke="#61DAFB" stroke-width="1" />
+      <circle cx="11" cy="11" r="1.3" fill="#61DAFB" />
+      <text x="20" y="14.8" fill="#E2E6EE" font-size="9.5" font-weight="600" class="sans">React.js</text>
+    </g>
+    <g transform="translate(100, 120)">
+      <rect width="68" height="22" rx="5" fill="#151B28" stroke="#252E42" />
+      <circle cx="11" cy="11" r="4.5" fill="#000000" stroke="#F5F2EB" stroke-width="1" />
+      <text x="11" y="13.5" text-anchor="middle" fill="#FFFFFF" font-size="6.5" font-weight="800" class="sans">N</text>
+      <text x="20" y="14.8" fill="#E2E6EE" font-size="9.5" font-weight="600" class="sans">Next.js</text>
+    </g>
+    <g transform="translate(174, 120)">
+      <rect width="76" height="22" rx="5" fill="#151B28" stroke="#252E42" />
+      <rect x="6" y="6" width="10" height="10" rx="2" fill="#3178C6" />
+      <text x="11" y="13.5" text-anchor="middle" fill="#FFFFFF" font-size="6" font-weight="800" class="sans">TS</text>
+      <text x="20" y="14.8" fill="#E2E6EE" font-size="9.5" font-weight="600" class="sans">TypeScript</text>
+    </g>
+    <g transform="translate(256, 120)">
+      <rect width="70" height="22" rx="5" fill="#151B28" stroke="#252E42" />
+      <path d="M 6 11 Q 9 8 12 11 Q 14 13 16 10" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" />
+      <text x="20" y="14.8" fill="#E2E6EE" font-size="9.5" font-weight="600" class="sans">Tailwind</text>
+    </g>
+    <g transform="translate(332, 120)">
+      <rect width="66" height="22" rx="5" fill="#151B28" stroke="#252E42" />
+      <circle cx="11" cy="11" r="4" fill="none" stroke="#A855F7" stroke-width="1.2" />
+      <circle cx="11" cy="11" r="1.4" fill="#A855F7" />
+      <text x="19" y="14.8" fill="#E2E6EE" font-size="9.5" font-weight="600" class="sans">Redux</text>
+    </g>
+    <text x="516" y="135" text-anchor="end" fill="#8C94A4" font-size="9" font-weight="700" class="mono">HO CHI MINH CITY, VN</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- 03 // ARCHITECTURE & TECH STACK MATRIX (36 Custom Vector Icon Badges) -->
+  <!-- ===================================================================== -->
+  <text x="64" y="528" fill="#E5484D" font-size="11" font-weight="700" class="mono">03 // ARCHITECTURE &amp; TECH STACK</text>
+  <text x="330" y="528" fill="#3B4252" font-size="11" class="mono">—</text>
+  <text x="350" y="528" fill="#8C94A4" font-size="11" font-weight="500" class="mono">36 PRODUCTION TECHNOLOGIES BY LAYER</text>
 
   <!-- Horizontal Pipeline Links Between the 4 Stack Cards -->
-  <line x1="326" y1="418" x2="340" y2="418" stroke="#E5484D" stroke-width="1.5" />
-  <line x1="602" y1="418" x2="616" y2="418" stroke="#E5484D" stroke-width="1.5" />
-  <line x1="878" y1="418" x2="892" y2="418" stroke="#E5484D" stroke-width="1.5" />
+  <line x1="326" y1="618" x2="340" y2="618" stroke="#E5484D" stroke-width="1.5" />
+  <line x1="602" y1="618" x2="616" y2="618" stroke="#E5484D" stroke-width="1.5" />
+  <line x1="878" y1="618" x2="892" y2="618" stroke="#E5484D" stroke-width="1.5" />
 
-  <!-- ===================================================================== -->
-  <!-- STACK CARD 01: CLIENT & MOTION (x=64, y=344, w=262, h=146)            -->
-  <!-- ===================================================================== -->
-  <g transform="translate(64, 344)">
+  <!-- STACK CARD 01: CLIENT & MOTION (x=64, y=544, w=262, h=146) -->
+  <g transform="translate(64, 544)">
     <rect width="262" height="146" rx="12" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1.1" />
     <text x="14" y="24" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">01 / CLIENT &amp; MOTION</text>
 
-    <!-- Row 1 (y=36): React 19 | Next.js 16 | TypeScript -->
-    <!-- React 19 -->
+    <!-- Row 1 -->
     <g transform="translate(14, 36)">
       <rect width="74" height="26" rx="6" fill="#171E2E" stroke="#2B354D" />
       <ellipse cx="12" cy="13" rx="6" ry="2.3" fill="none" stroke="#61DAFB" stroke-width="1" />
@@ -813,14 +889,12 @@
       <circle cx="12" cy="13" r="1.4" fill="#61DAFB" />
       <text x="22" y="16.5" fill="#F5F2EB" font-size="10" font-weight="700" class="sans">React 19</text>
     </g>
-    <!-- Next.js 16 -->
     <g transform="translate(94, 36)">
       <rect width="74" height="26" rx="6" fill="#171E2E" stroke="#2B354D" />
       <circle cx="12" cy="13" r="6" fill="#000000" stroke="#F5F2EB" stroke-width="1" />
       <path d="M 9.5 16 L 9.5 10 L 15 16.5 M 14.2 10 L 14.2 14" fill="none" stroke="#FFFFFF" stroke-width="1.2" />
       <text x="21" y="16.5" fill="#F5F2EB" font-size="9.8" font-weight="700" class="sans">Next.js 16</text>
     </g>
-    <!-- TypeScript -->
     <g transform="translate(174, 36)">
       <rect width="74" height="26" rx="6" fill="#171E2E" stroke="#2B354D" />
       <rect x="6" y="7" width="12" height="12" rx="2.5" fill="#3178C6" />
@@ -828,43 +902,37 @@
       <text x="22" y="16.5" fill="#F5F2EB" font-size="9.5" font-weight="700" class="sans">TypeScript</text>
     </g>
 
-    <!-- Row 2 (y=68): JavaScript | Tailwind 4 | Motion -->
-    <!-- JavaScript -->
+    <!-- Row 2 -->
     <g transform="translate(14, 68)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <rect x="6" y="7" width="12" height="12" rx="2.5" fill="#F7DF1E" />
       <text x="12" y="15.8" text-anchor="middle" fill="#0B0E13" font-size="7" font-weight="800" class="sans">JS</text>
       <text x="22" y="16.5" fill="#C7CCD6" font-size="9.5" font-weight="600" class="sans">JavaScript</text>
     </g>
-    <!-- Tailwind v4 -->
     <g transform="translate(94, 68)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <path d="M 6 12 Q 8.5 8.5 11.5 11 Q 14 13 17 10.5 M 7 15.5 Q 9.5 12 12.5 14.5 Q 15 16.5 18 14" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" />
       <text x="22" y="16.5" fill="#C7CCD6" font-size="9.5" font-weight="600" class="sans">Tailwind 4</text>
     </g>
-    <!-- Motion -->
     <g transform="translate(174, 68)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <polygon points="7,7 13,7 10,13 16,13 9,19 11,13 7,13" fill="#F59E0B" />
       <text x="22" y="16.5" fill="#C7CCD6" font-size="10" font-weight="600" class="sans">Motion</text>
     </g>
 
-    <!-- Row 3 (y=100): Zustand | React Query | Redux -->
-    <!-- Zustand -->
+    <!-- Row 3 -->
     <g transform="translate(14, 100)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <polygon points="12,7 17.5,10 17.5,16 12,19 6.5,16 6.5,10" fill="none" stroke="#F59E0B" stroke-width="1.2" />
       <circle cx="12" cy="13" r="2" fill="#F59E0B" />
       <text x="22" y="16.5" fill="#C7CCD6" font-size="10" font-weight="600" class="sans">Zustand</text>
     </g>
-    <!-- React Query -->
     <g transform="translate(94, 100)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <circle cx="12" cy="13" r="5" fill="none" stroke="#FF4154" stroke-width="1.3" stroke-dasharray="6 2" />
       <circle cx="12" cy="13" r="1.8" fill="#FF4154" />
       <text x="21" y="16.5" fill="#C7CCD6" font-size="9.2" font-weight="600" class="sans">TanStack</text>
     </g>
-    <!-- Redux -->
     <g transform="translate(174, 100)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <circle cx="12" cy="13" r="5" fill="none" stroke="#A855F7" stroke-width="1.2" />
@@ -875,29 +943,24 @@
     </g>
   </g>
 
-  <!-- ===================================================================== -->
-  <!-- STACK CARD 02: BACKEND, AI & VOICE (x=340, y=344, w=262, h=146)       -->
-  <!-- ===================================================================== -->
-  <g transform="translate(340, 344)">
+  <!-- STACK CARD 02: BACKEND, AI & VOICE (x=340, y=544, w=262, h=146) -->
+  <g transform="translate(340, 544)">
     <rect width="262" height="146" rx="12" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1.1" />
     <text x="14" y="24" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">02 / BACKEND, AI &amp; VOICE</text>
 
-    <!-- Row 1 (y=36): NestJS 11 | Python | FastAPI -->
-    <!-- NestJS 11 -->
+    <!-- Row 1 -->
     <g transform="translate(14, 36)">
       <rect width="74" height="26" rx="6" fill="#171E2E" stroke="#2B354D" />
       <path d="M 12 6.5 L 17.5 9.5 C 17.5 14.5 15 17.5 12 19.5 C 9 17.5 6.5 14.5 6.5 9.5 Z" fill="#E0234E" />
       <path d="M 9.5 14.5 L 12 9.5 L 14.5 14.5" fill="none" stroke="#FFFFFF" stroke-width="1.2" />
       <text x="21" y="16.5" fill="#F5F2EB" font-size="9.8" font-weight="700" class="sans">NestJS 11</text>
     </g>
-    <!-- Python -->
     <g transform="translate(94, 36)">
       <rect width="74" height="26" rx="6" fill="#171E2E" stroke="#2B354D" />
       <path d="M 8 10 C 8 7.5 15 7.5 15 10 L 15 13 L 9 13 C 7 13 7 15.5 9 15.5" fill="none" stroke="#3776AB" stroke-width="2.2" stroke-linecap="round" />
       <path d="M 16 16 C 16 18.5 9 18.5 9 16 L 9 13 L 15 13 C 17 13 17 10.5 15 10.5" fill="none" stroke="#FFD43B" stroke-width="2.2" stroke-linecap="round" />
       <text x="23" y="16.5" fill="#F5F2EB" font-size="10.2" font-weight="700" class="sans">Python</text>
     </g>
-    <!-- FastAPI -->
     <g transform="translate(174, 36)">
       <rect width="74" height="26" rx="6" fill="#171E2E" stroke="#2B354D" />
       <circle cx="12" cy="13" r="6" fill="#009688" />
@@ -905,22 +968,19 @@
       <text x="22" y="16.5" fill="#F5F2EB" font-size="10" font-weight="700" class="sans">FastAPI</text>
     </g>
 
-    <!-- Row 2 (y=68): Node.js | WebRTC | ElevenLabs -->
-    <!-- Node.js -->
+    <!-- Row 2 -->
     <g transform="translate(14, 68)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <polygon points="12,6.8 17.5,10 17.5,16 12,19.2 6.5,16 6.5,10" fill="#5FA04E" />
       <circle cx="12" cy="13" r="2" fill="#0B0E13" />
       <text x="22" y="16.5" fill="#C7CCD6" font-size="10" font-weight="600" class="sans">Node.js</text>
     </g>
-    <!-- WebRTC -->
     <g transform="translate(94, 68)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <circle cx="12" cy="13" r="2" fill="#38BDF8" />
       <path d="M 8 10 A 5 5 0 0 1 16 10 M 6.5 16 A 5 5 0 0 0 17.5 16" fill="none" stroke="#38BDF8" stroke-width="1.3" stroke-linecap="round" />
       <text x="22" y="16.5" fill="#C7CCD6" font-size="10" font-weight="600" class="sans">WebRTC</text>
     </g>
-    <!-- ElevenLabs -->
     <g transform="translate(174, 68)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <rect x="8.5" y="8" width="2.2" height="10" rx="1" fill="#F5F2EB" />
@@ -928,21 +988,18 @@
       <text x="19" y="16.5" fill="#C7CCD6" font-size="9.2" font-weight="600" class="sans">ElevenLabs</text>
     </g>
 
-    <!-- Row 3 (y=100): Express | REST API | Zod / PHP -->
-    <!-- Express -->
+    <!-- Row 3 -->
     <g transform="translate(14, 100)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <rect x="6" y="7" width="12" height="12" rx="2.5" fill="#262F45" />
       <text x="12" y="15.5" text-anchor="middle" fill="#F5F2EB" font-size="6.5" font-weight="800" class="mono">EX</text>
       <text x="22" y="16.5" fill="#C7CCD6" font-size="10" font-weight="600" class="sans">Express</text>
     </g>
-    <!-- REST API -->
     <g transform="translate(94, 100)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <path d="M 9 9.5 L 6.5 13 L 9 16.5 M 15 9.5 L 17.5 13 L 15 16.5" fill="none" stroke="#10B981" stroke-width="1.3" stroke-linecap="round" />
       <text x="21" y="16.5" fill="#C7CCD6" font-size="9.5" font-weight="600" class="sans">REST API</text>
     </g>
-    <!-- Zod / PHP -->
     <g transform="translate(174, 100)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <polygon points="12,7 17.5,11 15,18.5 9,18.5 6.5,11" fill="#3E67B1" />
@@ -951,28 +1008,23 @@
     </g>
   </g>
 
-  <!-- ===================================================================== -->
-  <!-- STACK CARD 03: DATA & SECURITY (x=616, y=344, w=262, h=146)           -->
-  <!-- ===================================================================== -->
-  <g transform="translate(616, 344)">
+  <!-- STACK CARD 03: DATA & SECURITY (x=616, y=544, w=262, h=146) -->
+  <g transform="translate(616, 544)">
     <rect width="262" height="146" rx="12" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1.1" />
     <text x="14" y="24" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">03 / DATA &amp; SECURITY</text>
 
-    <!-- Row 1 (y=36): PostgreSQL | Supabase | Prisma -->
-    <!-- PostgreSQL -->
+    <!-- Row 1 -->
     <g transform="translate(14, 36)">
       <rect width="74" height="26" rx="6" fill="#171E2E" stroke="#2B354D" />
       <ellipse cx="12" cy="9.5" rx="5.2" ry="2.2" fill="#336791" stroke="#60A5FA" stroke-width="1" />
       <path d="M 6.8 9.5 L 6.8 16.5 C 6.8 18 17.2 18 17.2 16.5 L 17.2 9.5" fill="#336791" stroke="#60A5FA" stroke-width="1" />
       <text x="20" y="16.5" fill="#F5F2EB" font-size="9.2" font-weight="700" class="sans">PostgreSQL</text>
     </g>
-    <!-- Supabase -->
     <g transform="translate(94, 36)">
       <rect width="74" height="26" rx="6" fill="#171E2E" stroke="#2B354D" />
       <polygon points="13,7 7.5,14 12,14 11,19 16.5,12 12,12" fill="#3ECF8E" />
       <text x="21" y="16.5" fill="#F5F2EB" font-size="9.8" font-weight="700" class="sans">Supabase</text>
     </g>
-    <!-- Prisma -->
     <g transform="translate(174, 36)">
       <rect width="74" height="26" rx="6" fill="#171E2E" stroke="#2B354D" />
       <polygon points="12,7 17,16.5 10,19 7,14" fill="none" stroke="#38BDF8" stroke-width="1.3" stroke-linejoin="round" />
@@ -980,8 +1032,7 @@
       <text x="22" y="16.5" fill="#F5F2EB" font-size="10" font-weight="700" class="sans">Prisma</text>
     </g>
 
-    <!-- Row 2 (y=68): Drizzle | MongoDB | SQLite -->
-    <!-- Drizzle -->
+    <!-- Row 2 -->
     <g transform="translate(14, 68)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <line x1="9" y1="8" x2="7" y2="17" stroke="#A3E635" stroke-width="1.8" stroke-linecap="round" />
@@ -989,13 +1040,11 @@
       <line x1="17" y1="8" x2="15" y2="17" stroke="#A3E635" stroke-width="1.8" stroke-linecap="round" />
       <text x="22" y="16.5" fill="#C7CCD6" font-size="10" font-weight="600" class="sans">Drizzle</text>
     </g>
-    <!-- MongoDB -->
     <g transform="translate(94, 68)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <path d="M 12 7 C 15.5 10 15.5 15 12 19 C 8.5 15 8.5 10 12 7 Z" fill="#10B981" />
       <text x="21" y="16.5" fill="#C7CCD6" font-size="9.8" font-weight="600" class="sans">MongoDB</text>
     </g>
-    <!-- SQLite -->
     <g transform="translate(174, 68)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <rect x="7" y="7.5" width="10" height="11" rx="2" fill="none" stroke="#38BDF8" stroke-width="1.2" />
@@ -1003,22 +1052,19 @@
       <text x="22" y="16.5" fill="#C7CCD6" font-size="10" font-weight="600" class="sans">SQLite</text>
     </g>
 
-    <!-- Row 3 (y=100): PG RLS | JWT Auth | RBAC -->
-    <!-- PG RLS -->
+    <!-- Row 3 -->
     <g transform="translate(14, 100)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <rect x="7.5" y="12" width="9" height="6.5" rx="1.5" fill="#F59E0B" />
       <path d="M 9.5 12 L 9.5 9.5 A 2.5 2.5 0 0 1 14.5 9.5 L 14.5 12" fill="none" stroke="#F59E0B" stroke-width="1.3" />
       <text x="22" y="16.5" fill="#C7CCD6" font-size="10" font-weight="600" class="sans">PG RLS</text>
     </g>
-    <!-- JWT Auth -->
     <g transform="translate(94, 100)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <circle cx="12" cy="13" r="5" fill="none" stroke="#E5484D" stroke-width="1.3" stroke-dasharray="3 2" />
       <circle cx="12" cy="13" r="1.8" fill="#38BDF8" />
       <text x="21" y="16.5" fill="#C7CCD6" font-size="9.8" font-weight="600" class="sans">JWT Auth</text>
     </g>
-    <!-- RBAC -->
     <g transform="translate(174, 100)">
       <rect width="74" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <path d="M 12 7 L 17 9.2 C 17 13.8 14.8 16.8 12 18.8 C 9.2 16.8 7 13.8 7 9.2 Z" fill="none" stroke="#10B981" stroke-width="1.3" />
@@ -1027,15 +1073,12 @@
     </g>
   </g>
 
-  <!-- ===================================================================== -->
-  <!-- STACK CARD 04: DELIVERY & QUALITY (x=892, y=344, w=268, h=146)        -->
-  <!-- ===================================================================== -->
-  <g transform="translate(892, 344)">
+  <!-- STACK CARD 04: DELIVERY & QUALITY (x=892, y=544, w=268, h=146) -->
+  <g transform="translate(892, 544)">
     <rect width="268" height="146" rx="12" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1.1" />
     <text x="14" y="24" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">04 / DELIVERY &amp; QUALITY</text>
 
-    <!-- Row 1 (y=36): Docker | Vercel | Playwright -->
-    <!-- Docker -->
+    <!-- Row 1 -->
     <g transform="translate(14, 36)">
       <rect width="76" height="26" rx="6" fill="#171E2E" stroke="#2B354D" />
       <path d="M 6 13.5 L 17.5 13.5 C 17.5 17 14.5 18.5 11 18.5 C 8 18.5 6 16.5 6 13.5 Z" fill="#2496ED" />
@@ -1043,13 +1086,11 @@
       <rect x="11.2" y="9.5" width="2.5" height="2.8" fill="#2496ED" />
       <text x="22" y="16.5" fill="#F5F2EB" font-size="10" font-weight="700" class="sans">Docker</text>
     </g>
-    <!-- Vercel -->
     <g transform="translate(96, 36)">
       <rect width="76" height="26" rx="6" fill="#171E2E" stroke="#2B354D" />
       <polygon points="12,7.5 17.5,17.5 6.5,17.5" fill="#FFFFFF" />
       <text x="22" y="16.5" fill="#F5F2EB" font-size="10" font-weight="700" class="sans">Vercel</text>
     </g>
-    <!-- Playwright -->
     <g transform="translate(178, 36)">
       <rect width="76" height="26" rx="6" fill="#171E2E" stroke="#2B354D" />
       <path d="M 8 8.5 L 16 8.5 L 16 14 C 16 16.8 12 18.5 12 18.5 C 12 18.5 8 16.8 8 14 Z" fill="#2EAD33" />
@@ -1058,8 +1099,7 @@
       <text x="20" y="16.5" fill="#F5F2EB" font-size="9.5" font-weight="700" class="sans">Playwright</text>
     </g>
 
-    <!-- Row 2 (y=68): GitHub CI | Git | Lighthouse -->
-    <!-- GitHub CI -->
+    <!-- Row 2 -->
     <g transform="translate(14, 68)">
       <rect width="76" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <circle cx="9" cy="10" r="2" fill="#A855F7" />
@@ -1067,14 +1107,12 @@
       <path d="M 9 12 L 9 15 C 9 16 10 16 13 16" fill="none" stroke="#A855F7" stroke-width="1.4" />
       <text x="21" y="16.5" fill="#C7CCD6" font-size="9.5" font-weight="600" class="sans">GitHub CI</text>
     </g>
-    <!-- Git -->
     <g transform="translate(96, 68)">
       <rect width="76" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <polygon points="12,7 18,13 12,19 6,13" fill="#F05032" />
       <circle cx="12" cy="13" r="1.6" fill="#FFFFFF" />
       <text x="22" y="16.5" fill="#C7CCD6" font-size="10" font-weight="600" class="sans">Git Flow</text>
     </g>
-    <!-- Lighthouse -->
     <g transform="translate(178, 68)">
       <rect width="76" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <circle cx="12" cy="13" r="5.2" fill="none" stroke="#10B981" stroke-width="1.5" />
@@ -1082,8 +1120,7 @@
       <text x="20" y="16.5" fill="#C7CCD6" font-size="9.5" font-weight="600" class="sans">CWV 100</text>
     </g>
 
-    <!-- Row 3 (y=100): pnpm | Figma UI | Terminal -->
-    <!-- pnpm -->
+    <!-- Row 3 -->
     <g transform="translate(14, 100)">
       <rect width="76" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <rect x="7" y="8" width="4.5" height="4.5" fill="#F69220" />
@@ -1092,7 +1129,6 @@
       <rect x="12.5" y="13.5" width="4.5" height="4.5" fill="#F69220" />
       <text x="22" y="16.5" fill="#C7CCD6" font-size="10" font-weight="600" class="sans">pnpm</text>
     </g>
-    <!-- Figma UI -->
     <g transform="translate(96, 100)">
       <rect width="76" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <circle cx="10" cy="9.5" r="2.2" fill="#F24E1E" />
@@ -1102,7 +1138,6 @@
       <circle cx="10" cy="17.5" r="2.2" fill="#0ACF83" />
       <text x="21" y="16.5" fill="#C7CCD6" font-size="9.8" font-weight="600" class="sans">Figma UI</text>
     </g>
-    <!-- Linux / CLI -->
     <g transform="translate(178, 100)">
       <rect width="76" height="26" rx="6" fill="#131824" stroke="#222A3D" />
       <rect x="6.5" y="7.5" width="11" height="11" rx="2" fill="#0B0E13" stroke="#38BDF8" stroke-width="1.1" />
@@ -1112,19 +1147,19 @@
   </g>
 
   <!-- ===================================================================== -->
-  <!-- 03 // SELECTED PRODUCTION SYSTEMS (2x2 Bento Grid + Icon Tech Pills)  -->
+  <!-- 04 // SELECTED PRODUCTION SYSTEMS (2x2 Bento Grid + Icon Tech Pills)  -->
   <!-- ===================================================================== -->
-  <text x="64" y="536" fill="#E5484D" font-size="11" font-weight="700" class="mono">03 // SELECTED ENGINEERING WORK</text>
-  <text x="336" y="536" fill="#3B4252" font-size="11" class="mono">—</text>
-  <text x="356" y="536" fill="#8C94A4" font-size="11" font-weight="500" class="mono">4 END-TO-END ARCHITECTURES</text>
+  <text x="64" y="732" fill="#E5484D" font-size="11" font-weight="700" class="mono">04 // SELECTED ENGINEERING WORK</text>
+  <text x="336" y="732" fill="#3B4252" font-size="11" class="mono">—</text>
+  <text x="356" y="732" fill="#8C94A4" font-size="11" font-weight="500" class="mono">4 END-TO-END ARCHITECTURES</text>
 
   <!-- Grid Center Node & Crossbars -->
-  <line x1="604" y1="630" x2="620" y2="630" stroke="#262F45" stroke-width="1.5" />
-  <line x1="604" y1="800" x2="620" y2="800" stroke="#262F45" stroke-width="1.5" />
-  <circle cx="612" cy="715" r="4" fill="#151B28" stroke="#E5484D" stroke-width="1.5" />
+  <line x1="604" y1="826" x2="620" y2="826" stroke="#262F45" stroke-width="1.5" />
+  <line x1="604" y1="996" x2="620" y2="996" stroke="#262F45" stroke-width="1.5" />
+  <circle cx="612" cy="911" r="4" fill="#151B28" stroke="#E5484D" stroke-width="1.5" />
 
-  <!-- PROJECT 01: KAIKAI (x=64, y=554, w=540, h=154) -->
-  <g transform="translate(64, 554)">
+  <!-- PROJECT 01: KAIKAI (x=64, y=750, w=540, h=154) -->
+  <g transform="translate(64, 750)">
     <rect width="540" height="154" rx="14" fill="url(#deckBg)" stroke="#E5484D" stroke-opacity="0.45" stroke-width="1.2" />
     <text x="24" y="30" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">01 // FLAGSHIP SAAS · MULTI-TENANT</text>
     <rect x="374" y="14" width="142" height="22" rx="11" fill="#251319" stroke="#E5484D" stroke-opacity="0.5" />
@@ -1135,7 +1170,6 @@
     <text x="24" y="90" fill="#9BA3B0" font-size="12.5" class="sans">Single-flight cache stampede protection, RBAC guards &amp; tenant row-level security.</text>
 
     <line x1="24" y1="108" x2="516" y2="108" stroke="#1E2534" stroke-width="1" />
-    <!-- Icon Tech Pills -->
     <rect x="24" y="118" width="76" height="22" rx="5" fill="#151B28" stroke="#252E42" />
     <circle cx="34" cy="129" r="3.5" fill="#FFFFFF" />
     <text x="43" y="133" fill="#E2E6EE" font-size="9.5" font-weight="600" class="sans">Next.js 16</text>
@@ -1159,8 +1193,8 @@
     <text x="516" y="133" text-anchor="end" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">PRODUCTION →</text>
   </g>
 
-  <!-- PROJECT 02: MURMUR (x=620, y=554, w=540, h=154) -->
-  <g transform="translate(620, 554)">
+  <!-- PROJECT 02: MURMUR (x=620, y=750, w=540, h=154) -->
+  <g transform="translate(620, 750)">
     <rect width="540" height="154" rx="14" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1.2" />
     <text x="24" y="30" fill="#8C94A4" font-size="9.5" font-weight="700" class="mono">02 // AI &amp; REALTIME VOICE</text>
     <rect x="390" y="14" width="126" height="22" rx="11" fill="#141A26" stroke="#263044" />
@@ -1194,8 +1228,8 @@
     <text x="516" y="133" text-anchor="end" fill="#8C94A4" font-size="9.5" font-weight="700" class="mono">ARCHITECTURE →</text>
   </g>
 
-  <!-- PROJECT 03: SOCIAL LEARNING (x=64, y=724, w=540, h=154) -->
-  <g transform="translate(64, 724)">
+  <!-- PROJECT 03: SOCIAL LEARNING (x=64, y=920, w=540, h=154) -->
+  <g transform="translate(64, 920)">
     <rect width="540" height="154" rx="14" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1.2" />
     <text x="24" y="30" fill="#8C94A4" font-size="9.5" font-weight="700" class="mono">03 // REALTIME SOCIAL GRAPH</text>
     <rect x="400" y="14" width="116" height="22" rx="11" fill="#141A26" stroke="#263044" />
@@ -1225,8 +1259,8 @@
     <text x="516" y="133" text-anchor="end" fill="#8C94A4" font-size="9.5" font-weight="700" class="mono">LIVE DEMO →</text>
   </g>
 
-  <!-- PROJECT 04: ATELIER NOIR (x=620, y=724, w=540, h=154) -->
-  <g transform="translate(620, 724)">
+  <!-- PROJECT 04: ATELIER NOIR (x=620, y=920, w=540, h=154) -->
+  <g transform="translate(620, 920)">
     <rect width="540" height="154" rx="14" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1.2" />
     <text x="24" y="30" fill="#8C94A4" font-size="9.5" font-weight="700" class="mono">04 // DESIGN ENGINEERING</text>
     <rect x="384" y="14" width="132" height="22" rx="11" fill="#0F241D" stroke="#10B981" stroke-opacity="0.5" />
@@ -1257,9 +1291,9 @@
   </g>
 
   <!-- ===================================================================== -->
-  <!-- 04 // ARCHITECTURAL SIGNATURE FOOTER BAR (x=64, y=904, w=1096, h=62)  -->
+  <!-- 05 // ARCHITECTURAL SIGNATURE FOOTER BAR (x=64, y=1098, w=1096, h=62) -->
   <!-- ===================================================================== -->
-  <g transform="translate(64, 904)">
+  <g transform="translate(64, 1098)">
     <rect width="1096" height="62" rx="12" fill="url(#deckBg)" stroke="#222A3C" stroke-width="1.2" />
     <text x="24" y="37" fill="#F5F2EB" font-size="17" font-weight="700" letter-spacing="-0.015em" class="sans">
       &quot;Good engineering is not just about writing code — it&apos;s about building something that <tspan fill="#E5484D" font-size="19.5" class="serif-italic">matters.</tspan>&quot;
