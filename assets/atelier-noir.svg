@@ -1,0 +1,431 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="canvasBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E13" />
+      <stop offset="50%" stop-color="#0E1219" />
+      <stop offset="100%" stop-color="#0B0E13" />
+    </linearGradient>
+
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#131823" />
+      <stop offset="100%" stop-color="#0D1118" />
+    </linearGradient>
+
+    <linearGradient id="featureCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151A26" />
+      <stop offset="100%" stop-color="#0D1017" />
+    </linearGradient>
+
+    <radialGradient id="heroGlow" cx="85%" cy="8%" r="42%">
+      <stop offset="0%" stop-color="#E5484D" stop-opacity="0.18" />
+      <stop offset="55%" stop-color="#E5484D" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#0B0E13" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="55%" r="45%">
+      <stop offset="0%" stop-color="#E5484D" stop-opacity="0.07" />
+      <stop offset="100%" stop-color="#0B0E13" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="footerGlow" cx="80%" cy="95%" r="40%">
+      <stop offset="0%" stop-color="#E5484D" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#0B0E13" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="spinePulseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5484D" stop-opacity="0" />
+      <stop offset="50%" stop-color="#E5484D" stop-opacity="1" />
+      <stop offset="100%" stop-color="#E5484D" stop-opacity="0" />
+    </linearGradient>
+
+    <pattern id="archGrid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.02" />
+    </pattern>
+
+    <style>
+      .mono {
+        font-family: 'Geist Mono', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+      .sans {
+        font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .serif-italic {
+        font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+      }
+      .pulse-dot {
+        animation: pulse 2.4s infinite ease-in-out;
+      }
+      .pulse-ring {
+        animation: ring 2.4s infinite ease-out;
+      }
+      .spine-signal {
+        animation: spineFlow 7s infinite linear;
+      }
+      .wave1 { animation: wave 1.2s infinite ease-in-out; }
+      .wave2 { animation: wave 1.2s infinite ease-in-out 0.2s; }
+      .wave3 { animation: wave 1.2s infinite ease-in-out 0.4s; }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.35; }
+      }
+      @keyframes ring {
+        0% { r: 3.5px; opacity: 0.75; }
+        100% { r: 11px; opacity: 0; }
+      }
+      @keyframes spineFlow {
+        0% { transform: translateY(40px); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(1120px); opacity: 0; }
+      }
+      @keyframes wave {
+        0%, 100% { opacity: 0.35; }
+        50% { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- ===================================================================== -->
+  <!-- MASTER MONOLITH FRAME (1200 x 1280)                                   -->
+  <!-- ===================================================================== -->
+  <rect width="1200" height="1280" rx="20" fill="url(#canvasBg)" />
+  <rect width="1200" height="1280" rx="20" fill="url(#archGrid)" />
+  <rect width="1200" height="1280" rx="20" fill="url(#heroGlow)" />
+  <rect width="1200" height="1280" rx="20" fill="url(#centerGlow)" />
+  <rect width="1200" height="1280" rx="20" fill="url(#footerGlow)" />
+  <rect x="0.75" y="0.75" width="1198.5" height="1278.5" rx="19.25" fill="none" stroke="#222836" stroke-width="1.5" />
+
+  <!-- ===================================================================== -->
+  <!-- CONTINUOUS ARCHITECTURAL SPINE (Connects 01 -> 02 -> 03 -> 04 -> 05)  -->
+  <!-- ===================================================================== -->
+  <line x1="48" y1="42" x2="48" y2="1192" stroke="#222836" stroke-width="1.5" />
+  <rect x="46.75" y="0" width="2.5" height="90" fill="url(#spinePulseGrad)" class="spine-signal" />
+
+  <!-- Spine Nodes + Horizontal Branch Connectors -->
+  <!-- Node 01: Identity -->
+  <circle cx="48" cy="42" r="4.5" fill="#E5484D" />
+  <line x1="48" y1="42" x2="64" y2="42" stroke="#E5484D" stroke-width="1.5" />
+
+  <!-- Node 02: Overview -->
+  <circle cx="48" cy="316" r="4.5" fill="#E5484D" />
+  <line x1="48" y1="316" x2="64" y2="316" stroke="#E5484D" stroke-width="1.5" />
+
+  <!-- Node 03: Selected Work -->
+  <circle cx="48" cy="566" r="4.5" fill="#E5484D" />
+  <line x1="48" y1="566" x2="64" y2="566" stroke="#E5484D" stroke-width="1.5" />
+
+  <!-- Node 04: Capabilities & Stack -->
+  <circle cx="48" cy="988" r="4.5" fill="#E5484D" />
+  <line x1="48" y1="988" x2="64" y2="988" stroke="#E5484D" stroke-width="1.5" />
+
+  <!-- Node 05: Philosophy -->
+  <circle cx="48" cy="1192" r="4.5" fill="#E5484D" />
+  <line x1="48" y1="1192" x2="64" y2="1192" stroke="#E5484D" stroke-width="1.5" />
+
+  <!-- ===================================================================== -->
+  <!-- 01 / IDENTITY & HERO                                                  -->
+  <!-- ===================================================================== -->
+  <text x="72" y="46" fill="#E5484D" font-size="11" font-weight="700" class="mono">01 / IDENTITY</text>
+  <text x="192" y="46" fill="#3B4252" font-size="11" class="mono">—</text>
+  <text x="212" y="46" fill="#8C94A4" font-size="11" font-weight="500" class="mono">HO CHI MINH CITY, VIETNAM</text>
+
+  <!-- Availability Badge -->
+  <g transform="translate(932, 26)">
+    <rect width="220" height="28" rx="14" fill="#121722" stroke="#242C3D" stroke-width="1" />
+    <circle cx="17" cy="14" r="3.5" fill="#10B981" class="pulse-ring" />
+    <circle cx="17" cy="14" r="3.5" fill="#10B981" class="pulse-dot" />
+    <text x="30" y="18" fill="#E2E6EE" font-size="10" font-weight="600" class="mono">AVAILABLE FOR WORK</text>
+  </g>
+
+  <!-- Display Name & Statement -->
+  <text x="72" y="136" fill="#F5F2EB" font-size="66" font-weight="800" letter-spacing="-0.03em" class="sans">TRAN TAN PHAT</text>
+
+  <text x="72" y="180" fill="#9BA3B0" font-size="21" font-weight="400" class="sans">
+    I turn ideas into <tspan fill="#F5F2EB" font-size="24" class="serif-italic">real web products</tspan><tspan fill="#E5484D" font-size="24" font-weight="700">.</tspan>
+    <tspan fill="#68707E" font-size="15.5" dx="10">End-to-end interfaces, reliable APIs &amp; relational data layers.</tspan>
+  </text>
+
+  <!-- Connected Identity Bar (x=72, width=1080) -->
+  <g transform="translate(72, 206)">
+    <rect width="1080" height="68" rx="12" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1" />
+
+    <text x="24" y="26" fill="#68707E" font-size="9.5" font-weight="700" class="mono">ROLE</text>
+    <text x="24" y="48" fill="#F5F2EB" font-size="14" font-weight="700" class="sans">Full-Stack Developer</text>
+
+    <line x1="230" y1="12" x2="230" y2="56" stroke="#1E2534" stroke-width="1" />
+    <text x="254" y="26" fill="#68707E" font-size="9.5" font-weight="700" class="mono">CORE ECOSYSTEM</text>
+    <text x="254" y="48" fill="#F5F2EB" font-size="14" font-weight="700" class="sans">React 19 · Next.js 16 · NestJS · Python</text>
+
+    <line x1="590" y1="12" x2="590" y2="56" stroke="#1E2534" stroke-width="1" />
+    <text x="614" y="26" fill="#68707E" font-size="9.5" font-weight="700" class="mono">CURRENTLY BUILDING</text>
+    <text x="614" y="48" fill="#F5F2EB" font-size="14" font-weight="700" class="sans">Kaikai (Ordering Platform &amp; CMS)</text>
+
+    <line x1="896" y1="12" x2="896" y2="56" stroke="#1E2534" stroke-width="1" />
+    <text x="920" y="26" fill="#68707E" font-size="9.5" font-weight="700" class="mono">LIVE PORTFOLIO</text>
+    <text x="920" y="48" fill="#E5484D" font-size="14" font-weight="700" class="sans">ttanphat.vercel.app ↗</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- 02 / ENGINEERING OVERVIEW (3-COLUMN BENTO, x=72, width=1080)          -->
+  <!-- ===================================================================== -->
+  <text x="72" y="320" fill="#E5484D" font-size="11" font-weight="700" class="mono">02 / ENGINEERING OVERVIEW</text>
+  <text x="308" y="320" fill="#3B4252" font-size="11" class="mono">—</text>
+  <text x="328" y="320" fill="#8C94A4" font-size="11" font-weight="500" class="mono">SYSTEM ARCHITECTURE, CAREER TIMELINE &amp; QUALITY BENCHMARKS</text>
+
+  <!-- Bento 02.1 (width=348) -->
+  <g transform="translate(72, 340)">
+    <rect width="348" height="184" rx="12" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1" />
+    <text x="22" y="30" fill="#68707E" font-size="10" font-weight="700" class="mono">02.1 / SYSTEM BOUNDARIES</text>
+    <text x="22" y="60" fill="#F5F2EB" font-size="19" font-weight="700" class="sans">
+      Clarity over <tspan class="serif-italic" fill="#E5484D">cleverness.</tspan>
+    </text>
+    <text x="22" y="86" fill="#9BA3B0" font-size="12.5" class="sans">
+      Strict separation between server truth and
+    </text>
+    <text x="22" y="105" fill="#9BA3B0" font-size="12.5" class="sans">
+      UI state, paired with 3-layer API security.
+    </text>
+
+    <!-- Connected Flow -->
+    <g transform="translate(22, 132)">
+      <rect width="88" height="28" rx="6" fill="#161C28" stroke="#262F42" />
+      <text x="44" y="18" text-anchor="middle" fill="#D5D9E2" font-size="9.5" font-weight="600" class="mono">INTERFACE</text>
+      <line x1="88" y1="14" x2="108" y2="14" stroke="#E5484D" stroke-width="1.5" />
+      <rect x="108" width="88" height="28" rx="6" fill="#161C28" stroke="#262F42" />
+      <text x="152" y="18" text-anchor="middle" fill="#D5D9E2" font-size="9.5" font-weight="600" class="mono">API / RBAC</text>
+      <line x1="196" y1="14" x2="216" y2="14" stroke="#E5484D" stroke-width="1.5" />
+      <rect x="216" width="88" height="28" rx="6" fill="#161C28" stroke="#262F42" />
+      <text x="260" y="18" text-anchor="middle" fill="#D5D9E2" font-size="9.5" font-weight="600" class="mono">DATA / RLS</text>
+    </g>
+  </g>
+
+  <!-- Connector between Bento 02.1 and 02.2 -->
+  <line x1="420" y1="432" x2="438" y2="432" stroke="#222836" stroke-width="1.5" />
+
+  <!-- Bento 02.2 (width=348) -->
+  <g transform="translate(438, 340)">
+    <rect width="348" height="184" rx="12" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1" />
+    <text x="22" y="30" fill="#68707E" font-size="10" font-weight="700" class="mono">02.2 / EXPERIENCE &amp; EDUCATION</text>
+
+    <line x1="28" y1="56" x2="28" y2="152" stroke="#262F42" stroke-width="1.5" />
+
+    <circle cx="28" cy="58" r="4" fill="#E5484D" />
+    <text x="44" y="62" fill="#F5F2EB" font-size="13.5" font-weight="700" class="sans">VNDTS Company</text>
+    <text x="326" y="61" text-anchor="end" fill="#E5484D" font-size="9.5" font-weight="600" class="mono">NOV 2025–NOW</text>
+    <text x="44" y="80" fill="#8C94A4" font-size="11.5" class="sans">Full-Stack Developer · Enterprise Web</text>
+
+    <circle cx="28" cy="106" r="3.5" fill="#0D1118" stroke="#68707E" stroke-width="1.5" />
+    <text x="44" y="110" fill="#E2E6EE" font-size="13.5" font-weight="600" class="sans">HITEK Solution</text>
+    <text x="326" y="109" text-anchor="end" fill="#7D8594" font-size="9.5" font-weight="600" class="mono">APR–OCT 2025</text>
+    <text x="44" y="128" fill="#8C94A4" font-size="11.5" class="sans">Full-Stack Developer · React &amp; Next.js</text>
+
+    <circle cx="28" cy="152" r="3.5" fill="#0D1118" stroke="#68707E" stroke-width="1.5" />
+    <text x="44" y="156" fill="#E2E6EE" font-size="13.5" font-weight="600" class="sans">HUTECH University</text>
+    <text x="326" y="155" text-anchor="end" fill="#7D8594" font-size="9.5" font-weight="600" class="mono">2021–2025</text>
+  </g>
+
+  <!-- Connector between Bento 02.2 and 02.3 -->
+  <line x1="786" y1="432" x2="804" y2="432" stroke="#222836" stroke-width="1.5" />
+
+  <!-- Bento 02.3 (width=348) -->
+  <g transform="translate(804, 340)">
+    <rect width="348" height="184" rx="12" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1" />
+    <text x="22" y="30" fill="#68707E" font-size="10" font-weight="700" class="mono">02.3 / ENGINEERING STANDARDS</text>
+
+    <g transform="translate(22, 46)">
+      <rect width="146" height="62" rx="8" fill="#151B26" stroke="#232B3C" />
+      <text x="16" y="30" fill="#F5F2EB" font-size="22" font-weight="800" class="sans">99–100</text>
+      <text x="16" y="49" fill="#8C94A4" font-size="9.5" font-weight="600" class="mono">LIGHTHOUSE LAB</text>
+
+      <rect x="158" width="146" height="62" rx="8" fill="#151B26" stroke="#232B3C" />
+      <text x="174" y="30" fill="#E5484D" font-size="22" font-weight="800" class="sans">3-Layer</text>
+      <text x="174" y="49" fill="#8C94A4" font-size="9.5" font-weight="600" class="mono">JWT · RBAC · RLS</text>
+    </g>
+
+    <g transform="translate(22, 120)">
+      <rect width="304" height="42" rx="8" fill="#151B26" stroke="#232B3C" />
+      <text x="16" y="25" fill="#D5D9E2" font-size="12" font-weight="600" class="sans">Single-flight cache · Idempotent SQL · Docker</text>
+    </g>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- 03 / SELECTED ENGINEERING WORK (2x2 CONNECTED MATRIX, x=72, w=1080)   -->
+  <!-- ===================================================================== -->
+  <text x="72" y="570" fill="#E5484D" font-size="11" font-weight="700" class="mono">03 / SELECTED ENGINEERING WORK</text>
+  <text x="360" y="570" fill="#3B4252" font-size="11" class="mono">—</text>
+  <text x="380" y="570" fill="#8C94A4" font-size="11" font-weight="500" class="mono">PRODUCTION ARCHITECTURE &amp; KEY DECISIONS</text>
+
+  <!-- Cross-Connector Hub between the 4 Project Cards -->
+  <line x1="603" y1="680" x2="621" y2="680" stroke="#262F42" stroke-width="1.5" />
+  <line x1="603" y1="866" x2="621" y2="866" stroke="#262F42" stroke-width="1.5" />
+  <line x1="337" y1="764" x2="337" y2="782" stroke="#262F42" stroke-width="1.5" />
+  <line x1="886" y1="764" x2="886" y2="782" stroke="#262F42" stroke-width="1.5" />
+
+  <!-- CARD 03.1: KAIKAI (x=72, y=590, w=531, h=174) -->
+  <g transform="translate(72, 590)">
+    <rect width="531" height="174" rx="12" fill="url(#featureCardBg)" stroke="#232B3C" stroke-width="1" />
+    <text x="24" y="30" fill="#E5484D" font-size="10" font-weight="700" class="mono">03.1 / WEB PLATFORM &amp; CMS</text>
+    <rect x="372" y="14" width="136" height="22" rx="11" fill="#191318" stroke="#422127" />
+    <circle cx="385" cy="25" r="3" fill="#E5484D" />
+    <text x="395" y="28.5" fill="#F2B8B5" font-size="9" font-weight="600" class="mono">website-kaikai ↗</text>
+
+    <text x="24" y="62" fill="#F5F2EB" font-size="22" font-weight="800" class="sans">Kaikai</text>
+    <text x="104" y="61" fill="#8C94A4" font-size="12.5" class="sans">— Customer ordering platform &amp; operator CMS</text>
+
+    <text x="24" y="88" fill="#9BA3B0" font-size="12.5" class="sans">
+      Single-flight read coalescing with generation counters, route-level cache &amp; 3-layer auth.
+    </text>
+
+    <!-- Connected Flow Bar -->
+    <g transform="translate(24, 104)">
+      <rect width="483" height="28" rx="6" fill="#0E121A" stroke="#1D2330" />
+      <text x="12" y="18" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">ARCH:</text>
+      <text x="58" y="18" fill="#E2E6EE" font-size="9.5" font-weight="600" class="mono">NEXT.JS 16 CACHE  →  NESTJS 11 RBAC GUARDS  →  POSTGRESQL RLS</text>
+    </g>
+
+    <text x="24" y="154" fill="#68707E" font-size="10" font-weight="600" class="mono">
+      NEXT.JS 16  ·  REACT 19  ·  NESTJS 11  ·  POSTGRESQL  ·  SUPABASE  ·  PRISMA ORM
+    </text>
+  </g>
+
+  <!-- CARD 03.2: MURMUR (x=621, y=590, w=531, h=174) -->
+  <g transform="translate(621, 590)">
+    <rect width="531" height="174" rx="12" fill="url(#featureCardBg)" stroke="#232B3C" stroke-width="1" />
+    <text x="24" y="30" fill="#E5484D" font-size="10" font-weight="700" class="mono">03.2 / REAL-TIME VOICE AI</text>
+    <rect x="372" y="14" width="136" height="22" rx="11" fill="#191318" stroke="#422127" />
+    <rect x="383" y="22" width="2" height="6" rx="1" fill="#E5484D" class="wave1" />
+    <rect x="387" y="19" width="2" height="12" rx="1" fill="#E5484D" class="wave2" />
+    <rect x="391" y="21" width="2" height="8" rx="1" fill="#E5484D" class="wave3" />
+    <text x="400" y="28.5" fill="#F2B8B5" font-size="9" font-weight="600" class="mono">murmur-voice ↗</text>
+
+    <text x="24" y="62" fill="#F5F2EB" font-size="22" font-weight="800" class="sans">Murmur</text>
+    <text x="116" y="61" fill="#8C94A4" font-size="12.5" class="sans">— Bidirectional WebRTC Voice AI conversation app</text>
+
+    <text x="24" y="88" fill="#9BA3B0" font-size="12.5" class="sans">
+      Server-side HMAC token isolation, unified call hook &amp; idempotent SQLite transcript writes.
+    </text>
+
+    <g transform="translate(24, 104)">
+      <rect width="483" height="28" rx="6" fill="#0E121A" stroke="#1D2330" />
+      <text x="12" y="18" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">ARCH:</text>
+      <text x="58" y="18" fill="#E2E6EE" font-size="9.5" font-weight="600" class="mono">WEBRTC AUDIO  ⇄  NEXT.JS HMAC TOKEN API  →  SQLITE + DRIZZLE</text>
+    </g>
+
+    <text x="24" y="154" fill="#68707E" font-size="10" font-weight="600" class="mono">
+      NEXT.JS  ·  ELEVENLABS SDK  ·  WEBRTC  ·  SQLITE  ·  DRIZZLE ORM  ·  DOCKER  ·  ZOD
+    </text>
+  </g>
+
+  <!-- CARD 03.3: SOCIAL APP (x=72, y=782, w=531, h=164) -->
+  <g transform="translate(72, 782)">
+    <rect width="531" height="164" rx="12" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1" />
+    <text x="24" y="30" fill="#E5484D" font-size="10" font-weight="700" class="mono">03.3 / STATE ARCHITECTURE</text>
+    <text x="507" y="29" text-anchor="end" fill="#8C94A4" font-size="9.5" font-weight="600" class="mono">CASE STUDY ↗</text>
+
+    <text x="24" y="60" fill="#F5F2EB" font-size="20" font-weight="800" class="sans">Social App Management</text>
+    <text x="24" y="84" fill="#9BA3B0" font-size="12.5" class="sans">
+      Strict ownership split between server cache (React Query) and local session UI (Zustand).
+    </text>
+
+    <g transform="translate(24, 98)">
+      <rect width="483" height="26" rx="6" fill="#0E121A" stroke="#1D2330" />
+      <text x="12" y="17" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">STATE:</text>
+      <text x="64" y="17" fill="#E2E6EE" font-size="9.5" font-weight="600" class="mono">REACT QUERY (SERVER TRUTH)  ‖  ZUSTAND (SESSION UI)  →  DOCKER</text>
+    </g>
+
+    <text x="24" y="146" fill="#68707E" font-size="10" font-weight="600" class="mono">
+      NEXT.JS  ·  TYPESCRIPT  ·  REACT QUERY  ·  ZUSTAND  ·  TAILWIND CSS  ·  DOCKER
+    </text>
+  </g>
+
+  <!-- CARD 03.4: ATELIER NOIR PORTFOLIO (x=621, y=782, w=531, h=164) -->
+  <g transform="translate(621, 782)">
+    <rect width="531" height="164" rx="12" fill="url(#cardBg)" stroke="#1E2534" stroke-width="1" />
+    <text x="24" y="30" fill="#E5484D" font-size="10" font-weight="700" class="mono">03.4 / DESIGN ENGINEERING &amp; CMS</text>
+    <text x="507" y="29" text-anchor="end" fill="#E5484D" font-size="9.5" font-weight="600" class="mono">TTANPHAT.VERCEL.APP ↗</text>
+
+    <text x="24" y="60" fill="#F5F2EB" font-size="20" font-weight="800" class="sans">Atelier Noir Portfolio &amp; Studio</text>
+    <text x="24" y="84" fill="#9BA3B0" font-size="12.5" class="sans">
+      Bilingual (EN/VI) server-rendered portfolio with atomic snapshot CMS &amp; private media.
+    </text>
+
+    <g transform="translate(24, 98)">
+      <rect width="483" height="26" rx="6" fill="#0E121A" stroke="#1D2330" />
+      <text x="12" y="17" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">STUDIO:</text>
+      <text x="68" y="17" fill="#E2E6EE" font-size="9.5" font-weight="600" class="mono">DRAFT SNAPSHOTS  →  SUPABASE RLS  →  TAGGED DATA CACHE</text>
+    </g>
+
+    <text x="24" y="146" fill="#68707E" font-size="10" font-weight="600" class="mono">
+      NEXT.JS 16  ·  REACT 19  ·  TYPESCRIPT  ·  SUPABASE  ·  MOTION  ·  LENIS  ·  ZOD
+    </text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- 04 / CAPABILITIES & TECH STACK (4 CONNECTED COLUMNS, x=72, w=1080)    -->
+  <!-- ===================================================================== -->
+  <text x="72" y="992" fill="#E5484D" font-size="11" font-weight="700" class="mono">04 / CAPABILITIES &amp; TECH STACK</text>
+  <text x="352" y="992" fill="#3B4252" font-size="11" class="mono">—</text>
+  <text x="372" y="992" fill="#8C94A4" font-size="11" font-weight="500" class="mono">GROUPED BY ARCHITECTURAL LAYER</text>
+
+  <!-- Horizontal Pipeline Line connecting all 4 Stack Columns -->
+  <line x1="330" y1="1080" x2="344" y2="1080" stroke="#E5484D" stroke-width="1.5" />
+  <line x1="602" y1="1080" x2="616" y2="1080" stroke="#E5484D" stroke-width="1.5" />
+  <line x1="874" y1="1080" x2="888" y2="1080" stroke="#E5484D" stroke-width="1.5" />
+
+  <!-- Col 1: Client & State (x=72, w=258) -->
+  <g transform="translate(72, 1010)">
+    <rect width="258" height="140" rx="10" fill="url(#cardBg)" stroke="#1E2534" />
+    <text x="18" y="26" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">04.1 / CLIENT &amp; STATE</text>
+    <text x="18" y="52" fill="#F5F2EB" font-size="13.5" font-weight="700" class="sans">React 19 · Next.js 16</text>
+    <text x="18" y="75" fill="#C7CCD6" font-size="12.5" class="sans">TypeScript · JavaScript</text>
+    <text x="18" y="98" fill="#C7CCD6" font-size="12.5" class="sans">React Query · Zustand · Redux</text>
+    <text x="18" y="121" fill="#8C94A4" font-size="11.5" class="sans">Tailwind CSS · Motion · Lenis</text>
+  </g>
+
+  <!-- Col 2: API & AI Services (x=344, w=258) -->
+  <g transform="translate(344, 1010)">
+    <rect width="258" height="140" rx="10" fill="url(#cardBg)" stroke="#1E2534" />
+    <text x="18" y="26" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">04.2 / API &amp; AI SERVICES</text>
+    <text x="18" y="52" fill="#F5F2EB" font-size="13.5" font-weight="700" class="sans">NestJS 11 · Node.js · Express</text>
+    <text x="18" y="75" fill="#F5F2EB" font-size="13.5" font-weight="700" class="sans">Python · FastAPI</text>
+    <text x="18" y="98" fill="#C7CCD6" font-size="12.5" class="sans">WebRTC · ElevenLabs · PHP</text>
+    <text x="18" y="121" fill="#8C94A4" font-size="11.5" class="sans">REST APIs · Zod Validation</text>
+  </g>
+
+  <!-- Col 3: Data & Security (x=616, w=258) -->
+  <g transform="translate(616, 1010)">
+    <rect width="258" height="140" rx="10" fill="url(#cardBg)" stroke="#1E2534" />
+    <text x="18" y="26" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">04.3 / DATA &amp; SECURITY</text>
+    <text x="18" y="52" fill="#F5F2EB" font-size="13.5" font-weight="700" class="sans">PostgreSQL · Supabase</text>
+    <text x="18" y="75" fill="#C7CCD6" font-size="12.5" class="sans">Prisma ORM · Drizzle ORM</text>
+    <text x="18" y="98" fill="#C7CCD6" font-size="12.5" class="sans">SQLite · MongoDB</text>
+    <text x="18" y="121" fill="#8C94A4" font-size="11.5" class="sans">JWT · RBAC Guards · PG RLS</text>
+  </g>
+
+  <!-- Col 4: Delivery & Ops (x=888, w=264) -->
+  <g transform="translate(888, 1010)">
+    <rect width="264" height="140" rx="10" fill="url(#cardBg)" stroke="#1E2534" />
+    <text x="18" y="26" fill="#E5484D" font-size="9.5" font-weight="700" class="mono">04.4 / DELIVERY &amp; OPS</text>
+    <text x="18" y="52" fill="#F5F2EB" font-size="13.5" font-weight="700" class="sans">Docker · Vercel</text>
+    <text x="18" y="75" fill="#C7CCD6" font-size="12.5" class="sans">Git · GitHub Workflows</text>
+    <text x="18" y="98" fill="#C7CCD6" font-size="12.5" class="sans">Playwright · Lighthouse Lab</text>
+    <text x="18" y="121" fill="#8C94A4" font-size="11.5" class="sans">Figma-to-Code · pnpm</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- 05 / BUILT WITH INTENTION (PHILOSOPHY FOOTER)                         -->
+  <!-- ===================================================================== -->
+  <text x="72" y="1196" fill="#E5484D" font-size="11" font-weight="700" class="mono">05 / BUILT WITH INTENTION</text>
+
+  <text x="72" y="1234" fill="#F5F2EB" font-size="23" font-weight="700" letter-spacing="-0.02em" class="sans">
+    “Good engineering is not just about writing code. It’s about building something that <tspan fill="#E5484D" font-size="26" class="serif-italic">matters.</tspan>”
+  </text>
+
+  <text x="1152" y="1234" text-anchor="end" fill="#8C94A4" font-size="10.5" font-weight="600" class="mono">
+    TTANPHAT.WORK@GMAIL.COM
+  </text>
+</svg>
