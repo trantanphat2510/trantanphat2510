@@ -73,6 +73,27 @@
       <stop offset="100%" stop-color="#9E1C22" />
     </radialGradient>
 
+    <linearGradient id="nameBlazeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#FFE4E6" />
+      <stop offset="70%" stop-color="#FF6B72" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+
+    <linearGradient id="nameSweepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E5484D" stop-opacity="0" />
+      <stop offset="30%" stop-color="#FF6B72" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="70%" stop-color="#FF6B72" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#E5484D" stop-opacity="0" />
+    </linearGradient>
+
+    <radialGradient id="nameAuraGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E5484D" stop-opacity="0.48" />
+      <stop offset="55%" stop-color="#E5484D" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#0B0E13" stop-opacity="0" />
+    </radialGradient>
+
     <filter id="crimsonBloom" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="3.2" result="blur" />
       <feMerge>
@@ -80,6 +101,20 @@
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
+
+    <filter id="nameBlazeFilter" x="-25%" y="-45%" width="150%" height="190%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="7.5" result="outerGlow" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="innerGlow" />
+      <feMerge>
+        <feMergeNode in="outerGlow" />
+        <feMergeNode in="innerGlow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <clipPath id="phatTextClip">
+      <text x="72" y="128" font-size="64" font-weight="800" letter-spacing="-0.03em" class="sans">TRAN TAN PHAT</text>
+    </clipPath>
 
     <pattern id="archGrid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.02" />
@@ -172,6 +207,13 @@
       }
       .phat-spotlight {
         animation: phatSpotlightShow 12s infinite ease-in-out;
+      }
+      .phat-name-blaze {
+        animation: phatNameBlazeAnim 12s infinite ease-in-out;
+        transform-origin: 318px 104px;
+      }
+      .phat-name-sweep {
+        animation: phatNameSweepAnim 12s infinite ease-in-out;
       }
       .phat-speech {
         animation: phatSpeechPop 12s infinite ease-in-out;
@@ -375,6 +417,22 @@
         78%, 95%  { opacity: 1; }
         97%, 100% { opacity: 0; }
       }
+      @keyframes phatNameBlazeAnim {
+        0%, 75%   { opacity: 0; transform: scale(1); }
+        77.5%     { opacity: 1; transform: scale(1.012); }
+        82%       { opacity: 0.82; transform: scale(1); }
+        86.5%     { opacity: 1; transform: scale(1.015); }
+        91%       { opacity: 0.86; transform: scale(1.004); }
+        95%       { opacity: 1; transform: scale(1.01); }
+        97%, 100% { opacity: 0; transform: scale(1); }
+      }
+      @keyframes phatNameSweepAnim {
+        0%, 75%   { transform: translateX(610px); opacity: 0; }
+        76.5%     { transform: translateX(570px); opacity: 1; }
+        86%       { transform: translateX(30px); opacity: 1; }
+        95.5%     { transform: translateX(570px); opacity: 1; }
+        97%, 100% { transform: translateX(610px); opacity: 0; }
+      }
       @keyframes phatSpeechPop {
         0%, 75%   { opacity: 0; transform: translateY(6px) scale(0.92); }
         78%, 95%  { opacity: 1; transform: translateY(0px) scale(1); }
@@ -471,7 +529,24 @@
   </g>
 
   <!-- Display Name & Statement (Left Column: x=72..595) -->
+  <!-- 1. Ambient Back-Aura behind TRAN TAN PHAT (Ignites when Agent shines spotlight) -->
+  <ellipse cx="318" cy="105" rx="280" ry="46" fill="url(#nameAuraGlow)" class="phat-name-blaze" />
+
+  <!-- 2. Base Crisp Display Name -->
   <text x="72" y="128" fill="#F5F2EB" font-size="64" font-weight="800" letter-spacing="-0.03em" class="sans">TRAN TAN PHAT</text>
+
+  <!-- 3. Blazing Supernova Neon Layer (Ignites & Pulses at 76%..96%) -->
+  <g class="phat-name-blaze">
+    <text x="72" y="128" fill="#E5484D" stroke="#E5484D" stroke-width="3.2" font-size="64" font-weight="800" letter-spacing="-0.03em" class="sans" filter="url(#nameBlazeFilter)" opacity="0.9">TRAN TAN PHAT</text>
+    <text x="72" y="128" fill="url(#nameBlazeGrad)" stroke="#FFFFFF" stroke-width="0.9" font-size="64" font-weight="800" letter-spacing="-0.03em" class="sans" filter="url(#crimsonBloom)">TRAN TAN PHAT</text>
+  </g>
+
+  <!-- 4. High-Energy Light Wave Sweeping Inside the Letters of TRAN TAN PHAT -->
+  <g clip-path="url(#phatTextClip)">
+    <g class="phat-name-sweep">
+      <polygon points="0,62 150,62 110,142 -40,142" fill="url(#nameSweepGrad)" />
+    </g>
+  </g>
 
   <text x="72" y="164" fill="#9BA3B0" font-size="21" font-weight="400" class="sans">
     I turn ideas into <tspan fill="#F5F2EB" font-size="24" class="serif-italic">real web products</tspan><tspan fill="#E5484D" font-size="24" font-weight="700">.</tspan>
@@ -657,7 +732,8 @@
 
   <!-- 2. LEFT INTERACTION: SPOTLIGHT ON "TRAN TAN PHAT" & HOLOGRAPHIC REPORT BUBBLE (Active at 77%..96%) -->
   <g class="phat-spotlight">
-    <!-- Holographic Spotlight Cone from Agent Hand (598, 108) onto TRAN TAN PHAT (x=564) -->
+    <!-- Wide Holographic Spotlight Cone from Agent Hand (598, 108) Bathing All of TRAN TAN PHAT -->
+    <polygon points="598,108 68,68 68,144" fill="url(#holoBeamGrad)" opacity="0.45" />
     <polygon points="598,108 562,78 562,136" fill="url(#holoBeamGrad)" />
     <line x1="598" y1="108" x2="564" y2="108" stroke="#E5484D" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
     <circle cx="598" cy="108" r="3" fill="#F5F2EB" filter="url(#crimsonBloom)" />
@@ -665,12 +741,16 @@
     <circle cx="564" cy="108" r="2" fill="#E5484D" />
 
     <!-- Architectural Signature Underline & Framing Brackets Illuminating "TRAN TAN PHAT" -->
-    <line x1="72" y1="138" x2="564" y2="138" stroke="#E5484D" stroke-width="2" filter="url(#crimsonBloom)" />
+    <line x1="72" y1="138" x2="564" y2="138" stroke="#E5484D" stroke-width="2.2" filter="url(#crimsonBloom)" />
     <polygon points="564,134 568,138 564,142 560,138" fill="#F5F2EB" />
-    <path d="M 62 88 L 62 76 L 74 76" fill="none" stroke="#E5484D" stroke-width="1.8" stroke-linecap="round" />
-    <path d="M 554 76 L 566 76 L 566 88" fill="none" stroke="#E5484D" stroke-width="1.8" stroke-linecap="round" />
+    <polygon points="72,134 76,138 72,142 68,138" fill="#F5F2EB" />
+    <path d="M 62 88 L 62 74 L 76 74" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" filter="url(#crimsonBloom)" />
+    <path d="M 552 74 L 566 74 L 566 88" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" filter="url(#crimsonBloom)" />
 
-    <!-- Celebratory 4-Point Cyber Sparkles Around Name -->
+    <!-- Celebratory 4-Point Cyber Sparkles Across Entire "TRAN TAN PHAT" Text -->
+    <polygon points="88,68 90,73 95,75 90,77 88,82 86,77 81,75 86,73" fill="#F5F2EB" filter="url(#crimsonBloom)" />
+    <polygon points="246,64 247.5,68.5 252,70 247.5,71.5 246,76 244.5,71.5 240,70 244.5,68.5" fill="#E5484D" filter="url(#crimsonBloom)" />
+    <polygon points="412,66 413.8,71 419,72.8 413.8,74.6 412,79.6 410.2,74.6 405,72.8 410.2,71" fill="#F5F2EB" filter="url(#crimsonBloom)" />
     <polygon points="576,74 578,80 584,82 578,84 576,90 574,84 568,82 574,80" fill="#F5F2EB" filter="url(#crimsonBloom)" />
     <polygon points="592,62 593.2,66 597,67.2 593.2,68.4 592,72.4 590.8,68.4 587,67.2 590.8,66" fill="#E5484D" filter="url(#crimsonBloom)" />
     <polygon points="546,60 547,63.5 550.5,64.5 547,65.5 546,69 545,65.5 541.5,64.5 545,63.5" fill="#10B981" />
