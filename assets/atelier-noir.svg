@@ -142,6 +142,14 @@
         animation: wingRight 1.6s infinite ease-in-out;
         transform-origin: 738px 132px;
       }
+      .bot-leg-l {
+        animation: legSwingL 2.4s infinite ease-in-out;
+        transform-origin: 700px 161px;
+      }
+      .bot-leg-r {
+        animation: legSwingR 2.4s infinite ease-in-out;
+        transform-origin: 720px 161px;
+      }
       .bot-eyes {
         animation: eyeLookAndBlink 5.2s infinite ease-in-out;
         transform-origin: 710px 98px;
@@ -213,6 +221,14 @@
       @keyframes wingRight {
         0%, 100% { transform: rotate(0deg); }
         50% { transform: rotate(-9deg); }
+      }
+      @keyframes legSwingL {
+        0%, 100% { transform: rotate(7deg) translateY(0px); }
+        50% { transform: rotate(-9deg) translateY(-2px); }
+      }
+      @keyframes legSwingR {
+        0%, 100% { transform: rotate(-9deg) translateY(-2px); }
+        50% { transform: rotate(7deg) translateY(0px); }
       }
       @keyframes spinRing {
         0% { transform: rotate(0deg); }
@@ -350,76 +366,105 @@
 
     <!-- Aerodynamic Cyber-Wings (Behind Torso) -->
     <g class="bot-wing-l">
-      <path d="M 684 132 L 644 114 L 652 132 L 638 144 L 680 148 Z" fill="#171D2B" stroke="#364159" stroke-width="1.2" />
-      <path d="M 680 136 L 650 122 L 656 134 Z" fill="#E5484D" fill-opacity="0.85" />
+      <path d="M 684 126 L 644 108 L 652 126 L 638 138 L 680 142 Z" fill="#171D2B" stroke="#364159" stroke-width="1.2" />
+      <path d="M 680 130 L 650 116 L 656 128 Z" fill="#E5484D" fill-opacity="0.85" />
     </g>
     <g class="bot-wing-r">
-      <path d="M 736 132 L 776 114 L 768 132 L 782 144 L 740 148 Z" fill="#171D2B" stroke="#364159" stroke-width="1.2" />
-      <path d="M 740 136 L 770 122 L 764 134 Z" fill="#E5484D" fill-opacity="0.85" />
+      <path d="M 736 126 L 776 108 L 768 126 L 782 138 L 740 142 Z" fill="#171D2B" stroke="#364159" stroke-width="1.2" />
+      <path d="M 740 130 L 770 116 L 764 128 Z" fill="#E5484D" fill-opacity="0.85" />
     </g>
 
-    <!-- Jet Thruster Plume (Beneath Torso) -->
-    <path d="M 699 172 Q 710 192 721 172 Z" fill="#E5484D" fill-opacity="0.65" filter="url(#crimsonBloom)" class="pulse-dot" />
-    <path d="M 704 172 Q 710 185 716 172 Z" fill="#F5F2EB" fill-opacity="0.9" />
+    <!-- ARTICULATED 3D MECHA LEGS & JET-BOOTS -->
+    <!-- Left Leg & Jet-Boot -->
+    <g class="bot-leg-l">
+      <!-- Thigh Joint -->
+      <rect x="695" y="158" width="9" height="11" rx="4" fill="#181F2E" stroke="#38435E" stroke-width="1.1" />
+      <!-- Flared Porcelain-Titanium Shin & Boot -->
+      <path d="M 694 166 L 705 166 L 707 181 C 707 183, 691 183, 691 181 Z" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1.1" />
+      <!-- Crimson Knee/Ankle Trim -->
+      <line x1="694" y1="173" x2="705" y2="173" stroke="#E5484D" stroke-width="2" stroke-linecap="round" />
+      <!-- Dark Boot Sole -->
+      <rect x="690" y="180" width="17" height="4.5" rx="2.2" fill="#141926" stroke="#38435E" stroke-width="0.9" />
+      <!-- Left Boot Jet Thruster Flame -->
+      <path d="M 694 184.5 Q 698.5 195 703 184.5 Z" fill="#E5484D" fill-opacity="0.8" filter="url(#crimsonBloom)" class="pulse-dot" />
+      <path d="M 696 184.5 Q 698.5 191 701 184.5 Z" fill="#F5F2EB" />
+    </g>
+
+    <!-- Right Leg & Jet-Boot -->
+    <g class="bot-leg-r">
+      <!-- Thigh Joint -->
+      <rect x="716" y="158" width="9" height="11" rx="4" fill="#181F2E" stroke="#38435E" stroke-width="1.1" />
+      <!-- Flared Porcelain-Titanium Shin & Boot -->
+      <path d="M 715 166 L 726 166 L 729 181 C 729 183, 713 183, 713 181 Z" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1.1" />
+      <!-- Crimson Knee/Ankle Trim -->
+      <line x1="715" y1="173" x2="726" y2="173" stroke="#E5484D" stroke-width="2" stroke-linecap="round" />
+      <!-- Dark Boot Sole -->
+      <rect x="713" y="180" width="17" height="4.5" rx="2.2" fill="#141926" stroke="#38435E" stroke-width="0.9" />
+      <!-- Right Boot Jet Thruster Flame -->
+      <path d="M 717 184.5 Q 721.5 195 726 184.5 Z" fill="#E5484D" fill-opacity="0.8" filter="url(#crimsonBloom)" class="pulse-dot" />
+      <path d="M 719 184.5 Q 721.5 191 724 184.5 Z" fill="#F5F2EB" />
+    </g>
 
     <!-- Sculpted 3D Capsule Torso & Armor -->
+    <!-- Pelvis / Hip Core -->
+    <path d="M 692 156 L 728 156 L 724 163 C 716 166, 704 166, 696 163 Z" fill="#141926" stroke="#38435E" stroke-width="1.2" />
     <!-- Dark Under-Suit -->
-    <path d="M 684 126 C 680 142, 686 168, 698 173 L 722 173 C 734 168, 740 142, 736 126 Z" fill="url(#botBodyGrad)" stroke="#38435E" stroke-width="1.5" />
+    <path d="M 684 122 C 680 136, 686 156, 696 161 L 724 161 C 734 156, 740 136, 736 122 Z" fill="url(#botBodyGrad)" stroke="#38435E" stroke-width="1.5" />
     <!-- White/Cream Porcelain-Titanium Chest Plate -->
-    <path d="M 686 127 C 684 140, 689 160, 700 166 L 720 166 C 731 160, 736 140, 734 127 Q 710 133 686 127 Z" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.6" />
+    <path d="M 686 123 C 684 134, 689 151, 699 156 L 721 156 C 731 151, 736 134, 734 123 Q 710 129 686 123 Z" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.6" />
     <!-- Dark Collar / Neck Trim -->
-    <path d="M 692 125 Q 710 132 728 125 L 724 133 Q 710 138 696 133 Z" fill="#141926" stroke="#E5484D" stroke-width="0.9" />
+    <path d="M 692 121 Q 710 128 728 121 L 724 129 Q 710 134 696 129 Z" fill="#141926" stroke="#E5484D" stroke-width="0.9" />
 
     <!-- Spinning Chest Arc Reactor -->
-    <circle cx="710" cy="149" r="11" fill="#0B0E13" stroke="#2B3448" stroke-width="1.5" />
-    <circle cx="710" cy="149" r="8.5" fill="none" stroke="#E5484D" stroke-width="1.5" stroke-dasharray="5 3" class="core-spin" />
-    <circle cx="710" cy="149" r="5" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" class="pulse-dot" />
-    <circle cx="710" cy="149" r="2" fill="#FFFFFF" />
+    <circle cx="710" cy="143" r="10.5" fill="#0B0E13" stroke="#2B3448" stroke-width="1.5" />
+    <circle cx="710" cy="143" r="8" fill="none" stroke="#E5484D" stroke-width="1.5" stroke-dasharray="5 3" class="core-spin" />
+    <circle cx="710" cy="143" r="4.8" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" class="pulse-dot" />
+    <circle cx="710" cy="143" r="2" fill="#FFFFFF" />
 
     <!-- SCULPTED 3D HEAD (With Subtle Independent Tilt) -->
     <g class="bot-head">
       <!-- Swept-Back Cyber Cat/Mecha Ears -->
-      <path d="M 676 80 L 666 58 L 692 70 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.3" stroke-linejoin="round" />
-      <path d="M 677 76 L 671 63 L 688 71 Z" fill="#E5484D" />
-      <path d="M 744 80 L 754 58 L 728 70 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.3" stroke-linejoin="round" />
-      <path d="M 743 76 L 749 63 L 732 71 Z" fill="#E5484D" />
+      <path d="M 676 76 L 666 54 L 692 66 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.3" stroke-linejoin="round" />
+      <path d="M 677 72 L 671 59 L 688 67 Z" fill="#E5484D" />
+      <path d="M 744 76 L 754 54 L 728 66 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.3" stroke-linejoin="round" />
+      <path d="M 743 72 L 749 59 L 732 67 Z" fill="#E5484D" />
 
       <!-- Outer Porcelain-Titanium 3D Helmet Dome -->
-      <rect x="670" y="68" width="80" height="56" rx="26" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.8" />
+      <rect x="670" y="64" width="80" height="56" rx="26" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.8" />
       <!-- Top Specular Gloss Arc on Helmet -->
-      <path d="M 686 73 Q 710 68 734 73" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.85" />
+      <path d="M 686 69 Q 710 64 734 69" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.85" />
       <!-- Helmet Forehead Emblem -->
-      <polygon points="710,73 706,80 710,78 714,80" fill="#E5484D" />
+      <polygon points="710,69 706,76 710,74 714,76" fill="#E5484D" />
 
       <!-- Side Cyber-Headphone Pods -->
-      <rect x="663" y="86" width="9" height="24" rx="4.5" fill="#151B28" stroke="#38435E" stroke-width="1.2" />
-      <circle cx="667.5" cy="98" r="2.5" fill="#E5484D" filter="url(#crimsonBloom)" />
-      <rect x="748" y="86" width="9" height="24" rx="4.5" fill="#151B28" stroke="#38435E" stroke-width="1.2" />
-      <circle cx="752.5" cy="98" r="2.5" fill="#E5484D" filter="url(#crimsonBloom)" />
+      <rect x="663" y="82" width="9" height="24" rx="4.5" fill="#151B28" stroke="#38435E" stroke-width="1.2" />
+      <circle cx="667.5" cy="94" r="2.5" fill="#E5484D" filter="url(#crimsonBloom)" />
+      <rect x="748" y="82" width="9" height="24" rx="4.5" fill="#151B28" stroke="#38435E" stroke-width="1.2" />
+      <circle cx="752.5" cy="94" r="2.5" fill="#E5484D" filter="url(#crimsonBloom)" />
 
       <!-- Curved Panoramic OLED Visor -->
-      <rect x="677" y="80" width="66" height="38" rx="18" fill="url(#botVisorGrad)" stroke="#232B3E" stroke-width="1.5" />
+      <rect x="677" y="76" width="66" height="38" rx="18" fill="url(#botVisorGrad)" stroke="#232B3E" stroke-width="1.5" />
       <!-- Glass Reflection Sheen on Visor -->
-      <path d="M 684 85 Q 702 82 716 85 L 692 112 Q 682 104 684 85 Z" fill="#FFFFFF" fill-opacity="0.06" />
+      <path d="M 684 81 Q 702 78 716 81 L 692 108 Q 682 100 684 81 Z" fill="#FFFFFF" fill-opacity="0.06" />
 
       <!-- Expressive Glowing Cyber Eyes + Smile (Tracks Phat & Terminal) -->
       <g class="bot-eyes">
         <!-- Left Eye -->
-        <rect x="688" y="90" width="14" height="16" rx="7" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
-        <circle cx="693" cy="95" r="3.2" fill="#FFFFFF" />
-        <circle cx="697.5" cy="101" r="1.4" fill="#FFFFFF" fill-opacity="0.85" />
+        <rect x="688" y="86" width="14" height="16" rx="7" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
+        <circle cx="693" cy="91" r="3.2" fill="#FFFFFF" />
+        <circle cx="697.5" cy="97" r="1.4" fill="#FFFFFF" fill-opacity="0.85" />
 
         <!-- Right Eye -->
-        <rect x="718" y="90" width="14" height="16" rx="7" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
-        <circle cx="723" cy="95" r="3.2" fill="#FFFFFF" />
-        <circle cx="727.5" cy="101" r="1.4" fill="#FFFFFF" fill-opacity="0.85" />
+        <rect x="718" y="86" width="14" height="16" rx="7" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
+        <circle cx="723" cy="91" r="3.2" fill="#FFFFFF" />
+        <circle cx="727.5" cy="97" r="1.4" fill="#FFFFFF" fill-opacity="0.85" />
 
         <!-- Subtle Digital Cheek Glows -->
-        <ellipse cx="685" cy="108" rx="3.5" ry="1.5" fill="#E5484D" fill-opacity="0.65" />
-        <ellipse cx="735" cy="108" rx="3.5" ry="1.5" fill="#E5484D" fill-opacity="0.65" />
+        <ellipse cx="685" cy="104" rx="3.5" ry="1.5" fill="#E5484D" fill-opacity="0.65" />
+        <ellipse cx="735" cy="104" rx="3.5" ry="1.5" fill="#E5484D" fill-opacity="0.65" />
 
         <!-- Happy Digital Smile Arc -->
-        <path d="M 706 108 Q 710 112 714 108" fill="none" stroke="#FF9A9E" stroke-width="1.8" stroke-linecap="round" />
+        <path d="M 706 104 Q 710 108 714 104" fill="none" stroke="#FF9A9E" stroke-width="1.8" stroke-linecap="round" />
       </g>
     </g>
 
