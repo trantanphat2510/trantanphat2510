@@ -116,57 +116,63 @@
       .wave2 { animation: wave 1.2s infinite ease-in-out 0.2s; }
       .wave3 { animation: wave 1.2s infinite ease-in-out 0.4s; }
       .bot-patrol {
-        animation: patrolMove 8.4s infinite linear;
+        animation: patrolMove 10s infinite linear;
       }
       .bot-turn {
-        animation: patrolTurn 8.4s infinite steps(1, end);
+        animation: patrolTurn 10s infinite steps(1, end);
       }
       .bot-gait-bob {
-        animation: humanBob 0.45s infinite ease-in-out;
+        animation: humanBob 10s infinite ease-in-out;
       }
       .bot-head {
-        animation: humanHeadNod 0.9s infinite ease-in-out;
+        animation: humanHeadNod 10s infinite ease-in-out;
         transform-origin: 0px 104px;
       }
       .bot-shadow {
-        animation: humanShadow 0.45s infinite ease-in-out;
-        transform-origin: 0px 192px;
+        animation: humanShadow 10s infinite ease-in-out;
+        transform-origin: 0px 193px;
       }
       .thigh-front {
-        animation: thighFrontWalk 0.9s infinite linear;
-        transform-origin: 0px 150px;
+        animation: thighFrontWalk 10s infinite linear;
+        transform-origin: 0px 148px;
       }
       .shin-front {
-        animation: shinFrontWalk 0.9s infinite linear;
-        transform-origin: 0px 169px;
+        animation: shinFrontWalk 10s infinite linear;
+        transform-origin: 0px 168px;
       }
       .thigh-back {
-        animation: thighBackWalk 0.9s infinite linear;
-        transform-origin: 0px 150px;
+        animation: thighBackWalk 10s infinite linear;
+        transform-origin: 0px 148px;
       }
       .shin-back {
-        animation: shinBackWalk 0.9s infinite linear;
-        transform-origin: 0px 169px;
+        animation: shinBackWalk 10s infinite linear;
+        transform-origin: 0px 168px;
       }
       .arm-front {
-        animation: armFrontWalk 0.9s infinite ease-in-out;
-        transform-origin: 0px 122px;
+        animation: armFrontWalk 10s infinite ease-in-out;
+        transform-origin: -1px 119px;
       }
       .forearm-front {
-        animation: forearmFrontWalk 0.9s infinite ease-in-out;
-        transform-origin: 0px 138px;
+        animation: forearmFrontWalk 10s infinite ease-in-out;
+        transform-origin: -1px 135px;
       }
       .arm-back {
-        animation: armBackWalk 0.9s infinite ease-in-out;
-        transform-origin: 0px 122px;
+        animation: armBackWalk 10s infinite ease-in-out;
+        transform-origin: 1px 119px;
       }
       .forearm-back {
-        animation: forearmBackWalk 0.9s infinite ease-in-out;
-        transform-origin: 0px 138px;
+        animation: forearmBackWalk 10s infinite ease-in-out;
+        transform-origin: 1px 135px;
+      }
+      .point-beam {
+        animation: pointLaserShow 10s infinite ease-in-out;
+      }
+      .term-highlight {
+        animation: termRowHighlight 10s infinite ease-in-out;
       }
       .bot-eyes {
         animation: eyeBlinkNatural 4.2s infinite ease-in-out;
-        transform-origin: 10px 88px;
+        transform-origin: 10px 86px;
       }
       .core-spin {
         animation: spinRing 6s infinite linear;
@@ -206,75 +212,140 @@
         0%, 100% { opacity: 0.35; }
         50% { opacity: 1; }
       }
+      /* 10s Master Timeline:
+         0%..32%: Walk Right (3 full strides)
+         33%..58%: Stop at Terminal & Point at Code Lines
+         60%..92%: Turn Left & Walk Back to Phat (3 full strides)
+         93%..100%: Turn Right & Stand by Phat */
       @keyframes patrolMove {
-        0%   { transform: translateX(-64px); }
-        46%  { transform: translateX(56px); }
-        50%  { transform: translateX(56px); }
-        96%  { transform: translateX(-64px); }
-        100% { transform: translateX(-64px); }
+        0%        { transform: translateX(-72px); }
+        32%, 58%  { transform: translateX(68px); }
+        92%, 100% { transform: translateX(-72px); }
       }
       @keyframes patrolTurn {
-        0%, 48%  { transform: scaleX(1); }
-        49%, 98% { transform: scaleX(-1); }
-        99%, 100% { transform: scaleX(1); }
+        0%, 58.9%  { transform: scaleX(1); }
+        59%, 92.9% { transform: scaleX(-1); }
+        93%, 100%  { transform: scaleX(1); }
       }
       @keyframes humanBob {
-        0%, 100% { transform: translateY(1.2px) rotate(2.5deg); }
-        50%      { transform: translateY(-2.8px) rotate(1.5deg); }
+        0%, 5%, 10.5%, 16%, 21.5%, 27%, 32% { transform: translateY(1.2px) rotate(2deg); }
+        2.5%, 8%, 13.5%, 19%, 24.5%, 29.5%  { transform: translateY(-2.6px) rotate(1deg); }
+        34%, 58%                             { transform: translateY(0px) rotate(0deg); }
+        60%, 65%, 70.5%, 76%, 81.5%, 87%, 92% { transform: translateY(1.2px) rotate(2deg); }
+        62.5%, 68%, 73.5%, 79%, 84.5%, 89.5%  { transform: translateY(-2.6px) rotate(1deg); }
+        93%, 100%                            { transform: translateY(0px) rotate(0deg); }
       }
       @keyframes humanHeadNod {
-        0%, 50%, 100% { transform: rotate(2deg) translateY(0.5px); }
-        25%, 75%      { transform: rotate(-1.5deg) translateY(-1px); }
+        0%, 32%  { transform: rotate(1.5deg); }
+        35%, 45% { transform: rotate(-4deg) translateY(-1px); }
+        46%, 57% { transform: rotate(3deg) translateY(1px); }
+        60%, 92% { transform: rotate(1.5deg); }
+        93%, 100% { transform: rotate(-2deg); }
       }
       @keyframes humanShadow {
-        0%, 100% { transform: scaleX(1.05); opacity: 0.55; }
-        50%      { transform: scaleX(0.88); opacity: 0.35; }
+        0%, 32%, 60%, 92% { transform: scaleX(1); opacity: 0.55; }
+        34%, 58%, 93%, 100% { transform: scaleX(1.08); opacity: 0.65; }
       }
-      /* 4-Pose Human Biomechanical Gait (Contact -> Down -> Passing -> Up -> Contact) */
+      /* Front Thigh: 3 strides (0..32%), Planted Stance (33..58%), 3 strides (60..92%), Planted (93..100%) */
       @keyframes thighFrontWalk {
-        0%   { transform: rotate(-28deg); }
-        25%  { transform: rotate(-2deg); }
-        50%  { transform: rotate(24deg); }
-        75%  { transform: rotate(-12deg); }
-        100% { transform: rotate(-28deg); }
+        0%, 10.6%, 21.3%, 32% { transform: rotate(-26deg); }
+        2.6%, 13.3%, 24%      { transform: rotate(-2deg); }
+        5.3%, 16%, 26.6%      { transform: rotate(22deg); }
+        8%, 18.6%, 29.3%      { transform: rotate(-10deg); }
+        34%, 58%              { transform: rotate(-9deg); }
+        60%, 70.6%, 81.3%, 92% { transform: rotate(-26deg); }
+        62.6%, 73.3%, 84%      { transform: rotate(-2deg); }
+        65.3%, 76%, 86.6%      { transform: rotate(22deg); }
+        68%, 78.6%, 89.3%      { transform: rotate(-10deg); }
+        94%, 100%             { transform: rotate(-6deg); }
       }
       @keyframes shinFrontWalk {
-        0%   { transform: rotate(4deg); }
-        25%  { transform: rotate(8deg); }
-        50%  { transform: rotate(20deg); }
-        75%  { transform: rotate(46deg); }
-        100% { transform: rotate(4deg); }
+        0%, 10.6%, 21.3%, 32% { transform: rotate(4deg); }
+        2.6%, 13.3%, 24%      { transform: rotate(8deg); }
+        5.3%, 16%, 26.6%      { transform: rotate(18deg); }
+        8%, 18.6%, 29.3%      { transform: rotate(44deg); }
+        34%, 58%              { transform: rotate(8deg); }
+        60%, 70.6%, 81.3%, 92% { transform: rotate(4deg); }
+        62.6%, 73.3%, 84%      { transform: rotate(8deg); }
+        65.3%, 76%, 86.6%      { transform: rotate(18deg); }
+        68%, 78.6%, 89.3%      { transform: rotate(44deg); }
+        94%, 100%             { transform: rotate(6deg); }
       }
       @keyframes thighBackWalk {
-        0%   { transform: rotate(24deg); }
-        25%  { transform: rotate(-12deg); }
-        50%  { transform: rotate(-28deg); }
-        75%  { transform: rotate(-2deg); }
-        100% { transform: rotate(24deg); }
+        0%, 10.6%, 21.3%, 32% { transform: rotate(22deg); }
+        2.6%, 13.3%, 24%      { transform: rotate(-10deg); }
+        5.3%, 16%, 26.6%      { transform: rotate(-26deg); }
+        8%, 18.6%, 29.3%      { transform: rotate(-2deg); }
+        34%, 58%              { transform: rotate(11deg); }
+        60%, 70.6%, 81.3%, 92% { transform: rotate(22deg); }
+        62.6%, 73.3%, 84%      { transform: rotate(-10deg); }
+        65.3%, 76%, 86.6%      { transform: rotate(-26deg); }
+        68%, 78.6%, 89.3%      { transform: rotate(-2deg); }
+        94%, 100%             { transform: rotate(9deg); }
       }
       @keyframes shinBackWalk {
-        0%   { transform: rotate(20deg); }
-        25%  { transform: rotate(46deg); }
-        50%  { transform: rotate(4deg); }
-        75%  { transform: rotate(8deg); }
-        100% { transform: rotate(20deg); }
+        0%, 10.6%, 21.3%, 32% { transform: rotate(18deg); }
+        2.6%, 13.3%, 24%      { transform: rotate(44deg); }
+        5.3%, 16%, 26.6%      { transform: rotate(4deg); }
+        8%, 18.6%, 29.3%      { transform: rotate(8deg); }
+        34%, 58%              { transform: rotate(4deg); }
+        60%, 70.6%, 81.3%, 92% { transform: rotate(18deg); }
+        62.6%, 73.3%, 84%      { transform: rotate(44deg); }
+        65.3%, 76%, 86.6%      { transform: rotate(4deg); }
+        68%, 78.6%, 89.3%      { transform: rotate(8deg); }
+        94%, 100%             { transform: rotate(4deg); }
       }
-      /* Opposite Arm Swing + Natural Forward Elbow Flex */
+      /* Front Arm: Swings during walk, then RAISES & POINTS AT TERMINAL during 35%..57%! */
       @keyframes armFrontWalk {
-        0%, 100% { transform: rotate(22deg); }
-        50%      { transform: rotate(-24deg); }
+        0%, 10.6%, 21.3%, 32% { transform: rotate(20deg); }
+        5.3%, 16%, 26.6%      { transform: rotate(-22deg); }
+        /* Pointing at Terminal Line 1 & Line 2 */
+        36%, 45%              { transform: rotate(-88deg); }
+        47%, 56%              { transform: rotate(-72deg); }
+        60%, 70.6%, 81.3%, 92% { transform: rotate(20deg); }
+        65.3%, 76%, 86.6%      { transform: rotate(-22deg); }
+        /* Friendly Wave by Phat */
+        95%, 98%              { transform: rotate(-65deg); }
+        100%                  { transform: rotate(20deg); }
       }
       @keyframes forearmFrontWalk {
-        0%, 100% { transform: rotate(-10deg); }
-        50%      { transform: rotate(-32deg); }
+        0%, 10.6%, 21.3%, 32% { transform: rotate(-10deg); }
+        5.3%, 16%, 26.6%      { transform: rotate(-30deg); }
+        /* Straightened Forearm pointing directly into Terminal */
+        36%, 56%              { transform: rotate(-6deg); }
+        60%, 70.6%, 81.3%, 92% { transform: rotate(-10deg); }
+        65.3%, 76%, 86.6%      { transform: rotate(-30deg); }
+        95%, 98%              { transform: rotate(-35deg); }
+        100%                  { transform: rotate(-10deg); }
       }
       @keyframes armBackWalk {
-        0%, 100% { transform: rotate(-24deg); }
-        50%      { transform: rotate(22deg); }
+        0%, 10.6%, 21.3%, 32% { transform: rotate(-22deg); }
+        5.3%, 16%, 26.6%      { transform: rotate(20deg); }
+        35%, 57%              { transform: rotate(14deg); }
+        60%, 70.6%, 81.3%, 92% { transform: rotate(-22deg); }
+        65.3%, 76%, 86.6%      { transform: rotate(20deg); }
+        94%, 100%             { transform: rotate(10deg); }
       }
       @keyframes forearmBackWalk {
-        0%, 100% { transform: rotate(-32deg); }
-        50%      { transform: rotate(-10deg); }
+        0%, 10.6%, 21.3%, 32% { transform: rotate(-28deg); }
+        5.3%, 16%, 26.6%      { transform: rotate(-10deg); }
+        35%, 57%              { transform: rotate(-18deg); }
+        60%, 70.6%, 81.3%, 92% { transform: rotate(-28deg); }
+        65.3%, 76%, 86.6%      { transform: rotate(-10deg); }
+        94%, 100%             { transform: rotate(-15deg); }
+      }
+      /* Laser Pointer & Terminal Target Highlight when Agent points at Terminal (36%..56%) */
+      @keyframes pointLaserShow {
+        0%, 34%  { opacity: 0; transform: translateY(0px); }
+        36%, 45% { opacity: 1; transform: translateY(0px); }
+        47%, 56% { opacity: 1; transform: translateY(20px); }
+        58%, 100% { opacity: 0; transform: translateY(20px); }
+      }
+      @keyframes termRowHighlight {
+        0%, 34%  { opacity: 0; transform: translateY(0px); }
+        36%, 45% { opacity: 0.95; transform: translateY(0px); }
+        47%, 56% { opacity: 0.95; transform: translateY(40px); }
+        58%, 100% { opacity: 0; transform: translateY(40px); }
       }
       @keyframes spinRing {
         0% { transform: rotate(0deg); }
@@ -375,11 +446,11 @@
   <circle cx="616" cy="193" r="2.5" fill="#E5484D" />
   <circle cx="806" cy="193" r="2.5" fill="#E5484D" />
 
-  <!-- PATROLLING HUMANOID AI AGENT (Centered at x=710, walks -64px to +56px) -->
+  <!-- PATROLLING HUMANOID AI AGENT (Centered at x=710, walks -72px to +68px) -->
   <g transform="translate(710, 0)">
     <g class="bot-patrol">
       <!-- Non-Flipping Floating Status Tag Above Agent -->
-      <g transform="translate(-44, 34)">
+      <g transform="translate(-44, 28)">
         <rect width="88" height="18" rx="9" fill="#151B28" stroke="#E5484D" stroke-width="1" />
         <circle cx="11" cy="9" r="2.5" fill="#10B981" class="pulse-dot" />
         <text x="19" y="12.5" fill="#F5F2EB" font-size="7.5" font-weight="700" class="mono">AGENT: ADA</text>
@@ -387,113 +458,137 @@
 
       <!-- Foot Contact Ground Shadow -->
       <g class="bot-shadow">
-        <ellipse cx="0" cy="193" rx="22" ry="3.5" fill="#05070A" fill-opacity="0.75" />
-        <ellipse cx="0" cy="193" rx="16" ry="2" fill="#E5484D" fill-opacity="0.28" />
+        <ellipse cx="0" cy="193" rx="24" ry="3.8" fill="#05070A" fill-opacity="0.8" />
+        <ellipse cx="0" cy="193" rx="16" ry="2.2" fill="#E5484D" fill-opacity="0.32" filter="url(#crimsonBloom)" />
       </g>
 
-      <!-- Direction-Flipping Humanoid Body (Faces Right when walking right, Left when walking left) -->
+      <!-- Direction-Flipping Humanoid Body (Faces Right when walking right & pointing, Left when walking back) -->
       <g class="bot-turn">
         <g class="bot-gait-bob">
 
-          <!-- 1. BACK ARM (Swings opposite to Back Leg, with natural elbow bend) -->
+          <!-- 1. BACK ARM (Sculpted 3D Sleeve & Forearm Gauntlet) -->
           <g class="arm-back">
-            <!-- Upper Arm -->
-            <line x1="0" y1="122" x2="0" y2="138" stroke="#242C3F" stroke-width="7" stroke-linecap="round" />
-            <!-- Forearm + Hand (Pivots at Elbow y=138) -->
+            <rect x="-2.5" y="116" width="7" height="20" rx="3.5" fill="#1F273A" stroke="#343E54" stroke-width="0.9" />
             <g class="forearm-back">
-              <line x1="0" y1="138" x2="0" y2="152" stroke="#8C96AA" stroke-width="6" stroke-linecap="round" />
-              <circle cx="0" cy="154" r="4" fill="#F5F2EB" stroke="#242C3F" stroke-width="1" />
+              <rect x="-2" y="133" width="6.5" height="18" rx="3.2" fill="#8C96AA" stroke="#242C3F" stroke-width="0.9" />
+              <circle cx="1.2" cy="153" r="4" fill="#F5F2EB" stroke="#242C3F" stroke-width="1" />
             </g>
           </g>
 
-          <!-- 2. BACK LEG (Hip y=150 -> Knee y=169 -> Ankle/Boot y=191) -->
+          <!-- 2. BACK LEG (Sculpted 3D Thigh, Armored Shin & High-Top Cyber Sneaker) -->
           <g class="thigh-back">
-            <!-- Thigh -->
-            <line x1="0" y1="150" x2="0" y2="169" stroke="#1E2536" stroke-width="8.5" stroke-linecap="round" />
-            <!-- Knee Joint + Lower Shin + Sneaker Boot -->
+            <rect x="-4" y="146" width="8.5" height="22" rx="4.2" fill="#1D2436" stroke="#343E54" stroke-width="1" />
             <g class="shin-back">
-              <circle cx="0" cy="169" r="4" fill="#2B344A" />
-              <line x1="0" y1="169" x2="0" y2="187" stroke="#9AA4B8" stroke-width="7.5" stroke-linecap="round" />
-              <!-- Human-like Cyber Sneaker/Boot (Points forward +x) -->
-              <path d="M -5 185 L 4 185 C 9 185, 12 188, 12 191 L -6 191 Z" fill="#181E2C" stroke="#E5484D" stroke-width="1.1" />
-              <line x1="-5" y1="191.5" x2="12" y2="191.5" stroke="#F5F2EB" stroke-width="1.5" stroke-linecap="round" />
+              <circle cx="0" cy="168" r="4.2" fill="#141926" stroke="#43506E" stroke-width="1" />
+              <path d="M -3.8 168 L 3.8 168 L 5 186 L -4.2 186 Z" fill="#9AA4B8" stroke="#2B344A" stroke-width="1" />
+              <!-- Cyber Sneaker (Back) -->
+              <path d="M -5.5 184 L 5 184 C 10 184, 13.5 187.5, 13.5 191.5 L -6.5 191.5 Z" fill="#181E2C" stroke="#E5484D" stroke-width="1.1" />
+              <line x1="-5.5" y1="192" x2="13.5" y2="192" stroke="#F5F2EB" stroke-width="1.6" stroke-linecap="round" />
             </g>
           </g>
 
-          <!-- 3. TORSO, BACKPACK & 3/4 PROFILE HEAD -->
-          <!-- Compact Cyber Backpack -->
-          <rect x="-18" y="118" width="9" height="24" rx="4" fill="#171D2B" stroke="#38435E" stroke-width="1.2" />
-          <circle cx="-13.5" cy="126" r="2" fill="#E5484D" class="pulse-dot" />
+          <!-- 3. SCULPTED 3D TORSO, STABILIZER WING & 3/4 PROFILE HEAD -->
+          <!-- Sleek Back Stabilizer Wing / Cyber-Cape -->
+          <path d="M -10 116 L -28 106 L -23 122 L -30 132 L -11 136 Z" fill="#171D2B" stroke="#38435E" stroke-width="1.1" />
+          <path d="M -12 119 L -24 112 L -20 122 Z" fill="#E5484D" fill-opacity="0.9" />
 
-          <!-- Pelvis / Waist -->
-          <rect x="-9" y="144" width="18" height="10" rx="4.5" fill="#181F2E" stroke="#343E54" stroke-width="1.1" />
+          <!-- Compact Jet/Telemetry Pack -->
+          <rect x="-16" y="116" width="8" height="24" rx="4" fill="#141926" stroke="#38435E" stroke-width="1.1" />
+          <circle cx="-12" cy="124" r="2" fill="#10B981" class="pulse-dot" />
 
-          <!-- Athletic Humanoid Torso (Porcelain-Titanium Jacket) -->
-          <path d="M -11 116 C -12 128, -10 140, -8 146 L 9 146 C 12 140, 13 128, 11 116 Z" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.7" />
-          <!-- Jacket Collar & Crimson Chest Emblem -->
-          <path d="M -8 115 Q 0 120 9 115 L 7 121 Q 0 125 -6 121 Z" fill="#141926" stroke="#E5484D" stroke-width="0.9" />
-          <circle cx="4" cy="131" r="4.5" fill="#0B0E13" stroke="#2B3448" stroke-width="1" />
-          <circle cx="4" cy="131" r="2.5" fill="#E5484D" filter="url(#crimsonBloom)" />
+          <!-- Pelvis & Utility Belt -->
+          <rect x="-10" y="141" width="21" height="10" rx="4.5" fill="#151B28" stroke="#38435E" stroke-width="1.1" />
+          <rect x="2" y="143" width="6" height="4" rx="1.5" fill="#E5484D" />
+
+          <!-- Sculpted Porcelain-Titanium Mecha Jacket -->
+          <path d="M -11 113 C -13 125, -11 138, -8 144 L 10 144 C 13 138, 15 125, 12 113 Z" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.8" />
+          <!-- Dark Cyber-Collar & Glowing Chest Core -->
+          <path d="M -9 112 Q 1 118 11 112 L 9 119 Q 1 124 -7 119 Z" fill="#141926" stroke="#E5484D" stroke-width="1" />
+          <circle cx="5" cy="129" r="5.5" fill="#0B0E13" stroke="#2B3448" stroke-width="1.2" />
+          <circle cx="5" cy="129" r="3.2" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" class="pulse-dot" />
+          <circle cx="5" cy="129" r="1.3" fill="#FFFFFF" />
 
           <!-- Neck -->
-          <rect x="-4" y="108" width="8" height="8" rx="3" fill="#1E2536" />
+          <rect x="-4" y="105" width="9" height="8" rx="3.5" fill="#1E2536" stroke="#38435E" stroke-width="0.8" />
 
-          <!-- 3/4 PROFILE HEAD (Faces Forward +x) -->
+          <!-- 3/4 PROFILE SCULPTED HEAD (Faces Forward +x) -->
           <g class="bot-head">
-            <!-- Swept-Back Cyber Fin / Ear -->
-            <path d="M -10 72 L -22 56 L -2 66 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.2" />
-            <path d="M -10 70 L -18 60 L -4 66 Z" fill="#E5484D" />
+            <!-- Floating Glowing Halo Ring Above Head -->
+            <ellipse cx="1" cy="51" rx="16" ry="3.2" fill="none" stroke="#E5484D" stroke-width="1.6" filter="url(#crimsonBloom)" />
+            <ellipse cx="1" cy="51" rx="10" ry="1.5" fill="none" stroke="#F5F2EB" stroke-width="0.7" stroke-opacity="0.8" />
 
-            <!-- 3D Rounded Humanoid Helmet -->
-            <rect x="-22" y="64" width="46" height="44" rx="21" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.8" />
-            <path d="M -10 68 Q 2 65 14 69" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+            <!-- Far Mecha-Ear (Right/Front) -->
+            <path d="M 10 64 L 18 48 L 2 60 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.1" />
+            <path d="M 10 62 L 15 52 L 4 59 Z" fill="#E5484D" />
 
-            <!-- 3/4 Forward-Facing Curved OLED Visor (Offset toward +x) -->
-            <rect x="-6" y="73" width="28" height="26" rx="12" fill="url(#botVisorGrad)" stroke="#232B3E" stroke-width="1.3" />
-            <path d="M -1 77 Q 8 75 16 77 L 4 94 Q -2 88 -1 77 Z" fill="#FFFFFF" fill-opacity="0.08" />
+            <!-- Near Mecha-Ear (Left/Back) -->
+            <path d="M -8 68 L -21 50 L 2 62 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.2" />
+            <path d="M -8 65 L -17 54 L 0 61 Z" fill="#E5484D" />
 
-            <!-- Expressive Forward-Looking Eyes -->
+            <!-- 3D Porcelain-Titanium Helmet Dome -->
+            <rect x="-23" y="59" width="50" height="48" rx="23" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.9" />
+            <!-- Top Specular Gloss Highlight -->
+            <path d="M -10 64 Q 3 60 16 65" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.9" />
+            <!-- Forehead Crimson Crest -->
+            <polygon points="11,63 8,69 11,67.5 14,69" fill="#E5484D" />
+
+            <!-- Curved Panoramic OLED Visor -->
+            <rect x="-5" y="69" width="31" height="29" rx="13.5" fill="url(#botVisorGrad)" stroke="#232B3E" stroke-width="1.4" />
+            <path d="M 0 73 Q 10 70 19 73 L 5 92 Q -2 86 0 73 Z" fill="#FFFFFF" fill-opacity="0.08" />
+
+            <!-- Expressive Glowing Eyes + Starlight Sparkles + Smile -->
             <g class="bot-eyes">
               <!-- Near Eye -->
-              <rect x="1" y="81" width="7.5" height="11" rx="3.75" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
-              <circle cx="4" cy="84.5" r="2" fill="#FFFFFF" />
-              <!-- Far Eye (Slightly narrower for 3/4 perspective) -->
-              <rect x="13" y="81.5" width="6" height="10" rx="3" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
-              <circle cx="15.5" cy="85" r="1.7" fill="#FFFFFF" />
-              <!-- Subtle Smile -->
-              <path d="M 7 95 Q 10.5 97.5 13.5 95" fill="none" stroke="#FF9A9E" stroke-width="1.4" stroke-linecap="round" />
+              <rect x="2" y="77" width="8.5" height="12" rx="4.2" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
+              <circle cx="5" cy="81" r="2.3" fill="#FFFFFF" />
+              <circle cx="8" cy="85.5" r="1" fill="#FFFFFF" fill-opacity="0.85" />
+              <!-- Far Eye -->
+              <rect x="15" y="77.5" width="7" height="11" rx="3.5" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
+              <circle cx="17.5" cy="81" r="2" fill="#FFFFFF" />
+              <circle cx="20" cy="85" r="0.9" fill="#FFFFFF" fill-opacity="0.85" />
+              <!-- Rosy Digital Cheek Glow -->
+              <ellipse cx="1" cy="91.5" rx="2.8" ry="1.2" fill="#E5484D" fill-opacity="0.7" />
+              <ellipse cx="22.5" cy="91" rx="2.2" ry="1.1" fill="#E5484D" fill-opacity="0.7" />
+              <!-- Happy Smile -->
+              <path d="M 9 92 Q 12.5 95 16 92" fill="none" stroke="#FF9A9E" stroke-width="1.5" stroke-linecap="round" />
             </g>
 
-            <!-- Side Headphone Hub (On Near Side) -->
-            <circle cx="-9" cy="87" r="6" fill="#151B28" stroke="#38435E" stroke-width="1.2" />
-            <circle cx="-9" cy="87" r="2.5" fill="#E5484D" filter="url(#crimsonBloom)" />
+            <!-- Side Cyber-Headphone Hub -->
+            <circle cx="-10" cy="84" r="7" fill="#151B28" stroke="#38435E" stroke-width="1.3" />
+            <circle cx="-10" cy="84" r="3" fill="#E5484D" filter="url(#crimsonBloom)" />
+            <circle cx="-10" cy="84" r="1.2" fill="#F5F2EB" />
           </g>
 
-          <!-- 4. FRONT LEG (Hip y=150 -> Knee y=169 -> Ankle/Boot y=191) -->
+          <!-- 4. FRONT LEG (Sculpted 3D Thigh, Armored Shin & High-Top Cyber Sneaker) -->
           <g class="thigh-front">
-            <!-- Thigh -->
-            <line x1="0" y1="150" x2="0" y2="169" stroke="#2B354D" stroke-width="9" stroke-linecap="round" />
-            <!-- Knee Joint + Lower Shin + Sneaker Boot -->
+            <rect x="-4.2" y="146" width="9" height="22" rx="4.5" fill="#2A334B" stroke="#43506E" stroke-width="1" />
             <g class="shin-front">
-              <circle cx="0" cy="169" r="4.2" fill="#151B28" stroke="#E5484D" stroke-width="1" />
-              <line x1="0" y1="169" x2="0" y2="187" stroke="url(#botArmorLight)" stroke-width="8" stroke-linecap="round" />
-              <!-- Human-like Cyber Sneaker/Boot (Points forward +x) -->
-              <path d="M -5 185 L 5 185 C 10 185, 13 188, 13 191 L -6 191 Z" fill="#F5F2EB" stroke="#38435E" stroke-width="1.1" />
-              <path d="M -2 187 L 8 187" stroke="#E5484D" stroke-width="2" stroke-linecap="round" />
-              <line x1="-5" y1="191.5" x2="13" y2="191.5" stroke="#E5484D" stroke-width="1.8" stroke-linecap="round" />
+              <circle cx="0" cy="168" r="4.5" fill="#151B28" stroke="#E5484D" stroke-width="1.1" />
+              <!-- Sculpted Porcelain-Titanium Shin Armor -->
+              <path d="M -4 168 L 4.2 168 L 5.5 186 L -4.5 186 Z" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1" />
+              <line x1="-3.5" y1="175" x2="4.5" y2="175" stroke="#E5484D" stroke-width="1.8" stroke-linecap="round" />
+              <!-- High-Top Cyber Sneaker (Front) -->
+              <path d="M -5.5 184 L 6 184 C 11 184, 14.5 187.5, 14.5 191.5 L -6.5 191.5 Z" fill="#F5F2EB" stroke="#38435E" stroke-width="1.1" />
+              <path d="M -2 186.5 L 8.5 186.5" stroke="#E5484D" stroke-width="2" stroke-linecap="round" />
+              <line x1="-5.5" y1="192" x2="14.5" y2="192" stroke="#E5484D" stroke-width="1.8" stroke-linecap="round" />
             </g>
           </g>
 
-          <!-- 5. FRONT ARM (Swings opposite to Front Leg, with natural elbow bend) -->
+          <!-- 5. FRONT ARM (Swings during walk, RAISES & POINTS FINGER AT TERMINAL at 35%..57%) -->
           <g class="arm-front">
-            <!-- Shoulder Pauldron & Upper Arm -->
-            <line x1="0" y1="122" x2="0" y2="138" stroke="#343F5A" stroke-width="7.5" stroke-linecap="round" />
-            <circle cx="0" cy="122" r="4" fill="#F5F2EB" stroke="#38435E" stroke-width="1" />
-            <!-- Forearm + Hand (Pivots at Elbow y=138) -->
+            <!-- Sculpted Shoulder Pauldron & Upper Arm -->
+            <rect x="-4.5" y="116" width="7.5" height="20" rx="3.75" fill="#2F3952" stroke="#43506E" stroke-width="1" />
+            <circle cx="-0.8" cy="119" r="4.5" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1" />
+            <circle cx="-0.8" cy="119" r="1.8" fill="#E5484D" />
+            <!-- Forearm Gauntlet + Pointing Hand (Pivots at Elbow y=135) -->
             <g class="forearm-front">
-              <line x1="0" y1="138" x2="0" y2="153" stroke="url(#botArmorLight)" stroke-width="6.5" stroke-linecap="round" />
-              <circle cx="0" cy="155" r="4.2" fill="#F5F2EB" stroke="#38435E" stroke-width="1" />
-              <circle cx="0" cy="155" r="1.8" fill="#E5484D" />
+              <rect x="-4" y="133" width="7" height="18" rx="3.5" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1" />
+              <!-- Palm -->
+              <circle cx="-0.5" cy="152" r="4.2" fill="#F5F2EB" stroke="#38435E" stroke-width="1" />
+              <!-- Extended Index Finger (Points straight out when arm raises to -88deg!) -->
+              <rect x="-2" y="153" width="3.2" height="7.5" rx="1.6" fill="#F5F2EB" stroke="#38435E" stroke-width="0.8" />
+              <!-- Glowing Fingertip Laser Node -->
+              <circle cx="-0.4" cy="160.5" r="2" fill="#E5484D" filter="url(#crimsonBloom)" />
             </g>
           </g>
 
@@ -502,9 +597,21 @@
     </g>
   </g>
 
+  <!-- LASER POINTER BEAM & TARGET RETICLE (Active when Agent stops & points at Terminal: 36%..56%) -->
+  <g class="point-beam">
+    <!-- Fingertip at x=778+40=818, y=114 pointing into Terminal x=852 -->
+    <line x1="818" y1="114" x2="854" y2="112" stroke="#E5484D" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
+    <circle cx="818" cy="114" r="3" fill="#F5F2EB" filter="url(#crimsonBloom)" />
+    <circle cx="854" cy="112" r="4.5" fill="none" stroke="#E5484D" stroke-width="1.5" />
+    <circle cx="854" cy="112" r="2" fill="#E5484D" />
+  </g>
+
   <!-- LIVE HOLOGRAPHIC WORKSTATION CONSOLE (x=842..1152, y=68..188) -->
   <g transform="translate(842, 68)">
     <rect width="310" height="120" rx="10" fill="url(#holoScreenGrad)" stroke="#E5484D" stroke-opacity="0.55" stroke-width="1.2" />
+
+    <!-- Active Row Highlight Bar (Triggered when Agent points at Terminal!) -->
+    <rect x="8" y="32" width="294" height="18" rx="4" fill="#E5484D" fill-opacity="0.18" stroke="#E5484D" stroke-opacity="0.5" stroke-width="0.8" class="term-highlight" />
 
     <!-- Top Terminal Bar -->
     <rect x="1" y="1" width="308" height="24" rx="9" fill="#1A1319" />
