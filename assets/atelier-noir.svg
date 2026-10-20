@@ -38,6 +38,22 @@
       <stop offset="100%" stop-color="#E5484D" stop-opacity="0" />
     </linearGradient>
 
+    <linearGradient id="holoBeamGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#E5484D" stop-opacity="0.45" />
+      <stop offset="50%" stop-color="#E5484D" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#E5484D" stop-opacity="0.02" />
+    </linearGradient>
+
+    <linearGradient id="holoScreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161C2A" stop-opacity="0.92" />
+      <stop offset="100%" stop-color="#0E121B" stop-opacity="0.95" />
+    </linearGradient>
+
+    <linearGradient id="botBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#232A3B" />
+      <stop offset="100%" stop-color="#121620" />
+    </linearGradient>
+
     <pattern id="archGrid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.02" />
     </pattern>
@@ -47,6 +63,10 @@
         font-family: 'Geist Mono', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
         letter-spacing: 0.11em;
         text-transform: uppercase;
+      }
+      .code {
+        font-family: 'Geist Mono', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+        letter-spacing: 0.03em;
       }
       .sans {
         font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -68,6 +88,37 @@
       .wave1 { animation: wave 1.2s infinite ease-in-out; }
       .wave2 { animation: wave 1.2s infinite ease-in-out 0.2s; }
       .wave3 { animation: wave 1.2s infinite ease-in-out 0.4s; }
+      .bot-float {
+        animation: botHover 3.2s infinite ease-in-out;
+      }
+      .bot-shadow {
+        animation: shadowScale 3.2s infinite ease-in-out;
+        transform-origin: 710px 190px;
+      }
+      .bot-arm-wave {
+        animation: waveArm 2.4s infinite ease-in-out;
+        transform-origin: 682px 134px;
+      }
+      .bot-arm-cast {
+        animation: castArm 3.2s infinite ease-in-out;
+        transform-origin: 738px 134px;
+      }
+      .bot-eyes {
+        animation: eyeLookAndBlink 5s infinite ease-in-out;
+        transform-origin: 710px 101px;
+      }
+      .holo-beam {
+        animation: beamPulse 2.2s infinite ease-in-out;
+      }
+      .holo-scanline {
+        animation: scanSweep 3.6s infinite ease-in-out;
+      }
+      .cursor-blink {
+        animation: blinkCursor 1s infinite steps(2, start);
+      }
+      .particle-1 { animation: floatUp 3s infinite ease-out; }
+      .particle-2 { animation: floatUp 3s infinite ease-out 1.2s; }
+      .particle-3 { animation: floatUp 3s infinite ease-out 2.1s; }
       @keyframes pulse {
         0%, 100% { opacity: 1; }
         50% { opacity: 0.35; }
@@ -85,6 +136,49 @@
       @keyframes wave {
         0%, 100% { opacity: 0.35; }
         50% { opacity: 1; }
+      }
+      @keyframes botHover {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+      }
+      @keyframes shadowScale {
+        0%, 100% { opacity: 0.55; transform: scaleX(1); }
+        50% { opacity: 0.25; transform: scaleX(0.78); }
+      }
+      @keyframes waveArm {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(-22deg); }
+        50% { transform: rotate(8deg); }
+        75% { transform: rotate(-18deg); }
+      }
+      @keyframes castArm {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(-6deg); }
+      }
+      @keyframes eyeLookAndBlink {
+        0%, 20% { transform: translateX(-3px) scaleY(1); }
+        23% { transform: translateX(-3px) scaleY(0.1); }
+        26%, 55% { transform: translateX(4px) scaleY(1); }
+        75%, 92% { transform: translateX(0px) scaleY(1); }
+        95% { transform: translateX(0px) scaleY(0.1); }
+        98%, 100% { transform: translateX(-3px) scaleY(1); }
+      }
+      @keyframes beamPulse {
+        0%, 100% { opacity: 0.85; }
+        50% { opacity: 0.45; }
+      }
+      @keyframes scanSweep {
+        0%, 100% { transform: translateY(0px); opacity: 0.25; }
+        50% { transform: translateY(86px); opacity: 0.75; }
+      }
+      @keyframes blinkCursor {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      @keyframes floatUp {
+        0% { transform: translateY(0px); opacity: 0; }
+        30% { opacity: 0.9; }
+        100% { transform: translateY(-24px); opacity: 0; }
       }
     </style>
   </defs>
@@ -141,13 +235,133 @@
     <text x="30" y="18" fill="#E2E6EE" font-size="10" font-weight="600" class="mono">AVAILABLE FOR WORK</text>
   </g>
 
-  <!-- Display Name & Statement -->
-  <text x="72" y="136" fill="#F5F2EB" font-size="66" font-weight="800" letter-spacing="-0.03em" class="sans">TRAN TAN PHAT</text>
+  <!-- Display Name & Statement (Left Column: x=72..595) -->
+  <text x="72" y="128" fill="#F5F2EB" font-size="64" font-weight="800" letter-spacing="-0.03em" class="sans">TRAN TAN PHAT</text>
 
-  <text x="72" y="180" fill="#9BA3B0" font-size="21" font-weight="400" class="sans">
+  <text x="72" y="164" fill="#9BA3B0" font-size="21" font-weight="400" class="sans">
     I turn ideas into <tspan fill="#F5F2EB" font-size="24" class="serif-italic">real web products</tspan><tspan fill="#E5484D" font-size="24" font-weight="700">.</tspan>
-    <tspan fill="#68707E" font-size="15.5" dx="10">End-to-end interfaces, reliable APIs &amp; relational data layers.</tspan>
   </text>
+  <text x="72" y="188" fill="#68707E" font-size="14" font-weight="500" class="sans">
+    End-to-end interfaces, reliable APIs &amp; relational data layers.
+  </text>
+
+  <!-- ===================================================================== -->
+  <!-- COMPANION AI AGENT & LIVE HOLOGRAPHIC WORKSTATION (x=640..1152)       -->
+  <!-- ===================================================================== -->
+  <!-- Anti-Gravity Floor Thruster Ring -->
+  <g class="bot-shadow">
+    <ellipse cx="710" cy="190" rx="32" ry="5.5" fill="#E5484D" fill-opacity="0.32" />
+    <ellipse cx="710" cy="190" rx="18" ry="2.5" fill="#F5F2EB" fill-opacity="0.45" />
+  </g>
+
+  <!-- Floating Ambient Data Particles around AI Agent -->
+  <circle cx="656" cy="116" r="2" fill="#E5484D" class="particle-1" />
+  <circle cx="758" cy="96" r="1.8" fill="#10B981" class="particle-2" />
+  <circle cx="672" cy="168" r="1.5" fill="#F5F2EB" class="particle-3" />
+
+  <!-- LEVITATING AI AGENT CHARACTER (Centered at x=710, y=68..182) -->
+  <g class="bot-float">
+    <!-- Speech / Status Bubble Above Head -->
+    <g transform="translate(612, 56)">
+      <rect width="128" height="22" rx="11" fill="#151A26" stroke="#E5484D" stroke-width="1" />
+      <circle cx="13" cy="11" r="3" fill="#10B981" class="pulse-dot" />
+      <text x="22" y="14.5" fill="#F5F2EB" font-size="8.5" font-weight="700" class="mono">AI AGENT: ACTIVE</text>
+      <path d="M 88 22 L 94 29 L 98 22 Z" fill="#151A26" stroke="#E5484D" stroke-width="1" />
+    </g>
+
+    <!-- Waving Left Arm (Saluting Phat & Visitor) -->
+    <g class="bot-arm-wave">
+      <path d="M 682 134 C 664 130, 654 116, 650 102" fill="none" stroke="#2B3346" stroke-width="8" stroke-linecap="round" />
+      <path d="M 682 134 C 664 130, 654 116, 650 102" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" />
+      <!-- Robot Hand -->
+      <circle cx="649" cy="99" r="5.5" fill="#181E2C" stroke="#E5484D" stroke-width="1.5" />
+    </g>
+
+    <!-- Casting Right Arm (Projecting Hologram to the Terminal) -->
+    <g class="bot-arm-cast">
+      <path d="M 738 134 C 754 134, 766 128, 778 124" fill="none" stroke="#2B3346" stroke-width="8" stroke-linecap="round" />
+      <!-- Hologram Emitter Emitter Node -->
+      <circle cx="780" cy="124" r="6" fill="#181E2C" stroke="#E5484D" stroke-width="1.5" />
+      <circle cx="780" cy="124" r="2.5" fill="#E5484D" class="pulse-dot" />
+    </g>
+
+    <!-- Holographic Projection Cone (From Right Hand x=780 to Terminal x=824) -->
+    <polygon points="782,124 826,74 826,178" fill="url(#holoBeamGrad)" class="holo-beam" />
+    <line x1="782" y1="124" x2="826" y2="92" stroke="#E5484D" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.6" />
+    <line x1="782" y1="124" x2="826" y2="156" stroke="#E5484D" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.6" />
+
+    <!-- Robot Antenna -->
+    <line x1="710" y1="68" x2="710" y2="80" stroke="#3B4459" stroke-width="2.5" stroke-linecap="round" />
+    <circle cx="710" cy="66" r="4" fill="#E5484D" class="pulse-dot" />
+    <circle cx="710" cy="66" r="4" fill="#E5484D" class="pulse-ring" />
+
+    <!-- Robot Head / Helmet -->
+    <rect x="676" y="80" width="68" height="44" rx="14" fill="url(#botBodyGrad)" stroke="#343E54" stroke-width="1.5" />
+    <!-- Ear Pods -->
+    <rect x="670" y="92" width="6" height="18" rx="3" fill="#E5484D" />
+    <rect x="744" y="92" width="6" height="18" rx="3" fill="#E5484D" />
+
+    <!-- Inner Glass Visor -->
+    <rect x="684" y="87" width="52" height="28" rx="8" fill="#090C12" stroke="#1E2536" stroke-width="1" />
+
+    <!-- Animated Cyber Eyes (Looks at Phat, then at Code Screen, & Blinks) -->
+    <g class="bot-eyes">
+      <rect x="694" y="96" width="10" height="10" rx="5" fill="#E5484D" />
+      <rect x="696" y="98" width="4" height="4" rx="2" fill="#F5F2EB" />
+      <rect x="716" y="96" width="10" height="10" rx="5" fill="#E5484D" />
+      <rect x="718" y="98" width="4" height="4" rx="2" fill="#F5F2EB" />
+    </g>
+
+    <!-- Robot Neck -->
+    <rect x="703" y="124" width="14" height="5" rx="2" fill="#1B2130" />
+
+    <!-- Robot Torso / Hover Chassis -->
+    <path d="M 682 129 L 738 129 L 730 168 C 728 174, 720 178, 710 178 C 700 178, 692 174, 690 168 Z" fill="url(#botBodyGrad)" stroke="#343E54" stroke-width="1.5" />
+
+    <!-- Chest Arc Core Reactor -->
+    <circle cx="710" cy="148" r="10" fill="#0B0E13" stroke="#2B3448" stroke-width="1.5" />
+    <circle cx="710" cy="148" r="6" fill="#E5484D" class="pulse-dot" />
+    <circle cx="710" cy="148" r="2.5" fill="#F5F2EB" />
+
+    <!-- Jet Thruster Flame at Base -->
+    <path d="M 702 178 L 710 189 L 718 178 Z" fill="#E5484D" fill-opacity="0.75" class="pulse-dot" />
+  </g>
+
+  <!-- LIVE HOLOGRAPHIC WORKSTATION CONSOLE (x=826..1152, y=68..188) -->
+  <g transform="translate(826, 68)">
+    <rect width="326" height="120" rx="10" fill="url(#holoScreenGrad)" stroke="#E5484D" stroke-opacity="0.55" stroke-width="1.2" />
+
+    <!-- Top Terminal Bar -->
+    <rect x="1" y="1" width="324" height="24" rx="9" fill="#1A1319" />
+    <circle cx="14" cy="13" r="3" fill="#E5484D" />
+    <circle cx="24" cy="13" r="3" fill="#F59E0B" />
+    <circle cx="34" cy="13" r="3" fill="#10B981" />
+    <text x="48" y="16.5" fill="#F2B8B5" font-size="9" font-weight="700" class="mono">NOIR-AGENT // CO-PILOT</text>
+
+    <!-- Live Voice Equalizer in Terminal Header -->
+    <rect x="292" y="10" width="2" height="6" rx="1" fill="#10B981" class="wave1" />
+    <rect x="296" y="7" width="2" height="12" rx="1" fill="#10B981" class="wave2" />
+    <rect x="300" y="9" width="2" height="8" rx="1" fill="#10B981" class="wave3" />
+    <rect x="304" y="8" width="2" height="10" rx="1" fill="#10B981" class="wave1" />
+
+    <!-- Animated Hologram Laser Scanline -->
+    <rect x="8" y="28" width="310" height="1.5" fill="#E5484D" fill-opacity="0.5" class="holo-scanline" />
+
+    <!-- Live Telemetry & Code Execution Lines -->
+    <text x="16" y="44" fill="#8C94A4" font-size="10.5" class="code">
+      <tspan fill="#E5484D" font-weight="700">$ </tspan>agent.orchestrate(<tspan fill="#F5F2EB">&quot;kaikai-cms&quot;</tspan>)
+    </text>
+    <text x="16" y="64" fill="#10B981" font-size="10.5" class="code">
+      ✓ Single-Flight Cache &amp; PG RLS: OK
+    </text>
+    <text x="16" y="84" fill="#8C94A4" font-size="10.5" class="code">
+      <tspan fill="#E5484D" font-weight="700">$ </tspan>webrtc.connect(<tspan fill="#F5F2EB">&quot;murmur-voice&quot;</tspan>)
+    </text>
+    <text x="16" y="104" fill="#F5F2EB" font-size="10.5" font-weight="600" class="code">
+      <tspan fill="#E5484D">⚡</tspan> Status: Shipping with Phat
+    </text>
+    <rect x="206" y="94" width="6" height="12" fill="#E5484D" class="cursor-blink" />
+  </g>
 
   <!-- Connected Identity Bar (x=72, width=1080) -->
   <g transform="translate(72, 206)">
