@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="100%" height="100%">
+  <defs>
+    <linearGradient id="creamBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5F2EB" />
+      <stop offset="100%" stop-color="#EAE4D7" />
+    </linearGradient>
+    <style>
+      .mono {
+        font-family: 'Geist Mono', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .sans {
+        font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .serif-italic {
+        font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+        font-style: italic;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+
+  <!-- Editorial Cream Card (Matches Section 05 on ttanphat.vercel.app) -->
+  <rect width="1200" height="150" rx="16" fill="url(#creamBg)" stroke="#D8D0C1" stroke-width="1.5" />
+
+  <text x="48" y="44" fill="#6E6A63" font-size="11" font-weight="700" class="mono">05 / BUILT WITH INTENTION</text>
+
+  <text x="48" y="92" fill="#121418" font-size="27" font-weight="700" letter-spacing="-0.02em" class="sans">
+    “Good engineering is not just about writing code. It’s about building something that <tspan fill="#E5484D" font-size="30" class="serif-italic">matters.</tspan>”
+  </text>
+
+  <text x="48" y="124" fill="#5A564F" font-size="11.5" font-weight="600" class="mono">
+    TRAN TAN PHAT  ·  TTANPHAT.WORK@GMAIL.COM  ·  TTANPHAT.VERCEL.APP
+  </text>
+</svg>

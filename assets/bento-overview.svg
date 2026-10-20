@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#11151E" />
+      <stop offset="100%" stop-color="#0B0E13" />
+    </linearGradient>
+    <style>
+      .mono {
+        font-family: 'Geist Mono', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .sans {
+        font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .serif-italic {
+        font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+        font-style: italic;
+      }
+    </style>
+  </defs>
+
+  <!-- CARD 1: ARCHITECTURE & APPROACH -->
+  <g transform="translate(0, 0)">
+    <rect width="384" height="240" rx="16" fill="url(#cardBg)" stroke="#222733" stroke-width="1.5" />
+    <text x="28" y="38" fill="#E5484D" font-size="10.5" font-weight="700" class="mono">01 / END-TO-END CRAFT</text>
+    <text x="28" y="74" fill="#F5F2EB" font-size="21" font-weight="700" class="sans">
+      From idea to a <tspan class="serif-italic" font-weight="400" fill="#E5484D">working</tspan> product.
+    </text>
+    <text x="28" y="106" fill="#9BA3B0" font-size="13.5" class="sans">
+      I build the interface a user touches and
+    </text>
+    <text x="28" y="126" fill="#9BA3B0" font-size="13.5" class="sans">
+      the API and data layer behind it — with a
+    </text>
+    <text x="28" y="146" fill="#9BA3B0" font-size="13.5" class="sans">
+      bias toward clarity over cleverness.
+    </text>
+
+    <!-- Mini Architecture Pills -->
+    <g transform="translate(28, 178)">
+      <rect width="98" height="28" rx="6" fill="#161B26" stroke="#283040" />
+      <text x="49" y="18" text-anchor="middle" fill="#D5D9E2" font-size="10.5" font-weight="600" class="mono">INTERFACE</text>
+
+      <text x="112" y="18" fill="#E5484D" font-size="12" class="mono">→</text>
+
+      <rect x="128" width="88" height="28" rx="6" fill="#161B26" stroke="#283040" />
+      <text x="172" y="18" text-anchor="middle" fill="#D5D9E2" font-size="10.5" font-weight="600" class="mono">API / AUTH</text>
+
+      <text x="229" y="18" fill="#E5484D" font-size="12" class="mono">→</text>
+
+      <rect x="245" width="96" height="28" rx="6" fill="#161B26" stroke="#283040" />
+      <text x="293" y="18" text-anchor="middle" fill="#D5D9E2" font-size="10.5" font-weight="600" class="mono">DATA / RLS</text>
+    </g>
+  </g>
+
+  <!-- CARD 2: EXPERIENCE & EDUCATION TIMELINE -->
+  <g transform="translate(408, 0)">
+    <rect width="384" height="240" rx="16" fill="url(#cardBg)" stroke="#222733" stroke-width="1.5" />
+    <text x="28" y="38" fill="#E5484D" font-size="10.5" font-weight="700" class="mono">02 / CAREER TIMELINE</text>
+
+    <!-- Vertical Timeline Line -->
+    <line x1="36" y1="68" x2="36" y2="196" stroke="#262D3B" stroke-width="1.5" />
+
+    <!-- Node 1: VNDTS -->
+    <circle cx="36" cy="70" r="4.5" fill="#E5484D" />
+    <text x="54" y="74" fill="#F5F2EB" font-size="14.5" font-weight="700" class="sans">VNDTS Company</text>
+    <text x="255" y="73" fill="#10B981" font-size="10" font-weight="600" class="mono">NOV 2025 – NOW</text>
+    <text x="54" y="93" fill="#8C94A4" font-size="12.5" class="sans">Full-Stack Developer · Enterprise Web</text>
+
+    <!-- Node 2: HITEK -->
+    <circle cx="36" cy="130" r="4" fill="#0B0E13" stroke="#68707E" stroke-width="2" />
+    <text x="54" y="134" fill="#E2E6EE" font-size="14.5" font-weight="600" class="sans">HITEK Solution</text>
+    <text x="255" y="133" fill="#7D8594" font-size="10" font-weight="600" class="mono">APR – OCT 2025</text>
+    <text x="54" y="153" fill="#8C94A4" font-size="12.5" class="sans">Full-Stack Developer · React &amp; Next.js</text>
+
+    <!-- Node 3: HUTECH -->
+    <circle cx="36" cy="190" r="4" fill="#0B0E13" stroke="#68707E" stroke-width="2" />
+    <text x="54" y="194" fill="#E2E6EE" font-size="14.5" font-weight="600" class="sans">HUTECH University</text>
+    <text x="255" y="193" fill="#7D8594" font-size="10" font-weight="600" class="mono">2021 – 2025</text>
+    <text x="54" y="213" fill="#8C94A4" font-size="12.5" class="sans">B.Sc. in Information Technology</text>
+  </g>
+
+  <!-- CARD 3: ENGINEERING STANDARDS -->
+  <g transform="translate(816, 0)">
+    <rect width="384" height="240" rx="16" fill="url(#cardBg)" stroke="#222733" stroke-width="1.5" />
+    <text x="28" y="38" fill="#E5484D" font-size="10.5" font-weight="700" class="mono">03 / ENGINEERING BENCHMARKS</text>
+
+    <!-- Metric 1 -->
+    <g transform="translate(28, 58)">
+      <rect width="156" height="74" rx="10" fill="#141923" stroke="#232A38" />
+      <text x="16" y="34" fill="#F5F2EB" font-size="26" font-weight="800" class="sans">99–100</text>
+      <text x="16" y="56" fill="#8C94A4" font-size="10" font-weight="600" class="mono">LIGHTHOUSE SCORE</text>
+    </g>
+
+    <!-- Metric 2 -->
+    <g transform="translate(200, 58)">
+      <rect width="156" height="74" rx="10" fill="#141923" stroke="#232A38" />
+      <text x="16" y="34" fill="#E5484D" font-size="26" font-weight="800" class="sans">3-Layer</text>
+      <text x="16" y="56" fill="#8C94A4" font-size="10" font-weight="600" class="mono">JWT · RBAC · PG RLS</text>
+    </g>
+
+    <!-- Metric 3 -->
+    <g transform="translate(28, 144)">
+      <rect width="328" height="68" rx="10" fill="#141923" stroke="#232A38" />
+      <text x="18" y="28" fill="#F5F2EB" font-size="14" font-weight="700" class="sans">Production-Grade Architecture</text>
+      <text x="18" y="49" fill="#8C94A4" font-size="12" class="sans">Single-flight caching · Idempotent writes · Docker</text>
+    </g>
+  </g>
+</svg>

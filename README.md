@@ -1,69 +1,63 @@
 <div align="center">
 
-# TRAN TAN PHAT
-**Full-Stack Developer** · Ho Chi Minh City, Vietnam
+<a href="https://ttanphat.vercel.app/">
+  <img src="./assets/hero-banner.svg" width="100%" alt="Tran Tan Phat — Full-Stack Developer" />
+</a>
 
-*“I turn ideas into real web products.”*
-
-<br />
+<br /><br />
 
 [![Portfolio](https://img.shields.io/badge/PORTFOLIO-ttanphat.vercel.app-E5484D?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0B0E13)](https://ttanphat.vercel.app/)
-[![Email](https://img.shields.io/badge/EMAIL-ttanphat.work%40gmail.com-18181B?style=for-the-badge&logo=gmail&logoColor=E5484D&labelColor=0B0E13)](mailto:ttanphat.work@gmail.com)
-[![Status](https://img.shields.io/badge/STATUS-AVAILABLE_FOR_WORK-10B981?style=for-the-badge&labelColor=0B0E13)](https://ttanphat.vercel.app/#contact)
-
-</div>
-
-<br />
-
-### `01` &nbsp; Profile
-
-```yaml
-role:        Full-Stack Developer (React / Next.js · Node.js / NestJS · Python)
-experience:  VNDTS Company (2025–Present) · HITEK Solution (2025)
-education:   B.Sc. in Information Technology — HUTECH (2021–2025)
-focus:       End-to-end web products, clean boundaries, and reliable APIs
-```
+&nbsp;
+[![Case Studies](https://img.shields.io/badge/CASE_STUDIES-4_PROJECTS-1E232E?style=for-the-badge&logo=gitbook&logoColor=E5484D&labelColor=0B0E13)](https://ttanphat.vercel.app/projects)
+&nbsp;
+[![Email](https://img.shields.io/badge/CONTACT-ttanphat.work%40gmail.com-1E232E?style=for-the-badge&logo=gmail&logoColor=E5484D&labelColor=0B0E13)](mailto:ttanphat.work@gmail.com)
 
 <br />
 
-### `02` &nbsp; Selected Work
-
-| Project | Focus | Stack | Links |
-| :--- | :--- | :--- | :---: |
-| **Kaikai** | Online Ordering Platform & CMS | `Next.js 16` `NestJS 11` `PostgreSQL` `Prisma` | [Live ↗](https://website-kaikai.vercel.app) · [Case Study](https://ttanphat.vercel.app/projects/kaikai) |
-| **Murmur** | Real-Time WebRTC Voice AI Agent | `Next.js` `ElevenLabs` `WebRTC` `SQLite` `Drizzle` | [Live ↗](https://murmur-voice.vercel.app) · [Case Study](https://ttanphat.vercel.app/projects/murmur) |
-| **Social App** | Full-Stack Social Platform | `Next.js` `TypeScript` `React Query` `Zustand` | [Case Study](https://ttanphat.vercel.app/projects/social-app) |
-| **Library System** | Inventory & Lending Management | `Node.js` `Express` `MongoDB` `JWT` | [Case Study](https://ttanphat.vercel.app/projects/library-management) · [Code](https://github.com/trantanphat2510/nodejs_quanlythuvien) |
-| **Atelier Noir** | Bilingual Portfolio & Custom CMS | `Next.js 16` `React 19` `Supabase` `Motion` | [Live ↗](https://ttanphat.vercel.app/) |
-
-<br />
-
-### `03` &nbsp; Tech Stack
-
-<div align="center">
-
-**Frontend & State**
-<br />
-<a href="https://ttanphat.vercel.app/">
-  <img src="https://skillicons.dev/icons?i=react,nextjs,ts,js,tailwind,redux,html,css&theme=dark" alt="Frontend Stack" />
-</a>
-
-<br />
-
-**Backend, Database & Infra**
-<br />
-<a href="https://ttanphat.vercel.app/">
-  <img src="https://skillicons.dev/icons?i=nodejs,nestjs,express,py,fastapi,php,postgres,prisma,supabase,mongodb,sqlite,docker,vercel,git&theme=dark" alt="Backend & Infra Stack" />
+<a href="https://ttanphat.vercel.app/#about">
+  <img src="./assets/bento-overview.svg" width="100%" alt="01 End-to-End Craft · 02 Career Timeline · 03 Engineering Benchmarks" />
 </a>
 
 </div>
 
 <br />
 
----
+### `04 /` &nbsp; Selected Engineering Work
+
+<p align="center">
+  <a href="https://website-kaikai.vercel.app">
+    <img src="./assets/project-kaikai.svg" width="49%" alt="Kaikai — Web Platform & CMS" />
+  </a>
+  &nbsp;
+  <a href="https://murmur-voice.vercel.app">
+    <img src="./assets/project-murmur.svg" width="49%" alt="Murmur — Voice AI Conversation App" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://ttanphat.vercel.app/projects/social-app">
+    <img src="./assets/project-social.svg" width="49%" alt="Social App Management — Full-Stack Social Platform" />
+  </a>
+  &nbsp;
+  <a href="https://ttanphat.vercel.app/">
+    <img src="./assets/project-noir.svg" width="49%" alt="Atelier Noir Portfolio & Custom CMS" />
+  </a>
+</p>
+
+<br />
+
+### `05 /` &nbsp; Core Stack & Tooling
 
 <div align="center">
-  <sub><b>Good engineering is not just about writing code. It’s about building something that matters.</b></sub>
-  <br />
-  <sub><a href="https://ttanphat.vercel.app/">ttanphat.vercel.app</a> · <a href="mailto:ttanphat.work@gmail.com">ttanphat.work@gmail.com</a></sub>
+
+<a href="https://ttanphat.vercel.app/">
+  <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,tailwind,redux,nodejs,nestjs,express,py,fastapi,php,postgres,prisma,supabase,sqlite,mongodb,docker,vercel,git,github,figma&perline=11&theme=dark" alt="Tech Stack" />
+</a>
+
+<br /><br />
+
+<a href="https://ttanphat.vercel.app/#contact">
+  <img src="./assets/philosophy-footer.svg" width="100%" alt="Good engineering is not just about writing code. It's about building something that matters." />
+</a>
+
 </div>
