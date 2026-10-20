@@ -81,10 +81,10 @@
     <text x="168" y="106" fill="#8C94A4" font-size="12" class="sans">· Full-Stack Dev</text>
     <text x="344" y="105" text-anchor="end" fill="#7D8594" font-size="9.5" font-weight="600" class="mono">2025</text>
 
-    <circle cx="28" cy="148" r="3.5" fill="#0D1017" stroke="#68707E" stroke-width="1.5" />
-    <text x="44" y="152" fill="#E2E6EE" font-size="13.5" font-weight="600" class="sans">HUTECH University</text>
-    <text x="188" y="152" fill="#8C94A4" font-size="12" class="sans">· B.Sc. in IT</text>
-    <text x="344" y="151" text-anchor="end" fill="#7D8594" font-size="9.5" font-weight="600" class="mono">2021–2025</text>
+    <circle cx="28" cy="144" r="3.5" fill="#0D1017" stroke="#68707E" stroke-width="1.5" />
+    <text x="44" y="148" fill="#E2E6EE" font-size="12.5" font-weight="600" class="sans">Ho Chi Minh City University of Technology</text>
+    <text x="44" y="165" fill="#8C94A4" font-size="11.5" class="sans">B.Sc. in Information Technology</text>
+    <text x="344" y="164" text-anchor="end" fill="#7D8594" font-size="9.5" font-weight="600" class="mono">2021–2025</text>
   </g>
 
   <!-- BENTO CELL 3: BENCHMARKS -->

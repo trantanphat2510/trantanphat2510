@@ -223,9 +223,10 @@
     <text x="326" y="109" text-anchor="end" fill="#7D8594" font-size="9.5" font-weight="600" class="mono">APR–OCT 2025</text>
     <text x="44" y="128" fill="#8C94A4" font-size="11.5" class="sans">Full-Stack Developer · React &amp; Next.js</text>
 
-    <circle cx="28" cy="152" r="3.5" fill="#0D1118" stroke="#68707E" stroke-width="1.5" />
-    <text x="44" y="156" fill="#E2E6EE" font-size="13.5" font-weight="600" class="sans">HUTECH University</text>
-    <text x="326" y="155" text-anchor="end" fill="#7D8594" font-size="9.5" font-weight="600" class="mono">2021–2025</text>
+    <circle cx="28" cy="148" r="3.5" fill="#0D1118" stroke="#68707E" stroke-width="1.5" />
+    <text x="44" y="152" fill="#E2E6EE" font-size="12.5" font-weight="600" class="sans">Ho Chi Minh City University of Technology</text>
+    <text x="44" y="170" fill="#8C94A4" font-size="11.5" class="sans">B.Sc. in Information Technology</text>
+    <text x="326" y="169" text-anchor="end" fill="#7D8594" font-size="9.5" font-weight="600" class="mono">2021–2025</text>
   </g>
 
   <!-- Connector between Bento 02.2 and 02.3 -->
