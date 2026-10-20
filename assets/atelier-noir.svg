@@ -115,15 +115,18 @@
       .wave1 { animation: wave 1.2s infinite ease-in-out; }
       .wave2 { animation: wave 1.2s infinite ease-in-out 0.2s; }
       .wave3 { animation: wave 1.2s infinite ease-in-out 0.4s; }
+      .bot-patrol {
+        animation: botPatrolWalk 7.2s infinite ease-in-out;
+      }
       .bot-float {
-        animation: botHover 3s infinite ease-in-out;
+        animation: botHover 1.3s infinite ease-in-out;
       }
       .bot-head {
-        animation: headTilt 4s infinite ease-in-out;
+        animation: headTilt 3.6s infinite ease-in-out;
         transform-origin: 710px 118px;
       }
       .bot-shadow {
-        animation: shadowScale 3s infinite ease-in-out;
+        animation: shadowScale 1.3s infinite ease-in-out;
         transform-origin: 710px 192px;
       }
       .bot-arm-wave {
@@ -131,28 +134,28 @@
         transform-origin: 672px 136px;
       }
       .bot-arm-cast {
-        animation: castArm 3s infinite ease-in-out;
+        animation: castArm 1.3s infinite ease-in-out;
         transform-origin: 748px 136px;
       }
       .bot-wing-l {
-        animation: wingLeft 1.6s infinite ease-in-out;
+        animation: wingLeft 1.3s infinite ease-in-out;
         transform-origin: 682px 132px;
       }
       .bot-wing-r {
-        animation: wingRight 1.6s infinite ease-in-out;
+        animation: wingRight 1.3s infinite ease-in-out;
         transform-origin: 738px 132px;
       }
       .bot-leg-l {
-        animation: legSwingL 2.4s infinite ease-in-out;
+        animation: legSwingL 0.65s infinite ease-in-out;
         transform-origin: 700px 161px;
       }
       .bot-leg-r {
-        animation: legSwingR 2.4s infinite ease-in-out;
+        animation: legSwingR 0.65s infinite ease-in-out;
         transform-origin: 720px 161px;
       }
       .bot-eyes {
-        animation: eyeLookAndBlink 5.2s infinite ease-in-out;
-        transform-origin: 710px 98px;
+        animation: eyeLookAndBlink 7.2s infinite ease-in-out;
+        transform-origin: 710px 94px;
       }
       .core-spin {
         animation: spinRing 6s infinite linear;
@@ -192,17 +195,22 @@
         0%, 100% { opacity: 0.35; }
         50% { opacity: 1; }
       }
+      @keyframes botPatrolWalk {
+        0%, 10% { transform: translateX(-46px); }
+        42%, 56% { transform: translateX(38px); }
+        90%, 100% { transform: translateX(-46px); }
+      }
       @keyframes botHover {
         0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-7px); }
+        50% { transform: translateY(-4px); }
       }
       @keyframes headTilt {
-        0%, 100% { transform: rotate(-2deg); }
+        0%, 100% { transform: rotate(-2.5deg); }
         50% { transform: rotate(2.5deg); }
       }
       @keyframes shadowScale {
-        0%, 100% { opacity: 0.65; transform: scaleX(1); }
-        50% { opacity: 0.25; transform: scaleX(0.74); }
+        0%, 100% { opacity: 0.7; transform: scaleX(1); }
+        50% { opacity: 0.35; transform: scaleX(0.82); }
       }
       @keyframes waveArm {
         0%, 100% { transform: rotate(0deg) translateY(0px); }
@@ -212,7 +220,7 @@
       }
       @keyframes castArm {
         0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-4px); }
+        50% { transform: translateY(-3px); }
       }
       @keyframes wingLeft {
         0%, 100% { transform: rotate(0deg); }
@@ -223,24 +231,26 @@
         50% { transform: rotate(-9deg); }
       }
       @keyframes legSwingL {
-        0%, 100% { transform: rotate(7deg) translateY(0px); }
-        50% { transform: rotate(-9deg) translateY(-2px); }
+        0%, 100% { transform: rotate(16deg) translateY(-2px); }
+        50% { transform: rotate(-16deg) translateY(1px); }
       }
       @keyframes legSwingR {
-        0%, 100% { transform: rotate(-9deg) translateY(-2px); }
-        50% { transform: rotate(7deg) translateY(0px); }
+        0%, 100% { transform: rotate(-16deg) translateY(1px); }
+        50% { transform: rotate(16deg) translateY(-2px); }
       }
       @keyframes spinRing {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
       }
       @keyframes eyeLookAndBlink {
-        0%, 18% { transform: translateX(-3.5px) scaleY(1); }
-        21% { transform: translateX(-3.5px) scaleY(0.08); }
-        24%, 52% { transform: translateX(4px) scaleY(1); }
-        72%, 90% { transform: translateX(0px) scaleY(1); }
-        93% { transform: translateX(0px) scaleY(0.08); }
-        96%, 100% { transform: translateX(-3.5px) scaleY(1); }
+        0%, 8% { transform: translateX(-4px) scaleY(1); }
+        10% { transform: translateX(-4px) scaleY(0.08); }
+        13%, 44% { transform: translateX(4.5px) scaleY(1); }
+        47% { transform: translateX(4.5px) scaleY(0.08); }
+        50%, 56% { transform: translateX(4.5px) scaleY(1); }
+        58%, 88% { transform: translateX(-4px) scaleY(1); }
+        91% { transform: translateX(-4px) scaleY(0.08); }
+        94%, 100% { transform: translateX(-4px) scaleY(1); }
       }
       @keyframes beamPulse {
         0%, 100% { opacity: 0.85; }
@@ -325,204 +335,176 @@
   </text>
 
   <!-- ===================================================================== -->
-  <!-- COMPANION AI AGENT & LIVE HOLOGRAPHIC WORKSTATION (x=640..1152)       -->
+  <!-- COMPANION AI AGENT & LIVE HOLOGRAPHIC WORKSTATION (x=610..1152)       -->
   <!-- ===================================================================== -->
-  <!-- Anti-Gravity Floor Thruster Ring -->
-  <g class="bot-shadow">
-    <ellipse cx="710" cy="192" rx="38" ry="6" fill="#E5484D" fill-opacity="0.28" filter="url(#crimsonBloom)" />
-    <ellipse cx="710" cy="192" rx="24" ry="3" fill="none" stroke="#E5484D" stroke-width="1" stroke-dasharray="6 4" />
-    <ellipse cx="710" cy="192" rx="12" ry="1.8" fill="#F5F2EB" fill-opacity="0.6" />
-  </g>
+  <!-- Cyber Patrol Track on Floor (x=634..786, y=192) -->
+  <line x1="634" y1="192" x2="786" y2="192" stroke="#242C3D" stroke-width="1.5" stroke-dasharray="5 4" />
+  <circle cx="634" cy="192" r="3" fill="#E5484D" />
+  <circle cx="786" cy="192" r="3" fill="#E5484D" />
 
-  <!-- Floating Ambient Data Particles around AI Agent -->
-  <g class="particle-1">
-    <circle cx="642" cy="122" r="2" fill="#E5484D" filter="url(#crimsonBloom)" />
-    <text x="630" y="116" fill="#E5484D" font-size="7.5" font-weight="700" class="mono">01</text>
-  </g>
-  <g class="particle-2">
-    <circle cx="764" cy="86" r="2" fill="#10B981" />
-    <text x="770" y="88" fill="#10B981" font-size="7.5" font-weight="700" class="mono">AI</text>
-  </g>
-  <circle cx="662" cy="172" r="1.8" fill="#F5F2EB" class="particle-3" />
-
-  <!-- 3D ASTRO-NOIR COMPANION AI AGENT (Centered at x=710, y=54..186) -->
-  <g class="bot-float">
-    <!-- Floating Halo Crown Above Head -->
-    <ellipse cx="710" cy="59" rx="22" ry="4.5" fill="none" stroke="#E5484D" stroke-width="1.8" filter="url(#crimsonBloom)" />
-    <ellipse cx="710" cy="59" rx="14" ry="2.2" fill="none" stroke="#F5F2EB" stroke-width="0.8" stroke-opacity="0.8" />
-
-    <!-- Speech Pill (Top Left of Bot) -->
-    <g transform="translate(596, 46)">
-      <rect width="92" height="20" rx="10" fill="#151B28" stroke="#E5484D" stroke-width="1" />
-      <circle cx="12" cy="10" r="2.8" fill="#10B981" class="pulse-dot" />
-      <text x="20" y="13.5" fill="#F5F2EB" font-size="8" font-weight="700" class="mono">HI! I&apos;M ADA</text>
-      <path d="M 74 20 L 80 26 L 84 20 Z" fill="#151B28" stroke="#E5484D" stroke-width="1" />
+  <!-- PATROLLING AI AGENT GROUP (Walks back and forth between Phat & Console) -->
+  <g class="bot-patrol">
+    <!-- Anti-Gravity Floor Thruster Ring (Follows Agent) -->
+    <g class="bot-shadow">
+      <ellipse cx="710" cy="192" rx="34" ry="5.5" fill="#E5484D" fill-opacity="0.3" filter="url(#crimsonBloom)" />
+      <ellipse cx="710" cy="192" rx="22" ry="2.8" fill="none" stroke="#E5484D" stroke-width="1" stroke-dasharray="6 4" />
+      <ellipse cx="710" cy="192" rx="11" ry="1.6" fill="#F5F2EB" fill-opacity="0.65" />
     </g>
 
-    <!-- Holographic Projection Cone (From Right Emitter x=782 to Terminal x=826) -->
-    <polygon points="782,124 826,72 826,180" fill="url(#holoBeamGrad)" class="holo-beam" />
-    <line x1="782" y1="124" x2="826" y2="88" stroke="#E5484D" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.65" />
-    <line x1="782" y1="124" x2="826" y2="162" stroke="#E5484D" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.65" />
-
-    <!-- Aerodynamic Cyber-Wings (Behind Torso) -->
-    <g class="bot-wing-l">
-      <path d="M 684 126 L 644 108 L 652 126 L 638 138 L 680 142 Z" fill="#171D2B" stroke="#364159" stroke-width="1.2" />
-      <path d="M 680 130 L 650 116 L 656 128 Z" fill="#E5484D" fill-opacity="0.85" />
+    <!-- Floating Ambient Data Particles around AI Agent -->
+    <g class="particle-1">
+      <circle cx="652" cy="122" r="2" fill="#E5484D" filter="url(#crimsonBloom)" />
+      <text x="640" y="116" fill="#E5484D" font-size="7.5" font-weight="700" class="mono">01</text>
     </g>
-    <g class="bot-wing-r">
-      <path d="M 736 126 L 776 108 L 768 126 L 782 138 L 740 142 Z" fill="#171D2B" stroke="#364159" stroke-width="1.2" />
-      <path d="M 740 130 L 770 116 L 764 128 Z" fill="#E5484D" fill-opacity="0.85" />
+    <g class="particle-2">
+      <circle cx="764" cy="86" r="2" fill="#10B981" />
+      <text x="770" y="88" fill="#10B981" font-size="7.5" font-weight="700" class="mono">AI</text>
     </g>
 
-    <!-- ARTICULATED 3D MECHA LEGS & JET-BOOTS -->
-    <!-- Left Leg & Jet-Boot -->
-    <g class="bot-leg-l">
-      <!-- Thigh Joint -->
-      <rect x="695" y="158" width="9" height="11" rx="4" fill="#181F2E" stroke="#38435E" stroke-width="1.1" />
-      <!-- Flared Porcelain-Titanium Shin & Boot -->
-      <path d="M 694 166 L 705 166 L 707 181 C 707 183, 691 183, 691 181 Z" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1.1" />
-      <!-- Crimson Knee/Ankle Trim -->
-      <line x1="694" y1="173" x2="705" y2="173" stroke="#E5484D" stroke-width="2" stroke-linecap="round" />
-      <!-- Dark Boot Sole -->
-      <rect x="690" y="180" width="17" height="4.5" rx="2.2" fill="#141926" stroke="#38435E" stroke-width="0.9" />
-      <!-- Left Boot Jet Thruster Flame -->
-      <path d="M 694 184.5 Q 698.5 195 703 184.5 Z" fill="#E5484D" fill-opacity="0.8" filter="url(#crimsonBloom)" class="pulse-dot" />
-      <path d="M 696 184.5 Q 698.5 191 701 184.5 Z" fill="#F5F2EB" />
-    </g>
+    <!-- 3D ASTRO-NOIR COMPANION AI AGENT (Centered at x=710, y=54..186) -->
+    <g class="bot-float">
+      <!-- Floating Halo Crown Above Head -->
+      <ellipse cx="710" cy="59" rx="22" ry="4.5" fill="none" stroke="#E5484D" stroke-width="1.8" filter="url(#crimsonBloom)" />
+      <ellipse cx="710" cy="59" rx="14" ry="2.2" fill="none" stroke="#F5F2EB" stroke-width="0.8" stroke-opacity="0.8" />
 
-    <!-- Right Leg & Jet-Boot -->
-    <g class="bot-leg-r">
-      <!-- Thigh Joint -->
-      <rect x="716" y="158" width="9" height="11" rx="4" fill="#181F2E" stroke="#38435E" stroke-width="1.1" />
-      <!-- Flared Porcelain-Titanium Shin & Boot -->
-      <path d="M 715 166 L 726 166 L 729 181 C 729 183, 713 183, 713 181 Z" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1.1" />
-      <!-- Crimson Knee/Ankle Trim -->
-      <line x1="715" y1="173" x2="726" y2="173" stroke="#E5484D" stroke-width="2" stroke-linecap="round" />
-      <!-- Dark Boot Sole -->
-      <rect x="713" y="180" width="17" height="4.5" rx="2.2" fill="#141926" stroke="#38435E" stroke-width="0.9" />
-      <!-- Right Boot Jet Thruster Flame -->
-      <path d="M 717 184.5 Q 721.5 195 726 184.5 Z" fill="#E5484D" fill-opacity="0.8" filter="url(#crimsonBloom)" class="pulse-dot" />
-      <path d="M 719 184.5 Q 721.5 191 724 184.5 Z" fill="#F5F2EB" />
-    </g>
+      <!-- Speech Pill (Follows Bot) -->
+      <g transform="translate(612, 42)">
+        <rect width="92" height="20" rx="10" fill="#151B28" stroke="#E5484D" stroke-width="1" />
+        <circle cx="12" cy="10" r="2.8" fill="#10B981" class="pulse-dot" />
+        <text x="20" y="13.5" fill="#F5F2EB" font-size="8" font-weight="700" class="mono">HI! I&apos;M ADA</text>
+        <path d="M 74 20 L 80 26 L 84 20 Z" fill="#151B28" stroke="#E5484D" stroke-width="1" />
+      </g>
 
-    <!-- Sculpted 3D Capsule Torso & Armor -->
-    <!-- Pelvis / Hip Core -->
-    <path d="M 692 156 L 728 156 L 724 163 C 716 166, 704 166, 696 163 Z" fill="#141926" stroke="#38435E" stroke-width="1.2" />
-    <!-- Dark Under-Suit -->
-    <path d="M 684 122 C 680 136, 686 156, 696 161 L 724 161 C 734 156, 740 136, 736 122 Z" fill="url(#botBodyGrad)" stroke="#38435E" stroke-width="1.5" />
-    <!-- White/Cream Porcelain-Titanium Chest Plate -->
-    <path d="M 686 123 C 684 134, 689 151, 699 156 L 721 156 C 731 151, 736 134, 734 123 Q 710 129 686 123 Z" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.6" />
-    <!-- Dark Collar / Neck Trim -->
-    <path d="M 692 121 Q 710 128 728 121 L 724 129 Q 710 134 696 129 Z" fill="#141926" stroke="#E5484D" stroke-width="0.9" />
+      <!-- Aerodynamic Cyber-Wings (Behind Torso) -->
+      <g class="bot-wing-l">
+        <path d="M 684 126 L 644 108 L 652 126 L 638 138 L 680 142 Z" fill="#171D2B" stroke="#364159" stroke-width="1.2" />
+        <path d="M 680 130 L 650 116 L 656 128 Z" fill="#E5484D" fill-opacity="0.85" />
+      </g>
+      <g class="bot-wing-r">
+        <path d="M 736 126 L 776 108 L 768 126 L 782 138 L 740 142 Z" fill="#171D2B" stroke="#364159" stroke-width="1.2" />
+        <path d="M 740 130 L 770 116 L 764 128 Z" fill="#E5484D" fill-opacity="0.85" />
+      </g>
 
-    <!-- Spinning Chest Arc Reactor -->
-    <circle cx="710" cy="143" r="10.5" fill="#0B0E13" stroke="#2B3448" stroke-width="1.5" />
-    <circle cx="710" cy="143" r="8" fill="none" stroke="#E5484D" stroke-width="1.5" stroke-dasharray="5 3" class="core-spin" />
-    <circle cx="710" cy="143" r="4.8" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" class="pulse-dot" />
-    <circle cx="710" cy="143" r="2" fill="#FFFFFF" />
+      <!-- ARTICULATED 3D MECHA LEGS & JET-BOOTS -->
+      <!-- Left Leg & Jet-Boot -->
+      <g class="bot-leg-l">
+        <rect x="695" y="158" width="9" height="11" rx="4" fill="#181F2E" stroke="#38435E" stroke-width="1.1" />
+        <path d="M 694 166 L 705 166 L 707 181 C 707 183, 691 183, 691 181 Z" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1.1" />
+        <line x1="694" y1="173" x2="705" y2="173" stroke="#E5484D" stroke-width="2" stroke-linecap="round" />
+        <rect x="690" y="180" width="17" height="4.5" rx="2.2" fill="#141926" stroke="#38435E" stroke-width="0.9" />
+        <path d="M 694 184.5 Q 698.5 194 703 184.5 Z" fill="#E5484D" fill-opacity="0.8" filter="url(#crimsonBloom)" class="pulse-dot" />
+        <path d="M 696 184.5 Q 698.5 190 701 184.5 Z" fill="#F5F2EB" />
+      </g>
 
-    <!-- SCULPTED 3D HEAD (With Subtle Independent Tilt) -->
-    <g class="bot-head">
-      <!-- Swept-Back Cyber Cat/Mecha Ears -->
-      <path d="M 676 76 L 666 54 L 692 66 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.3" stroke-linejoin="round" />
-      <path d="M 677 72 L 671 59 L 688 67 Z" fill="#E5484D" />
-      <path d="M 744 76 L 754 54 L 728 66 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.3" stroke-linejoin="round" />
-      <path d="M 743 72 L 749 59 L 732 67 Z" fill="#E5484D" />
+      <!-- Right Leg & Jet-Boot -->
+      <g class="bot-leg-r">
+        <rect x="716" y="158" width="9" height="11" rx="4" fill="#181F2E" stroke="#38435E" stroke-width="1.1" />
+        <path d="M 715 166 L 726 166 L 729 181 C 729 183, 713 183, 713 181 Z" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1.1" />
+        <line x1="715" y1="173" x2="726" y2="173" stroke="#E5484D" stroke-width="2" stroke-linecap="round" />
+        <rect x="713" y="180" width="17" height="4.5" rx="2.2" fill="#141926" stroke="#38435E" stroke-width="0.9" />
+        <path d="M 717 184.5 Q 721.5 194 726 184.5 Z" fill="#E5484D" fill-opacity="0.8" filter="url(#crimsonBloom)" class="pulse-dot" />
+        <path d="M 719 184.5 Q 721.5 190 724 184.5 Z" fill="#F5F2EB" />
+      </g>
 
-      <!-- Outer Porcelain-Titanium 3D Helmet Dome -->
-      <rect x="670" y="64" width="80" height="56" rx="26" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.8" />
-      <!-- Top Specular Gloss Arc on Helmet -->
-      <path d="M 686 69 Q 710 64 734 69" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.85" />
-      <!-- Helmet Forehead Emblem -->
-      <polygon points="710,69 706,76 710,74 714,76" fill="#E5484D" />
+      <!-- Sculpted 3D Capsule Torso & Armor -->
+      <path d="M 692 156 L 728 156 L 724 163 C 716 166, 704 166, 696 163 Z" fill="#141926" stroke="#38435E" stroke-width="1.2" />
+      <path d="M 684 122 C 680 136, 686 156, 696 161 L 724 161 C 734 156, 740 136, 736 122 Z" fill="url(#botBodyGrad)" stroke="#38435E" stroke-width="1.5" />
+      <path d="M 686 123 C 684 134, 689 151, 699 156 L 721 156 C 731 151, 736 134, 734 123 Q 710 129 686 123 Z" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.6" />
+      <path d="M 692 121 Q 710 128 728 121 L 724 129 Q 710 134 696 129 Z" fill="#141926" stroke="#E5484D" stroke-width="0.9" />
 
-      <!-- Side Cyber-Headphone Pods -->
-      <rect x="663" y="82" width="9" height="24" rx="4.5" fill="#151B28" stroke="#38435E" stroke-width="1.2" />
-      <circle cx="667.5" cy="94" r="2.5" fill="#E5484D" filter="url(#crimsonBloom)" />
-      <rect x="748" y="82" width="9" height="24" rx="4.5" fill="#151B28" stroke="#38435E" stroke-width="1.2" />
-      <circle cx="752.5" cy="94" r="2.5" fill="#E5484D" filter="url(#crimsonBloom)" />
+      <!-- Spinning Chest Arc Reactor -->
+      <circle cx="710" cy="143" r="10.5" fill="#0B0E13" stroke="#2B3448" stroke-width="1.5" />
+      <circle cx="710" cy="143" r="8" fill="none" stroke="#E5484D" stroke-width="1.5" stroke-dasharray="5 3" class="core-spin" />
+      <circle cx="710" cy="143" r="4.8" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" class="pulse-dot" />
+      <circle cx="710" cy="143" r="2" fill="#FFFFFF" />
 
-      <!-- Curved Panoramic OLED Visor -->
-      <rect x="677" y="76" width="66" height="38" rx="18" fill="url(#botVisorGrad)" stroke="#232B3E" stroke-width="1.5" />
-      <!-- Glass Reflection Sheen on Visor -->
-      <path d="M 684 81 Q 702 78 716 81 L 692 108 Q 682 100 684 81 Z" fill="#FFFFFF" fill-opacity="0.06" />
+      <!-- SCULPTED 3D HEAD -->
+      <g class="bot-head">
+        <path d="M 676 76 L 666 54 L 692 66 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.3" stroke-linejoin="round" />
+        <path d="M 677 72 L 671 59 L 688 67 Z" fill="#E5484D" />
+        <path d="M 744 76 L 754 54 L 728 66 Z" fill="url(#botBodyGrad)" stroke="#43506E" stroke-width="1.3" stroke-linejoin="round" />
+        <path d="M 743 72 L 749 59 L 732 67 Z" fill="#E5484D" />
 
-      <!-- Expressive Glowing Cyber Eyes + Smile (Tracks Phat & Terminal) -->
-      <g class="bot-eyes">
-        <!-- Left Eye -->
-        <rect x="688" y="86" width="14" height="16" rx="7" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
-        <circle cx="693" cy="91" r="3.2" fill="#FFFFFF" />
-        <circle cx="697.5" cy="97" r="1.4" fill="#FFFFFF" fill-opacity="0.85" />
+        <rect x="670" y="64" width="80" height="56" rx="26" fill="url(#botArmorLight)" stroke="#FFFFFF" stroke-width="0.8" />
+        <path d="M 686 69 Q 710 64 734 69" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.85" />
+        <polygon points="710,69 706,76 710,74 714,76" fill="#E5484D" />
 
-        <!-- Right Eye -->
-        <rect x="718" y="86" width="14" height="16" rx="7" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
-        <circle cx="723" cy="91" r="3.2" fill="#FFFFFF" />
-        <circle cx="727.5" cy="97" r="1.4" fill="#FFFFFF" fill-opacity="0.85" />
+        <rect x="663" y="82" width="9" height="24" rx="4.5" fill="#151B28" stroke="#38435E" stroke-width="1.2" />
+        <circle cx="667.5" cy="94" r="2.5" fill="#E5484D" filter="url(#crimsonBloom)" />
+        <rect x="748" y="82" width="9" height="24" rx="4.5" fill="#151B28" stroke="#38435E" stroke-width="1.2" />
+        <circle cx="752.5" cy="94" r="2.5" fill="#E5484D" filter="url(#crimsonBloom)" />
 
-        <!-- Subtle Digital Cheek Glows -->
-        <ellipse cx="685" cy="104" rx="3.5" ry="1.5" fill="#E5484D" fill-opacity="0.65" />
-        <ellipse cx="735" cy="104" rx="3.5" ry="1.5" fill="#E5484D" fill-opacity="0.65" />
+        <rect x="677" y="76" width="66" height="38" rx="18" fill="url(#botVisorGrad)" stroke="#232B3E" stroke-width="1.5" />
+        <path d="M 684 81 Q 702 78 716 81 L 692 108 Q 682 100 684 81 Z" fill="#FFFFFF" fill-opacity="0.06" />
 
-        <!-- Happy Digital Smile Arc -->
-        <path d="M 706 104 Q 710 108 714 104" fill="none" stroke="#FF9A9E" stroke-width="1.8" stroke-linecap="round" />
+        <g class="bot-eyes">
+          <rect x="688" y="86" width="14" height="16" rx="7" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
+          <circle cx="693" cy="91" r="3.2" fill="#FFFFFF" />
+          <circle cx="697.5" cy="97" r="1.4" fill="#FFFFFF" fill-opacity="0.85" />
+
+          <rect x="718" y="86" width="14" height="16" rx="7" fill="url(#eyeGlow)" filter="url(#crimsonBloom)" />
+          <circle cx="723" cy="91" r="3.2" fill="#FFFFFF" />
+          <circle cx="727.5" cy="97" r="1.4" fill="#FFFFFF" fill-opacity="0.85" />
+
+          <ellipse cx="685" cy="104" rx="3.5" ry="1.5" fill="#E5484D" fill-opacity="0.65" />
+          <ellipse cx="735" cy="104" rx="3.5" ry="1.5" fill="#E5484D" fill-opacity="0.65" />
+          <path d="M 706 104 Q 710 108 714 104" fill="none" stroke="#FF9A9E" stroke-width="1.8" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- FLOATING MAGNETIC MECHA-HAND (LEFT — Waving at Phat) -->
+      <g class="bot-arm-wave">
+        <rect x="646" y="100" width="18" height="22" rx="9" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1.2" transform="rotate(-18 655 111)" />
+        <circle cx="655" cy="111" r="3.5" fill="#E5484D" filter="url(#crimsonBloom)" />
+        <circle cx="648" cy="97" r="2.5" fill="#F5F2EB" />
+        <circle cx="655" cy="95" r="2.5" fill="#F5F2EB" />
+        <circle cx="662" cy="98" r="2.5" fill="#F5F2EB" />
+      </g>
+
+      <!-- FLOATING MAGNETIC MECHA-HAND (RIGHT — Spinning Hologram Emitter) -->
+      <g class="bot-arm-cast">
+        <rect x="756" y="114" width="18" height="20" rx="9" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1.2" transform="rotate(15 765 124)" />
+        <circle cx="766" cy="124" r="3.5" fill="#E5484D" />
+        <circle cx="782" cy="124" r="9" fill="none" stroke="#E5484D" stroke-width="1.4" stroke-dasharray="4 3" class="emitter-spin" />
+        <circle cx="782" cy="124" r="3.5" fill="#F5F2EB" filter="url(#crimsonBloom)" class="pulse-dot" />
       </g>
     </g>
-
-    <!-- FLOATING MAGNETIC MECHA-HAND (LEFT — Waving at Phat) -->
-    <g class="bot-arm-wave">
-      <rect x="646" y="100" width="18" height="22" rx="9" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1.2" transform="rotate(-18 655 111)" />
-      <!-- Glowing Palm Core -->
-      <circle cx="655" cy="111" r="3.5" fill="#E5484D" filter="url(#crimsonBloom)" />
-      <!-- Cute Floating Fingers -->
-      <circle cx="648" cy="97" r="2.5" fill="#F5F2EB" />
-      <circle cx="655" cy="95" r="2.5" fill="#F5F2EB" />
-      <circle cx="662" cy="98" r="2.5" fill="#F5F2EB" />
-    </g>
-
-    <!-- FLOATING MAGNETIC MECHA-HAND (RIGHT — Projecting Hologram Ring) -->
-    <g class="bot-arm-cast">
-      <rect x="756" y="114" width="18" height="20" rx="9" fill="url(#botArmorLight)" stroke="#38435E" stroke-width="1.2" transform="rotate(15 765 124)" />
-      <circle cx="766" cy="124" r="3.5" fill="#E5484D" />
-      <!-- Spinning Holographic Emitter Ring in front of Right Hand -->
-      <circle cx="782" cy="124" r="9" fill="none" stroke="#E5484D" stroke-width="1.4" stroke-dasharray="4 3" class="emitter-spin" />
-      <circle cx="782" cy="124" r="3.5" fill="#F5F2EB" filter="url(#crimsonBloom)" class="pulse-dot" />
-    </g>
   </g>
 
-  <!-- LIVE HOLOGRAPHIC WORKSTATION CONSOLE (x=826..1152, y=68..188) -->
-  <g transform="translate(826, 68)">
-    <rect width="326" height="120" rx="10" fill="url(#holoScreenGrad)" stroke="#E5484D" stroke-opacity="0.55" stroke-width="1.2" />
+  <!-- LIVE HOLOGRAPHIC WORKSTATION CONSOLE (x=842..1152, y=68..188) -->
+  <g transform="translate(842, 68)">
+    <rect width="310" height="120" rx="10" fill="url(#holoScreenGrad)" stroke="#E5484D" stroke-opacity="0.55" stroke-width="1.2" />
 
     <!-- Top Terminal Bar -->
-    <rect x="1" y="1" width="324" height="24" rx="9" fill="#1A1319" />
+    <rect x="1" y="1" width="308" height="24" rx="9" fill="#1A1319" />
     <circle cx="14" cy="13" r="3" fill="#E5484D" />
     <circle cx="24" cy="13" r="3" fill="#F59E0B" />
     <circle cx="34" cy="13" r="3" fill="#10B981" />
     <text x="48" y="16.5" fill="#F2B8B5" font-size="9" font-weight="700" class="mono">NOIR-AGENT // CO-PILOT</text>
 
     <!-- Live Voice Equalizer in Terminal Header -->
-    <rect x="292" y="10" width="2" height="6" rx="1" fill="#10B981" class="wave1" />
-    <rect x="296" y="7" width="2" height="12" rx="1" fill="#10B981" class="wave2" />
-    <rect x="300" y="9" width="2" height="8" rx="1" fill="#10B981" class="wave3" />
-    <rect x="304" y="8" width="2" height="10" rx="1" fill="#10B981" class="wave1" />
+    <rect x="276" y="10" width="2" height="6" rx="1" fill="#10B981" class="wave1" />
+    <rect x="280" y="7" width="2" height="12" rx="1" fill="#10B981" class="wave2" />
+    <rect x="284" y="9" width="2" height="8" rx="1" fill="#10B981" class="wave3" />
+    <rect x="288" y="8" width="2" height="10" rx="1" fill="#10B981" class="wave1" />
 
     <!-- Animated Hologram Laser Scanline -->
-    <rect x="8" y="28" width="310" height="1.5" fill="#E5484D" fill-opacity="0.5" class="holo-scanline" />
+    <rect x="8" y="28" width="294" height="1.5" fill="#E5484D" fill-opacity="0.5" class="holo-scanline" />
 
     <!-- Live Telemetry & Code Execution Lines -->
-    <text x="16" y="44" fill="#8C94A4" font-size="10.5" class="code">
+    <text x="14" y="44" fill="#8C94A4" font-size="10" class="code">
       <tspan fill="#E5484D" font-weight="700">$ </tspan>agent.orchestrate(<tspan fill="#F5F2EB">&quot;kaikai-cms&quot;</tspan>)
     </text>
-    <text x="16" y="64" fill="#10B981" font-size="10.5" class="code">
+    <text x="14" y="64" fill="#10B981" font-size="10" class="code">
       ✓ Single-Flight Cache &amp; PG RLS: OK
     </text>
-    <text x="16" y="84" fill="#8C94A4" font-size="10.5" class="code">
+    <text x="14" y="84" fill="#8C94A4" font-size="10" class="code">
       <tspan fill="#E5484D" font-weight="700">$ </tspan>webrtc.connect(<tspan fill="#F5F2EB">&quot;murmur-voice&quot;</tspan>)
     </text>
-    <text x="16" y="104" fill="#F5F2EB" font-size="10.5" font-weight="600" class="code">
+    <text x="14" y="104" fill="#F5F2EB" font-size="10" font-weight="600" class="code">
       <tspan fill="#E5484D">⚡</tspan> Status: Shipping with Phat
     </text>
-    <rect x="206" y="94" width="6" height="12" fill="#E5484D" class="cursor-blink" />
+    <rect x="198" y="94" width="6" height="12" fill="#E5484D" class="cursor-blink" />
   </g>
 
   <!-- Connected Identity Bar (x=72, width=1080) -->
