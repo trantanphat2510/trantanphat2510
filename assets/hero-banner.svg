@@ -1,30 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="100%" height="100%">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0B0E13" />
-      <stop offset="55%" stop-color="#0F131A" />
+      <stop offset="60%" stop-color="#10141D" />
       <stop offset="100%" stop-color="#0B0E13" />
     </linearGradient>
 
-    <radialGradient id="crimsonGlow" cx="82%" cy="28%" r="48%">
-      <stop offset="0%" stop-color="#E5484D" stop-opacity="0.22" />
-      <stop offset="55%" stop-color="#E5484D" stop-opacity="0.05" />
+    <radialGradient id="crimsonGlow" cx="85%" cy="22%" r="50%">
+      <stop offset="0%" stop-color="#E5484D" stop-opacity="0.18" />
+      <stop offset="60%" stop-color="#E5484D" stop-opacity="0.04" />
       <stop offset="100%" stop-color="#0B0E13" stop-opacity="0" />
     </radialGradient>
 
-    <radialGradient id="subtleWarm" cx="15%" cy="85%" r="45%">
-      <stop offset="0%" stop-color="#F5F2EB" stop-opacity="0.06" />
-      <stop offset="100%" stop-color="#0B0E13" stop-opacity="0" />
-    </radialGradient>
-
-    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#E5484D" stop-opacity="0.9" />
-      <stop offset="35%" stop-color="#E5484D" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#222733" stop-opacity="0.4" />
+    <linearGradient id="spineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E232E" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#E5484D" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#E5484D" stop-opacity="0.9" />
     </linearGradient>
 
-    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.03" />
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.022" />
     </pattern>
 
     <style>
@@ -43,99 +38,73 @@
       }
       .pulse-dot {
         animation: pulse 2.4s infinite ease-in-out;
-        transform-origin: center;
       }
       .pulse-ring {
         animation: ring 2.4s infinite ease-out;
-        transform-origin: center;
-      }
-      .scanline {
-        animation: scan 6s infinite ease-in-out;
       }
       @keyframes pulse {
         0%, 100% { opacity: 1; }
-        50% { opacity: 0.45; }
+        50% { opacity: 0.4; }
       }
       @keyframes ring {
-        0% { r: 4px; opacity: 0.7; }
-        100% { r: 12px; opacity: 0; }
-      }
-      @keyframes scan {
-        0%, 100% { transform: translateX(0px); opacity: 0.5; }
-        50% { transform: translateX(180px); opacity: 1; }
+        0% { r: 3.5px; opacity: 0.7; }
+        100% { r: 11px; opacity: 0; }
       }
     </style>
   </defs>
 
-  <!-- Outer Card Background -->
-  <rect width="1200" height="380" rx="18" fill="url(#bg)" />
-  <rect width="1200" height="380" rx="18" fill="url(#grid)" />
-  <rect width="1200" height="380" rx="18" fill="url(#crimsonGlow)" />
-  <rect width="1200" height="380" rx="18" fill="url(#subtleWarm)" />
-  <rect x="0.75" y="0.75" width="1198.5" height="378.5" rx="17.25" fill="none" stroke="#232834" stroke-width="1.5" />
+  <!-- Main Frame -->
+  <rect width="1200" height="340" rx="14" fill="url(#bg)" />
+  <rect width="1200" height="340" rx="14" fill="url(#grid)" />
+  <rect width="1200" height="340" rx="14" fill="url(#crimsonGlow)" />
+  <rect x="0.75" y="0.75" width="1198.5" height="338.5" rx="13.25" fill="none" stroke="#1E232E" stroke-width="1.5" />
 
-  <!-- Architectural Crosshairs -->
-  <g stroke="#343B4A" stroke-width="1">
-    <line x1="48" y1="68" x2="60" y2="68" />
-    <line x1="54" y1="62" x2="54" y2="74" />
-    <line x1="1140" y1="68" x2="1152" y2="68" />
-    <line x1="1146" y1="62" x2="1146" y2="74" />
+  <!-- Continuous Left Architectural Spine (Connects down to next section) -->
+  <line x1="48" y1="0" x2="48" y2="340" stroke="#1E232E" stroke-width="1" />
+  <line x1="48" y1="240" x2="48" y2="340" stroke="url(#spineGrad)" stroke-width="1.5" />
+  <circle cx="48" cy="42" r="3.5" fill="#E5484D" />
+  <circle cx="48" cy="272" r="3" fill="#0B0E13" stroke="#E5484D" stroke-width="1.5" />
+
+  <!-- Top Bar -->
+  <text x="68" y="46" fill="#E5484D" font-size="11" font-weight="700" class="mono">01 / IDENTITY</text>
+  <text x="190" y="46" fill="#3B4252" font-size="11" class="mono">·</text>
+  <text x="208" y="46" fill="#8C94A4" font-size="11" font-weight="500" class="mono">HO CHI MINH CITY, VIETNAM</text>
+
+  <!-- Right Status Pill -->
+  <g transform="translate(932, 26)">
+    <rect width="220" height="28" rx="14" fill="#121721" stroke="#232A38" stroke-width="1" />
+    <circle cx="17" cy="14" r="3.5" fill="#10B981" class="pulse-ring" />
+    <circle cx="17" cy="14" r="3.5" fill="#10B981" class="pulse-dot" />
+    <text x="30" y="18" fill="#E2E6EE" font-size="10" font-weight="600" class="mono">AVAILABLE FOR WORK</text>
   </g>
 
-  <!-- Top Editorial Bar -->
-  <text x="54" y="44" fill="#8A919E" font-size="11" font-weight="600" class="mono">00 / PORTFOLIO IDENTITY</text>
-  <text x="275" y="44" fill="#464D5C" font-size="11" class="mono">—</text>
-  <text x="298" y="44" fill="#C7CCD6" font-size="11" font-weight="500" class="mono">HO CHI MINH CITY, VIETNAM</text>
+  <line x1="48" y1="68" x2="1152" y2="68" stroke="#1A1F29" stroke-width="1" />
 
-  <!-- Availability Pill (Top Right) -->
-  <g transform="translate(918, 24)">
-    <rect width="228" height="30" rx="15" fill="#131822" stroke="#262D3D" stroke-width="1" />
-    <circle cx="18" cy="15" r="4" fill="#10B981" class="pulse-ring" />
-    <circle cx="18" cy="15" r="4" fill="#10B981" class="pulse-dot" />
-    <text x="32" y="19" fill="#E6E9EF" font-size="10.5" font-weight="600" class="mono">AVAILABLE FOR WORK</text>
-  </g>
+  <!-- Main Heading & Editorial Tagline -->
+  <text x="68" y="158" fill="#F5F2EB" font-size="68" font-weight="800" letter-spacing="-0.03em" class="sans">TRAN TAN PHAT</text>
 
-  <!-- Top Divider -->
-  <line x1="54" y1="68" x2="1146" y2="68" stroke="#1E232E" stroke-width="1" />
-
-  <!-- Currently Building Tag -->
-  <g transform="translate(54, 96)">
-    <rect width="256" height="26" rx="6" fill="#1A1217" stroke="#4D2228" stroke-width="1" />
-    <circle cx="14" cy="13" r="3.5" fill="#E5484D" />
-    <text x="26" y="17" fill="#F2B8B5" font-size="10.5" font-weight="600" class="mono">CURRENTLY: BUILDING KAIKAI</text>
-  </g>
-
-  <!-- Main Display Name -->
-  <text x="52" y="196" fill="#F5F2EB" font-size="72" font-weight="800" letter-spacing="-0.03em" class="sans">TRAN TAN PHAT</text>
-
-  <!-- Editorial Tagline with Crimson Italic Serif Accent -->
-  <text x="54" y="242" fill="#A9B0BC" font-size="24" font-weight="400" class="sans">
-    I turn ideas into <tspan fill="#F5F2EB" font-size="27" class="serif-italic">real web products</tspan><tspan fill="#E5484D" font-size="28" font-weight="700">.</tspan>
+  <text x="68" y="204" fill="#9BA3B0" font-size="22" font-weight="400" class="sans">
+    I turn ideas into <tspan fill="#F5F2EB" font-size="25" class="serif-italic">real web products</tspan><tspan fill="#E5484D" font-size="25" font-weight="700">.</tspan>
+    <tspan fill="#68707E" font-size="16" dx="12">End-to-end interfaces, reliable APIs &amp; relational data layers.</tspan>
   </text>
 
-  <!-- Architectural Accent Line -->
-  <line x1="54" y1="278" x2="1146" y2="278" stroke="url(#accentLine)" stroke-width="1.5" />
-  <rect x="54" y="276.5" width="84" height="3" rx="1.5" fill="#E5484D" class="scanline" />
+  <!-- Bottom Connected Metadata Strip -->
+  <line x1="48" y1="242" x2="1152" y2="242" stroke="#1A1F29" stroke-width="1" />
 
-  <!-- Bottom Metadata Grid (4 Columns) -->
-  <g transform="translate(54, 306)">
-    <!-- Col 1 -->
-    <text x="0" y="14" fill="#68707E" font-size="10" font-weight="600" class="mono">ROLE</text>
-    <text x="0" y="36" fill="#E6E9EF" font-size="14" font-weight="600" class="sans">Full-Stack Developer</text>
+  <g transform="translate(68, 262)">
+    <text x="0" y="13" fill="#68707E" font-size="10" font-weight="600" class="mono">ROLE</text>
+    <text x="0" y="34" fill="#F5F2EB" font-size="14" font-weight="600" class="sans">Full-Stack Developer</text>
 
-    <!-- Col 2 -->
-    <line x1="255" y1="0" x2="255" y2="44" stroke="#1E232E" stroke-width="1" />
-    <text x="280" y="14" fill="#68707E" font-size="10" font-weight="600" class="mono">CORE ECOSYSTEM</text>
-    <text x="280" y="36" fill="#E6E9EF" font-size="14" font-weight="600" class="sans">React 19 · Next.js 16 · NestJS · Python</text>
+    <line x1="230" y1="-4" x2="230" y2="42" stroke="#1A1F29" stroke-width="1" />
+    <text x="254" y="13" fill="#68707E" font-size="10" font-weight="600" class="mono">CORE STACK</text>
+    <text x="254" y="34" fill="#F5F2EB" font-size="14" font-weight="600" class="sans">React 19 · Next.js 16 · NestJS · Python</text>
 
-    <!-- Col 3 -->
-    <line x1="615" y1="0" x2="615" y2="44" stroke="#1E232E" stroke-width="1" />
-    <text x="640" y="14" fill="#68707E" font-size="10" font-weight="600" class="mono">ENGINEERING FOCUS</text>
-    <text x="640" y="36" fill="#E6E9EF" font-size="14" font-weight="600" class="sans">Clean Boundaries · Typed APIs · RLS</text>
+    <line x1="590" y1="-4" x2="590" y2="42" stroke="#1A1F29" stroke-width="1" />
+    <text x="614" y="13" fill="#68707E" font-size="10" font-weight="600" class="mono">CURRENT FOCUS</text>
+    <text x="614" y="34" fill="#F5F2EB" font-size="14" font-weight="600" class="sans">Building Kaikai (Platform &amp; CMS)</text>
 
-    <!-- Col 4 -->
-    <line x1="935" y1="0" x2="935" y2="44" stroke="#1E232E" stroke-width="1" />
-    <text x="960" y="14" fill="#68707E" font-size="10" font-weight="600" class="mono">PORTFOLIO</text>
-    <text x="960" y="36" fill="#E5484D" font-size="14" font-weight="700" class="sans">ttanphat.vercel.app ↗</text>
+    <line x1="896" y1="-4" x2="896" y2="42" stroke="#1A1F29" stroke-width="1" />
+    <text x="920" y="13" fill="#68707E" font-size="10" font-weight="600" class="mono">PORTFOLIO</text>
+    <text x="920" y="34" fill="#E5484D" font-size="14" font-weight="700" class="sans">ttanphat.vercel.app ↗</text>
   </g>
 </svg>

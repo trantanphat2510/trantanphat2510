@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 250" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 592 236" width="100%" height="100%">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#121620" />
+      <stop offset="0%" stop-color="#11151E" />
       <stop offset="100%" stop-color="#0B0E13" />
     </linearGradient>
-    <radialGradient id="glow" cx="90%" cy="15%" r="55%">
-      <stop offset="0%" stop-color="#E5484D" stop-opacity="0.22" />
+    <radialGradient id="glow" cx="92%" cy="12%" r="50%">
+      <stop offset="0%" stop-color="#E5484D" stop-opacity="0.16" />
       <stop offset="100%" stop-color="#0B0E13" stop-opacity="0" />
     </radialGradient>
     <style>
@@ -20,56 +20,56 @@
     </style>
   </defs>
 
-  <rect width="590" height="250" rx="16" fill="url(#bg)" />
-  <rect width="590" height="250" rx="16" fill="url(#glow)" />
-  <rect x="0.75" y="0.75" width="588.5" height="248.5" rx="15.25" fill="none" stroke="#262C3A" stroke-width="1.5" />
+  <rect width="592" height="236" rx="14" fill="url(#bg)" />
+  <rect width="592" height="236" rx="14" fill="url(#glow)" />
+  <rect x="0.75" y="0.75" width="590.5" height="234.5" rx="13.25" fill="none" stroke="#1E232E" stroke-width="1.5" />
 
-  <!-- Top Row -->
-  <text x="28" y="38" fill="#E5484D" font-size="11" font-weight="700" class="mono">01 / WEB PLATFORM &amp; CMS</text>
-  <g transform="translate(424, 21)">
-    <rect width="138" height="24" rx="12" fill="#1C1418" stroke="#4D2228" />
-    <circle cx="14" cy="12" r="3.5" fill="#E5484D" />
+  <!-- Left Spine Match -->
+  <line x1="24" y1="0" x2="24" y2="236" stroke="#1A1F29" stroke-width="1" />
+  <circle cx="24" cy="34" r="3" fill="#E5484D" />
+
+  <text x="42" y="38" fill="#E5484D" font-size="10.5" font-weight="700" class="mono">03.1 / WEB PLATFORM &amp; CMS</text>
+  <g transform="translate(422, 20)">
+    <rect width="144" height="24" rx="12" fill="#171217" stroke="#3D2026" />
+    <circle cx="14" cy="12" r="3" fill="#E5484D" />
     <text x="25" y="15.5" fill="#F2B8B5" font-size="9.5" font-weight="600" class="mono">website-kaikai ↗</text>
   </g>
 
-  <!-- Title & Summary -->
-  <text x="28" y="78" fill="#F5F2EB" font-size="28" font-weight="800" class="sans">Kaikai</text>
-  <text x="28" y="106" fill="#9BA3B0" font-size="13.5" class="sans">
+  <text x="42" y="76" fill="#F5F2EB" font-size="26" font-weight="800" class="sans">Kaikai</text>
+  <text x="42" y="102" fill="#9BA3B0" font-size="13" class="sans">
     Customer ordering platform &amp; operator CMS over one relational layer.
   </text>
-  <text x="28" y="126" fill="#9BA3B0" font-size="13.5" class="sans">
+  <text x="42" y="121" fill="#9BA3B0" font-size="13" class="sans">
     Single-flight read coalescing, route caching &amp; 3-layer authorization.
   </text>
 
-  <!-- Mini Architecture Flow -->
-  <g transform="translate(28, 146)">
-    <rect width="534" height="40" rx="8" fill="#10141D" stroke="#1F2532" />
-    <text x="16" y="24" fill="#68707E" font-size="10" font-weight="700" class="mono">ARCH:</text>
-    <text x="64" y="24" fill="#E2E6EE" font-size="11" font-weight="600" class="mono">NEXT.JS 16 CACHE</text>
-    <text x="196" y="24" fill="#E5484D" font-size="11" class="mono">→</text>
-    <text x="216" y="24" fill="#E2E6EE" font-size="11" font-weight="600" class="mono">NESTJS 11 RBAC</text>
-    <text x="338" y="24" fill="#E5484D" font-size="11" class="mono">→</text>
-    <text x="358" y="24" fill="#E2E6EE" font-size="11" font-weight="600" class="mono">POSTGRESQL RLS</text>
+  <g transform="translate(42, 138)">
+    <rect width="524" height="36" rx="7" fill="#0E121A" stroke="#1C222E" />
+    <text x="14" y="22" fill="#68707E" font-size="9.5" font-weight="700" class="mono">FLOW:</text>
+    <text x="62" y="22" fill="#E2E6EE" font-size="10.5" font-weight="600" class="mono">NEXT.JS 16 CACHE</text>
+    <text x="190" y="22" fill="#E5484D" font-size="11" class="mono">→</text>
+    <text x="208" y="22" fill="#E2E6EE" font-size="10.5" font-weight="600" class="mono">NESTJS 11 RBAC</text>
+    <text x="326" y="22" fill="#E5484D" font-size="11" class="mono">→</text>
+    <text x="344" y="22" fill="#E2E6EE" font-size="10.5" font-weight="600" class="mono">POSTGRESQL RLS</text>
   </g>
 
-  <!-- Tech Stack Pills -->
-  <g transform="translate(28, 202)">
-    <rect width="84" height="24" rx="6" fill="#171C28" />
-    <text x="42" y="15.5" text-anchor="middle" fill="#C7CCD6" font-size="10" font-weight="600" class="mono">Next.js 16</text>
+  <g transform="translate(42, 190)">
+    <rect width="82" height="24" rx="5" fill="#151A24" stroke="#222836" />
+    <text x="41" y="15.5" text-anchor="middle" fill="#C7CCD6" font-size="9.5" font-weight="600" class="mono">Next.js 16</text>
 
-    <rect x="92" width="76" height="24" rx="6" fill="#171C28" />
-    <text x="130" y="15.5" text-anchor="middle" fill="#C7CCD6" font-size="10" font-weight="600" class="mono">React 19</text>
+    <rect x="90" width="74" height="24" rx="5" fill="#151A24" stroke="#222836" />
+    <text x="127" y="15.5" text-anchor="middle" fill="#C7CCD6" font-size="9.5" font-weight="600" class="mono">React 19</text>
 
-    <rect x="176" width="82" height="24" rx="6" fill="#171C28" />
-    <text x="217" y="15.5" text-anchor="middle" fill="#C7CCD6" font-size="10" font-weight="600" class="mono">NestJS 11</text>
+    <rect x="172" width="80" height="24" rx="5" fill="#151A24" stroke="#222836" />
+    <text x="212" y="15.5" text-anchor="middle" fill="#C7CCD6" font-size="9.5" font-weight="600" class="mono">NestJS 11</text>
 
-    <rect x="266" width="90" height="24" rx="6" fill="#171C28" />
-    <text x="311" y="15.5" text-anchor="middle" fill="#C7CCD6" font-size="10" font-weight="600" class="mono">PostgreSQL</text>
+    <rect x="260" width="88" height="24" rx="5" fill="#151A24" stroke="#222836" />
+    <text x="304" y="15.5" text-anchor="middle" fill="#C7CCD6" font-size="9.5" font-weight="600" class="mono">PostgreSQL</text>
 
-    <rect x="364" width="78" height="24" rx="6" fill="#171C28" />
-    <text x="403" y="15.5" text-anchor="middle" fill="#C7CCD6" font-size="10" font-weight="600" class="mono">Supabase</text>
+    <rect x="356" width="76" height="24" rx="5" fill="#151A24" stroke="#222836" />
+    <text x="394" y="15.5" text-anchor="middle" fill="#C7CCD6" font-size="9.5" font-weight="600" class="mono">Supabase</text>
 
-    <rect x="450" width="84" height="24" rx="6" fill="#171C28" />
-    <text x="492" y="15.5" text-anchor="middle" fill="#C7CCD6" font-size="10" font-weight="600" class="mono">Prisma ORM</text>
+    <rect x="440" width="84" height="24" rx="5" fill="#151A24" stroke="#222836" />
+    <text x="482" y="15.5" text-anchor="middle" fill="#C7CCD6" font-size="9.5" font-weight="600" class="mono">Prisma ORM</text>
   </g>
 </svg>
