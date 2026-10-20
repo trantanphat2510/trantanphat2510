@@ -18,7 +18,7 @@
 ### `01` &nbsp; Profile
 
 ```yaml
-role:        Full-Stack Developer (React / Next.js & Node.js / NestJS)
+role:        Full-Stack Developer (React / Next.js · Node.js / NestJS · Python)
 experience:  VNDTS Company (2025–Present) · HITEK Solution (2025)
 education:   B.Sc. in Information Technology — HUTECH (2021–2025)
 focus:       End-to-end web products, clean boundaries, and reliable APIs
@@ -53,7 +53,7 @@ focus:       End-to-end web products, clean boundaries, and reliable APIs
 **Backend, Database & Infra**
 <br />
 <a href="https://ttanphat.vercel.app/">
-  <img src="https://skillicons.dev/icons?i=nodejs,nestjs,express,php,postgres,prisma,supabase,mongodb,sqlite,docker,vercel,git&theme=dark" alt="Backend & Infra Stack" />
+  <img src="https://skillicons.dev/icons?i=nodejs,nestjs,express,py,fastapi,php,postgres,prisma,supabase,mongodb,sqlite,docker,vercel,git&theme=dark" alt="Backend & Infra Stack" />
 </a>
 
 </div>
