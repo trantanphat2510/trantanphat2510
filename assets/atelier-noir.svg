@@ -205,9 +205,8 @@
       .phat-name-sweep { animation: phatNameSweepAnim 12s infinite ease-in-out; }
       .phat-speech { animation: phatSpeechPop 12s infinite ease-in-out; transform-origin: 640px 80px; }
       .eyes-normal { animation: eyesNormalToggle 12s infinite steps(1, end); }
-      .eyes-scan { animation: eyesScanToggle 12s infinite steps(1, end); }
       .eyes-happy { animation: eyesHappyToggle 12s infinite steps(1, end); }
-      .bot-eyes { animation: eyeBlinkNatural 4.2s infinite ease-in-out; transform-origin: 10px 86px; }
+      .bot-eyes { animation: eyeBlinkNatural 4.2s infinite ease-in-out; transform-origin: 0px 78.5px; }
       .holo-scanline { animation: scanSweep 3.6s infinite ease-in-out; }
       .cursor-blink { animation: blinkCursor 1s infinite steps(2, start); }
 
@@ -543,16 +542,9 @@
         97%, 100% { opacity: 0; transform: translateY(4px) scale(0.95); }
       }
       @keyframes eyesNormalToggle {
-        0%, 26.9%  { opacity: 1; }
-        27%, 47.9% { opacity: 0; }
-        48%, 75.9% { opacity: 1; }
+        0%, 75.9%  { opacity: 1; }
         76%, 96.9% { opacity: 0; }
         97%, 100%  { opacity: 1; }
-      }
-      @keyframes eyesScanToggle {
-        0%, 26.9%  { opacity: 0; }
-        27%, 47.9% { opacity: 1; }
-        48%, 100%  { opacity: 0; }
       }
       @keyframes eyesHappyToggle {
         0%, 75.9%  { opacity: 0; }
@@ -845,7 +837,7 @@
   <circle cx="739" cy="233" r="2" fill="#38BDF8" />
   <circle cx="832" cy="233" r="3" fill="#38BDF8" filter="url(#crimsonBloom)" />
 
-  <!-- PATROLLING STREETWEAR HOODIE CHIBI BOY (GLASSES, BLACK HOODIE & WHITE SNEAKERS) -->
+  <!-- PATROLLING STREETWEAR HOODIE CHIBI BOY (CUTE ANIME EYES, BLACK HOODIE & WHITE SNEAKERS) -->
   <g transform="translate(730, 40)">
     <g class="bot-patrol">
       <g class="bot-shadow">
@@ -912,7 +904,7 @@
           <circle cx="4" cy="127.5" r="0.8" fill="#FFFFFF" />
           <line x1="-5" y1="133.5" x2="5" y2="133.5" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" />
 
-          <!-- 4. HEAD: FLUFFY MESSY HAIR, BLACK GLASSES & WARM BROWN EYES -->
+          <!-- 4. HEAD: FLUFFY MESSY HAIR & BIG WARM SPARKLING ANIME EYES -->
           <g class="bot-head">
             <!-- Back Hair Mass (Voluminous & Tousled) -->
             <ellipse cx="0" cy="70" rx="28" ry="26" fill="url(#chibiHairBrown)" />
@@ -939,7 +931,7 @@
             <ellipse cx="-13" cy="87.5" rx="4.2" ry="2" fill="#FF8A9E" fill-opacity="0.45" />
             <ellipse cx="13" cy="87.5" rx="4.2" ry="2" fill="#FF8A9E" fill-opacity="0.45" />
 
-            <!-- Cute Eyebrows Visible Above Glasses -->
+            <!-- Cute Expressive Anime Eyebrows -->
             <path d="M -17 67 Q -11 64 -6 66" fill="none" stroke="#2B211B" stroke-width="1.8" stroke-linecap="round" />
             <path d="M 6 66 Q 11 64 17 67" fill="none" stroke="#2B211B" stroke-width="1.8" stroke-linecap="round" />
 
@@ -951,7 +943,7 @@
 
             <!-- 3 DYNAMIC ANIME EXPRESSIONS -->
             <g class="bot-eyes">
-              <!-- STATE 1: NORMAL WARM CHOCOLATE-BROWN EYES (BEHIND GLASSES) -->
+              <!-- STATE 1: BIG SPARKLING CHOCOLATE-BROWN ANIME EYES -->
               <g class="eyes-normal">
                 <!-- Left Eye -->
                 <ellipse cx="-10.5" cy="78.5" rx="5.5" ry="6" fill="#FFFFFF" />
@@ -972,24 +964,6 @@
                 <path d="M 5 74 Q 10.5 72 16 74" fill="none" stroke="#161210" stroke-width="2" stroke-linecap="round" />
               </g>
 
-              <!-- STATE 2: TECH HUD GLASSES INSPECTION (AT TERMINAL) -->
-              <g class="eyes-scan">
-                <!-- Left Eye -->
-                <ellipse cx="-10.5" cy="78.5" rx="5" ry="5.5" fill="#FFFFFF" />
-                <ellipse cx="-10" cy="78.5" rx="3.8" ry="4.5" fill="#38BDF8" />
-                <circle cx="-10" cy="78.5" r="2" fill="#0284C7" />
-                <circle cx="-11.5" cy="77" r="1.2" fill="#FFFFFF" />
-                <circle cx="-10" cy="78.5" r="6" fill="none" stroke="#38BDF8" stroke-width="0.8" stroke-dasharray="3 2" />
-
-                <!-- Right Eye: High-tech Cyan Glare on Lens -->
-                <ellipse cx="10.5" cy="78.5" rx="5" ry="5.5" fill="#FFFFFF" />
-                <ellipse cx="10" cy="78.5" rx="3.8" ry="4.5" fill="#38BDF8" />
-                <circle cx="10" cy="78.5" r="2" fill="#0284C7" />
-                <circle cx="8.5" cy="77" r="1.2" fill="#FFFFFF" />
-                <!-- Terminal Wink Smirk -->
-                <path d="M -2 89.5 Q 2 93 5 89" fill="none" stroke="#9A3412" stroke-width="1.4" stroke-linecap="round" />
-              </g>
-
               <!-- STATE 3: PURE JOY ^ ^ EYES & HEART BLUSH (SPOTLIGHTING TRAN TAN PHAT) -->
               <g class="eyes-happy">
                 <path d="M -15 79 Q -10 72.5 -5 79" fill="none" stroke="#161210" stroke-width="2.5" stroke-linecap="round" />
@@ -1004,20 +978,7 @@
               </g>
             </g>
 
-            <!-- THICK BLACK RECTANGULAR GLASSES (Exact Match to Reference Image) -->
-            <!-- Left Frame -->
-            <rect x="-19" y="70" width="17" height="17" rx="4.5" fill="none" stroke="#0D0B0A" stroke-width="2.6" />
-            <line x1="-16" y1="72.5" x2="-6" y2="72.5" stroke="#FFFFFF" stroke-width="0.8" stroke-linecap="round" opacity="0.35" />
-            <!-- Right Frame -->
-            <rect x="2" y="70" width="17" height="17" rx="4.5" fill="none" stroke="#0D0B0A" stroke-width="2.6" />
-            <line x1="5" y1="72.5" x2="15" y2="72.5" stroke="#FFFFFF" stroke-width="0.8" stroke-linecap="round" opacity="0.35" />
-            <!-- Nose Bridge -->
-            <path d="M -2 76.5 Q 0 75 2 76.5" fill="none" stroke="#0D0B0A" stroke-width="2.4" stroke-linecap="round" />
-            <!-- Temples to Ears -->
-            <line x1="-19" y1="76" x2="-23" y2="78" stroke="#0D0B0A" stroke-width="2.2" stroke-linecap="round" />
-            <line x1="19" y1="76" x2="23" y2="78" stroke="#0D0B0A" stroke-width="2.2" stroke-linecap="round" />
-
-            <!-- FRONT LAYER: FLUFFY WAVY BANGS OVERLAPPING GLASSES TOP (SECONDARY MOTION) -->
+            <!-- FRONT LAYER: FLUFFY WAVY BANGS (SECONDARY MOTION) -->
             <g class="hair-fluff">
               <path d="M -22 60 Q -26 73 -18 80 Q -17 72 -20 62 Z" fill="url(#chibiHairBrown)" />
               <path d="M -18 52 Q -15 69 -8 72 Q -11 62 -12 54 Z" fill="url(#chibiHairBrown)" />
