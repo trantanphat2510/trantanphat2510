@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 1440" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 1204" width="100%" height="100%">
   <defs>
     <!-- Master High-Contrast Surfaces -->
     <linearGradient id="canvasBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -230,7 +230,7 @@
         0% { transform: translateY(36px); opacity: 0; }
         10% { opacity: 1; }
         90% { opacity: 1; }
-        100% { transform: translateY(1310px); opacity: 0; }
+        100% { transform: translateY(1074px); opacity: 0; }
       }
       @keyframes wave {
         0%, 100% { opacity: 0.35; }
@@ -599,39 +599,35 @@
   </defs>
 
   <!-- ===================================================================== -->
-  <!-- MASTER MONOLITH CANVAS (1200 x 1440 — High Contrast, Large Typography)-->
+  <!-- MASTER MONOLITH CANVAS (1200 x 1204 — High Contrast, Large Typography)-->
   <!-- ===================================================================== -->
-  <rect width="1200" height="1440" rx="20" fill="url(#canvasBg)" />
-  <rect width="1200" height="1440" rx="20" fill="url(#archGrid)" />
-  <rect width="1200" height="1440" rx="20" fill="url(#heroGlow)" />
-  <rect width="1200" height="1440" rx="20" fill="url(#centerGlow)" />
-  <rect x="0.75" y="0.75" width="1198.5" height="1438.5" rx="19.25" fill="none" stroke="#263046" stroke-width="1.5" />
+  <rect width="1200" height="1204" rx="20" fill="url(#canvasBg)" />
+  <rect width="1200" height="1204" rx="20" fill="url(#archGrid)" />
+  <rect width="1200" height="1204" rx="20" fill="url(#heroGlow)" />
+  <rect width="1200" height="1204" rx="20" fill="url(#centerGlow)" />
+  <rect x="0.75" y="0.75" width="1198.5" height="1202.5" rx="19.25" fill="none" stroke="#263046" stroke-width="1.5" />
 
   <!-- ===================================================================== -->
-  <!-- CONTINUOUS ARCHITECTURAL SPINE (x=36, connects 01 -> 02 -> 03 -> 04 -> 05) -->
+  <!-- CONTINUOUS ARCHITECTURAL SPINE (x=36, connects 01 -> 02 -> 03 -> 04)      -->
   <!-- ===================================================================== -->
-  <line x1="36" y1="56" x2="36" y2="1382" stroke="#28334A" stroke-width="1.5" />
+  <line x1="36" y1="56" x2="36" y2="1147" stroke="#28334A" stroke-width="1.5" />
   <rect x="34.75" y="0" width="2.5" height="90" fill="url(#spinePulseGrad)" class="spine-signal" />
 
   <!-- Node 01: Hero Command Deck -->
   <circle cx="36" cy="56" r="5" fill="#E5484D" />
   <line x1="36" y1="56" x2="64" y2="56" stroke="#E5484D" stroke-width="1.8" />
 
-  <!-- Node 02: Professional Experience -->
+  <!-- Node 02: Tech Stack Matrix -->
   <circle cx="36" cy="322" r="5" fill="#E5484D" />
   <line x1="36" y1="322" x2="64" y2="322" stroke="#E5484D" stroke-width="1.8" />
 
-  <!-- Node 03: Tech Stack Matrix -->
-  <circle cx="36" cy="558" r="5" fill="#E5484D" />
-  <line x1="36" y1="558" x2="64" y2="558" stroke="#E5484D" stroke-width="1.8" />
+  <!-- Node 03: Selected Systems -->
+  <circle cx="36" cy="700" r="5" fill="#E5484D" />
+  <line x1="36" y1="700" x2="64" y2="700" stroke="#E5484D" stroke-width="1.8" />
 
-  <!-- Node 04: Selected Systems -->
-  <circle cx="36" cy="936" r="5" fill="#E5484D" />
-  <line x1="36" y1="936" x2="64" y2="936" stroke="#E5484D" stroke-width="1.8" />
-
-  <!-- Node 05: Signature Footer -->
-  <circle cx="36" cy="1382" r="5" fill="#E5484D" />
-  <line x1="36" y1="1382" x2="64" y2="1382" stroke="#E5484D" stroke-width="1.8" />
+  <!-- Node 04: Signature Footer -->
+  <circle cx="36" cy="1147" r="5" fill="#E5484D" />
+  <line x1="36" y1="1147" x2="64" y2="1147" stroke="#E5484D" stroke-width="1.8" />
 
   <!-- ===================================================================== -->
   <!-- 01 // EXECUTIVE HERO & INTERACTIVE AI CO-PILOT COMMAND DECK           -->
@@ -1026,117 +1022,19 @@
   </g>
 
   <!-- ===================================================================== -->
-  <!-- 02 // PROFESSIONAL EXPERIENCE (Official Brand Logos, Zero Overlap)    -->
+  <!-- 02 // ARCHITECTURE & TECH STACK (Official Brand Logos, 2x2 Bento Grid)-->
   <!-- ===================================================================== -->
-  <text x="64" y="326" fill="#FF6B72" font-size="13" font-weight="800" class="mono">02 // PROFESSIONAL EXPERIENCE</text>
-  <text x="342" y="326" fill="#4B566E" font-size="13" class="mono">—</text>
-  <text x="362" y="326" fill="#CBD5E1" font-size="12" font-weight="600" class="mono">ENTERPRISE &amp; PRODUCT ENGINEERING TIMELINE</text>
-
-  <!-- Timeline Connector Bridge -->
-  <line x1="604" y1="432" x2="620" y2="432" stroke="#E5484D" stroke-width="2" />
-  <circle cx="612" cy="432" r="4" fill="#151B28" stroke="#E5484D" stroke-width="2" />
-
-  <!-- EXPERIENCE 01: VNDTS COMPANY (x=64, y=342, w=540, h=178) -->
-  <g transform="translate(64, 342)">
-    <rect width="540" height="178" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
-    <rect x="18" y="0" width="504" height="3" rx="1.5" fill="#E5484D" />
-
-    <circle cx="30" cy="27" r="4" fill="#10B981" class="pulse-ring" />
-    <circle cx="30" cy="27" r="4" fill="#10B981" class="pulse-dot" />
-    <text x="42" y="31" fill="#FF6B72" font-size="10.5" font-weight="700" class="mono">01 // FULL-STACK DEVELOPER</text>
-
-    <rect x="356" y="14" width="160" height="25" rx="12.5" fill="#102820" stroke="#10B981" stroke-width="1.2" />
-    <text x="436" y="30" text-anchor="middle" fill="#6EE7B7" font-size="9.5" font-weight="700" class="mono">NOV 2025 – AUG 2026</text>
-
-    <text x="24" y="64" fill="#FFFFFF" font-size="25" font-weight="800" letter-spacing="-0.02em" class="sans">VNDTS Company</text>
-    <text x="228" y="64" fill="#A6B0C3" font-size="13.5" font-weight="600" class="sans">· Ho Chi Minh City, VN</text>
-
-    <text x="24" y="90" fill="#E2E8F0" font-size="13" font-weight="500" class="sans">• Develop responsive, high-performance enterprise business websites in PHP.</text>
-    <text x="24" y="112" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• Translate Figma systems into pixel-accurate UI architectures with Git/GitHub.</text>
-
-    <line x1="24" y1="126" x2="516" y2="126" stroke="#28334A" stroke-width="1" />
-
-    <g transform="translate(24, 136)">
-      <rect width="88" height="30" rx="7" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
-      <use href="#logo-php" xlink:href="#logo-php" x="9" y="7" width="16" height="16" />
-      <text x="30" y="19.5" fill="#FFFFFF" font-size="12.5" font-weight="700" class="sans">PHP</text>
-    </g>
-    <g transform="translate(122, 136)">
-      <rect width="110" height="30" rx="7" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
-      <use href="#logo-figma" xlink:href="#logo-figma" x="9" y="7" width="16" height="16" />
-      <text x="30" y="19.5" fill="#FFFFFF" font-size="12.5" font-weight="700" class="sans">Figma UI</text>
-    </g>
-    <g transform="translate(242, 136)">
-      <rect width="82" height="30" rx="7" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
-      <use href="#logo-git" xlink:href="#logo-git" x="9" y="7" width="16" height="16" />
-      <text x="30" y="19.5" fill="#FFFFFF" font-size="12.5" font-weight="700" class="sans">Git</text>
-    </g>
-    <g transform="translate(334, 136)">
-      <rect width="102" height="30" rx="7" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
-      <use href="#logo-github" xlink:href="#logo-github" x="9" y="7" width="16" height="16" />
-      <text x="30" y="19.5" fill="#FFFFFF" font-size="12.5" font-weight="700" class="sans">GitHub</text>
-    </g>
-  </g>
-
-  <!-- EXPERIENCE 02: HITEK SOLUTION (x=620, y=342, w=540, h=178) -->
-  <g transform="translate(620, 342)">
-    <rect width="540" height="178" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
-    <rect x="18" y="0" width="504" height="3" rx="1.5" fill="#38BDF8" />
-
-    <text x="24" y="31" fill="#38BDF8" font-size="10.5" font-weight="700" class="mono">02 // FULL-STACK DEVELOPER</text>
-
-    <rect x="356" y="14" width="160" height="25" rx="12.5" fill="#162033" stroke="#38BDF8" stroke-opacity="0.6" stroke-width="1.2" />
-    <text x="436" y="30" text-anchor="middle" fill="#E0F2FE" font-size="9.5" font-weight="700" class="mono">APR 2025 – OCT 2025</text>
-
-    <text x="24" y="64" fill="#FFFFFF" font-size="25" font-weight="800" letter-spacing="-0.02em" class="sans">HITEK Solution</text>
-    <text x="208" y="64" fill="#A6B0C3" font-size="13.5" font-weight="600" class="sans">· Ho Chi Minh City, VN</text>
-
-    <text x="24" y="90" fill="#E2E8F0" font-size="13" font-weight="500" class="sans">• Engineered dynamic product frontends with React.js, Next.js &amp; TypeScript.</text>
-    <text x="24" y="112" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• Architected modular state with Redux Toolkit, Tailwind CSS &amp; REST APIs.</text>
-
-    <line x1="24" y1="126" x2="516" y2="126" stroke="#28334A" stroke-width="1" />
-
-    <g transform="translate(24, 136)">
-      <rect width="92" height="30" rx="7" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
-      <use href="#logo-react" xlink:href="#logo-react" x="9" y="7" width="16" height="16" />
-      <text x="30" y="19.5" fill="#FFFFFF" font-size="12" font-weight="700" class="sans">React.js</text>
-    </g>
-    <g transform="translate(122, 136)">
-      <rect width="88" height="30" rx="7" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
-      <use href="#logo-nextjs" xlink:href="#logo-nextjs" x="9" y="7" width="16" height="16" />
-      <text x="30" y="19.5" fill="#FFFFFF" font-size="12" font-weight="700" class="sans">Next.js</text>
-    </g>
-    <g transform="translate(216, 136)">
-      <rect width="106" height="30" rx="7" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
-      <use href="#logo-ts" xlink:href="#logo-ts" x="9" y="7" width="16" height="16" />
-      <text x="30" y="19.5" fill="#FFFFFF" font-size="12" font-weight="700" class="sans">TypeScript</text>
-    </g>
-    <g transform="translate(328, 136)">
-      <rect width="94" height="30" rx="7" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
-      <use href="#logo-tailwind" xlink:href="#logo-tailwind" x="9" y="7" width="16" height="16" />
-      <text x="30" y="19.5" fill="#FFFFFF" font-size="12" font-weight="700" class="sans">Tailwind</text>
-    </g>
-    <g transform="translate(428, 136)">
-      <rect width="88" height="30" rx="7" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
-      <use href="#logo-redux" xlink:href="#logo-redux" x="9" y="7" width="16" height="16" />
-      <text x="30" y="19.5" fill="#FFFFFF" font-size="12" font-weight="700" class="sans">Redux</text>
-    </g>
-  </g>
-
-  <!-- ===================================================================== -->
-  <!-- 03 // ARCHITECTURE & TECH STACK (Official Brand Logos, 2x2 Bento Grid)-->
-  <!-- ===================================================================== -->
-  <text x="64" y="562" fill="#FF6B72" font-size="13" font-weight="800" class="mono">03 // ARCHITECTURE &amp; TECH STACK</text>
-  <text x="356" y="562" fill="#4B566E" font-size="13" class="mono">—</text>
-  <text x="376" y="562" fill="#CBD5E1" font-size="12" font-weight="600" class="mono">32 CORE PRODUCTION TECHNOLOGIES BY LAYER</text>
+  <text x="64" y="326" fill="#FF6B72" font-size="13" font-weight="800" class="mono">02 // ARCHITECTURE &amp; TECH STACK</text>
+  <text x="356" y="326" fill="#4B566E" font-size="13" class="mono">—</text>
+  <text x="376" y="326" fill="#CBD5E1" font-size="12" font-weight="600" class="mono">32 CORE PRODUCTION TECHNOLOGIES BY LAYER</text>
 
   <!-- Grid Connectors -->
-  <line x1="604" y1="654" x2="620" y2="654" stroke="#E5484D" stroke-width="2" />
-  <line x1="604" y1="824" x2="620" y2="824" stroke="#E5484D" stroke-width="2" />
-  <circle cx="612" cy="739" r="4" fill="#151B28" stroke="#E5484D" stroke-width="2" />
+  <line x1="604" y1="419" x2="620" y2="419" stroke="#E5484D" stroke-width="2" />
+  <line x1="604" y1="589" x2="620" y2="589" stroke="#E5484D" stroke-width="2" />
+  <circle cx="612" cy="504" r="4" fill="#151B28" stroke="#E5484D" stroke-width="2" />
 
-  <!-- STACK LAYER 01: FRONTEND & UI ENGINEERING (x=64, y=578, w=540, h=154) -->
-  <g transform="translate(64, 578)">
+  <!-- STACK LAYER 01: FRONTEND & UI ENGINEERING (x=64, y=342, w=540, h=154) -->
+  <g transform="translate(64, 342)">
     <rect width="540" height="154" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
     <text x="24" y="30" fill="#FF6B72" font-size="11" font-weight="800" class="mono">01 // CLIENT, STATE &amp; MOTION ARCHITECTURE</text>
     <text x="516" y="30" text-anchor="end" fill="#94A3B8" font-size="10" font-weight="700" class="mono">FRONTEND LAYER</text>
@@ -1184,8 +1082,8 @@
     </g>
   </g>
 
-  <!-- STACK LAYER 02: BACKEND, AI & REALTIME (x=620, y=578, w=540, h=154) -->
-  <g transform="translate(620, 578)">
+  <!-- STACK LAYER 02: BACKEND, AI & REALTIME (x=620, y=342, w=540, h=154) -->
+  <g transform="translate(620, 342)">
     <rect width="540" height="154" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
     <text x="24" y="30" fill="#FF6B72" font-size="11" font-weight="800" class="mono">02 // BACKEND SERVICES, AI &amp; REALTIME VOICE</text>
     <text x="516" y="30" text-anchor="end" fill="#94A3B8" font-size="10" font-weight="700" class="mono">SERVER LAYER</text>
@@ -1233,8 +1131,8 @@
     </g>
   </g>
 
-  <!-- STACK LAYER 03: DATA LAYER & SECURITY (x=64, y=748, w=540, h=154) -->
-  <g transform="translate(64, 748)">
+  <!-- STACK LAYER 03: DATA LAYER & SECURITY (x=64, y=512, w=540, h=154) -->
+  <g transform="translate(64, 512)">
     <rect width="540" height="154" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
     <text x="24" y="30" fill="#FF6B72" font-size="11" font-weight="800" class="mono">03 // RELATIONAL DATA, ORMS &amp; SECURITY</text>
     <text x="516" y="30" text-anchor="end" fill="#94A3B8" font-size="10" font-weight="700" class="mono">DATA LAYER</text>
@@ -1282,8 +1180,8 @@
     </g>
   </g>
 
-  <!-- STACK LAYER 04: DEVOPS, TESTING & DESIGN (x=620, y=748, w=540, h=154) -->
-  <g transform="translate(620, 748)">
+  <!-- STACK LAYER 04: DEVOPS, TESTING & DESIGN (x=620, y=512, w=540, h=154) -->
+  <g transform="translate(620, 512)">
     <rect width="540" height="154" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
     <text x="24" y="30" fill="#FF6B72" font-size="11" font-weight="800" class="mono">04 // DELIVERY, E2E QUALITY &amp; TOOLING</text>
     <text x="516" y="30" text-anchor="end" fill="#94A3B8" font-size="10" font-weight="700" class="mono">DEVOPS LAYER</text>
@@ -1332,19 +1230,19 @@
   </g>
 
   <!-- ===================================================================== -->
-  <!-- 04 // SELECTED PRODUCTION SYSTEMS (With Official Brand Logos)         -->
+  <!-- 03 // SELECTED PRODUCTION SYSTEMS (With Official Brand Logos)         -->
   <!-- ===================================================================== -->
-  <text x="64" y="940" fill="#FF6B72" font-size="13" font-weight="800" class="mono">04 // SELECTED ENGINEERING WORK</text>
-  <text x="358" y="940" fill="#4B566E" font-size="13" class="mono">—</text>
-  <text x="378" y="940" fill="#CBD5E1" font-size="12" font-weight="600" class="mono">4 END-TO-END PRODUCTION ARCHITECTURES</text>
+  <text x="64" y="704" fill="#FF6B72" font-size="13" font-weight="800" class="mono">03 // SELECTED ENGINEERING WORK</text>
+  <text x="358" y="704" fill="#4B566E" font-size="13" class="mono">—</text>
+  <text x="378" y="704" fill="#CBD5E1" font-size="12" font-weight="600" class="mono">4 END-TO-END PRODUCTION ARCHITECTURES</text>
 
   <!-- Grid Center Node & Crossbars -->
-  <line x1="604" y1="1044" x2="620" y2="1044" stroke="#E5484D" stroke-width="2" />
-  <line x1="604" y1="1238" x2="620" y2="1238" stroke="#E5484D" stroke-width="2" />
-  <circle cx="612" cy="1141" r="4.5" fill="#151B28" stroke="#E5484D" stroke-width="2" />
+  <line x1="604" y1="810" x2="620" y2="810" stroke="#E5484D" stroke-width="2" />
+  <line x1="604" y1="1002" x2="620" y2="1002" stroke="#E5484D" stroke-width="2" />
+  <circle cx="612" cy="906" r="4.5" fill="#151B28" stroke="#E5484D" stroke-width="2" />
 
-  <!-- PROJECT 01: KAIKAI (x=64, y=958, w=540, h=176) -->
-  <g transform="translate(64, 958)">
+  <!-- PROJECT 01: KAIKAI (x=64, y=722, w=540, h=176) -->
+  <g transform="translate(64, 722)">
     <rect width="540" height="176" rx="14" fill="url(#deckBg)" stroke="#E5484D" stroke-opacity="0.65" stroke-width="1.5" />
     <rect x="18" y="0" width="504" height="3" rx="1.5" fill="#E5484D" />
 
@@ -1386,8 +1284,8 @@
     </g>
   </g>
 
-  <!-- PROJECT 02: MURMUR (x=620, y=958, w=540, h=176) -->
-  <g transform="translate(620, 958)">
+  <!-- PROJECT 02: MURMUR (x=620, y=722, w=540, h=176) -->
+  <g transform="translate(620, 722)">
     <rect width="540" height="176" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
     <rect x="18" y="0" width="504" height="3" rx="1.5" fill="#38BDF8" />
 
@@ -1429,8 +1327,8 @@
     </g>
   </g>
 
-  <!-- PROJECT 03: SOCIAL LEARNING (x=64, y=1150, w=540, h=176) -->
-  <g transform="translate(64, 1150)">
+  <!-- PROJECT 03: SOCIAL LEARNING (x=64, y=914, w=540, h=176) -->
+  <g transform="translate(64, 914)">
     <rect width="540" height="176" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
     <rect x="18" y="0" width="504" height="3" rx="1.5" fill="#A855F7" />
 
@@ -1472,8 +1370,8 @@
     </g>
   </g>
 
-  <!-- PROJECT 04: ATELIER NOIR (x=620, y=1150, w=540, h=176) -->
-  <g transform="translate(620, 1150)">
+  <!-- PROJECT 04: ATELIER NOIR (x=620, y=914, w=540, h=176) -->
+  <g transform="translate(620, 914)">
     <rect width="540" height="176" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
     <rect x="18" y="0" width="504" height="3" rx="1.5" fill="#10B981" />
 
@@ -1511,9 +1409,9 @@
   </g>
 
   <!-- ===================================================================== -->
-  <!-- 05 // ARCHITECTURAL SIGNATURE FOOTER BAR (x=64, y=1352, w=1096, h=62) -->
+  <!-- 04 // ARCHITECTURAL SIGNATURE FOOTER BAR (x=64, y=1116, w=1096, h=62) -->
   <!-- ===================================================================== -->
-  <g transform="translate(64, 1352)">
+  <g transform="translate(64, 1116)">
     <rect width="1096" height="62" rx="12" fill="url(#deckBg)" stroke="#2E3A54" stroke-width="1.4" />
     <text x="24" y="37" fill="#FFFFFF" font-size="17.5" font-weight="700" letter-spacing="-0.015em" class="sans">
       &quot;Good engineering is not just about writing code — it&apos;s about building something that <tspan fill="#FF6B72" font-size="20" class="serif-italic">matters.</tspan>&quot;
