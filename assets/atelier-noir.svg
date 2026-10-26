@@ -64,8 +64,39 @@
     </linearGradient>
 
     <linearGradient id="holoScreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#171F30" stop-opacity="0.96" />
-      <stop offset="100%" stop-color="#0D121D" stop-opacity="0.98" />
+      <stop offset="0%" stop-color="#121A2B" stop-opacity="0.98" />
+      <stop offset="55%" stop-color="#0B101C" stop-opacity="0.98" />
+      <stop offset="100%" stop-color="#070B13" stop-opacity="0.99" />
+    </linearGradient>
+
+    <linearGradient id="termBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#E5484D" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.65" />
+    </linearGradient>
+
+    <linearGradient id="activeBlockGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.24" />
+      <stop offset="65%" stop-color="#38BDF8" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.03" />
+    </linearGradient>
+
+    <linearGradient id="glassSheenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.045" />
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.015" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="holoEmitterCone" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="scanlineBarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
+      <stop offset="25%" stop-color="#38BDF8" stop-opacity="0.55" />
+      <stop offset="75%" stop-color="#E5484D" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#E5484D" stop-opacity="0" />
     </linearGradient>
 
     <!-- Streetwear Hoodie Chibi Boy Shaders (Pro Kindchenschema & Mochi Aesthetics) -->
@@ -209,7 +240,8 @@
 
       .point-beam-row1 { animation: pointLaserRow1 12s infinite ease-in-out; }
       .point-beam-row2 { animation: pointLaserRow2 12s infinite ease-in-out; }
-      .term-highlight { animation: termRowHighlight 12s infinite ease-in-out; }
+      .term-block-1 { animation: termBlock1Pulse 12s infinite ease-in-out; }
+      .term-block-2 { animation: termBlock2Pulse 12s infinite ease-in-out; }
       .phat-spotlight { animation: phatSpotlightShow 12s infinite ease-in-out; }
       .phat-name-blaze { animation: phatNameBlazeAnim 12s infinite ease-in-out; transform-origin: 325px 112px; }
       .phat-name-sweep { animation: phatNameSweepAnim 12s infinite ease-in-out; }
@@ -517,12 +549,15 @@
         39%, 47%  { opacity: 1; }
         48.5%, 100% { opacity: 0; }
       }
-      @keyframes termRowHighlight {
-        0%, 26%  { opacity: 0; transform: translateY(0px); }
-        28%, 37% { opacity: 0.95; transform: translateY(0px); }
-        38%      { opacity: 0.7; transform: translateY(20px); }
-        39%, 47% { opacity: 0.95; transform: translateY(40px); }
-        49%, 100% { opacity: 0; transform: translateY(40px); }
+      @keyframes termBlock1Pulse {
+        0%, 26.5%   { opacity: 0; }
+        28%, 37%    { opacity: 1; }
+        38.5%, 100% { opacity: 0; }
+      }
+      @keyframes termBlock2Pulse {
+        0%, 37.5%   { opacity: 0; }
+        39%, 47%    { opacity: 1; }
+        48.5%, 100% { opacity: 0; }
       }
       @keyframes phatSpotlightShow {
         0%, 75%   { opacity: 0; }
@@ -586,7 +621,7 @@
       }
       @keyframes scanSweep {
         0%, 100% { transform: translateY(0px); opacity: 0.25; }
-        50% { transform: translateY(96px); opacity: 0.75; }
+        50% { transform: translateY(114px); opacity: 0.8; }
       }
       @keyframes blinkCursor {
         0%, 100% { opacity: 1; }
@@ -1228,21 +1263,21 @@
   </g>
 
   <!-- RIGHT INTERACTION: TACTICAL HOLOGRAM SCAN CONE & LASER RETICLE AT TERMINAL -->
-  <!-- Row 1 Scan: Stylus Tip (829, 146) -> Terminal Command 1 (860, 132) -->
+  <!-- Block 1 Scan (28%–37%): Stylus Tip (829, 146) -> Warp Command Block 1 (854, 126) -->
   <g class="point-beam-row1">
-    <polygon points="829,146 860,122 860,142" fill="url(#scanBeamRight)" />
-    <line x1="829" y1="146" x2="860" y2="132" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
+    <polygon points="829,146 854,110 854,142" fill="url(#scanBeamRight)" />
+    <line x1="829" y1="146" x2="854" y2="126" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
     <circle cx="829" cy="146" r="3" fill="#FFFFFF" filter="url(#crimsonBloom)" />
-    <circle cx="860" cy="132" r="5" fill="none" stroke="#38BDF8" stroke-width="1.4" />
-    <circle cx="860" cy="132" r="2" fill="#E5484D" />
+    <circle cx="854" cy="126" r="5.5" fill="none" stroke="#38BDF8" stroke-width="1.3" />
+    <circle cx="854" cy="126" r="2.2" fill="#E5484D" />
   </g>
-  <!-- Row 2 Scan: Stylus Tip (830, 161) -> Terminal Command 2 (860, 172) -->
+  <!-- Block 2 Scan (39%–47%): Stylus Tip (830, 161) -> Warp Command Block 2 (854, 168) -->
   <g class="point-beam-row2">
-    <polygon points="830,161 860,162 860,182" fill="url(#scanBeamRight)" />
-    <line x1="830" y1="161" x2="860" y2="172" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
+    <polygon points="830,161 854,152 854,184" fill="url(#scanBeamRight)" />
+    <line x1="830" y1="161" x2="854" y2="168" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
     <circle cx="830" cy="161" r="3" fill="#FFFFFF" filter="url(#crimsonBloom)" />
-    <circle cx="860" cy="172" r="5" fill="none" stroke="#38BDF8" stroke-width="1.4" />
-    <circle cx="860" cy="172" r="2" fill="#E5484D" />
+    <circle cx="854" cy="168" r="5.5" fill="none" stroke="#38BDF8" stroke-width="1.3" />
+    <circle cx="854" cy="168" r="2.2" fill="#10B981" />
   </g>
 
   <!-- LEFT INTERACTION: WIDE SPOTLIGHT CONE & BLAZING FRAME ON "TRAN TAN PHAT" -->
@@ -1269,47 +1304,164 @@
 
   <!-- Floating Holographic Speech Bubble Inside Co-Pilot Stage (Zero Hair Overlap, Seamless Path) -->
   <g class="phat-speech">
-    <g transform="translate(700, 74)">
+    <g transform="translate(696, 72)">
       <path d="M 11 0 H 137 A 11 11 0 0 1 148 11 A 11 11 0 0 1 137 22 H 11 A 11 11 0 0 1 0.5 14.5 L -6.5 11 L 0.5 7.5 A 11 11 0 0 1 11 0 Z" fill="#121824" stroke="#10B981" stroke-width="1.2" stroke-linejoin="round" />
       <circle cx="12" cy="11" r="3" fill="#10B981" class="pulse-dot" />
       <text x="21" y="14.2" fill="#F5F2EB" font-size="7.6" font-weight="700" class="mono">✓ ALL SYSTEMS LIVE, PHAT!</text>
     </g>
   </g>
 
-  <!-- LIVE HOLOGRAPHIC WORKSTATION CONSOLE (x=852..1128, y=88..236) -->
-  <g transform="translate(852, 88)">
-    <rect width="276" height="146" rx="10" fill="url(#holoScreenGrad)" stroke="#E5484D" stroke-opacity="0.55" stroke-width="1.2" />
-    <rect x="8" y="34" width="260" height="20" rx="4" fill="#38BDF8" fill-opacity="0.18" stroke="#38BDF8" stroke-opacity="0.7" stroke-width="0.9" class="term-highlight" />
+  <!-- ===================================================================== -->
+  <!-- NOIR-OS // HOLOGRAPHIC WARP & IDE COMMAND DECK (x=848..1130, y=78..257) -->
+  <!-- ===================================================================== -->
+  <g transform="translate(848, 78)">
+    <!-- 1. Holographic Floor Emitter Pedestal & Upward Light Field -->
+    <polygon points="28,168 254,168 214,177 68,177" fill="url(#holoEmitterCone)" />
+    <rect x="58" y="175" width="166" height="4" rx="2" fill="#0F172A" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="0.9" />
+    <line x1="88" y1="177" x2="194" y2="177" stroke="#38BDF8" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+    <circle cx="72" cy="177" r="1.4" fill="#E5484D" />
+    <circle cx="141" cy="177" r="1.8" fill="#38BDF8" filter="url(#crimsonBloom)" />
+    <circle cx="210" cy="177" r="1.4" fill="#10B981" />
 
-    <rect x="1" y="1" width="274" height="24" rx="9" fill="#181218" />
-    <circle cx="13" cy="13" r="3" fill="#E5484D" />
-    <circle cx="23" cy="13" r="3" fill="#F59E0B" />
-    <circle cx="33" cy="13" r="3" fill="#10B981" />
-    <text x="45" y="16.5" fill="#F2B8B5" font-size="8.5" font-weight="700" class="mono">NOIR-AGENT // CO-PILOT</text>
+    <!-- 2. Outer Drop Shadow, Glassmorphic Bezel & Cybernetic HUD Corner Reticles -->
+    <rect x="-2" y="2" width="286" height="170" rx="11" fill="#030509" fill-opacity="0.65" />
+    <rect width="282" height="168" rx="10" fill="url(#holoScreenGrad)" stroke="url(#termBorderGrad)" stroke-width="1.3" />
+    <rect x="1.5" y="1.5" width="279" height="165" rx="8.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="0.9" />
 
-    <rect x="246" y="10" width="2" height="6" rx="1" fill="#10B981" class="wave1" />
-    <rect x="250" y="7" width="2" height="12" rx="1" fill="#10B981" class="wave2" />
-    <rect x="254" y="9" width="2" height="8" rx="1" fill="#10B981" class="wave3" />
-    <rect x="258" y="8" width="2" height="10" rx="1" fill="#10B981" class="wave1" />
+    <!-- Subtle Architectural Grid & Diagonal Specular Glass Reflection Inside Viewport -->
+    <rect x="25" y="26" width="256" height="122" fill="url(#archGrid)" opacity="0.55" />
+    <polygon points="2,26 150,26 88,148 2,148" fill="url(#glassSheenGrad)" />
 
-    <rect x="8" y="28" width="260" height="1.5" fill="#E5484D" fill-opacity="0.45" class="holo-scanline" />
+    <!-- 4 Precision HUD Corner Brackets -->
+    <path d="M -2.5 9 V -2.5 H 9" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" opacity="0.85" />
+    <path d="M 273 -2.5 H 284.5 V 9" fill="none" stroke="#E5484D" stroke-width="1.4" stroke-linecap="round" opacity="0.85" />
+    <path d="M -2.5 159 V 170.5 H 9" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" opacity="0.7" />
+    <path d="M 273 170.5 H 284.5 V 159" fill="none" stroke="#10B981" stroke-width="1.4" stroke-linecap="round" opacity="0.85" />
 
-    <text x="14" y="48" fill="#CBD5E1" font-size="9.5" class="code">
-      <tspan fill="#E5484D" font-weight="700">$ </tspan>agent.orchestrate(<tspan fill="#FFFFFF">&quot;kaikai-cms&quot;</tspan>)
+    <!-- 3. Warp / Ghostty Pro Multi-Tab Header Bar (Flush Top-Only Rounded Geometry) -->
+    <path d="M 1 10 A 9 9 0 0 1 10 1 H 272 A 9 9 0 0 1 281 10 V 26 H 1 Z" fill="#0A0E18" />
+    <line x1="1" y1="26" x2="281" y2="26" stroke="#24324D" stroke-width="1" />
+
+    <!-- macOS Pro Traffic Lights with Inner Specular Cores -->
+    <circle cx="13" cy="13.5" r="3.3" fill="#FF5F56" />
+    <circle cx="12" cy="12.5" r="1.0" fill="#FECACA" fill-opacity="0.65" />
+    <circle cx="23.5" cy="13.5" r="3.3" fill="#FFBD2E" />
+    <circle cx="22.5" cy="12.5" r="1.0" fill="#FEF08A" fill-opacity="0.65" />
+    <circle cx="34" cy="13.5" r="3.3" fill="#27C93F" />
+    <circle cx="33" cy="12.5" r="1.0" fill="#BBF7D0" fill-opacity="0.65" />
+
+    <!-- Active Tab 1: noir-agent.ts -->
+    <path d="M 46 26 V 9 A 5 5 0 0 1 51 4 H 150 A 5 5 0 0 1 155 9 V 26 Z" fill="#131C2E" stroke="#293A5A" stroke-width="0.85" />
+    <line x1="50" y1="4" x2="151" y2="4" stroke="#E5484D" stroke-width="1.6" stroke-linecap="round" />
+    <text x="54" y="17.5" fill="#38BDF8" font-size="8" font-weight="800" class="code">&gt;_</text>
+    <text x="68" y="17.5" fill="#F8FAFC" font-size="8" font-weight="700" class="code">noir-agent.ts</text>
+    <circle cx="145" cy="14.5" r="2" fill="#10B981" />
+
+    <!-- Inactive Tab 2: metrics.sh -->
+    <path d="M 159 26 V 10 A 4 4 0 0 1 163 6 H 222 A 4 4 0 0 1 226 10 V 26 Z" fill="#0D1422" stroke="#1E293B" stroke-width="0.75" />
+    <text x="167" y="17.5" fill="#64748B" font-size="7.5" font-weight="600" class="code">metrics.sh</text>
+
+    <!-- Right Header SSH Lock & Live Audio/Telemetry Equalizer -->
+    <text x="233" y="17" fill="#38BDF8" font-size="6.8" font-weight="700" class="mono">SSH</text>
+    <rect x="253" y="11" width="2" height="6" rx="1" fill="#10B981" class="wave1" />
+    <rect x="257" y="8" width="2" height="12" rx="1" fill="#38BDF8" class="wave2" />
+    <rect x="261" y="10" width="2" height="8" rx="1" fill="#10B981" class="wave3" />
+    <rect x="265" y="9" width="2" height="10" rx="1" fill="#E5484D" class="wave1" />
+
+    <!-- 4. IDE Line-Number Gutter (x=1..25, y=26.5..148) -->
+    <rect x="1" y="26.5" width="24" height="121" fill="#070A12" fill-opacity="0.85" />
+    <line x1="25" y1="26.5" x2="25" y2="148" stroke="#1E293B" stroke-width="1" />
+    <text x="13" y="43" text-anchor="middle" fill="#475569" font-size="7.2" class="code">01</text>
+    <text x="13" y="59" text-anchor="middle" fill="#475569" font-size="7.2" class="code">02</text>
+    <text x="13" y="85" text-anchor="middle" fill="#475569" font-size="7.2" class="code">03</text>
+    <text x="13" y="101" text-anchor="middle" fill="#475569" font-size="7.2" class="code">04</text>
+    <text x="13" y="122" text-anchor="middle" fill="#475569" font-size="7.2" class="code">05</text>
+    <text x="13" y="139" text-anchor="middle" fill="#E5484D" font-size="7.2" font-weight="700" class="code">06</text>
+
+    <!-- 5. Holographic CRT Laser Scanline Sweeping Across Code Viewport -->
+    <rect x="26" y="28" width="254" height="1.6" fill="url(#scanlineBarGrad)" class="holo-scanline" />
+
+    <!-- =================================================================== -->
+    <!-- 6. WARP COMMAND BLOCK 01 (y=30..66 — Highlighted at 28%–37% Scan)   -->
+    <!-- =================================================================== -->
+    <rect x="29" y="30" width="248" height="36" rx="5" fill="#0D1424" fill-opacity="0.7" stroke="#1E293B" stroke-width="0.8" />
+    <rect x="29" y="31" width="2.5" height="34" rx="1.2" fill="#334155" />
+
+    <!-- Reactive Laser-Scan Illumination Overlay for Block 01 -->
+    <g class="term-block-1">
+      <rect x="29" y="30" width="248" height="36" rx="5" fill="url(#activeBlockGrad)" stroke="#38BDF8" stroke-width="1.15" />
+      <rect x="29" y="31" width="3.2" height="34" rx="1.5" fill="#38BDF8" filter="url(#crimsonBloom)" />
+    </g>
+
+    <!-- Line 01: Syntax-Highlighted Command Input -->
+    <text x="37" y="43" font-size="8.6" class="code">
+      <tspan fill="#E5484D" font-weight="800">❯ </tspan><tspan fill="#38BDF8" font-weight="700">kaikai</tspan><tspan fill="#64748B">.</tspan><tspan fill="#FBBF24" font-weight="600">deploy</tspan><tspan fill="#94A3B8">({ </tspan><tspan fill="#CBD5E1">rls:</tspan><tspan fill="#34D399" font-weight="700"> true</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#CBD5E1">swr:</tspan><tspan fill="#A78BFA"> &quot;edge&quot;</tspan><tspan fill="#94A3B8"> })</tspan>
     </text>
-    <text x="14" y="68" fill="#34D399" font-size="9.5" class="code">
-      ✓ Single-Flight &amp; PG RLS: VERIFIED
+    <!-- Line 02: Execution Verification + Latency Telemetry Pill -->
+    <text x="37" y="59" font-size="8.3" class="code">
+      <tspan fill="#10B981" font-weight="800">✔ </tspan><tspan fill="#64748B">[PG-16]</tspan><tspan fill="#E2E8F0"> Single-Flight &amp; RLS</tspan>
     </text>
-    <text x="14" y="88" fill="#CBD5E1" font-size="9.5" class="code">
-      <tspan fill="#E5484D" font-weight="700">$ </tspan>webrtc.connect(<tspan fill="#FFFFFF">&quot;murmur-ai&quot;</tspan>)
+    <rect x="215" y="49" width="57" height="13" rx="3.5" fill="#064E3B" fill-opacity="0.65" stroke="#10B981" stroke-width="0.75" />
+    <text x="243.5" y="58" text-anchor="middle" fill="#34D399" font-size="6.8" font-weight="700" class="mono">200 · 12ms</text>
+
+    <!-- =================================================================== -->
+    <!-- 7. WARP COMMAND BLOCK 02 (y=72..108 — Highlighted at 39%–47% Scan)  -->
+    <!-- =================================================================== -->
+    <rect x="29" y="72" width="248" height="36" rx="5" fill="#0D1424" fill-opacity="0.7" stroke="#1E293B" stroke-width="0.8" />
+    <rect x="29" y="73" width="2.5" height="34" rx="1.2" fill="#334155" />
+
+    <!-- Reactive Laser-Scan Illumination Overlay for Block 02 -->
+    <g class="term-block-2">
+      <rect x="29" y="72" width="248" height="36" rx="5" fill="url(#activeBlockGrad)" stroke="#38BDF8" stroke-width="1.15" />
+      <rect x="29" y="73" width="3.2" height="34" rx="1.5" fill="#10B981" filter="url(#crimsonBloom)" />
+    </g>
+
+    <!-- Line 03: Syntax-Highlighted Command Input -->
+    <text x="37" y="85" font-size="8.6" class="code">
+      <tspan fill="#E5484D" font-weight="800">❯ </tspan><tspan fill="#38BDF8" font-weight="700">murmur</tspan><tspan fill="#64748B">.</tspan><tspan fill="#FBBF24" font-weight="600">stream</tspan><tspan fill="#94A3B8">({ </tspan><tspan fill="#CBD5E1">p2p:</tspan><tspan fill="#A78BFA"> &quot;webrtc&quot;</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#CBD5E1">ai:</tspan><tspan fill="#34D399" font-weight="700"> true</tspan><tspan fill="#94A3B8"> })</tspan>
     </text>
-    <text x="14" y="108" fill="#34D399" font-size="9.5" class="code">
-      ✓ P2P Voice &amp; FastAPI: &lt;100ms
+    <!-- Line 04: Execution Verification + Latency Telemetry Pill -->
+    <text x="37" y="101" font-size="8.3" class="code">
+      <tspan fill="#10B981" font-weight="800">✔ </tspan><tspan fill="#64748B">[SFU]</tspan><tspan fill="#E2E8F0"> Voice Mesh &amp; FastAPI</tspan>
     </text>
-    <text x="14" y="130" fill="#FFFFFF" font-size="9.5" font-weight="600" class="code">
-      <tspan fill="#E5484D">⚡</tspan> Status: Shipping with Phat
+    <rect x="215" y="91" width="57" height="13" rx="3.5" fill="#0C4A6E" fill-opacity="0.65" stroke="#38BDF8" stroke-width="0.75" />
+    <text x="243.5" y="100" text-anchor="middle" fill="#7DD3FC" font-size="6.8" font-weight="700" class="mono">RTC · 18ms</text>
+
+    <!-- =================================================================== -->
+    <!-- 8. LIVE TELEMETRY SPARKLINE & INTERACTIVE SHELL PROMPT (y=114..145) -->
+    <!-- =================================================================== -->
+    <!-- Line 05: Cluster Health & Live Sparkline Waveform -->
+    <text x="33" y="122" font-size="8.0" class="code">
+      <tspan fill="#F59E0B">◆ </tspan><tspan fill="#94A3B8">NODES:</tspan><tspan fill="#34D399" font-weight="700"> 4/4 LIVE</tspan><tspan fill="#334155"> │ </tspan><tspan fill="#94A3B8">PERF:</tspan><tspan fill="#38BDF8" font-weight="700"> 100</tspan>
     </text>
-    <rect x="184" y="120" width="5.5" height="11" fill="#E5484D" class="cursor-blink" />
+    <polyline points="216,122 222,120 228,121 234,116 240,119 246,115 252,118 258,114 264,117 271,113" fill="none" stroke="#10B981" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="271" cy="113" r="1.8" fill="#34D399" class="pulse-dot" />
+
+    <!-- Line 06: Active ZSH / Powerline Prompt + Blinking Neon Block Cursor -->
+    <text x="33" y="139" font-size="8.8" class="code">
+      <tspan fill="#E5484D" font-weight="800">⚡ </tspan><tspan fill="#38BDF8" font-weight="700">phat@noir</tspan><tspan fill="#64748B">:</tspan><tspan fill="#A78BFA">~</tspan><tspan fill="#E5484D" font-weight="700">$ </tspan><tspan fill="#FFFFFF" font-weight="700">ship --prod --all</tspan>
+    </text>
+    <rect x="205" y="130" width="5.5" height="10.5" rx="1" fill="#E5484D" class="cursor-blink" />
+
+    <!-- =================================================================== -->
+    <!-- 9. NEOVIM / TMUX POWERLINE STATUS FOOTER BAR (y=148..167)           -->
+    <!-- =================================================================== -->
+    <path d="M 1 148 H 281 V 158 A 9 9 0 0 1 272 167 H 10 A 9 9 0 0 1 1 158 Z" fill="#080C15" />
+    <line x1="1" y1="148" x2="281" y2="148" stroke="#1E293B" stroke-width="1" />
+
+    <!-- Powerline Mode Pill -->
+    <rect x="6" y="151" width="44" height="12.5" rx="3" fill="#E5484D" />
+    <text x="28" y="159.6" text-anchor="middle" fill="#FFFFFF" font-size="6.8" font-weight="800" class="mono">● AGENT</text>
+
+    <!-- Git Branch & Dirty State -->
+    <text x="56" y="159.8" fill="#38BDF8" font-size="7.4" font-weight="700" class="code">⎇ main*</text>
+
+    <!-- Live CPU / Memory Telemetry -->
+    <text x="96" y="159.8" fill="#475569" font-size="7.0" class="mono">│ <tspan fill="#94A3B8">CPU</tspan> <tspan fill="#34D399" font-weight="700">12%</tspan> · <tspan fill="#94A3B8">MEM</tspan> <tspan fill="#38BDF8" font-weight="700">42M</tspan></text>
+
+    <!-- Right Runtime Badge -->
+    <rect x="227" y="151" width="49" height="12.5" rx="3" fill="#131C2E" stroke="#263552" stroke-width="0.7" />
+    <text x="251.5" y="159.6" text-anchor="middle" fill="#CBD5E1" font-size="6.6" font-weight="700" class="mono">TS 5.8</text>
   </g>
 
   <!-- ===================================================================== -->
