@@ -122,6 +122,11 @@
       <stop offset="100%" stop-color="#F43F5E" />
     </linearGradient>
 
+    <linearGradient id="prodVerifiedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+
     <!-- Streetwear Hoodie Chibi Boy Shaders (Pro Kindchenschema & Mochi Aesthetics) -->
     <linearGradient id="chibiSkin" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FFF7F3" />
@@ -286,6 +291,9 @@
       .prod-sec-2 { animation: prodSec2Cascade 12s infinite ease-out; }
       .prod-sec-3 { animation: prodSec3Cascade 12s infinite ease-out; }
       .prod-sec-4 { animation: prodSec4Cascade 12s infinite ease-out; }
+      .e2e-cursor { animation: e2eCursorGlideClick 12s infinite cubic-bezier(0.22, 1, 0.36, 1); transform-origin: 0px 0px; }
+      .e2e-ripple { animation: e2eClickRippleBurst 12s infinite ease-out; transform-origin: 187px 132px; }
+      .prod-cta-verified { animation: prodCtaVerifiedShow 12s infinite cubic-bezier(0.22, 1, 0.36, 1); }
       .phat-spotlight { animation: phatSpotlightShow 12s infinite ease-in-out; }
       .phat-name-blaze { animation: phatNameBlazeAnim 12s infinite ease-in-out; transform-origin: 325px 112px; }
       .phat-name-sweep { animation: phatNameSweepAnim 12s infinite ease-in-out; }
@@ -828,6 +836,36 @@
         0%, 40.2%    { opacity: 0; transform: translateY(-5px); }
         43.5%, 63%   { opacity: 1; transform: translateY(0px); }
         65%, 100%    { opacity: 0; transform: translateY(0px); }
+      }
+
+      /* Automated Playwright E2E Cursor: Spawns after Top-Down Render (43.8%), glides to CTA button (187, 132), clicks at 47.8%! */
+      @keyframes e2eCursorGlideClick {
+        0%, 43.4%    { opacity: 0; transform: translate(256px, 52px) scale(0.7); }
+        44.2%        { opacity: 1; transform: translate(252px, 52px) scale(1); }
+        /* Glides diagonally across rendered Bento Cards toward the bottom CTA Button */
+        45.8%        { opacity: 1; transform: translate(216px, 84px) scale(1); }
+        47.2%        { opacity: 1; transform: translate(187px, 132px) scale(1); }
+        /* Tactile Click Down on CTA Button at 47.8% */
+        47.8%        { opacity: 1; transform: translate(187px, 132px) scale(0.78); }
+        48.5%        { opacity: 1; transform: translate(187px, 132px) scale(1.04); }
+        /* Parks neatly to the bottom-right so Verified text is 100% unobstructed */
+        50.2%, 62.5% { opacity: 1; transform: translate(258px, 135px) scale(0.95); }
+        64.5%, 100%  { opacity: 0; transform: translate(258px, 135px) scale(0.7); }
+      }
+
+      /* Concentric Shockwave Ripple Burst at Button Click Point (187, 132) at 47.8% */
+      @keyframes e2eClickRippleBurst {
+        0%, 47.5%    { opacity: 0; transform: scale(0.25); }
+        47.9%        { opacity: 1; transform: scale(0.45); }
+        49.8%        { opacity: 0; transform: scale(1.85); }
+        100%         { opacity: 0; transform: scale(1.85); }
+      }
+
+      /* Post-Click Verified Product State (48.0% → 63%): Button turns Emerald, E2E Toast and Border Glow light up! */
+      @keyframes prodCtaVerifiedShow {
+        0%, 47.7%    { opacity: 0; }
+        48.3%, 63.0% { opacity: 1; }
+        65.0%, 100%  { opacity: 0; }
       }
       @keyframes phatSpotlightShow {
         0%, 75%   { opacity: 0; }
@@ -1967,117 +2005,157 @@
       <!-- ================================================================= -->
       <!-- 5. RIGHT PANE: LIVE PRODUCT RENDERING TOP-TO-BOTTOM (x=141..281)  -->
       <!-- ================================================================= -->
-      <!-- 5.1. Underlying Blueprint Wireframe Skeleton (Visible Before Laser Renders Each Row) -->
-      <g opacity="0.42">
-        <rect x="146" y="30" width="130" height="10" rx="3" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
-        <rect x="146" y="43" width="130" height="14" rx="3.5" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
-        <rect x="146" y="60" width="63" height="28" rx="4" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
-        <rect x="213" y="60" width="63" height="28" rx="4" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
-        <rect x="146" y="91" width="130" height="26" rx="4" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
-        <rect x="146" y="120" width="130" height="24" rx="4" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
-        <text x="211" y="90" text-anchor="middle" fill="#334155" font-size="6.2" font-weight="700" class="mono">WAITING FOR SSR STREAM...</text>
-      </g>
-
-      <!-- 5.2. Progressive Top-to-Bottom Clipped Product UI (Revealed from y=26 down to y=148!) -->
+      <!-- Strict Viewport Clip (x=141..281, y=26..148) Prevents Any Laser Bleed Onto Header/Footer -->
+      <clipPath id="rightPaneViewportClip">
+        <rect x="141" y="26" width="140" height="122" />
+      </clipPath>
+      <!-- Top-to-Bottom Progressive Reveal Clip (Expands scaleY from 0 at y=26 to 1 at y=148) -->
       <clipPath id="productTopDownClip">
         <rect x="141" y="26" width="140" height="122" class="product-clip-rect" />
       </clipPath>
-      <g clip-path="url(#productTopDownClip)">
-        <!-- SECTION 1 (TOP, y=30..57): Product App Navbar & AI Hero Banner -->
-        <g class="prod-sec-1">
-          <!-- App Top Navbar -->
-          <rect x="146" y="29.5" width="130" height="11" rx="3" fill="#111827" stroke="#283550" stroke-width="0.8" />
-          <circle cx="152" cy="35" r="2.2" fill="#E5484D" />
-          <text x="157" y="37.2" fill="#FFFFFF" font-size="5.8" font-weight="800" class="sans">ATELIER.NOIR</text>
-          <rect x="214" y="33.5" width="12" height="2.5" rx="1" fill="#38BDF8" opacity="0.8" />
-          <rect x="229" y="33.5" width="12" height="2.5" rx="1" fill="#475569" />
-          <rect x="252" y="31.5" width="21" height="7" rx="2" fill="#064E3B" stroke="#10B981" stroke-width="0.6" />
-          <text x="262.5" y="36.8" text-anchor="middle" fill="#34D399" font-size="5.0" font-weight="800" class="mono">v4.2</text>
 
-          <!-- Product Hero Banner Card -->
-          <rect x="146" y="42.5" width="130" height="15" rx="3.8" fill="url(#prodHeroCardGrad)" stroke="#38BDF8" stroke-opacity="0.7" stroke-width="0.85" />
-          <rect x="146" y="43.5" width="2.4" height="13" rx="1.2" fill="#E5484D" />
-          <text x="152" y="49.8" fill="#F8FAFC" font-size="6.0" font-weight="800" class="sans">AI CO-PILOT SYSTEM</text>
-          <text x="152" y="55.2" fill="#93C5FD" font-size="4.8" font-weight="600" class="mono">Next.js 15 · Edge SSR · 60fps</text>
-          <rect x="242" y="45.5" width="30" height="9" rx="2.8" fill="#0F172A" stroke="#38BDF8" stroke-width="0.65" />
-          <text x="257" y="51.8" text-anchor="middle" fill="#38BDF8" font-size="5.2" font-weight="800" class="mono">⚡ 100</text>
+      <g clip-path="url(#rightPaneViewportClip)">
+        <!-- 5.1. Underlying Blueprint Wireframe Skeleton (Visible Only Below the Sweeping Laser!) -->
+        <g opacity="0.45">
+          <rect x="146" y="30" width="130" height="10" rx="3" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
+          <rect x="146" y="43" width="130" height="14" rx="3.5" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
+          <rect x="146" y="60" width="63" height="28" rx="4" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
+          <rect x="213" y="60" width="63" height="28" rx="4" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
+          <rect x="146" y="91" width="130" height="26" rx="4" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
+          <rect x="146" y="120" width="130" height="24" rx="4" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
+          <text x="211" y="88" text-anchor="middle" fill="#334155" font-size="6.0" font-weight="700" class="mono">WAITING FOR SSR STREAM...</text>
         </g>
 
-        <!-- SECTION 2 (UPPER-MID, y=60..88): Dual Bento Analytics & Lighthouse Gauge Cards -->
-        <g class="prod-sec-2">
-          <!-- Left Bento Card: Real-Time Throughput & Glowing Area Sparkline -->
-          <rect x="146" y="60" width="63" height="28" rx="4" fill="#0E1525" stroke="#293A5A" stroke-width="0.85" />
-          <text x="151" y="67.2" fill="#94A3B8" font-size="4.9" font-weight="700" class="mono">THROUGHPUT</text>
-          <text x="151" y="75.2" fill="#FFFFFF" font-size="7.2" font-weight="800" class="sans">14.8k/s</text>
-          <text x="187" y="74.5" fill="#34D399" font-size="5.2" font-weight="800" class="mono">+28%</text>
-          <!-- Area Chart Under Curve & Glowing Line -->
-          <polygon points="150,85.5 150,82 159,80 168,81.5 177,78.5 186,79.5 195,76.5 205,74.5 205,85.5" fill="#38BDF8" fill-opacity="0.22" />
-          <polyline points="150,82 159,80 168,81.5 177,78.5 186,79.5 195,76.5 205,74.5" fill="none" stroke="#38BDF8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-          <circle cx="205" cy="74.5" r="1.5" fill="#FFFFFF" />
+        <!-- 5.2. Progressive Top-to-Bottom Clipped Product UI (Revealed from y=26 down to y=148!) -->
+        <g clip-path="url(#productTopDownClip)">
+          <!-- Solid Opaque Canvas Backdrop Inside Top-Down Clip: Cleanly Covers Wireframe As Laser Sweeps Down! -->
+          <rect x="141" y="26" width="140" height="122" fill="#070B14" />
+          <rect x="141" y="26" width="140" height="122" fill="url(#archGrid)" opacity="0.32" />
 
-          <!-- Right Bento Card: Circular 100/100 Core Web Vitals Ring Gauge -->
-          <rect x="213" y="60" width="63" height="28" rx="4" fill="#0E1525" stroke="#293A5A" stroke-width="0.85" />
-          <text x="218" y="67.2" fill="#94A3B8" font-size="4.9" font-weight="700" class="mono">WEB VITALS</text>
-          <text x="218" y="75.5" fill="#34D399" font-size="6.4" font-weight="800" class="sans">0ms CLS</text>
-          <text x="218" y="83.2" fill="#7DD3FC" font-size="5.2" font-weight="700" class="mono">LCP: 0.4s</text>
-          <!-- Glowing Emerald Ring Gauge -->
-          <circle cx="261.5" cy="74" r="8.8" fill="#071318" stroke="#064E3B" stroke-width="1.8" />
-          <circle cx="261.5" cy="74" r="8.8" fill="none" stroke="#10B981" stroke-width="1.8" stroke-dasharray="48 8" stroke-linecap="round" />
-          <text x="261.5" y="76" text-anchor="middle" fill="#6EE7B7" font-size="5.6" font-weight="800" class="mono">100</text>
+          <!-- SECTION 1 (TOP, y=30..57): Product App Navbar & AI Hero Banner -->
+          <g class="prod-sec-1">
+            <!-- App Top Navbar -->
+            <rect x="146" y="29.5" width="130" height="11" rx="3" fill="#111827" stroke="#283550" stroke-width="0.8" />
+            <circle cx="152" cy="35" r="2.2" fill="#E5484D" />
+            <text x="157" y="37.2" fill="#FFFFFF" font-size="5.8" font-weight="800" class="sans">ATELIER.NOIR</text>
+            <rect x="214" y="33.5" width="12" height="2.5" rx="1" fill="#38BDF8" opacity="0.8" />
+            <rect x="229" y="33.5" width="12" height="2.5" rx="1" fill="#475569" />
+            <rect x="252" y="31.5" width="21" height="7" rx="2" fill="#064E3B" stroke="#10B981" stroke-width="0.6" />
+            <text x="262.5" y="36.8" text-anchor="middle" fill="#34D399" font-size="5.0" font-weight="800" class="mono">v4.2</text>
+
+            <!-- Product Hero Banner Card -->
+            <rect x="146" y="42.5" width="130" height="15" rx="3.8" fill="url(#prodHeroCardGrad)" stroke="#38BDF8" stroke-opacity="0.7" stroke-width="0.85" />
+            <rect x="146" y="43.5" width="2.4" height="13" rx="1.2" fill="#E5484D" />
+            <text x="152" y="49.8" fill="#F8FAFC" font-size="6.0" font-weight="800" class="sans">AI CO-PILOT SYSTEM</text>
+            <text x="152" y="55.2" fill="#93C5FD" font-size="4.8" font-weight="600" class="mono">Next.js 15 · Edge SSR · 60fps</text>
+            <rect x="242" y="45.5" width="30" height="9" rx="2.8" fill="#0F172A" stroke="#38BDF8" stroke-width="0.65" />
+            <text x="257" y="51.8" text-anchor="middle" fill="#38BDF8" font-size="5.2" font-weight="800" class="mono">⚡ 100</text>
+          </g>
+
+          <!-- SECTION 2 (UPPER-MID, y=60..88): Dual Bento Analytics & Lighthouse Gauge Cards -->
+          <g class="prod-sec-2">
+            <!-- Left Bento Card: Real-Time Throughput & Glowing Area Sparkline -->
+            <rect x="146" y="60" width="63" height="28" rx="4" fill="#0E1525" stroke="#293A5A" stroke-width="0.85" />
+            <text x="151" y="67.2" fill="#94A3B8" font-size="4.9" font-weight="700" class="mono">THROUGHPUT</text>
+            <text x="151" y="75.2" fill="#FFFFFF" font-size="7.2" font-weight="800" class="sans">14.8k/s</text>
+            <text x="187" y="74.5" fill="#34D399" font-size="5.2" font-weight="800" class="mono">+28%</text>
+            <!-- Area Chart Under Curve & Glowing Line -->
+            <polygon points="150,85.5 150,82 159,80 168,81.5 177,78.5 186,79.5 195,76.5 205,74.5 205,85.5" fill="#38BDF8" fill-opacity="0.22" />
+            <polyline points="150,82 159,80 168,81.5 177,78.5 186,79.5 195,76.5 205,74.5" fill="none" stroke="#38BDF8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="205" cy="74.5" r="1.5" fill="#FFFFFF" />
+
+            <!-- Right Bento Card: Circular 100/100 Core Web Vitals Ring Gauge -->
+            <rect x="213" y="60" width="63" height="28" rx="4" fill="#0E1525" stroke="#293A5A" stroke-width="0.85" />
+            <text x="218" y="67.2" fill="#94A3B8" font-size="4.9" font-weight="700" class="mono">WEB VITALS</text>
+            <text x="218" y="75.5" fill="#34D399" font-size="6.4" font-weight="800" class="sans">0ms CLS</text>
+            <text x="218" y="83.2" fill="#7DD3FC" font-size="5.2" font-weight="700" class="mono">LCP: 0.4s</text>
+            <!-- Glowing Emerald Ring Gauge -->
+            <circle cx="261.5" cy="74" r="8.8" fill="#071318" stroke="#064E3B" stroke-width="1.8" />
+            <circle cx="261.5" cy="74" r="8.8" fill="none" stroke="#10B981" stroke-width="1.8" stroke-dasharray="48 8" stroke-linecap="round" />
+            <text x="261.5" y="76" text-anchor="middle" fill="#6EE7B7" font-size="5.6" font-weight="800" class="mono">100</text>
+          </g>
+
+          <!-- SECTION 3 (LOWER-MID, y=91..117): Neural Voice Mesh & WebRTC Live Waveform Card -->
+          <g class="prod-sec-3">
+            <rect x="146" y="91" width="130" height="26" rx="4" fill="#0E1525" stroke="#293A5A" stroke-width="0.85" />
+            <text x="151.5" y="98.8" fill="#E2E8F0" font-size="5.2" font-weight="800" class="mono">NEURAL MESH // WEBRTC</text>
+            <text x="242" y="98.8" fill="#38BDF8" font-size="5.0" font-weight="700" class="mono">12ms · P2P</text>
+
+            <!-- 3-Node Neural Topology Graph (Left of Card) -->
+            <line x1="156" y1="109" x2="173" y2="105" stroke="#38BDF8" stroke-width="1.0" />
+            <line x1="173" y1="105" x2="190" y2="109" stroke="#10B981" stroke-width="1.0" />
+            <line x1="156" y1="109" x2="190" y2="109" stroke="#E5484D" stroke-width="0.8" stroke-dasharray="2 1.5" />
+            <circle cx="156" cy="109" r="2.6" fill="#0F172A" stroke="#38BDF8" stroke-width="1.1" />
+            <circle cx="156" cy="109" r="1.1" fill="#38BDF8" />
+            <circle cx="173" cy="105" r="2.8" fill="#0F172A" stroke="#10B981" stroke-width="1.1" />
+            <circle cx="173" cy="105" r="1.2" fill="#34D399" />
+            <circle cx="190" cy="109" r="2.6" fill="#0F172A" stroke="#E5484D" stroke-width="1.1" />
+            <circle cx="190" cy="109" r="1.1" fill="#E5484D" />
+
+            <!-- Live Multi-Channel Audio/Stream Spectrum Bars (Right of Card) -->
+            <rect x="204" y="106" width="2.5" height="6" rx="1" fill="#38BDF8" class="wave1" />
+            <rect x="209" y="103" width="2.5" height="9" rx="1" fill="#38BDF8" class="wave2" />
+            <rect x="214" y="101.5" width="2.5" height="10.5" rx="1" fill="#10B981" class="wave3" />
+            <rect x="219" y="104.5" width="2.5" height="7.5" rx="1" fill="#10B981" class="wave1" />
+            <rect x="224" y="102" width="2.5" height="10" rx="1" fill="#E5484D" class="wave2" />
+            <rect x="229" y="105" width="2.5" height="7" rx="1" fill="#38BDF8" class="wave3" />
+            <rect x="234" y="102.5" width="2.5" height="9.5" rx="1" fill="#10B981" class="wave1" />
+            <rect x="239" y="106" width="2.5" height="6" rx="1" fill="#38BDF8" class="wave2" />
+            <rect x="247" y="103" width="24" height="9.5" rx="2.5" fill="#131C2E" stroke="#38BDF8" stroke-width="0.6" />
+            <text x="259" y="109.6" text-anchor="middle" fill="#BAE6FD" font-size="4.9" font-weight="800" class="mono">ACTIVE</text>
+          </g>
+
+          <!-- SECTION 4 (BOTTOM, y=120..145): Interactive Production CTA & E2E Test Target -->
+          <g class="prod-sec-4">
+            <rect x="146" y="120" width="130" height="24.5" rx="4" fill="#101829" stroke="#38BDF8" stroke-opacity="0.75" stroke-width="0.9" />
+            <!-- Pre-Click Crimson CTA Button ("🚀 LAUNCH E2E") -->
+            <rect x="150" y="124" width="74" height="16.5" rx="3.5" fill="url(#prodCtaGrad)" />
+            <text x="187" y="134.5" text-anchor="middle" fill="#FFFFFF" font-size="5.8" font-weight="800" class="mono">🚀 LAUNCH E2E</text>
+            <!-- Right Status Pill ("⏳ TEST") -->
+            <rect x="228" y="124" width="44" height="16.5" rx="3.5" fill="#131C2E" stroke="#38BDF8" stroke-width="0.75" />
+            <text x="250" y="134.5" text-anchor="middle" fill="#7DD3FC" font-size="5.6" font-weight="800" class="mono">⚡ E2E</text>
+          </g>
+
+          <!-- 5.3. POST-CLICK VERIFIED STATE (Illuminates at 48.0% right when Playwright E2E Cursor clicks!) -->
+          <g class="prod-cta-verified">
+            <!-- Emerald Verification Frame Highlight Around Entire Rendered Product -->
+            <rect x="143" y="27.5" width="136" height="119" rx="5" fill="none" stroke="#10B981" stroke-opacity="0.65" stroke-width="1.1" />
+            <!-- Top Navbar Badge Upgrade: v4.2 → PASS -->
+            <rect x="247" y="31" width="26" height="8" rx="2.2" fill="#064E3B" stroke="#34D399" stroke-width="0.75" />
+            <text x="260" y="36.8" text-anchor="middle" fill="#6EE7B7" font-size="4.9" font-weight="800" class="mono">✔ PASS</text>
+            <!-- Transformed Emerald CTA Button ("✔ E2E VERIFIED") & 100/100 Trophy Pill -->
+            <rect x="146" y="120" width="130" height="24.5" rx="4" fill="#06281E" stroke="#10B981" stroke-width="1.1" />
+            <rect x="150" y="124" width="74" height="16.5" rx="3.5" fill="url(#prodVerifiedGrad)" stroke="#6EE7B7" stroke-width="0.75" />
+            <text x="187" y="134.5" text-anchor="middle" fill="#FFFFFF" font-size="5.7" font-weight="800" class="mono">✔ E2E VERIFIED</text>
+            <rect x="228" y="124" width="44" height="16.5" rx="3.5" fill="#0F291E" stroke="#34D399" stroke-width="0.85" />
+            <text x="250" y="134.5" text-anchor="middle" fill="#6EE7B7" font-size="5.6" font-weight="800" class="mono">★ 100%</text>
+          </g>
         </g>
 
-        <!-- SECTION 3 (LOWER-MID, y=91..117): Neural Voice Mesh & WebRTC Live Waveform Card -->
-        <g class="prod-sec-3">
-          <rect x="146" y="91" width="130" height="26" rx="4" fill="#0E1525" stroke="#293A5A" stroke-width="0.85" />
-          <text x="151.5" y="98.8" fill="#E2E8F0" font-size="5.2" font-weight="800" class="mono">NEURAL MESH // WEBRTC</text>
-          <text x="242" y="98.8" fill="#38BDF8" font-size="5.0" font-weight="700" class="mono">12ms · P2P</text>
-
-          <!-- 3-Node Neural Topology Graph (Left of Card) -->
-          <line x1="156" y1="109" x2="173" y2="105" stroke="#38BDF8" stroke-width="1.0" />
-          <line x1="173" y1="105" x2="190" y2="109" stroke="#10B981" stroke-width="1.0" />
-          <line x1="156" y1="109" x2="190" y2="109" stroke="#E5484D" stroke-width="0.8" stroke-dasharray="2 1.5" />
-          <circle cx="156" cy="109" r="2.6" fill="#0F172A" stroke="#38BDF8" stroke-width="1.1" />
-          <circle cx="156" cy="109" r="1.1" fill="#38BDF8" />
-          <circle cx="173" cy="105" r="2.8" fill="#0F172A" stroke="#10B981" stroke-width="1.1" />
-          <circle cx="173" cy="105" r="1.2" fill="#34D399" />
-          <circle cx="190" cy="109" r="2.6" fill="#0F172A" stroke="#E5484D" stroke-width="1.1" />
-          <circle cx="190" cy="109" r="1.1" fill="#E5484D" />
-
-          <!-- Live Multi-Channel Audio/Stream Spectrum Bars (Right of Card) -->
-          <rect x="204" y="106" width="2.5" height="6" rx="1" fill="#38BDF8" />
-          <rect x="209" y="103" width="2.5" height="9" rx="1" fill="#38BDF8" />
-          <rect x="214" y="101.5" width="2.5" height="10.5" rx="1" fill="#10B981" />
-          <rect x="219" y="104.5" width="2.5" height="7.5" rx="1" fill="#10B981" />
-          <rect x="224" y="102" width="2.5" height="10" rx="1" fill="#E5484D" />
-          <rect x="229" y="105" width="2.5" height="7" rx="1" fill="#38BDF8" />
-          <rect x="234" y="102.5" width="2.5" height="9.5" rx="1" fill="#10B981" />
-          <rect x="239" y="106" width="2.5" height="6" rx="1" fill="#38BDF8" />
-          <rect x="247" y="103" width="24" height="9.5" rx="2.5" fill="#131C2E" stroke="#38BDF8" stroke-width="0.6" />
-          <text x="259" y="109.6" text-anchor="middle" fill="#BAE6FD" font-size="4.9" font-weight="800" class="mono">ACTIVE</text>
+        <!-- 5.4. TOP-TO-BOTTOM SWEEPING HOLOGRAPHIC LASER RENDER HEAD (Scans y=28 → y=146 inside Viewport Clip!) -->
+        <g class="prod-laser-scanner">
+          <rect x="142" y="16" width="138" height="12" fill="url(#prodLaserTrailGrad)" />
+          <line x1="142" y1="28" x2="280" y2="28" stroke="#10B981" stroke-width="1.8" filter="url(#crimsonBloom)" />
+          <line x1="144" y1="28" x2="278" y2="28" stroke="#FFFFFF" stroke-width="0.85" />
+          <polygon points="142,25.5 145,28 142,30.5 139,28" fill="#38BDF8" />
+          <polygon points="280,25.5 283,28 280,30.5 277,28" fill="#10B981" />
         </g>
 
-        <!-- SECTION 4 (BOTTOM, y=120..145): Interactive Production CTA & Verified Ship Bar -->
-        <g class="prod-sec-4">
-          <rect x="146" y="120" width="130" height="24.5" rx="4" fill="#101829" stroke="#38BDF8" stroke-opacity="0.75" stroke-width="0.9" />
-          <!-- Glowing Crimson Production Deploy Button -->
-          <rect x="150" y="124" width="74" height="16.5" rx="3.5" fill="url(#prodCtaGrad)" />
-          <text x="187" y="134.5" text-anchor="middle" fill="#FFFFFF" font-size="6.0" font-weight="800" class="mono">🚀 LIVE PRODUCT</text>
-          <!-- Right Verified Production Status Pill -->
-          <rect x="228" y="124" width="44" height="16.5" rx="3.5" fill="#064E3B" stroke="#10B981" stroke-width="0.8" />
-          <text x="250" y="134.5" text-anchor="middle" fill="#6EE7B7" font-size="5.8" font-weight="800" class="mono">✔ READY</text>
+        <!-- 5.5. CLICK SHOCKWAVE RIPPLE BURST AT (187, 132) WHEN E2E CURSOR CLICKS BUTTON (47.8%) -->
+        <g class="e2e-ripple">
+          <circle cx="187" cy="132" r="9" fill="none" stroke="#34D399" stroke-width="1.6" />
+          <circle cx="187" cy="132" r="5" fill="#38BDF8" fill-opacity="0.35" stroke="#FFFFFF" stroke-width="1.0" />
         </g>
-      </g>
 
-      <!-- 5.3. TOP-TO-BOTTOM SWEEPING HOLOGRAPHIC LASER RENDER HEAD (Scans y=28 → y=146!) -->
-      <g class="prod-laser-scanner">
-        <!-- Trailing Upward Laser Glow Veil -->
-        <rect x="142" y="16" width="138" height="12" fill="url(#prodLaserTrailGrad)" />
-        <!-- High-Intensity Laser Render Line -->
-        <line x1="142" y1="28" x2="280" y2="28" stroke="#10B981" stroke-width="1.8" filter="url(#crimsonBloom)" />
-        <line x1="144" y1="28" x2="278" y2="28" stroke="#FFFFFF" stroke-width="0.85" />
-        <!-- Left & Right Laser Emitter Diamonds -->
-        <polygon points="142,25.5 145,28 142,30.5 139,28" fill="#38BDF8" />
-        <polygon points="280,25.5 283,28 280,30.5 277,28" fill="#10B981" />
+        <!-- 5.6. AUTONOMOUS PLAYWRIGHT E2E AGENT CURSOR (Glides Across UI & Clicks CTA Button at 47.8%!) -->
+        <g class="e2e-cursor">
+          <!-- Crisp Cyber Vector Pointer Arrow (Tip at 0,0) -->
+          <path d="M 0 0 L 0 11.5 L 3.0 8.8 L 5.4 13.2 L 7.2 12.3 L 4.8 7.9 L 8.6 7.9 Z" fill="#FFFFFF" stroke="#0F172A" stroke-width="0.9" stroke-linejoin="round" />
+          <circle cx="0" cy="0" r="1.6" fill="#38BDF8" />
+          <!-- Floating Playwright E2E Agent Tag Attached to Cursor -->
+          <rect x="7" y="8" width="21" height="8.5" rx="2.5" fill="#0F172A" stroke="#38BDF8" stroke-width="0.75" />
+          <text x="17.5" y="14.1" text-anchor="middle" fill="#38BDF8" font-size="4.8" font-weight="800" class="mono">E2E</text>
+        </g>
       </g>
 
       <!-- ================================================================= -->
