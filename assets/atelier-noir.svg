@@ -105,6 +105,23 @@
       <stop offset="100%" stop-color="#E5484D" stop-opacity="0" />
     </linearGradient>
 
+    <linearGradient id="prodLaserTrailGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
+      <stop offset="65%" stop-color="#38BDF8" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.48" />
+    </linearGradient>
+
+    <linearGradient id="prodHeroCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B" />
+      <stop offset="55%" stop-color="#172554" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+
+    <linearGradient id="prodCtaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E5484D" />
+      <stop offset="100%" stop-color="#F43F5E" />
+    </linearGradient>
+
     <!-- Streetwear Hoodie Chibi Boy Shaders (Pro Kindchenschema & Mochi Aesthetics) -->
     <linearGradient id="chibiSkin" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FFF7F3" />
@@ -259,8 +276,16 @@
       .term-cmd-2 { animation: termCmd2Show 12s infinite ease-out; }
       .term-out-2 { animation: termOut2Show 12s infinite ease-out; }
       .term-cmd-3 { animation: termCmd3Show 12s infinite ease-out; }
+      .term-out-3 { animation: termOut3Show 12s infinite ease-out; }
       .term-block-1 { animation: termBlock1Pulse 12s infinite ease-in-out; }
       .term-block-2 { animation: termBlock2Pulse 12s infinite ease-in-out; }
+      .term-block-3 { animation: termBlock3Pulse 12s infinite ease-in-out; }
+      .product-clip-rect { animation: productTopDownReveal 12s infinite cubic-bezier(0.22, 1, 0.36, 1); transform-origin: 141px 26px; }
+      .prod-laser-scanner { animation: productLaserScanDown 12s infinite cubic-bezier(0.22, 1, 0.36, 1); }
+      .prod-sec-1 { animation: prodSec1Cascade 12s infinite ease-out; }
+      .prod-sec-2 { animation: prodSec2Cascade 12s infinite ease-out; }
+      .prod-sec-3 { animation: prodSec3Cascade 12s infinite ease-out; }
+      .prod-sec-4 { animation: prodSec4Cascade 12s infinite ease-out; }
       .phat-spotlight { animation: phatSpotlightShow 12s infinite ease-in-out; }
       .phat-name-blaze { animation: phatNameBlazeAnim 12s infinite ease-in-out; transform-origin: 325px 112px; }
       .phat-name-sweep { animation: phatNameSweepAnim 12s infinite ease-in-out; }
@@ -704,42 +729,105 @@
         65.5%, 100%  { opacity: 0; transform: scale(0.08); }
       }
 
-      /* 14. Sequential Command Typing and Execution Synced with Seated Typing Window */
+      /* 14. Split-Screen Terminal Code Execution and Top-to-Bottom Product Rendering (28.4% → 63%) */
       @keyframes termCmd1Show {
-        0%, 28.4%  { opacity: 0; transform: translateX(-4px); }
-        29.6%, 63% { opacity: 1; transform: translateX(0px); }
+        0%, 28.2%  { opacity: 0; transform: translateX(-3px); }
+        29.4%, 63% { opacity: 1; transform: translateX(0px); }
         65%, 100%  { opacity: 0; transform: translateX(0px); }
       }
       @keyframes termOut1Show {
-        0%, 31.0%  { opacity: 0; transform: translateY(2px); }
-        32.2%, 63% { opacity: 1; transform: translateY(0px); }
+        0%, 30.0%  { opacity: 0; transform: translateY(2px); }
+        31.2%, 63% { opacity: 1; transform: translateY(0px); }
         65%, 100%  { opacity: 0; transform: translateY(0px); }
       }
       @keyframes termCmd2Show {
-        0%, 34.8%  { opacity: 0; transform: translateX(-4px); }
-        36.2%, 63% { opacity: 1; transform: translateX(0px); }
+        0%, 33.6%  { opacity: 0; transform: translateX(-3px); }
+        34.8%, 63% { opacity: 1; transform: translateX(0px); }
         65%, 100%  { opacity: 0; transform: translateX(0px); }
       }
       @keyframes termOut2Show {
-        0%, 37.8%  { opacity: 0; transform: translateY(2px); }
-        39.2%, 63% { opacity: 1; transform: translateY(0px); }
+        0%, 35.6%  { opacity: 0; transform: translateY(2px); }
+        36.8%, 63% { opacity: 1; transform: translateY(0px); }
         65%, 100%  { opacity: 0; transform: translateY(0px); }
       }
       @keyframes termCmd3Show {
-        0%, 41.5%  { opacity: 0; transform: translateX(-4px); }
-        43.0%, 63% { opacity: 1; transform: translateX(0px); }
+        0%, 39.2%  { opacity: 0; transform: translateX(-3px); }
+        40.5%, 63% { opacity: 1; transform: translateX(0px); }
         65%, 100%  { opacity: 0; transform: translateX(0px); }
       }
+      @keyframes termOut3Show {
+        0%, 41.2%  { opacity: 0; transform: translateY(2px); }
+        42.5%, 63% { opacity: 1; transform: translateY(0px); }
+        65%, 100%  { opacity: 0; transform: translateY(0px); }
+      }
       @keyframes termBlock1Pulse {
-        0%, 28.2%   { opacity: 0; }
-        29.5%, 35%  { opacity: 1; }
-        36.5%, 100% { opacity: 0.32; }
+        0%, 28.0%   { opacity: 0; }
+        29.2%, 33.4% { opacity: 1; }
+        34.6%, 63%  { opacity: 0.32; }
+        65%, 100%   { opacity: 0; }
       }
       @keyframes termBlock2Pulse {
-        0%, 34.8%   { opacity: 0; }
-        36.2%, 45.8% { opacity: 1; }
+        0%, 33.4%   { opacity: 0; }
+        34.6%, 39.0% { opacity: 1; }
+        40.2%, 63%  { opacity: 0.35; }
+        65%, 100%   { opacity: 0; }
+      }
+      @keyframes termBlock3Pulse {
+        0%, 39.0%   { opacity: 0; }
+        40.2%, 45.8% { opacity: 1; }
         47.2%, 63%  { opacity: 0.45; }
         65%, 100%   { opacity: 0; }
+      }
+
+      /* Top-to-Bottom Clip Mask Expansion: Reveals Right Product UI strictly from y=26 down to y=148 */
+      @keyframes productTopDownReveal {
+        0%, 28.6%    { transform: scaleY(0); }
+        /* Stage 1: Reveal Top Navbar and Hero Banner (y=26 → y=59) */
+        32.5%, 33.8% { transform: scaleY(0.28); }
+        /* Stage 2A: Reveal Dual Bento Metric Cards (y=59 → y=89) */
+        36.5%        { transform: scaleY(0.53); }
+        /* Stage 2B: Reveal Neural Voice Mesh Card (y=89 → y=119) */
+        39.2%, 40.0% { transform: scaleY(0.77); }
+        /* Stage 3: Reveal Bottom CTA Bar to 100% Full Product Height (y=119 → y=148) */
+        43.8%, 63.2% { transform: scaleY(1); }
+        65.2%, 100%  { transform: scaleY(0); }
+      }
+
+      /* Sweeping Horizontal Top-to-Bottom Laser Render Head (Follows the exact bottom edge of the revealing product!) */
+      @keyframes productLaserScanDown {
+        0%, 28.4%    { opacity: 0; transform: translateY(0px); }
+        29.0%        { opacity: 1; transform: translateY(2px); }
+        /* Scans down across Top Navbar and Hero Banner */
+        32.5%, 33.8% { opacity: 1; transform: translateY(32px); }
+        /* Scans down across Dual Bento Metric Cards */
+        36.5%        { opacity: 1; transform: translateY(62px); }
+        /* Scans down across Neural Voice Mesh Card */
+        39.2%, 40.0% { opacity: 1; transform: translateY(91px); }
+        /* Reaches Bottom of Product UI (y=146) and completes render */
+        43.8%        { opacity: 1; transform: translateY(118px); }
+        45.4%, 100%  { opacity: 0; transform: translateY(120px); }
+      }
+
+      /* Individual Top-to-Bottom Section Cascades (Each section drops in from above as the laser sweeps past) */
+      @keyframes prodSec1Cascade {
+        0%, 28.8%    { opacity: 0; transform: translateY(-5px); }
+        31.8%, 63%   { opacity: 1; transform: translateY(0px); }
+        65%, 100%    { opacity: 0; transform: translateY(0px); }
+      }
+      @keyframes prodSec2Cascade {
+        0%, 34.0%    { opacity: 0; transform: translateY(-5px); }
+        36.5%, 63%   { opacity: 1; transform: translateY(0px); }
+        65%, 100%    { opacity: 0; transform: translateY(0px); }
+      }
+      @keyframes prodSec3Cascade {
+        0%, 36.6%    { opacity: 0; transform: translateY(-5px); }
+        39.2%, 63%   { opacity: 1; transform: translateY(0px); }
+        65%, 100%    { opacity: 0; transform: translateY(0px); }
+      }
+      @keyframes prodSec4Cascade {
+        0%, 40.2%    { opacity: 0; transform: translateY(-5px); }
+        43.5%, 63%   { opacity: 1; transform: translateY(0px); }
+        65%, 100%    { opacity: 0; transform: translateY(0px); }
       }
       @keyframes phatSpotlightShow {
         0%, 75%   { opacity: 0; }
@@ -1162,7 +1250,7 @@
     <circle cx="138" cy="76" r="28" fill="#0B111E" stroke="#263552" stroke-width="1.1" />
     <circle cx="138" cy="76" r="19" fill="none" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1" stroke-dasharray="5 3" />
     <circle cx="138" cy="76" r="4" fill="#38BDF8" class="pulse-dot" />
-    <text x="138" y="118" text-anchor="middle" fill="#64748B" font-size="8" font-weight="700" class="mono">HOLO-TERMINAL // STANDBY</text>
+    <text x="138" y="118" text-anchor="middle" fill="#64748B" font-size="7.6" font-weight="700" class="mono">SPLIT-IDE &amp; LIVE UI // STANDBY</text>
     <text x="138" y="131" text-anchor="middle" fill="#38BDF8" fill-opacity="0.7" font-size="7" font-weight="700" class="mono">⚡ TYPE ON WORKSTATION TO PROJECT</text>
   </g>
 
@@ -1727,18 +1815,20 @@
   </g>
 
   <!-- ===================================================================== -->
-  <!-- NOIR-OS // HOLOGRAPHIC WARP & IDE COMMAND DECK (Projected From Laptop!) -->
+  <!-- NOIR-STUDIO // SPLIT-SCREEN TERMINAL (LEFT) & TOP-DOWN LIVE UI (RIGHT) -->
   <!-- ===================================================================== -->
   <g transform="translate(848, 78)">
     <g class="terminal-holo-window">
       <!-- 1. Outer Drop Shadow, Glassmorphic Bezel & Cybernetic HUD Corner Reticles -->
-      <rect x="-2" y="2" width="286" height="170" rx="11" fill="#030509" fill-opacity="0.75" />
+      <rect x="-2" y="2" width="286" height="170" rx="11" fill="#030509" fill-opacity="0.78" />
       <rect width="282" height="168" rx="10" fill="url(#holoScreenGrad)" stroke="url(#termBorderGrad)" stroke-width="1.35" />
       <rect x="1.5" y="1.5" width="279" height="165" rx="8.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="0.9" />
 
-      <!-- Subtle Architectural Grid & Diagonal Specular Glass Reflection Inside Viewport -->
-      <rect x="25" y="26" width="256" height="122" fill="url(#archGrid)" opacity="0.55" />
-      <polygon points="2,26 150,26 88,148 2,148" fill="url(#glassSheenGrad)" />
+      <!-- Left Code Viewport Grid & Right Live Preview Canvas Backdrop -->
+      <rect x="17" y="26" width="122" height="122" fill="url(#archGrid)" opacity="0.45" />
+      <rect x="141" y="26" width="140" height="122" fill="#070B14" fill-opacity="0.88" />
+      <rect x="141" y="26" width="140" height="122" fill="url(#archGrid)" opacity="0.35" />
+      <polygon points="2,26 138,26 82,148 2,148" fill="url(#glassSheenGrad)" />
 
       <!-- 4 Precision HUD Corner Brackets -->
       <path d="M -2.5 9 V -2.5 H 9" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" opacity="0.85" />
@@ -1746,125 +1836,267 @@
       <path d="M -2.5 159 V 170.5 H 9" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" opacity="0.7" />
       <path d="M 273 170.5 H 284.5 V 159" fill="none" stroke="#10B981" stroke-width="1.4" stroke-linecap="round" opacity="0.85" />
 
-      <!-- 2. Warp / Ghostty Pro Multi-Tab Header Bar (Flush Top-Only Rounded Geometry) -->
+      <!-- ================================================================= -->
+      <!-- 2. UNIFIED SPLIT-VIEW HEADER BAR (LEFT: CLI TAB | RIGHT: BROWSER) -->
+      <!-- ================================================================= -->
       <path d="M 1 10 A 9 9 0 0 1 10 1 H 272 A 9 9 0 0 1 281 10 V 26 H 1 Z" fill="#0A0E18" />
       <line x1="1" y1="26" x2="281" y2="26" stroke="#24324D" stroke-width="1" />
 
-      <!-- macOS Pro Traffic Lights with Inner Specular Cores -->
-      <circle cx="13" cy="13.5" r="3.3" fill="#FF5F56" />
-      <circle cx="12" cy="12.5" r="1.0" fill="#FECACA" fill-opacity="0.65" />
-      <circle cx="23.5" cy="13.5" r="3.3" fill="#FFBD2E" />
-      <circle cx="22.5" cy="12.5" r="1.0" fill="#FEF08A" fill-opacity="0.65" />
-      <circle cx="34" cy="13.5" r="3.3" fill="#27C93F" />
-      <circle cx="33" cy="12.5" r="1.0" fill="#BBF7D0" fill-opacity="0.65" />
+      <!-- macOS Pro Traffic Lights -->
+      <circle cx="11" cy="13.5" r="3.0" fill="#FF5F56" />
+      <circle cx="10.2" cy="12.7" r="0.9" fill="#FECACA" fill-opacity="0.65" />
+      <circle cx="20" cy="13.5" r="3.0" fill="#FFBD2E" />
+      <circle cx="19.2" cy="12.7" r="0.9" fill="#FEF08A" fill-opacity="0.65" />
+      <circle cx="29" cy="13.5" r="3.0" fill="#27C93F" />
+      <circle cx="28.2" cy="12.7" r="0.9" fill="#BBF7D0" fill-opacity="0.65" />
 
-      <!-- Active Tab 1: noir-agent.ts -->
-      <path d="M 46 26 V 9 A 5 5 0 0 1 51 4 H 150 A 5 5 0 0 1 155 9 V 26 Z" fill="#131C2E" stroke="#293A5A" stroke-width="0.85" />
-      <line x1="50" y1="4" x2="151" y2="4" stroke="#E5484D" stroke-width="1.6" stroke-linecap="round" />
-      <text x="54" y="17.5" fill="#38BDF8" font-size="8" font-weight="800" class="code">&gt;_</text>
-      <text x="68" y="17.5" fill="#F8FAFC" font-size="8" font-weight="700" class="code">noir-agent.ts</text>
-      <circle cx="145" cy="14.5" r="2" fill="#10B981" />
+      <!-- Left Header: Active Terminal Code Tab (build-ui.tsx) -->
+      <path d="M 38 26 V 8.5 A 4.5 4.5 0 0 1 42.5 4 H 131.5 A 4.5 4.5 0 0 1 136 8.5 V 26 Z" fill="#131C2E" stroke="#293A5A" stroke-width="0.85" />
+      <line x1="42" y1="4" x2="132" y2="4" stroke="#E5484D" stroke-width="1.5" stroke-linecap="round" />
+      <text x="44" y="17.2" fill="#38BDF8" font-size="7.4" font-weight="800" class="code">&gt;_</text>
+      <text x="56" y="17.2" fill="#F8FAFC" font-size="7.4" font-weight="700" class="code">build-ui.tsx</text>
+      <circle cx="127" cy="14.5" r="1.8" fill="#38BDF8" class="pulse-dot" />
 
-      <!-- Inactive Tab 2: metrics.sh -->
-      <path d="M 159 26 V 10 A 4 4 0 0 1 163 6 H 222 A 4 4 0 0 1 226 10 V 26 Z" fill="#0D1422" stroke="#1E293B" stroke-width="0.75" />
-      <text x="167" y="17.5" fill="#64748B" font-size="7.5" font-weight="600" class="code">metrics.sh</text>
+      <!-- Center Split-Screen Header Divider -->
+      <line x1="140" y1="1" x2="140" y2="26" stroke="#24324D" stroke-width="1" />
 
-      <!-- Right Header SSH Lock & Live Audio/Telemetry Equalizer -->
-      <text x="233" y="17" fill="#38BDF8" font-size="6.8" font-weight="700" class="mono">SSH</text>
-      <rect x="253" y="11" width="2" height="6" rx="1" fill="#10B981" class="wave1" />
-      <rect x="257" y="8" width="2" height="12" rx="1" fill="#38BDF8" class="wave2" />
-      <rect x="261" y="10" width="2" height="8" rx="1" fill="#10B981" class="wave3" />
-      <rect x="265" y="9" width="2" height="10" rx="1" fill="#E5484D" class="wave1" />
-
-      <!-- 3. IDE Line-Number Gutter (x=1..25, y=26.5..148) -->
-      <rect x="1" y="26.5" width="24" height="121" fill="#070A12" fill-opacity="0.85" />
-      <line x1="25" y1="26.5" x2="25" y2="148" stroke="#1E293B" stroke-width="1" />
-      <text x="13" y="43" text-anchor="middle" fill="#475569" font-size="7.2" class="code">01</text>
-      <text x="13" y="59" text-anchor="middle" fill="#475569" font-size="7.2" class="code">02</text>
-      <text x="13" y="85" text-anchor="middle" fill="#475569" font-size="7.2" class="code">03</text>
-      <text x="13" y="101" text-anchor="middle" fill="#475569" font-size="7.2" class="code">04</text>
-      <text x="13" y="122" text-anchor="middle" fill="#475569" font-size="7.2" class="code">05</text>
-      <text x="13" y="139" text-anchor="middle" fill="#E5484D" font-size="7.2" font-weight="700" class="code">06</text>
-
-      <!-- 4. Holographic CRT Laser Scanline Sweeping Across Code Viewport -->
-      <rect x="26" y="28" width="254" height="1.6" fill="url(#scanlineBarGrad)" class="holo-scanline" />
+      <!-- Right Header: Live Product Preview Browser Bar (localhost:3000) -->
+      <rect x="145" y="5" width="131" height="16" rx="4.5" fill="#111827" stroke="#263552" stroke-width="0.8" />
+      <circle cx="152.5" cy="13" r="2.2" fill="#10B981" class="pulse-dot" />
+      <text x="158.5" y="15.5" fill="#E2E8F0" font-size="6.8" font-weight="700" class="mono">localhost:3000</text>
+      <!-- Mini Sound/Telemetry Equalizer & LIVE UI Badge -->
+      <rect x="223" y="10" width="1.6" height="6" rx="0.8" fill="#10B981" class="wave1" />
+      <rect x="226" y="8" width="1.6" height="10" rx="0.8" fill="#38BDF8" class="wave2" />
+      <rect x="229" y="9" width="1.6" height="8" rx="0.8" fill="#10B981" class="wave3" />
+      <rect x="234" y="7" width="39" height="12" rx="3" fill="#064E3B" stroke="#10B981" stroke-width="0.65" />
+      <text x="253.5" y="15.2" text-anchor="middle" fill="#34D399" font-size="6.0" font-weight="800" class="mono">LIVE UI</text>
 
       <!-- ================================================================= -->
-      <!-- 5. WARP COMMAND BLOCK 01 (Typed & Executed at 27.5%–35%)          -->
+      <!-- 3. LEFT PANE: HOLOGRAPHIC TERMINAL & COMPILER (x=1..139, y=26..148) -->
       <!-- ================================================================= -->
-      <rect x="29" y="30" width="248" height="36" rx="5" fill="#0D1424" fill-opacity="0.7" stroke="#1E293B" stroke-width="0.8" />
-      <rect x="29" y="31" width="2.5" height="34" rx="1.2" fill="#334155" />
+      <!-- IDE Line-Number Gutter (x=1..17) -->
+      <rect x="1" y="26.5" width="16" height="121" fill="#070A12" fill-opacity="0.88" />
+      <line x1="17" y1="26.5" x2="17" y2="148" stroke="#1E293B" stroke-width="0.9" />
+      <text x="9" y="42" text-anchor="middle" fill="#475569" font-size="6.5" class="code">01</text>
+      <text x="9" y="56" text-anchor="middle" fill="#475569" font-size="6.5" class="code">02</text>
+      <text x="9" y="81" text-anchor="middle" fill="#475569" font-size="6.5" class="code">03</text>
+      <text x="9" y="95" text-anchor="middle" fill="#475569" font-size="6.5" class="code">04</text>
+      <text x="9" y="120" text-anchor="middle" fill="#475569" font-size="6.5" class="code">05</text>
+      <text x="9" y="134" text-anchor="middle" fill="#E5484D" font-size="6.5" font-weight="700" class="code">06</text>
 
+      <!-- Holographic CRT Laser Scanline Sweeping Across Left Terminal Pane -->
+      <rect x="18" y="28" width="120" height="1.5" fill="url(#scanlineBarGrad)" class="holo-scanline" />
+
+      <!-- 3.1. TERMINAL BLOCK 01 (28.4% → 33.4%): Compiles Top Navbar & Hero Banner -->
+      <rect x="20" y="30" width="116" height="33" rx="4.5" fill="#0D1424" fill-opacity="0.75" stroke="#1E293B" stroke-width="0.75" />
+      <rect x="20" y="31" width="2.2" height="31" rx="1.1" fill="#334155" />
       <g class="term-block-1">
-        <rect x="29" y="30" width="248" height="36" rx="5" fill="url(#activeBlockGrad)" stroke="#38BDF8" stroke-width="1.15" />
-        <rect x="29" y="31" width="3.2" height="34" rx="1.5" fill="#38BDF8" filter="url(#crimsonBloom)" />
+        <rect x="20" y="30" width="116" height="33" rx="4.5" fill="url(#activeBlockGrad)" stroke="#38BDF8" stroke-width="1.05" />
+        <rect x="20" y="31" width="2.8" height="31" rx="1.3" fill="#38BDF8" filter="url(#crimsonBloom)" />
       </g>
-
       <g class="term-cmd-1">
-        <text x="37" y="43" font-size="8.6" class="code">
-          <tspan fill="#E5484D" font-weight="800">❯ </tspan><tspan fill="#38BDF8" font-weight="700">kaikai</tspan><tspan fill="#64748B">.</tspan><tspan fill="#FBBF24" font-weight="600">deploy</tspan><tspan fill="#94A3B8">({ </tspan><tspan fill="#CBD5E1">rls:</tspan><tspan fill="#34D399" font-weight="700"> true</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#CBD5E1">swr:</tspan><tspan fill="#A78BFA"> &quot;edge&quot;</tspan><tspan fill="#94A3B8"> })</tspan>
+        <text x="25.5" y="42" font-size="7.3" class="code">
+          <tspan fill="#E5484D" font-weight="800">❯ </tspan><tspan fill="#38BDF8" font-weight="700">render</tspan><tspan fill="#94A3B8">(&lt;</tspan><tspan fill="#FBBF24" font-weight="700">HeroUI</tspan><tspan fill="#94A3B8"> /&gt;)</tspan>
         </text>
       </g>
       <g class="term-out-1">
-        <text x="37" y="59" font-size="8.3" class="code">
-          <tspan fill="#10B981" font-weight="800">✔ </tspan><tspan fill="#64748B">[PG-16]</tspan><tspan fill="#E2E8F0"> Single-Flight &amp; RLS</tspan>
+        <text x="25.5" y="56" font-size="6.8" class="code">
+          <tspan fill="#10B981" font-weight="800">✔ </tspan><tspan fill="#CBD5E1">Nav + Hero</tspan>
         </text>
-        <rect x="215" y="49" width="57" height="13" rx="3.5" fill="#064E3B" fill-opacity="0.65" stroke="#10B981" stroke-width="0.75" />
-        <text x="243.5" y="58" text-anchor="middle" fill="#34D399" font-size="6.8" font-weight="700" class="mono">200 · 12ms</text>
+        <rect x="98" y="47.5" width="34" height="11" rx="2.8" fill="#064E3B" stroke="#10B981" stroke-width="0.65" />
+        <text x="115" y="55" text-anchor="middle" fill="#34D399" font-size="5.8" font-weight="800" class="mono">▼ TOP</text>
+        <!-- Synaptic Compiler Bridge 1: Injects Code into Right Product Top Section -->
+        <line x1="136" y1="46.5" x2="145" y2="46.5" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" />
+        <circle cx="140" cy="46.5" r="2.6" fill="#0B111E" stroke="#38BDF8" stroke-width="1.1" />
+        <circle cx="140" cy="46.5" r="1.2" fill="#38BDF8" />
       </g>
 
-      <!-- ================================================================= -->
-      <!-- 6. WARP COMMAND BLOCK 02 (Typed & Executed at 35%–42%)            -->
-      <!-- ================================================================= -->
-      <rect x="29" y="72" width="248" height="36" rx="5" fill="#0D1424" fill-opacity="0.7" stroke="#1E293B" stroke-width="0.8" />
-      <rect x="29" y="73" width="2.5" height="34" rx="1.2" fill="#334155" />
-
+      <!-- 3.2. TERMINAL BLOCK 02 (33.6% → 39.0%): Compiles Middle Bento Grid & Neural Mesh -->
+      <rect x="20" y="69" width="116" height="33" rx="4.5" fill="#0D1424" fill-opacity="0.75" stroke="#1E293B" stroke-width="0.75" />
+      <rect x="20" y="70" width="2.2" height="31" rx="1.1" fill="#334155" />
       <g class="term-block-2">
-        <rect x="29" y="72" width="248" height="36" rx="5" fill="url(#activeBlockGrad)" stroke="#38BDF8" stroke-width="1.15" />
-        <rect x="29" y="73" width="3.2" height="34" rx="1.5" fill="#10B981" filter="url(#crimsonBloom)" />
+        <rect x="20" y="69" width="116" height="33" rx="4.5" fill="url(#activeBlockGrad)" stroke="#38BDF8" stroke-width="1.05" />
+        <rect x="20" y="70" width="2.8" height="31" rx="1.3" fill="#10B981" filter="url(#crimsonBloom)" />
       </g>
-
       <g class="term-cmd-2">
-        <text x="37" y="85" font-size="8.6" class="code">
-          <tspan fill="#E5484D" font-weight="800">❯ </tspan><tspan fill="#38BDF8" font-weight="700">murmur</tspan><tspan fill="#64748B">.</tspan><tspan fill="#FBBF24" font-weight="600">stream</tspan><tspan fill="#94A3B8">({ </tspan><tspan fill="#CBD5E1">p2p:</tspan><tspan fill="#A78BFA"> &quot;webrtc&quot;</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#CBD5E1">ai:</tspan><tspan fill="#34D399" font-weight="700"> true</tspan><tspan fill="#94A3B8"> })</tspan>
+        <text x="25.5" y="81" font-size="7.3" class="code">
+          <tspan fill="#E5484D" font-weight="800">❯ </tspan><tspan fill="#38BDF8" font-weight="700">mount</tspan><tspan fill="#94A3B8">(&lt;</tspan><tspan fill="#34D399" font-weight="700">BentoGrid</tspan><tspan fill="#94A3B8"> /&gt;)</tspan>
         </text>
       </g>
       <g class="term-out-2">
-        <text x="37" y="101" font-size="8.3" class="code">
-          <tspan fill="#10B981" font-weight="800">✔ </tspan><tspan fill="#64748B">[SFU]</tspan><tspan fill="#E2E8F0"> Voice Mesh &amp; FastAPI</tspan>
+        <text x="25.5" y="95" font-size="6.8" class="code">
+          <tspan fill="#10B981" font-weight="800">✔ </tspan><tspan fill="#CBD5E1">Charts + Mesh</tspan>
         </text>
-        <rect x="215" y="91" width="57" height="13" rx="3.5" fill="#0C4A6E" fill-opacity="0.65" stroke="#38BDF8" stroke-width="0.75" />
-        <text x="243.5" y="100" text-anchor="middle" fill="#7DD3FC" font-size="6.8" font-weight="700" class="mono">RTC · 18ms</text>
+        <rect x="98" y="86.5" width="34" height="11" rx="2.8" fill="#0C4A6E" stroke="#38BDF8" stroke-width="0.65" />
+        <text x="115" y="94" text-anchor="middle" fill="#7DD3FC" font-size="5.8" font-weight="800" class="mono">▼ MID</text>
+        <!-- Synaptic Compiler Bridge 2: Injects Code into Right Product Middle Section -->
+        <line x1="136" y1="85.5" x2="145" y2="85.5" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" />
+        <circle cx="140" cy="85.5" r="2.6" fill="#0B111E" stroke="#10B981" stroke-width="1.1" />
+        <circle cx="140" cy="85.5" r="1.2" fill="#34D399" />
       </g>
 
-      <!-- ================================================================= -->
-      <!-- 7. LIVE TELEMETRY SPARKLINE & FINAL PROMPT (Typed at 42%–63%)     -->
-      <!-- ================================================================= -->
+      <!-- 3.3. TERMINAL BLOCK 03 (39.2% → 45.8%): Compiles Bottom CTA & Finalizes Product -->
+      <rect x="20" y="108" width="116" height="34" rx="4.5" fill="#0D1424" fill-opacity="0.75" stroke="#1E293B" stroke-width="0.75" />
+      <rect x="20" y="109" width="2.2" height="32" rx="1.1" fill="#334155" />
+      <g class="term-block-3">
+        <rect x="20" y="108" width="116" height="34" rx="4.5" fill="url(#activeBlockGrad)" stroke="#E5484D" stroke-width="1.05" />
+        <rect x="20" y="109" width="2.8" height="32" rx="1.3" fill="#E5484D" filter="url(#crimsonBloom)" />
+      </g>
       <g class="term-cmd-3">
-        <text x="33" y="122" font-size="8.0" class="code">
-          <tspan fill="#F59E0B">◆ </tspan><tspan fill="#94A3B8">NODES:</tspan><tspan fill="#34D399" font-weight="700"> 4/4 LIVE</tspan><tspan fill="#334155"> │ </tspan><tspan fill="#94A3B8">PERF:</tspan><tspan fill="#38BDF8" font-weight="700"> 100</tspan>
+        <text x="25.5" y="120" font-size="7.3" class="code">
+          <tspan fill="#E5484D" font-weight="800">❯ </tspan><tspan fill="#38BDF8" font-weight="700">ship</tspan><tspan fill="#94A3B8">(&lt;</tspan><tspan fill="#FF6B72" font-weight="700">ProdCTA</tspan><tspan fill="#94A3B8"> /&gt;)</tspan>
         </text>
-        <polyline points="216,122 222,120 228,121 234,116 240,119 246,115 252,118 258,114 264,117 271,113" fill="none" stroke="#10B981" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-        <circle cx="271" cy="113" r="1.8" fill="#34D399" class="pulse-dot" />
-
-        <text x="33" y="139" font-size="8.8" class="code">
-          <tspan fill="#E5484D" font-weight="800">⚡ </tspan><tspan fill="#38BDF8" font-weight="700">phat@noir</tspan><tspan fill="#64748B">:</tspan><tspan fill="#A78BFA">~</tspan><tspan fill="#E5484D" font-weight="700">$ </tspan><tspan fill="#FFFFFF" font-weight="700">ship --prod --all</tspan>
+      </g>
+      <g class="term-out-3">
+        <text x="25.5" y="134.5" font-size="6.8" class="code">
+          <tspan fill="#10B981" font-weight="800">✔ </tspan><tspan fill="#34D399" font-weight="700">100% Rendered</tspan>
         </text>
-        <rect x="205" y="130" width="5.5" height="10.5" rx="1" fill="#E5484D" class="cursor-blink" />
+        <rect x="99" y="126.5" width="4.5" height="9" rx="1" fill="#E5484D" class="cursor-blink" />
+        <!-- Synaptic Compiler Bridge 3: Injects Code into Right Product Bottom Section -->
+        <line x1="136" y1="125" x2="145" y2="125" stroke="#E5484D" stroke-width="1.5" stroke-linecap="round" />
+        <circle cx="140" cy="125" r="2.6" fill="#0B111E" stroke="#E5484D" stroke-width="1.1" />
+        <circle cx="140" cy="125" r="1.2" fill="#E5484D" />
       </g>
 
       <!-- ================================================================= -->
-      <!-- 8. NEOVIM / TMUX POWERLINE STATUS FOOTER BAR (y=148..167)         -->
+      <!-- 4. CENTER SPLIT-SCREEN DIVIDER SPINE (x=140, y=26..148)           -->
+      <!-- ================================================================= -->
+      <line x1="140" y1="26" x2="140" y2="148" stroke="#263552" stroke-width="1.1" />
+      <line x1="140" y1="30" x2="140" y2="144" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="0.9" stroke-dasharray="3 3" />
+
+      <!-- ================================================================= -->
+      <!-- 5. RIGHT PANE: LIVE PRODUCT RENDERING TOP-TO-BOTTOM (x=141..281)  -->
+      <!-- ================================================================= -->
+      <!-- 5.1. Underlying Blueprint Wireframe Skeleton (Visible Before Laser Renders Each Row) -->
+      <g opacity="0.42">
+        <rect x="146" y="30" width="130" height="10" rx="3" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
+        <rect x="146" y="43" width="130" height="14" rx="3.5" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
+        <rect x="146" y="60" width="63" height="28" rx="4" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
+        <rect x="213" y="60" width="63" height="28" rx="4" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
+        <rect x="146" y="91" width="130" height="26" rx="4" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
+        <rect x="146" y="120" width="130" height="24" rx="4" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="2 2" />
+        <text x="211" y="90" text-anchor="middle" fill="#334155" font-size="6.2" font-weight="700" class="mono">WAITING FOR SSR STREAM...</text>
+      </g>
+
+      <!-- 5.2. Progressive Top-to-Bottom Clipped Product UI (Revealed from y=26 down to y=148!) -->
+      <clipPath id="productTopDownClip">
+        <rect x="141" y="26" width="140" height="122" class="product-clip-rect" />
+      </clipPath>
+      <g clip-path="url(#productTopDownClip)">
+        <!-- SECTION 1 (TOP, y=30..57): Product App Navbar & AI Hero Banner -->
+        <g class="prod-sec-1">
+          <!-- App Top Navbar -->
+          <rect x="146" y="29.5" width="130" height="11" rx="3" fill="#111827" stroke="#283550" stroke-width="0.8" />
+          <circle cx="152" cy="35" r="2.2" fill="#E5484D" />
+          <text x="157" y="37.2" fill="#FFFFFF" font-size="5.8" font-weight="800" class="sans">ATELIER.NOIR</text>
+          <rect x="214" y="33.5" width="12" height="2.5" rx="1" fill="#38BDF8" opacity="0.8" />
+          <rect x="229" y="33.5" width="12" height="2.5" rx="1" fill="#475569" />
+          <rect x="252" y="31.5" width="21" height="7" rx="2" fill="#064E3B" stroke="#10B981" stroke-width="0.6" />
+          <text x="262.5" y="36.8" text-anchor="middle" fill="#34D399" font-size="5.0" font-weight="800" class="mono">v4.2</text>
+
+          <!-- Product Hero Banner Card -->
+          <rect x="146" y="42.5" width="130" height="15" rx="3.8" fill="url(#prodHeroCardGrad)" stroke="#38BDF8" stroke-opacity="0.7" stroke-width="0.85" />
+          <rect x="146" y="43.5" width="2.4" height="13" rx="1.2" fill="#E5484D" />
+          <text x="152" y="49.8" fill="#F8FAFC" font-size="6.0" font-weight="800" class="sans">AI CO-PILOT SYSTEM</text>
+          <text x="152" y="55.2" fill="#93C5FD" font-size="4.8" font-weight="600" class="mono">Next.js 15 · Edge SSR · 60fps</text>
+          <rect x="242" y="45.5" width="30" height="9" rx="2.8" fill="#0F172A" stroke="#38BDF8" stroke-width="0.65" />
+          <text x="257" y="51.8" text-anchor="middle" fill="#38BDF8" font-size="5.2" font-weight="800" class="mono">⚡ 100</text>
+        </g>
+
+        <!-- SECTION 2 (UPPER-MID, y=60..88): Dual Bento Analytics & Lighthouse Gauge Cards -->
+        <g class="prod-sec-2">
+          <!-- Left Bento Card: Real-Time Throughput & Glowing Area Sparkline -->
+          <rect x="146" y="60" width="63" height="28" rx="4" fill="#0E1525" stroke="#293A5A" stroke-width="0.85" />
+          <text x="151" y="67.2" fill="#94A3B8" font-size="4.9" font-weight="700" class="mono">THROUGHPUT</text>
+          <text x="151" y="75.2" fill="#FFFFFF" font-size="7.2" font-weight="800" class="sans">14.8k/s</text>
+          <text x="187" y="74.5" fill="#34D399" font-size="5.2" font-weight="800" class="mono">+28%</text>
+          <!-- Area Chart Under Curve & Glowing Line -->
+          <polygon points="150,85.5 150,82 159,80 168,81.5 177,78.5 186,79.5 195,76.5 205,74.5 205,85.5" fill="#38BDF8" fill-opacity="0.22" />
+          <polyline points="150,82 159,80 168,81.5 177,78.5 186,79.5 195,76.5 205,74.5" fill="none" stroke="#38BDF8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="205" cy="74.5" r="1.5" fill="#FFFFFF" />
+
+          <!-- Right Bento Card: Circular 100/100 Core Web Vitals Ring Gauge -->
+          <rect x="213" y="60" width="63" height="28" rx="4" fill="#0E1525" stroke="#293A5A" stroke-width="0.85" />
+          <text x="218" y="67.2" fill="#94A3B8" font-size="4.9" font-weight="700" class="mono">WEB VITALS</text>
+          <text x="218" y="75.5" fill="#34D399" font-size="6.4" font-weight="800" class="sans">0ms CLS</text>
+          <text x="218" y="83.2" fill="#7DD3FC" font-size="5.2" font-weight="700" class="mono">LCP: 0.4s</text>
+          <!-- Glowing Emerald Ring Gauge -->
+          <circle cx="261.5" cy="74" r="8.8" fill="#071318" stroke="#064E3B" stroke-width="1.8" />
+          <circle cx="261.5" cy="74" r="8.8" fill="none" stroke="#10B981" stroke-width="1.8" stroke-dasharray="48 8" stroke-linecap="round" />
+          <text x="261.5" y="76" text-anchor="middle" fill="#6EE7B7" font-size="5.6" font-weight="800" class="mono">100</text>
+        </g>
+
+        <!-- SECTION 3 (LOWER-MID, y=91..117): Neural Voice Mesh & WebRTC Live Waveform Card -->
+        <g class="prod-sec-3">
+          <rect x="146" y="91" width="130" height="26" rx="4" fill="#0E1525" stroke="#293A5A" stroke-width="0.85" />
+          <text x="151.5" y="98.8" fill="#E2E8F0" font-size="5.2" font-weight="800" class="mono">NEURAL MESH // WEBRTC</text>
+          <text x="242" y="98.8" fill="#38BDF8" font-size="5.0" font-weight="700" class="mono">12ms · P2P</text>
+
+          <!-- 3-Node Neural Topology Graph (Left of Card) -->
+          <line x1="156" y1="109" x2="173" y2="105" stroke="#38BDF8" stroke-width="1.0" />
+          <line x1="173" y1="105" x2="190" y2="109" stroke="#10B981" stroke-width="1.0" />
+          <line x1="156" y1="109" x2="190" y2="109" stroke="#E5484D" stroke-width="0.8" stroke-dasharray="2 1.5" />
+          <circle cx="156" cy="109" r="2.6" fill="#0F172A" stroke="#38BDF8" stroke-width="1.1" />
+          <circle cx="156" cy="109" r="1.1" fill="#38BDF8" />
+          <circle cx="173" cy="105" r="2.8" fill="#0F172A" stroke="#10B981" stroke-width="1.1" />
+          <circle cx="173" cy="105" r="1.2" fill="#34D399" />
+          <circle cx="190" cy="109" r="2.6" fill="#0F172A" stroke="#E5484D" stroke-width="1.1" />
+          <circle cx="190" cy="109" r="1.1" fill="#E5484D" />
+
+          <!-- Live Multi-Channel Audio/Stream Spectrum Bars (Right of Card) -->
+          <rect x="204" y="106" width="2.5" height="6" rx="1" fill="#38BDF8" />
+          <rect x="209" y="103" width="2.5" height="9" rx="1" fill="#38BDF8" />
+          <rect x="214" y="101.5" width="2.5" height="10.5" rx="1" fill="#10B981" />
+          <rect x="219" y="104.5" width="2.5" height="7.5" rx="1" fill="#10B981" />
+          <rect x="224" y="102" width="2.5" height="10" rx="1" fill="#E5484D" />
+          <rect x="229" y="105" width="2.5" height="7" rx="1" fill="#38BDF8" />
+          <rect x="234" y="102.5" width="2.5" height="9.5" rx="1" fill="#10B981" />
+          <rect x="239" y="106" width="2.5" height="6" rx="1" fill="#38BDF8" />
+          <rect x="247" y="103" width="24" height="9.5" rx="2.5" fill="#131C2E" stroke="#38BDF8" stroke-width="0.6" />
+          <text x="259" y="109.6" text-anchor="middle" fill="#BAE6FD" font-size="4.9" font-weight="800" class="mono">ACTIVE</text>
+        </g>
+
+        <!-- SECTION 4 (BOTTOM, y=120..145): Interactive Production CTA & Verified Ship Bar -->
+        <g class="prod-sec-4">
+          <rect x="146" y="120" width="130" height="24.5" rx="4" fill="#101829" stroke="#38BDF8" stroke-opacity="0.75" stroke-width="0.9" />
+          <!-- Glowing Crimson Production Deploy Button -->
+          <rect x="150" y="124" width="74" height="16.5" rx="3.5" fill="url(#prodCtaGrad)" />
+          <text x="187" y="134.5" text-anchor="middle" fill="#FFFFFF" font-size="6.0" font-weight="800" class="mono">🚀 LIVE PRODUCT</text>
+          <!-- Right Verified Production Status Pill -->
+          <rect x="228" y="124" width="44" height="16.5" rx="3.5" fill="#064E3B" stroke="#10B981" stroke-width="0.8" />
+          <text x="250" y="134.5" text-anchor="middle" fill="#6EE7B7" font-size="5.8" font-weight="800" class="mono">✔ READY</text>
+        </g>
+      </g>
+
+      <!-- 5.3. TOP-TO-BOTTOM SWEEPING HOLOGRAPHIC LASER RENDER HEAD (Scans y=28 → y=146!) -->
+      <g class="prod-laser-scanner">
+        <!-- Trailing Upward Laser Glow Veil -->
+        <rect x="142" y="16" width="138" height="12" fill="url(#prodLaserTrailGrad)" />
+        <!-- High-Intensity Laser Render Line -->
+        <line x1="142" y1="28" x2="280" y2="28" stroke="#10B981" stroke-width="1.8" filter="url(#crimsonBloom)" />
+        <line x1="144" y1="28" x2="278" y2="28" stroke="#FFFFFF" stroke-width="0.85" />
+        <!-- Left & Right Laser Emitter Diamonds -->
+        <polygon points="142,25.5 145,28 142,30.5 139,28" fill="#38BDF8" />
+        <polygon points="280,25.5 283,28 280,30.5 277,28" fill="#10B981" />
+      </g>
+
+      <!-- ================================================================= -->
+      <!-- 6. UNIFIED SPLIT-VIEW STATUS FOOTER BAR (y=148..167)              -->
       <!-- ================================================================= -->
       <path d="M 1 148 H 281 V 158 A 9 9 0 0 1 272 167 H 10 A 9 9 0 0 1 1 158 Z" fill="#080C15" />
       <line x1="1" y1="148" x2="281" y2="148" stroke="#1E293B" stroke-width="1" />
+      <line x1="140" y1="148" x2="140" y2="167" stroke="#1E293B" stroke-width="1" />
 
-      <rect x="6" y="151" width="44" height="12.5" rx="3" fill="#E5484D" />
-      <text x="28" y="159.6" text-anchor="middle" fill="#FFFFFF" font-size="6.8" font-weight="800" class="mono">● AGENT</text>
-      <text x="56" y="159.8" fill="#38BDF8" font-size="7.4" font-weight="700" class="code">⎇ main*</text>
-      <text x="96" y="159.8" fill="#475569" font-size="7.0" class="mono">│ <tspan fill="#94A3B8">CPU</tspan> <tspan fill="#34D399" font-weight="700">12%</tspan> · <tspan fill="#94A3B8">MEM</tspan> <tspan fill="#38BDF8" font-weight="700">42M</tspan></text>
-      <rect x="227" y="151" width="49" height="12.5" rx="3" fill="#131C2E" stroke="#263552" stroke-width="0.7" />
-      <text x="251.5" y="159.6" text-anchor="middle" fill="#CBD5E1" font-size="6.6" font-weight="700" class="mono">TS 5.8</text>
+      <!-- Left Footer: Terminal Compiler Status -->
+      <rect x="6" y="151" width="42" height="12.5" rx="3" fill="#E5484D" />
+      <text x="27" y="159.5" text-anchor="middle" fill="#FFFFFF" font-size="6.4" font-weight="800" class="mono">● CLI</text>
+      <text x="53" y="159.6" fill="#38BDF8" font-size="6.8" font-weight="700" class="code">⎇ main*</text>
+      <text x="90" y="159.6" fill="#94A3B8" font-size="6.4" font-weight="700" class="mono">TSX → UI</text>
+
+      <!-- Right Footer: Top-Down Progressive Product Render Status -->
+      <text x="146" y="159.6" fill="#38BDF8" font-size="6.5" font-weight="700" class="mono">▼ TOP-DOWN RENDER</text>
+      <rect x="228" y="151" width="48" height="12.5" rx="3" fill="#064E3B" stroke="#10B981" stroke-width="0.7" />
+      <text x="252" y="159.5" text-anchor="middle" fill="#34D399" font-size="6.2" font-weight="800" class="mono">100% SSR</text>
     </g>
   </g>
 
