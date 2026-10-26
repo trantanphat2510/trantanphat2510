@@ -1,33 +1,42 @@
 <div align="center">
 
+<!-- 01–04 // MASTER ATELIER NOIR ARCHITECTURAL MONOLITH -->
 <a href="https://ttanphat.vercel.app/">
   <img src="./assets/atelier-noir.svg" width="100%" alt="Trần Tấn Phát — Full-Stack Developer · Atelier Noir Architecture" />
 </a>
 
-<br />
+<!-- 05 // CYBERNETIC BRIDGE & INTERACTIVE COMMAND DOCK -->
+<img src="./assets/launchpad-header.svg" width="100%" alt="05 // Interactive Command Dock — Select Any Module to Deploy" />
 
 <p align="center">
-  <a href="https://ttanphat.vercel.app/"><img src="./assets/nav-portfolio.svg" width="164" height="41" alt="01 // Portfolio — ttanphat.vercel.app" /></a>&nbsp;
-  <a href="https://website-kaikai.vercel.app/"><img src="./assets/nav-kaikai.svg" width="164" height="41" alt="02 // Flagship SaaS — KAIKAI Platform" /></a>&nbsp;
-  <a href="https://murmur-voice.vercel.app/"><img src="./assets/nav-murmur.svg" width="164" height="41" alt="03 // Voice AI P2P — MurMur Voice AI" /></a>&nbsp;
-  <a href="https://ttanphat.vercel.app/projects"><img src="./assets/nav-projects.svg" width="164" height="41" alt="04 // Case Studies — 4 Live Systems" /></a>&nbsp;
-  <a href="mailto:ttanphat.work@gmail.com"><img src="./assets/nav-email.svg" width="164" height="41" alt="05 // Direct Contact — ttanphat.work@gmail.com" /></a>
+  <a href="https://ttanphat.vercel.app/"><img src="./assets/nav-portfolio.svg" width="172" height="50" alt="01 // Portfolio — ttanphat.vercel.app" /></a>&nbsp;
+  <a href="https://website-kaikai.vercel.app/"><img src="./assets/nav-kaikai.svg" width="172" height="50" alt="02 // SaaS Core — KAIKAI Platform" /></a>&nbsp;
+  <a href="https://murmur-voice.vercel.app/"><img src="./assets/nav-murmur.svg" width="172" height="50" alt="03 // Voice AI — MurMur Voice AI" /></a>&nbsp;
+  <a href="https://ttanphat.vercel.app/projects"><img src="./assets/nav-projects.svg" width="172" height="50" alt="04 // Archive — 4 Case Studies" /></a>&nbsp;
+  <a href="mailto:ttanphat.work@gmail.com"><img src="./assets/nav-email.svg" width="172" height="50" alt="05 // Contact — ttanphat.work@gmail.com" /></a>
 </p>
 
+<!-- 06 // EXPANDABLE SYSTEM SPECIFICATIONS & MOBILE COMMAND MATRIX -->
 <details>
-  <summary><b>⚡ SYSTEM DIRECTORY // LIVE DEPLOYMENTS, ARCHITECTURE &amp; TECH SPECS</b> <sub><i>(Click to expand interactive links &amp; mobile text view)</i></sub></summary>
+  <summary><code>⚡ NOIR-OS // SYSTEM SPECIFICATIONS, SLA METRICS &amp; DIRECT REPOSITORY MATRIX</code> <sub><i>(Click to expand interactive terminal index)</i></sub></summary>
   <br />
 
-  | # | Production System | Architecture &amp; Engineering Highlights | Core Stack | Live Deployment |
-  | :--- | :--- | :--- | :--- | :--- |
-  | **01** | **KAIKAI** | Multi-branch booking &amp; operator CMS · Single-flight cache stampede protection · 3-layer RBAC &amp; PostgreSQL RLS across 10+ modules | `Next.js 16` `NestJS 11` `PostgreSQL` `Prisma` `Supabase` | [**website-kaikai.vercel.app ↗**](https://website-kaikai.vercel.app/) |
-  | **02** | **MurMur** | Voice-first English practice platform · Sub-100ms WebRTC peer-to-peer audio routing · Conversational AI voice agent | `Next.js` `FastAPI` `Python` `WebRTC` `ElevenLabs` | [**murmur-voice.vercel.app ↗**](https://murmur-voice.vercel.app/) |
-  | **03** | **Social Learning** | Academic collaboration graph · Instant optimistic UI mutations · Live study channels via Supabase Realtime &amp; RLS | `React 19` `TypeScript` `Supabase` `TanStack Query` `Zustand` | [**Case Study ↗**](https://ttanphat.vercel.app/projects) |
-  | **04** | **Atelier Noir** | High-contrast interactive design system · 60fps spring-physics motion · Verified **100/100** Lighthouse Core Web Vitals &amp; Playwright E2E | `React 19` `Tailwind v4` `Motion` `Playwright` | [**ttanphat.vercel.app ↗**](https://ttanphat.vercel.app/) |
+  | ID | Production System | Domain &amp; SLA Metric | Architectural Engineering Highlights | Primary Core Stack | Live Endpoint |
+  | :---: | :--- | :---: | :--- | :--- | :---: |
+  | `01` | **KAIKAI** | `Multi-Tenant SaaS`<br/>**10+ Modules · PG RLS** | • **Single-flight cache** stampede protection on high-concurrency booking reads<br/>• **3-layer RBAC** guards &amp; **PostgreSQL 16 Row-Level Security (RLS)** isolation | `Next.js 16` `NestJS 11` `PostgreSQL` `Prisma` `Supabase` | [**Launch App ↗**](https://website-kaikai.vercel.app/) |
+  | `02` | **MurMur** | `Realtime Voice AI`<br/>**&lt;100ms P2P Audio** | • Low-latency **WebRTC peer-to-peer** voice rooms with sub-100ms audio routing<br/>• **Python FastAPI** orchestrator + **ElevenLabs** conversational AI voice synthesis | `Next.js` `FastAPI` `Python` `WebRTC` `ElevenLabs` | [**Launch App ↗**](https://murmur-voice.vercel.app/) |
+  | `03` | **Social Learning** | `Academic Graph`<br/>**Optimistic Sync** | • Instant **optimistic UI** feed mutations &amp; cache invalidation via **TanStack Query**<br/>• Live collaborative study channels powered by **Supabase Realtime** &amp; RLS | `React 19` `TypeScript` `Supabase` `Zustand` `Docker` | [**Case Study ↗**](https://ttanphat.vercel.app/projects) |
+  | `04` | **Atelier Noir** | `Design Engineering`<br/>**100/100 Lighthouse** | • **60fps spring-physics** motion system, Lenis smooth scroll &amp; zero layout shift<br/>• Verified **100/100 Core Web Vitals** with automated **Playwright E2E** CI suite | `React 19` `TypeScript` `Tailwind v4` `Motion` `Playwright` | [**Launch App ↗**](https://ttanphat.vercel.app/) |
 
   <p align="center">
-    <sub><b>Trần Tấn Phát</b> · Full-Stack Developer (Ho Chi Minh City, VN) · B.S. in IT @ HUTECH (2021–2025) · <a href="mailto:ttanphat.work@gmail.com">ttanphat.work@gmail.com</a></sub>
+    <code>IDENTITY: Trần Tấn Phát</code> &nbsp;·&nbsp;
+    <code>ROLE: Full-Stack Developer</code> &nbsp;·&nbsp;
+    <code>EDUCATION: B.S. in IT @ HUTECH (2021–2025)</code> &nbsp;·&nbsp;
+    <a href="mailto:ttanphat.work@gmail.com"><code>ttanphat.work@gmail.com</code></a>
   </p>
 </details>
+
+<!-- 07 // TELEMETRY CLOSING RAIL -->
+<img src="./assets/telemetry-footer.svg" width="100%" alt="NOIR-OS v4.2 — All 4 Production Systems Online" />
 
 </div>

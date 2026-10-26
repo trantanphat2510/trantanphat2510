@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 44" width="100%" height="100%">
+  <defs>
+    <linearGradient id="canvasBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090E" />
+      <stop offset="50%" stop-color="#0B0F17" />
+      <stop offset="100%" stop-color="#07090E" />
+    </linearGradient>
+    <linearGradient id="footBg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0B101B" />
+      <stop offset="50%" stop-color="#11192B" />
+      <stop offset="100%" stop-color="#0B101B" />
+    </linearGradient>
+    <style>
+      .mono {
+        font-family: 'Geist Mono', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .pulse { animation: pulseAnim 2.4s infinite ease-in-out; }
+      .w1 { animation: waveAnim 1.3s infinite ease-in-out; }
+      .w2 { animation: waveAnim 1.3s infinite ease-in-out 0.25s; }
+      .w3 { animation: waveAnim 1.3s infinite ease-in-out 0.5s; }
+      @keyframes pulseAnim {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.35; }
+      }
+      @keyframes waveAnim {
+        0%, 100% { opacity: 0.35; }
+        50% { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Full-Width 1200px Obsidian Monolith Frame (Light/Dark Mode Immune) -->
+  <rect width="1200" height="44" rx="13" fill="url(#canvasBg)" />
+  <rect x="0.75" y="0.75" width="1198.5" height="42.5" rx="12.25" fill="none" stroke="#263046" stroke-width="1.5" />
+
+  <!-- Terminal Spine Node at x=36 -->
+  <circle cx="36" cy="22" r="5.5" fill="#0B0F17" stroke="#38BDF8" stroke-opacity="0.65" stroke-width="1.2" />
+  <circle cx="36" cy="22" r="2.2" fill="#38BDF8" />
+  <line x1="41.5" y1="22" x2="61" y2="22" stroke="#38BDF8" stroke-width="1.4" />
+
+  <!-- Inner Telemetry Rail (x=64..1160, y=7..37) -->
+  <rect x="64" y="7" width="1096" height="30" rx="8" fill="url(#footBg)" stroke="#22304A" stroke-width="1.1" />
+  <line x1="120" y1="7" x2="1104" y2="7" stroke="#38BDF8" stroke-opacity="0.22" stroke-width="1" />
+
+  <!-- Left System Signature -->
+  <circle cx="82" cy="22" r="2.8" fill="#38BDF8" class="pulse" />
+  <text x="93" y="25.5" fill="#94A3B8" font-size="9" font-weight="700" class="mono">NOIR-OS v4.2 // <tspan fill="#E2E8F0">ATELIER NOIR ARCHITECTURE</tspan> · HO CHI MINH CITY, VN</text>
+
+  <!-- Center Equalizer Pulse -->
+  <rect x="602" y="18" width="2" height="8" rx="1" fill="#E5484D" class="w1" />
+  <rect x="607" y="15" width="2" height="14" rx="1" fill="#38BDF8" class="w2" />
+  <rect x="612" y="17" width="2" height="10" rx="1" fill="#10B981" class="w3" />
+  <rect x="617" y="16" width="2" height="12" rx="1" fill="#38BDF8" class="w1" />
+  <rect x="622" y="19" width="2" height="6" rx="1" fill="#E5484D" class="w2" />
+
+  <!-- Right Operational Status -->
+  <circle cx="882" cy="22" r="2.8" fill="#10B981" class="pulse" />
+  <text x="892" y="25.5" fill="#34D399" font-size="9" font-weight="800" class="mono">ALL 4 PRODUCTION SYSTEMS ONLINE · 100/100 CWV</text>
+</svg>
