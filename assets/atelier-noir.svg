@@ -244,8 +244,16 @@
       .arm-back { animation: armBackWalk 12s infinite ease-in-out; transform-origin: 8px 117px; }
       .forearm-back { animation: forearmBackWalk 12s infinite ease-in-out; transform-origin: 8px 133px; }
 
-      .point-beam-row1 { animation: pointLaserRow1 12s infinite ease-in-out; }
-      .point-beam-row2 { animation: pointLaserRow2 12s infinite ease-in-out; }
+      .laptop-holo-beam { animation: laptopBeamProject 12s infinite ease-in-out; }
+      .terminal-holo-window { animation: terminalHoloPop 12s infinite cubic-bezier(0.22, 1, 0.36, 1); transform-origin: -14px 97px; }
+      .typing-sparks { animation: typingSparksBurst 12s infinite ease-in-out; }
+      .laptop-screen-glow { animation: laptopScreenBlaze 12s infinite ease-in-out; }
+      .stylus-wand { animation: stylusWandToggle 12s infinite ease-in-out; }
+      .term-cmd-1 { animation: termCmd1Show 12s infinite ease-out; }
+      .term-out-1 { animation: termOut1Show 12s infinite ease-out; }
+      .term-cmd-2 { animation: termCmd2Show 12s infinite ease-out; }
+      .term-out-2 { animation: termOut2Show 12s infinite ease-out; }
+      .term-cmd-3 { animation: termCmd3Show 12s infinite ease-out; }
       .term-block-1 { animation: termBlock1Pulse 12s infinite ease-in-out; }
       .term-block-2 { animation: termBlock2Pulse 12s infinite ease-in-out; }
       .phat-spotlight { animation: phatSpotlightShow 12s infinite ease-in-out; }
@@ -503,15 +511,15 @@
         100%                   { transform: rotate(16deg); }
       }
 
-      /* 9. Front Arm (Laser Pointer / Stylus Gesture from Left Shoulder) */
+      /* 9. Front Arm (Rapid Laptop Keyboard Typing at 25%–47% + Spotlight Gesture at 75%–96%) */
       @keyframes armFrontWalk {
         0%, 6%, 12%, 18%       { transform: rotate(16deg); }
         3%, 9%, 15%, 21%       { transform: rotate(-16deg); }
-        26%                    { transform: rotate(-20deg); }
-        28%, 37%               { transform: rotate(-100deg); } /* Pointing row 1 */
-        38%                    { transform: rotate(-90deg); }  /* Smooth transfer */
-        39%, 47%               { transform: rotate(-80deg); }  /* Pointing row 2 */
-        49%                    { transform: rotate(-18deg); }
+        24.5%                  { transform: rotate(-34deg); }
+        /* Rapid Laptop Typing Rhythm (Hands on MacBook Keyboard) */
+        26%, 30%, 34%, 38%, 42%, 46% { transform: rotate(-37deg); }
+        28%, 32%, 36%, 40%, 44%, 47% { transform: rotate(-45deg); }
+        49%                    { transform: rotate(-14deg); }
         51%, 57%, 63%, 69%     { transform: rotate(16deg); }
         54%, 60%, 66%, 72%     { transform: rotate(-16deg); }
         75%                    { transform: rotate(-40deg); }
@@ -524,18 +532,22 @@
       @keyframes forearmFrontWalk {
         0%, 6%, 12%, 18%       { transform: rotate(-8deg); }
         3%, 9%, 15%, 21%       { transform: rotate(-26deg); }
-        28%, 47%               { transform: rotate(-6deg); }
+        26%, 30%, 34%, 38%, 42%, 46% { transform: rotate(-12deg); }
+        28%, 32%, 36%, 40%, 44%, 47% { transform: rotate(-24deg); }
         51%, 57%, 63%, 69%     { transform: rotate(-8deg); }
         54%, 60%, 66%, 72%     { transform: rotate(-26deg); }
         77%, 96%               { transform: rotate(-8deg); }
         99%, 100%              { transform: rotate(-8deg); }
       }
 
-      /* 10. Back Arm (Natural Balance Counter-Swing) */
+      /* 10. Back Arm (Counter-Phase Laptop Typing + Natural Walk Balance) */
       @keyframes armBackWalk {
         0%, 6%, 12%, 18%       { transform: rotate(-18deg); }
         3%, 9%, 15%, 21%       { transform: rotate(18deg); }
-        27%, 47%               { transform: rotate(10deg); }
+        24.5%                  { transform: rotate(-20deg); }
+        26%, 30%, 34%, 38%, 42%, 46% { transform: rotate(-28deg); }
+        28%, 32%, 36%, 40%, 44%, 47% { transform: rotate(-19deg); }
+        49%                    { transform: rotate(-10deg); }
         51%, 57%, 63%, 69%     { transform: rotate(-18deg); }
         54%, 60%, 66%, 72%     { transform: rotate(18deg); }
         77%, 96%               { transform: rotate(-32deg); }
@@ -544,32 +556,83 @@
       @keyframes forearmBackWalk {
         0%, 6%, 12%, 18%       { transform: rotate(-24deg); }
         3%, 9%, 15%, 21%       { transform: rotate(-8deg); }
-        27%, 47%               { transform: rotate(-14deg); }
+        26%, 30%, 34%, 38%, 42%, 46% { transform: rotate(-24deg); }
+        28%, 32%, 36%, 40%, 44%, 47% { transform: rotate(-12deg); }
         51%, 57%, 63%, 69%     { transform: rotate(-24deg); }
         54%, 60%, 66%, 72%     { transform: rotate(-8deg); }
         77%, 96%               { transform: rotate(-38deg); }
         99%, 100%              { transform: rotate(-24deg); }
       }
 
-      @keyframes pointLaserRow1 {
-        0%, 26.5% { opacity: 0; }
-        28%, 37%  { opacity: 1; }
-        38.5%, 100% { opacity: 0; }
+      /* 11. Stylus Wand Toggle (Hidden during Laptop Typing, Active during Left Spotlight) */
+      @keyframes stylusWandToggle {
+        0%, 73.5%  { opacity: 0; }
+        75%, 96.5% { opacity: 1; }
+        98%, 100%  { opacity: 0; }
       }
-      @keyframes pointLaserRow2 {
-        0%, 37.5% { opacity: 0; }
-        39%, 47%  { opacity: 1; }
-        48.5%, 100% { opacity: 0; }
+
+      /* 12. Laptop Screen Blaze & Keystroke Sparks During Typing (25.5%–48%) */
+      @keyframes laptopScreenBlaze {
+        0%, 24.5%  { opacity: 0.35; }
+        26%, 47.5% { opacity: 1; }
+        50%, 100%  { opacity: 0.35; }
+      }
+      @keyframes typingSparksBurst {
+        0%, 25%    { opacity: 0; transform: translateY(2px); }
+        26.5%, 47% { opacity: 1; transform: translateY(-2px); }
+        48.5%, 100% { opacity: 0; transform: translateY(2px); }
+      }
+
+      /* 13. Holographic Projection Cone & Terminal Pop-Out From Laptop Screen */
+      @keyframes laptopBeamProject {
+        0%, 25%    { opacity: 0; }
+        26.5%, 62% { opacity: 0.95; }
+        65.5%, 100% { opacity: 0; }
+      }
+      @keyframes terminalHoloPop {
+        0%, 25%    { opacity: 0; transform: scale(0.08); }
+        26.8%      { opacity: 1; transform: scale(1.02); }
+        28%, 62%   { opacity: 1; transform: scale(1); }
+        63.2%      { opacity: 0.85; transform: scale(1.01); }
+        65.5%, 100% { opacity: 0; transform: scale(0.08); }
+      }
+
+      /* 14. Sequential Command Typing & Execution Inside Projected Terminal */
+      @keyframes termCmd1Show {
+        0%, 27.2%  { opacity: 0; transform: translateX(-4px); }
+        28.5%, 63% { opacity: 1; transform: translateX(0px); }
+        65%, 100%  { opacity: 0; transform: translateX(0px); }
+      }
+      @keyframes termOut1Show {
+        0%, 30.2%  { opacity: 0; transform: translateY(2px); }
+        31.5%, 63% { opacity: 1; transform: translateY(0px); }
+        65%, 100%  { opacity: 0; transform: translateY(0px); }
+      }
+      @keyframes termCmd2Show {
+        0%, 34.5%  { opacity: 0; transform: translateX(-4px); }
+        36.0%, 63% { opacity: 1; transform: translateX(0px); }
+        65%, 100%  { opacity: 0; transform: translateX(0px); }
+      }
+      @keyframes termOut2Show {
+        0%, 37.8%  { opacity: 0; transform: translateY(2px); }
+        39.2%, 63% { opacity: 1; transform: translateY(0px); }
+        65%, 100%  { opacity: 0; transform: translateY(0px); }
+      }
+      @keyframes termCmd3Show {
+        0%, 41.5%  { opacity: 0; transform: translateX(-4px); }
+        43.0%, 63% { opacity: 1; transform: translateX(0px); }
+        65%, 100%  { opacity: 0; transform: translateX(0px); }
       }
       @keyframes termBlock1Pulse {
-        0%, 26.5%   { opacity: 0; }
-        28%, 37%    { opacity: 1; }
-        38.5%, 100% { opacity: 0; }
+        0%, 27%     { opacity: 0; }
+        28.5%, 35%  { opacity: 1; }
+        36.5%, 100% { opacity: 0.32; }
       }
       @keyframes termBlock2Pulse {
-        0%, 37.5%   { opacity: 0; }
-        39%, 47%    { opacity: 1; }
-        48.5%, 100% { opacity: 0; }
+        0%, 34.5%   { opacity: 0; }
+        36%, 47.5%  { opacity: 1; }
+        49%, 63%    { opacity: 0.45; }
+        65%, 100%   { opacity: 0; }
       }
       @keyframes phatSpotlightShow {
         0%, 75%   { opacity: 0; }
@@ -982,28 +1045,74 @@
   <circle cx="824" cy="233" r="3" fill="#38BDF8" filter="url(#crimsonBloom)" />
   <circle cx="854" cy="255" r="2" fill="#38BDF8" />
 
-  <!-- Developer Espresso Mug on Glowing Cyan Warming Coaster + Rising Steam (x=826..843, y=214..235) -->
-  <g transform="translate(833, 232)">
-    <!-- Glowing Holo Warming Pad -->
-    <ellipse cx="0" cy="2.2" rx="7.5" ry="2.2" fill="#0B1324" stroke="#38BDF8" stroke-width="0.85" />
-    <ellipse cx="0" cy="2.2" rx="4.8" ry="1.1" fill="#38BDF8" fill-opacity="0.45" />
-    <!-- Cup Handle -->
-    <path d="M 4.2 -6.2 C 7.2 -6.2, 7.2 -1.5, 4.2 -1.5" fill="none" stroke="#E5484D" stroke-width="1.3" stroke-linecap="round" />
-    <!-- Matte Obsidian Cup Body with Crimson Rim -->
-    <path d="M -4.8 -8.5 H 4.8 L 3.8 1.5 C 3.6 2.3, -3.6 2.3, -3.8 1.5 Z" fill="#161C2B" stroke="#64748B" stroke-width="0.85" stroke-linejoin="round" />
-    <line x1="-4.5" y1="-6.8" x2="4.5" y2="-6.8" stroke="#E5484D" stroke-width="1.1" />
-    <!-- Animated Rising Coffee Steam Wisps -->
-    <path d="M -1.6 -10.5 Q -3.0 -13.5 -0.8 -16.2" fill="none" stroke="#CBD5E1" stroke-width="0.95" stroke-linecap="round" class="steam-wisp-1" />
-    <path d="M 1.6 -10.0 Q 3.0 -13.0 0.8 -15.8" fill="none" stroke="#CBD5E1" stroke-width="0.95" stroke-linecap="round" class="steam-wisp-2" />
+  <!-- =================================================================== -->
+  <!-- STANDBY HOLO-EMITTER BAY (Visible When Terminal Is Folded Into Laptop) -->
+  <!-- =================================================================== -->
+  <g transform="translate(852, 80)">
+    <rect width="276" height="164" rx="10" fill="#080C15" fill-opacity="0.55" stroke="#1E293B" stroke-width="1" stroke-dasharray="6 4" />
+    <line x1="138" y1="16" x2="138" y2="148" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="3 3" />
+    <line x1="20" y1="82" x2="256" y2="82" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="3 3" />
+    <circle cx="138" cy="76" r="28" fill="#0B111E" stroke="#263552" stroke-width="1.1" />
+    <circle cx="138" cy="76" r="19" fill="none" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1" stroke-dasharray="5 3" />
+    <circle cx="138" cy="76" r="4" fill="#38BDF8" class="pulse-dot" />
+    <text x="138" y="118" text-anchor="middle" fill="#64748B" font-size="8" font-weight="700" class="mono">HOLO-TERMINAL // STANDBY</text>
+    <text x="138" y="131" text-anchor="middle" fill="#38BDF8" fill-opacity="0.7" font-size="7" font-weight="700" class="mono">⚡ TYPE ON WORKSTATION TO PROJECT</text>
   </g>
 
-  <!-- Right-Side Mini Macro-Pad / Status Dock Beside Terminal Pedestal (x=1080..1122, y=249..259) -->
+  <!-- Permanent Holographic Floor Emitter Pedestal & Right Macro-Pad -->
+  <g transform="translate(848, 78)">
+    <polygon points="28,168 254,168 214,177 68,177" fill="url(#holoEmitterCone)" />
+    <rect x="58" y="175" width="166" height="4" rx="2" fill="#0F172A" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="0.9" />
+    <line x1="88" y1="177" x2="194" y2="177" stroke="#38BDF8" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+    <circle cx="72" cy="177" r="1.4" fill="#E5484D" />
+    <circle cx="141" cy="177" r="1.8" fill="#38BDF8" filter="url(#crimsonBloom)" />
+    <circle cx="210" cy="177" r="1.4" fill="#10B981" />
+  </g>
   <g transform="translate(1080, 250)">
     <rect width="42" height="7" rx="2.5" fill="#0F172A" stroke="#263552" stroke-width="0.85" />
     <rect x="4" y="1.8" width="6" height="3.4" rx="1" fill="#E5484D" />
     <rect x="12.5" y="1.8" width="6" height="3.4" rx="1" fill="#38BDF8" />
     <rect x="21" y="1.8" width="6" height="3.4" rx="1" fill="#10B981" />
     <rect x="29.5" y="1.8" width="8.5" height="3.4" rx="1" fill="#334155" />
+  </g>
+
+  <!-- =================================================================== -->
+  <!-- CYBER-NOIR STANDING WORK DESK & LAPTOP KEYBOARD BASE (x=803..850)   -->
+  <!-- (Rendered before Chibi so Chibi's hands rest ON TOP of the keys!)   -->
+  <!-- =================================================================== -->
+  <g>
+    <!-- Under-Desk Ambient Cyan Neon Cast Glow -->
+    <ellipse cx="827" cy="195" rx="22" ry="4.5" fill="#38BDF8" fill-opacity="0.18" />
+    <ellipse cx="828" cy="233.5" rx="18" ry="3" fill="#040609" fill-opacity="0.85" />
+
+    <!-- Telescopic Smart Desk Pillar Leg & Stabilizer Foot (x=814..842, y=192..234.5) -->
+    <path d="M 813 234 L 819 229.5 H 837 L 843 234 Z" fill="#161F33" stroke="#3B4D70" stroke-width="0.9" />
+    <rect x="823.5" y="191.5" width="9" height="38.5" rx="1.5" fill="#0E1422" stroke="#2A3957" stroke-width="0.95" />
+    <!-- Vertical RGB Telemetry Strip Inside Desk Leg -->
+    <line x1="828" y1="194" x2="828" y2="227" stroke="#38BDF8" stroke-width="1.3" stroke-linecap="round" opacity="0.85" />
+    <circle cx="828" cy="202" r="1.1" fill="#E5484D" />
+
+    <!-- Beveled Carbon-Titanium Standing Desk Tabletop (x=802..850, y=187.5..192) -->
+    <rect x="802" y="187.5" width="48" height="4.5" rx="2" fill="#172136" stroke="#475980" stroke-width="0.95" />
+    <line x1="804" y1="189.8" x2="848" y2="189.8" stroke="url(#termBorderGrad)" stroke-width="1.2" stroke-linecap="round" />
+
+    <!-- Laptop Aluminum Keyboard Base Deck on Tabletop (x=806..827, y=184.5..187.8) -->
+    <rect x="806" y="184.8" width="21.5" height="3.0" rx="1.2" fill="#28354E" stroke="#94A3B8" stroke-width="0.75" />
+    <!-- Individual Illuminated Mechanical Keycaps Under Chibi's Fingers -->
+    <rect x="808.5" y="183.6" width="3.2" height="1.3" rx="0.4" fill="#38BDF8" />
+    <rect x="812.8" y="183.6" width="3.2" height="1.3" rx="0.4" fill="#E2E8F0" />
+    <rect x="817.1" y="183.6" width="3.2" height="1.3" rx="0.4" fill="#38BDF8" />
+    <rect x="821.4" y="183.6" width="3.2" height="1.3" rx="0.4" fill="#10B981" />
+
+    <!-- Steaming Developer Espresso Mug on Front Corner of Work Desk (x=842, y=186) -->
+    <g transform="translate(842.5, 186.2)">
+      <ellipse cx="0" cy="1.2" rx="5.2" ry="1.4" fill="#0B1324" stroke="#38BDF8" stroke-width="0.7" />
+      <path d="M 3.2 -4.8 C 5.4 -4.8, 5.4 -1.0, 3.2 -1.0" fill="none" stroke="#E5484D" stroke-width="1.05" stroke-linecap="round" />
+      <path d="M -3.6 -6.5 H 3.6 L 2.9 1.0 C 2.7 1.6, -2.7 1.6, -2.9 1.0 Z" fill="#161C2B" stroke="#64748B" stroke-width="0.75" stroke-linejoin="round" />
+      <line x1="-3.3" y1="-5.1" x2="3.3" y2="-5.1" stroke="#E5484D" stroke-width="0.95" />
+      <path d="M -1.2 -8.0 Q -2.4 -10.8 -0.6 -13.2" fill="none" stroke="#CBD5E1" stroke-width="0.85" stroke-linecap="round" class="steam-wisp-1" />
+      <path d="M 1.2 -7.6 Q 2.4 -10.4 0.6 -12.8" fill="none" stroke="#CBD5E1" stroke-width="0.85" stroke-linecap="round" class="steam-wisp-2" />
+    </g>
   </g>
 
   <!-- PATROLLING STREETWEAR HOODIE CHIBI BOY (STUDIO-GRADE ANIME ART & KINEMATICS) -->
@@ -1353,10 +1462,12 @@
               <!-- 1. Palm Base with Mochi Warmth (Behind Stylus) -->
               <circle cx="-8" cy="154.5" r="4.3" fill="url(#chibiSkin)" stroke="#C68670" stroke-width="0.75" />
               <ellipse cx="-8" cy="155.2" rx="2.2" ry="1.3" fill="url(#mochiBlushGrad)" />
-              <!-- 2. Laser Pointer Stylus Wand (Held Inside Hand) -->
-              <rect x="-9.3" y="152" width="2.8" height="11.5" rx="1.4" fill="#1E1C1B" stroke="#E5484D" stroke-width="0.85" />
-              <circle cx="-7.9" cy="163.5" r="2.4" fill="#E5484D" filter="url(#crimsonBloom)" />
-              <circle cx="-7.9" cy="163.5" r="1.15" fill="#FFFFFF" />
+              <!-- 2. Laser Pointer Stylus Wand (Active During Left Spotlight Phase) -->
+              <g class="stylus-wand">
+                <rect x="-9.3" y="152" width="2.8" height="11.5" rx="1.4" fill="#1E1C1B" stroke="#E5484D" stroke-width="0.85" />
+                <circle cx="-7.9" cy="163.5" r="2.4" fill="#E5484D" filter="url(#crimsonBloom)" />
+                <circle cx="-7.9" cy="163.5" r="1.15" fill="#FFFFFF" />
+              </g>
               <!-- 3. Curled Chubby Fingers & Thumb Wrapping OVER the Stylus Body! -->
               <ellipse cx="-6.1" cy="154.8" rx="2.2" ry="1.55" transform="rotate(-18 -6.1 154.8)" fill="url(#chibiSkin)" stroke="#C68670" stroke-width="0.7" />
               <ellipse cx="-9.6" cy="155.2" rx="1.8" ry="1.35" transform="rotate(15 -9.6 155.2)" fill="url(#chibiSkin)" stroke="#C68670" stroke-width="0.7" />
@@ -1367,22 +1478,41 @@
     </g>
   </g>
 
-  <!-- RIGHT INTERACTION: TACTICAL HOLOGRAM SCAN CONE & LASER RETICLE AT TERMINAL -->
-  <!-- Block 1 Scan (28%–37%): Stylus Tip (829, 146) -> Warp Command Block 1 (854, 126) -->
-  <g class="point-beam-row1">
-    <polygon points="829,146 854,110 854,142" fill="url(#scanBeamRight)" />
-    <line x1="829" y1="146" x2="854" y2="126" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
-    <circle cx="829" cy="146" r="3" fill="#FFFFFF" filter="url(#crimsonBloom)" />
-    <circle cx="854" cy="126" r="5.5" fill="none" stroke="#38BDF8" stroke-width="1.3" />
-    <circle cx="854" cy="126" r="2.2" fill="#E5484D" />
+  <!-- ===================================================================== -->
+  <!-- LAPTOP DISPLAY LID, KEYSTROKE SPARKS & HOLOGRAPHIC PROJECTION CONE    -->
+  <!-- ===================================================================== -->
+  <!-- 1. Open Dev Laptop / MacBook Display Lid (x=825.5..836, y=166..187) -->
+  <g>
+    <!-- Ambient Cyan Screen Light Cast Toward Chibi's Face & Hands When Typing -->
+    <polygon points="826,185 804,174 808,187" fill="#38BDF8" fill-opacity="0.18" class="laptop-screen-glow" />
+    <!-- Tilted Metallic Display Housing -->
+    <polygon points="825.5,186.8 828.2,186.8 836.2,166.5 833.5,166.5" fill="#28354E" stroke="#94A3B8" stroke-width="0.8" stroke-linejoin="round" />
+    <!-- Glowing Retina Display Inner Edge -->
+    <line x1="825.3" y1="185.8" x2="833.0" y2="167.2" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" filter="url(#crimsonBloom)" class="laptop-screen-glow" />
+    <!-- Glowing Core Emblem on Back of Laptop Lid -->
+    <circle cx="831.2" cy="176.5" r="1.5" fill="#38BDF8" filter="url(#crimsonBloom)" class="laptop-screen-glow" />
+    <circle cx="831.2" cy="176.5" r="0.8" fill="#FFFFFF" />
   </g>
-  <!-- Block 2 Scan (39%–47%): Stylus Tip (830, 161) -> Warp Command Block 2 (854, 168) -->
-  <g class="point-beam-row2">
-    <polygon points="830,161 854,152 854,184" fill="url(#scanBeamRight)" />
-    <line x1="830" y1="161" x2="854" y2="168" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
-    <circle cx="830" cy="161" r="3" fill="#FFFFFF" filter="url(#crimsonBloom)" />
-    <circle cx="854" cy="168" r="5.5" fill="none" stroke="#38BDF8" stroke-width="1.3" />
-    <circle cx="854" cy="168" r="2.2" fill="#10B981" />
+
+  <!-- 2. Animated Keystroke Sparks Bursting Above Keyboard During Typing (25.5%–47.5%) -->
+  <g class="typing-sparks">
+    <circle cx="811" cy="179" r="1.3" fill="#38BDF8" filter="url(#crimsonBloom)" />
+    <circle cx="819" cy="176.5" r="1.4" fill="#10B981" filter="url(#crimsonBloom)" />
+    <circle cx="815" cy="174" r="1.1" fill="#E5484D" />
+    <path d="M 807.5 175.5 H 810.5 M 809 174 V 177" stroke="#38BDF8" stroke-width="0.9" stroke-linecap="round" />
+    <path d="M 821.5 179.5 H 824.5 M 823 178 V 181" stroke="#34D399" stroke-width="0.9" stroke-linecap="round" />
+  </g>
+
+  <!-- 3. Holographic Projection Cone Shooting From Laptop Screen (834, 175) -> Terminal -->
+  <g class="laptop-holo-beam">
+    <polygon points="834,175 852,82 852,242" fill="url(#scanBeamRight)" opacity="0.85" />
+    <polygon points="834,175 852,115 852,210" fill="url(#scanBeamRight)" />
+    <line x1="834" y1="175" x2="852" y2="86" stroke="#38BDF8" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.75" />
+    <line x1="834" y1="175" x2="852" y2="162" stroke="#38BDF8" stroke-width="1.7" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
+    <line x1="834" y1="175" x2="852" y2="238" stroke="#10B981" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.75" />
+    <!-- Holographic Projector Lens Ring at Laptop Screen -->
+    <ellipse cx="834" cy="175" rx="2.4" ry="5.2" transform="rotate(20 834 175)" fill="none" stroke="#38BDF8" stroke-width="1.3" filter="url(#crimsonBloom)" />
+    <circle cx="834" cy="175" r="2.2" fill="#FFFFFF" filter="url(#crimsonBloom)" />
   </g>
 
   <!-- LEFT INTERACTION: WIDE SPOTLIGHT CONE & BLAZING FRAME ON "TRAN TAN PHAT" -->
@@ -1417,156 +1547,145 @@
   </g>
 
   <!-- ===================================================================== -->
-  <!-- NOIR-OS // HOLOGRAPHIC WARP & IDE COMMAND DECK (x=848..1130, y=78..257) -->
+  <!-- NOIR-OS // HOLOGRAPHIC WARP & IDE COMMAND DECK (Projected From Laptop!) -->
   <!-- ===================================================================== -->
   <g transform="translate(848, 78)">
-    <!-- 1. Holographic Floor Emitter Pedestal & Upward Light Field -->
-    <polygon points="28,168 254,168 214,177 68,177" fill="url(#holoEmitterCone)" />
-    <rect x="58" y="175" width="166" height="4" rx="2" fill="#0F172A" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="0.9" />
-    <line x1="88" y1="177" x2="194" y2="177" stroke="#38BDF8" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
-    <circle cx="72" cy="177" r="1.4" fill="#E5484D" />
-    <circle cx="141" cy="177" r="1.8" fill="#38BDF8" filter="url(#crimsonBloom)" />
-    <circle cx="210" cy="177" r="1.4" fill="#10B981" />
+    <g class="terminal-holo-window">
+      <!-- 1. Outer Drop Shadow, Glassmorphic Bezel & Cybernetic HUD Corner Reticles -->
+      <rect x="-2" y="2" width="286" height="170" rx="11" fill="#030509" fill-opacity="0.75" />
+      <rect width="282" height="168" rx="10" fill="url(#holoScreenGrad)" stroke="url(#termBorderGrad)" stroke-width="1.35" />
+      <rect x="1.5" y="1.5" width="279" height="165" rx="8.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="0.9" />
 
-    <!-- 2. Outer Drop Shadow, Glassmorphic Bezel & Cybernetic HUD Corner Reticles -->
-    <rect x="-2" y="2" width="286" height="170" rx="11" fill="#030509" fill-opacity="0.65" />
-    <rect width="282" height="168" rx="10" fill="url(#holoScreenGrad)" stroke="url(#termBorderGrad)" stroke-width="1.3" />
-    <rect x="1.5" y="1.5" width="279" height="165" rx="8.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="0.9" />
+      <!-- Subtle Architectural Grid & Diagonal Specular Glass Reflection Inside Viewport -->
+      <rect x="25" y="26" width="256" height="122" fill="url(#archGrid)" opacity="0.55" />
+      <polygon points="2,26 150,26 88,148 2,148" fill="url(#glassSheenGrad)" />
 
-    <!-- Subtle Architectural Grid & Diagonal Specular Glass Reflection Inside Viewport -->
-    <rect x="25" y="26" width="256" height="122" fill="url(#archGrid)" opacity="0.55" />
-    <polygon points="2,26 150,26 88,148 2,148" fill="url(#glassSheenGrad)" />
+      <!-- 4 Precision HUD Corner Brackets -->
+      <path d="M -2.5 9 V -2.5 H 9" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" opacity="0.85" />
+      <path d="M 273 -2.5 H 284.5 V 9" fill="none" stroke="#E5484D" stroke-width="1.4" stroke-linecap="round" opacity="0.85" />
+      <path d="M -2.5 159 V 170.5 H 9" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" opacity="0.7" />
+      <path d="M 273 170.5 H 284.5 V 159" fill="none" stroke="#10B981" stroke-width="1.4" stroke-linecap="round" opacity="0.85" />
 
-    <!-- 4 Precision HUD Corner Brackets -->
-    <path d="M -2.5 9 V -2.5 H 9" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" opacity="0.85" />
-    <path d="M 273 -2.5 H 284.5 V 9" fill="none" stroke="#E5484D" stroke-width="1.4" stroke-linecap="round" opacity="0.85" />
-    <path d="M -2.5 159 V 170.5 H 9" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" opacity="0.7" />
-    <path d="M 273 170.5 H 284.5 V 159" fill="none" stroke="#10B981" stroke-width="1.4" stroke-linecap="round" opacity="0.85" />
+      <!-- 2. Warp / Ghostty Pro Multi-Tab Header Bar (Flush Top-Only Rounded Geometry) -->
+      <path d="M 1 10 A 9 9 0 0 1 10 1 H 272 A 9 9 0 0 1 281 10 V 26 H 1 Z" fill="#0A0E18" />
+      <line x1="1" y1="26" x2="281" y2="26" stroke="#24324D" stroke-width="1" />
 
-    <!-- 3. Warp / Ghostty Pro Multi-Tab Header Bar (Flush Top-Only Rounded Geometry) -->
-    <path d="M 1 10 A 9 9 0 0 1 10 1 H 272 A 9 9 0 0 1 281 10 V 26 H 1 Z" fill="#0A0E18" />
-    <line x1="1" y1="26" x2="281" y2="26" stroke="#24324D" stroke-width="1" />
+      <!-- macOS Pro Traffic Lights with Inner Specular Cores -->
+      <circle cx="13" cy="13.5" r="3.3" fill="#FF5F56" />
+      <circle cx="12" cy="12.5" r="1.0" fill="#FECACA" fill-opacity="0.65" />
+      <circle cx="23.5" cy="13.5" r="3.3" fill="#FFBD2E" />
+      <circle cx="22.5" cy="12.5" r="1.0" fill="#FEF08A" fill-opacity="0.65" />
+      <circle cx="34" cy="13.5" r="3.3" fill="#27C93F" />
+      <circle cx="33" cy="12.5" r="1.0" fill="#BBF7D0" fill-opacity="0.65" />
 
-    <!-- macOS Pro Traffic Lights with Inner Specular Cores -->
-    <circle cx="13" cy="13.5" r="3.3" fill="#FF5F56" />
-    <circle cx="12" cy="12.5" r="1.0" fill="#FECACA" fill-opacity="0.65" />
-    <circle cx="23.5" cy="13.5" r="3.3" fill="#FFBD2E" />
-    <circle cx="22.5" cy="12.5" r="1.0" fill="#FEF08A" fill-opacity="0.65" />
-    <circle cx="34" cy="13.5" r="3.3" fill="#27C93F" />
-    <circle cx="33" cy="12.5" r="1.0" fill="#BBF7D0" fill-opacity="0.65" />
+      <!-- Active Tab 1: noir-agent.ts -->
+      <path d="M 46 26 V 9 A 5 5 0 0 1 51 4 H 150 A 5 5 0 0 1 155 9 V 26 Z" fill="#131C2E" stroke="#293A5A" stroke-width="0.85" />
+      <line x1="50" y1="4" x2="151" y2="4" stroke="#E5484D" stroke-width="1.6" stroke-linecap="round" />
+      <text x="54" y="17.5" fill="#38BDF8" font-size="8" font-weight="800" class="code">&gt;_</text>
+      <text x="68" y="17.5" fill="#F8FAFC" font-size="8" font-weight="700" class="code">noir-agent.ts</text>
+      <circle cx="145" cy="14.5" r="2" fill="#10B981" />
 
-    <!-- Active Tab 1: noir-agent.ts -->
-    <path d="M 46 26 V 9 A 5 5 0 0 1 51 4 H 150 A 5 5 0 0 1 155 9 V 26 Z" fill="#131C2E" stroke="#293A5A" stroke-width="0.85" />
-    <line x1="50" y1="4" x2="151" y2="4" stroke="#E5484D" stroke-width="1.6" stroke-linecap="round" />
-    <text x="54" y="17.5" fill="#38BDF8" font-size="8" font-weight="800" class="code">&gt;_</text>
-    <text x="68" y="17.5" fill="#F8FAFC" font-size="8" font-weight="700" class="code">noir-agent.ts</text>
-    <circle cx="145" cy="14.5" r="2" fill="#10B981" />
+      <!-- Inactive Tab 2: metrics.sh -->
+      <path d="M 159 26 V 10 A 4 4 0 0 1 163 6 H 222 A 4 4 0 0 1 226 10 V 26 Z" fill="#0D1422" stroke="#1E293B" stroke-width="0.75" />
+      <text x="167" y="17.5" fill="#64748B" font-size="7.5" font-weight="600" class="code">metrics.sh</text>
 
-    <!-- Inactive Tab 2: metrics.sh -->
-    <path d="M 159 26 V 10 A 4 4 0 0 1 163 6 H 222 A 4 4 0 0 1 226 10 V 26 Z" fill="#0D1422" stroke="#1E293B" stroke-width="0.75" />
-    <text x="167" y="17.5" fill="#64748B" font-size="7.5" font-weight="600" class="code">metrics.sh</text>
+      <!-- Right Header SSH Lock & Live Audio/Telemetry Equalizer -->
+      <text x="233" y="17" fill="#38BDF8" font-size="6.8" font-weight="700" class="mono">SSH</text>
+      <rect x="253" y="11" width="2" height="6" rx="1" fill="#10B981" class="wave1" />
+      <rect x="257" y="8" width="2" height="12" rx="1" fill="#38BDF8" class="wave2" />
+      <rect x="261" y="10" width="2" height="8" rx="1" fill="#10B981" class="wave3" />
+      <rect x="265" y="9" width="2" height="10" rx="1" fill="#E5484D" class="wave1" />
 
-    <!-- Right Header SSH Lock & Live Audio/Telemetry Equalizer -->
-    <text x="233" y="17" fill="#38BDF8" font-size="6.8" font-weight="700" class="mono">SSH</text>
-    <rect x="253" y="11" width="2" height="6" rx="1" fill="#10B981" class="wave1" />
-    <rect x="257" y="8" width="2" height="12" rx="1" fill="#38BDF8" class="wave2" />
-    <rect x="261" y="10" width="2" height="8" rx="1" fill="#10B981" class="wave3" />
-    <rect x="265" y="9" width="2" height="10" rx="1" fill="#E5484D" class="wave1" />
+      <!-- 3. IDE Line-Number Gutter (x=1..25, y=26.5..148) -->
+      <rect x="1" y="26.5" width="24" height="121" fill="#070A12" fill-opacity="0.85" />
+      <line x1="25" y1="26.5" x2="25" y2="148" stroke="#1E293B" stroke-width="1" />
+      <text x="13" y="43" text-anchor="middle" fill="#475569" font-size="7.2" class="code">01</text>
+      <text x="13" y="59" text-anchor="middle" fill="#475569" font-size="7.2" class="code">02</text>
+      <text x="13" y="85" text-anchor="middle" fill="#475569" font-size="7.2" class="code">03</text>
+      <text x="13" y="101" text-anchor="middle" fill="#475569" font-size="7.2" class="code">04</text>
+      <text x="13" y="122" text-anchor="middle" fill="#475569" font-size="7.2" class="code">05</text>
+      <text x="13" y="139" text-anchor="middle" fill="#E5484D" font-size="7.2" font-weight="700" class="code">06</text>
 
-    <!-- 4. IDE Line-Number Gutter (x=1..25, y=26.5..148) -->
-    <rect x="1" y="26.5" width="24" height="121" fill="#070A12" fill-opacity="0.85" />
-    <line x1="25" y1="26.5" x2="25" y2="148" stroke="#1E293B" stroke-width="1" />
-    <text x="13" y="43" text-anchor="middle" fill="#475569" font-size="7.2" class="code">01</text>
-    <text x="13" y="59" text-anchor="middle" fill="#475569" font-size="7.2" class="code">02</text>
-    <text x="13" y="85" text-anchor="middle" fill="#475569" font-size="7.2" class="code">03</text>
-    <text x="13" y="101" text-anchor="middle" fill="#475569" font-size="7.2" class="code">04</text>
-    <text x="13" y="122" text-anchor="middle" fill="#475569" font-size="7.2" class="code">05</text>
-    <text x="13" y="139" text-anchor="middle" fill="#E5484D" font-size="7.2" font-weight="700" class="code">06</text>
+      <!-- 4. Holographic CRT Laser Scanline Sweeping Across Code Viewport -->
+      <rect x="26" y="28" width="254" height="1.6" fill="url(#scanlineBarGrad)" class="holo-scanline" />
 
-    <!-- 5. Holographic CRT Laser Scanline Sweeping Across Code Viewport -->
-    <rect x="26" y="28" width="254" height="1.6" fill="url(#scanlineBarGrad)" class="holo-scanline" />
+      <!-- ================================================================= -->
+      <!-- 5. WARP COMMAND BLOCK 01 (Typed & Executed at 27.5%–35%)          -->
+      <!-- ================================================================= -->
+      <rect x="29" y="30" width="248" height="36" rx="5" fill="#0D1424" fill-opacity="0.7" stroke="#1E293B" stroke-width="0.8" />
+      <rect x="29" y="31" width="2.5" height="34" rx="1.2" fill="#334155" />
 
-    <!-- =================================================================== -->
-    <!-- 6. WARP COMMAND BLOCK 01 (y=30..66 — Highlighted at 28%–37% Scan)   -->
-    <!-- =================================================================== -->
-    <rect x="29" y="30" width="248" height="36" rx="5" fill="#0D1424" fill-opacity="0.7" stroke="#1E293B" stroke-width="0.8" />
-    <rect x="29" y="31" width="2.5" height="34" rx="1.2" fill="#334155" />
+      <g class="term-block-1">
+        <rect x="29" y="30" width="248" height="36" rx="5" fill="url(#activeBlockGrad)" stroke="#38BDF8" stroke-width="1.15" />
+        <rect x="29" y="31" width="3.2" height="34" rx="1.5" fill="#38BDF8" filter="url(#crimsonBloom)" />
+      </g>
 
-    <!-- Reactive Laser-Scan Illumination Overlay for Block 01 -->
-    <g class="term-block-1">
-      <rect x="29" y="30" width="248" height="36" rx="5" fill="url(#activeBlockGrad)" stroke="#38BDF8" stroke-width="1.15" />
-      <rect x="29" y="31" width="3.2" height="34" rx="1.5" fill="#38BDF8" filter="url(#crimsonBloom)" />
+      <g class="term-cmd-1">
+        <text x="37" y="43" font-size="8.6" class="code">
+          <tspan fill="#E5484D" font-weight="800">❯ </tspan><tspan fill="#38BDF8" font-weight="700">kaikai</tspan><tspan fill="#64748B">.</tspan><tspan fill="#FBBF24" font-weight="600">deploy</tspan><tspan fill="#94A3B8">({ </tspan><tspan fill="#CBD5E1">rls:</tspan><tspan fill="#34D399" font-weight="700"> true</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#CBD5E1">swr:</tspan><tspan fill="#A78BFA"> &quot;edge&quot;</tspan><tspan fill="#94A3B8"> })</tspan>
+        </text>
+      </g>
+      <g class="term-out-1">
+        <text x="37" y="59" font-size="8.3" class="code">
+          <tspan fill="#10B981" font-weight="800">✔ </tspan><tspan fill="#64748B">[PG-16]</tspan><tspan fill="#E2E8F0"> Single-Flight &amp; RLS</tspan>
+        </text>
+        <rect x="215" y="49" width="57" height="13" rx="3.5" fill="#064E3B" fill-opacity="0.65" stroke="#10B981" stroke-width="0.75" />
+        <text x="243.5" y="58" text-anchor="middle" fill="#34D399" font-size="6.8" font-weight="700" class="mono">200 · 12ms</text>
+      </g>
+
+      <!-- ================================================================= -->
+      <!-- 6. WARP COMMAND BLOCK 02 (Typed & Executed at 35%–42%)            -->
+      <!-- ================================================================= -->
+      <rect x="29" y="72" width="248" height="36" rx="5" fill="#0D1424" fill-opacity="0.7" stroke="#1E293B" stroke-width="0.8" />
+      <rect x="29" y="73" width="2.5" height="34" rx="1.2" fill="#334155" />
+
+      <g class="term-block-2">
+        <rect x="29" y="72" width="248" height="36" rx="5" fill="url(#activeBlockGrad)" stroke="#38BDF8" stroke-width="1.15" />
+        <rect x="29" y="73" width="3.2" height="34" rx="1.5" fill="#10B981" filter="url(#crimsonBloom)" />
+      </g>
+
+      <g class="term-cmd-2">
+        <text x="37" y="85" font-size="8.6" class="code">
+          <tspan fill="#E5484D" font-weight="800">❯ </tspan><tspan fill="#38BDF8" font-weight="700">murmur</tspan><tspan fill="#64748B">.</tspan><tspan fill="#FBBF24" font-weight="600">stream</tspan><tspan fill="#94A3B8">({ </tspan><tspan fill="#CBD5E1">p2p:</tspan><tspan fill="#A78BFA"> &quot;webrtc&quot;</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#CBD5E1">ai:</tspan><tspan fill="#34D399" font-weight="700"> true</tspan><tspan fill="#94A3B8"> })</tspan>
+        </text>
+      </g>
+      <g class="term-out-2">
+        <text x="37" y="101" font-size="8.3" class="code">
+          <tspan fill="#10B981" font-weight="800">✔ </tspan><tspan fill="#64748B">[SFU]</tspan><tspan fill="#E2E8F0"> Voice Mesh &amp; FastAPI</tspan>
+        </text>
+        <rect x="215" y="91" width="57" height="13" rx="3.5" fill="#0C4A6E" fill-opacity="0.65" stroke="#38BDF8" stroke-width="0.75" />
+        <text x="243.5" y="100" text-anchor="middle" fill="#7DD3FC" font-size="6.8" font-weight="700" class="mono">RTC · 18ms</text>
+      </g>
+
+      <!-- ================================================================= -->
+      <!-- 7. LIVE TELEMETRY SPARKLINE & FINAL PROMPT (Typed at 42%–63%)     -->
+      <!-- ================================================================= -->
+      <g class="term-cmd-3">
+        <text x="33" y="122" font-size="8.0" class="code">
+          <tspan fill="#F59E0B">◆ </tspan><tspan fill="#94A3B8">NODES:</tspan><tspan fill="#34D399" font-weight="700"> 4/4 LIVE</tspan><tspan fill="#334155"> │ </tspan><tspan fill="#94A3B8">PERF:</tspan><tspan fill="#38BDF8" font-weight="700"> 100</tspan>
+        </text>
+        <polyline points="216,122 222,120 228,121 234,116 240,119 246,115 252,118 258,114 264,117 271,113" fill="none" stroke="#10B981" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+        <circle cx="271" cy="113" r="1.8" fill="#34D399" class="pulse-dot" />
+
+        <text x="33" y="139" font-size="8.8" class="code">
+          <tspan fill="#E5484D" font-weight="800">⚡ </tspan><tspan fill="#38BDF8" font-weight="700">phat@noir</tspan><tspan fill="#64748B">:</tspan><tspan fill="#A78BFA">~</tspan><tspan fill="#E5484D" font-weight="700">$ </tspan><tspan fill="#FFFFFF" font-weight="700">ship --prod --all</tspan>
+        </text>
+        <rect x="205" y="130" width="5.5" height="10.5" rx="1" fill="#E5484D" class="cursor-blink" />
+      </g>
+
+      <!-- ================================================================= -->
+      <!-- 8. NEOVIM / TMUX POWERLINE STATUS FOOTER BAR (y=148..167)         -->
+      <!-- ================================================================= -->
+      <path d="M 1 148 H 281 V 158 A 9 9 0 0 1 272 167 H 10 A 9 9 0 0 1 1 158 Z" fill="#080C15" />
+      <line x1="1" y1="148" x2="281" y2="148" stroke="#1E293B" stroke-width="1" />
+
+      <rect x="6" y="151" width="44" height="12.5" rx="3" fill="#E5484D" />
+      <text x="28" y="159.6" text-anchor="middle" fill="#FFFFFF" font-size="6.8" font-weight="800" class="mono">● AGENT</text>
+      <text x="56" y="159.8" fill="#38BDF8" font-size="7.4" font-weight="700" class="code">⎇ main*</text>
+      <text x="96" y="159.8" fill="#475569" font-size="7.0" class="mono">│ <tspan fill="#94A3B8">CPU</tspan> <tspan fill="#34D399" font-weight="700">12%</tspan> · <tspan fill="#94A3B8">MEM</tspan> <tspan fill="#38BDF8" font-weight="700">42M</tspan></text>
+      <rect x="227" y="151" width="49" height="12.5" rx="3" fill="#131C2E" stroke="#263552" stroke-width="0.7" />
+      <text x="251.5" y="159.6" text-anchor="middle" fill="#CBD5E1" font-size="6.6" font-weight="700" class="mono">TS 5.8</text>
     </g>
-
-    <!-- Line 01: Syntax-Highlighted Command Input -->
-    <text x="37" y="43" font-size="8.6" class="code">
-      <tspan fill="#E5484D" font-weight="800">❯ </tspan><tspan fill="#38BDF8" font-weight="700">kaikai</tspan><tspan fill="#64748B">.</tspan><tspan fill="#FBBF24" font-weight="600">deploy</tspan><tspan fill="#94A3B8">({ </tspan><tspan fill="#CBD5E1">rls:</tspan><tspan fill="#34D399" font-weight="700"> true</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#CBD5E1">swr:</tspan><tspan fill="#A78BFA"> &quot;edge&quot;</tspan><tspan fill="#94A3B8"> })</tspan>
-    </text>
-    <!-- Line 02: Execution Verification + Latency Telemetry Pill -->
-    <text x="37" y="59" font-size="8.3" class="code">
-      <tspan fill="#10B981" font-weight="800">✔ </tspan><tspan fill="#64748B">[PG-16]</tspan><tspan fill="#E2E8F0"> Single-Flight &amp; RLS</tspan>
-    </text>
-    <rect x="215" y="49" width="57" height="13" rx="3.5" fill="#064E3B" fill-opacity="0.65" stroke="#10B981" stroke-width="0.75" />
-    <text x="243.5" y="58" text-anchor="middle" fill="#34D399" font-size="6.8" font-weight="700" class="mono">200 · 12ms</text>
-
-    <!-- =================================================================== -->
-    <!-- 7. WARP COMMAND BLOCK 02 (y=72..108 — Highlighted at 39%–47% Scan)  -->
-    <!-- =================================================================== -->
-    <rect x="29" y="72" width="248" height="36" rx="5" fill="#0D1424" fill-opacity="0.7" stroke="#1E293B" stroke-width="0.8" />
-    <rect x="29" y="73" width="2.5" height="34" rx="1.2" fill="#334155" />
-
-    <!-- Reactive Laser-Scan Illumination Overlay for Block 02 -->
-    <g class="term-block-2">
-      <rect x="29" y="72" width="248" height="36" rx="5" fill="url(#activeBlockGrad)" stroke="#38BDF8" stroke-width="1.15" />
-      <rect x="29" y="73" width="3.2" height="34" rx="1.5" fill="#10B981" filter="url(#crimsonBloom)" />
-    </g>
-
-    <!-- Line 03: Syntax-Highlighted Command Input -->
-    <text x="37" y="85" font-size="8.6" class="code">
-      <tspan fill="#E5484D" font-weight="800">❯ </tspan><tspan fill="#38BDF8" font-weight="700">murmur</tspan><tspan fill="#64748B">.</tspan><tspan fill="#FBBF24" font-weight="600">stream</tspan><tspan fill="#94A3B8">({ </tspan><tspan fill="#CBD5E1">p2p:</tspan><tspan fill="#A78BFA"> &quot;webrtc&quot;</tspan><tspan fill="#94A3B8">, </tspan><tspan fill="#CBD5E1">ai:</tspan><tspan fill="#34D399" font-weight="700"> true</tspan><tspan fill="#94A3B8"> })</tspan>
-    </text>
-    <!-- Line 04: Execution Verification + Latency Telemetry Pill -->
-    <text x="37" y="101" font-size="8.3" class="code">
-      <tspan fill="#10B981" font-weight="800">✔ </tspan><tspan fill="#64748B">[SFU]</tspan><tspan fill="#E2E8F0"> Voice Mesh &amp; FastAPI</tspan>
-    </text>
-    <rect x="215" y="91" width="57" height="13" rx="3.5" fill="#0C4A6E" fill-opacity="0.65" stroke="#38BDF8" stroke-width="0.75" />
-    <text x="243.5" y="100" text-anchor="middle" fill="#7DD3FC" font-size="6.8" font-weight="700" class="mono">RTC · 18ms</text>
-
-    <!-- =================================================================== -->
-    <!-- 8. LIVE TELEMETRY SPARKLINE & INTERACTIVE SHELL PROMPT (y=114..145) -->
-    <!-- =================================================================== -->
-    <!-- Line 05: Cluster Health & Live Sparkline Waveform -->
-    <text x="33" y="122" font-size="8.0" class="code">
-      <tspan fill="#F59E0B">◆ </tspan><tspan fill="#94A3B8">NODES:</tspan><tspan fill="#34D399" font-weight="700"> 4/4 LIVE</tspan><tspan fill="#334155"> │ </tspan><tspan fill="#94A3B8">PERF:</tspan><tspan fill="#38BDF8" font-weight="700"> 100</tspan>
-    </text>
-    <polyline points="216,122 222,120 228,121 234,116 240,119 246,115 252,118 258,114 264,117 271,113" fill="none" stroke="#10B981" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-    <circle cx="271" cy="113" r="1.8" fill="#34D399" class="pulse-dot" />
-
-    <!-- Line 06: Active ZSH / Powerline Prompt + Blinking Neon Block Cursor -->
-    <text x="33" y="139" font-size="8.8" class="code">
-      <tspan fill="#E5484D" font-weight="800">⚡ </tspan><tspan fill="#38BDF8" font-weight="700">phat@noir</tspan><tspan fill="#64748B">:</tspan><tspan fill="#A78BFA">~</tspan><tspan fill="#E5484D" font-weight="700">$ </tspan><tspan fill="#FFFFFF" font-weight="700">ship --prod --all</tspan>
-    </text>
-    <rect x="205" y="130" width="5.5" height="10.5" rx="1" fill="#E5484D" class="cursor-blink" />
-
-    <!-- =================================================================== -->
-    <!-- 9. NEOVIM / TMUX POWERLINE STATUS FOOTER BAR (y=148..167)           -->
-    <!-- =================================================================== -->
-    <path d="M 1 148 H 281 V 158 A 9 9 0 0 1 272 167 H 10 A 9 9 0 0 1 1 158 Z" fill="#080C15" />
-    <line x1="1" y1="148" x2="281" y2="148" stroke="#1E293B" stroke-width="1" />
-
-    <!-- Powerline Mode Pill -->
-    <rect x="6" y="151" width="44" height="12.5" rx="3" fill="#E5484D" />
-    <text x="28" y="159.6" text-anchor="middle" fill="#FFFFFF" font-size="6.8" font-weight="800" class="mono">● AGENT</text>
-
-    <!-- Git Branch & Dirty State -->
-    <text x="56" y="159.8" fill="#38BDF8" font-size="7.4" font-weight="700" class="code">⎇ main*</text>
-
-    <!-- Live CPU / Memory Telemetry -->
-    <text x="96" y="159.8" fill="#475569" font-size="7.0" class="mono">│ <tspan fill="#94A3B8">CPU</tspan> <tspan fill="#34D399" font-weight="700">12%</tspan> · <tspan fill="#94A3B8">MEM</tspan> <tspan fill="#38BDF8" font-weight="700">42M</tspan></text>
-
-    <!-- Right Runtime Badge -->
-    <rect x="227" y="151" width="49" height="12.5" rx="3" fill="#131C2E" stroke="#263552" stroke-width="0.7" />
-    <text x="251.5" y="159.6" text-anchor="middle" fill="#CBD5E1" font-size="6.6" font-weight="700" class="mono">TS 5.8</text>
   </g>
 
   <!-- ===================================================================== -->
