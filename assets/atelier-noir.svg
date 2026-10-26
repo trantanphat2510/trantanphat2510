@@ -244,8 +244,9 @@
       .arm-back { animation: armBackWalk 12s infinite ease-in-out; transform-origin: 8px 117px; }
       .forearm-back { animation: forearmBackWalk 12s infinite ease-in-out; transform-origin: 8px 133px; }
 
+      .chair-seat-recoil { animation: chairSeatRecoil 12s infinite ease-in-out; transform-origin: 786px 206px; }
       .laptop-holo-beam { animation: laptopBeamProject 12s infinite ease-in-out; }
-      .terminal-holo-window { animation: terminalHoloPop 12s infinite cubic-bezier(0.22, 1, 0.36, 1); transform-origin: -14px 97px; }
+      .terminal-holo-window { animation: terminalHoloPop 12s infinite cubic-bezier(0.22, 1, 0.36, 1); transform-origin: -14px 108px; }
       .typing-sparks { animation: typingSparksBurst 12s infinite ease-in-out; }
       .laptop-screen-glow { animation: laptopScreenBlaze 12s infinite ease-in-out; }
       .stylus-wand { animation: stylusWandToggle 12s infinite ease-in-out; }
@@ -344,14 +345,16 @@
         24.0%     { transform: translateY(0.4px) rotate(0deg); }
         25.0%     { transform: translateY(0px) rotate(0deg); }
 
-        /* Terminal Inspection Idle (Micro-Breathing 26% -> 47.5%) */
-        26.0%     { transform: translateY(0px) rotate(0deg); }
-        29.5%     { transform: translateY(-1.1px) rotate(0.3deg); }
-        33.5%     { transform: translateY(0.2px) rotate(0deg); }
-        37.5%     { transform: translateY(-1.3px) rotate(0.4deg); }
-        41.5%     { transform: translateY(0.2px) rotate(0deg); }
-        45.5%     { transform: translateY(-1.0px) rotate(0.2deg); }
-        47.5%     { transform: translateY(0px) rotate(0deg); }
+        /* Sitting Down into Cyber-Noir Chair and Coding Micro-Breathing (24.8% -> 48.2%) */
+        24.8%     { transform: translateY(4.0px) rotate(1.8deg); }
+        25.6%     { transform: translateY(13.8px) rotate(1.4deg); }
+        29.5%     { transform: translateY(12.8px) rotate(1.8deg); }
+        33.5%     { transform: translateY(13.6px) rotate(1.2deg); }
+        37.5%     { transform: translateY(12.7px) rotate(1.9deg); }
+        41.5%     { transform: translateY(13.6px) rotate(1.2deg); }
+        45.5%     { transform: translateY(12.9px) rotate(1.6deg); }
+        47.0%     { transform: translateY(13.5px) rotate(1.2deg); }
+        48.2%     { transform: translateY(0px) rotate(0deg); }
 
         /* Walk Phase 2: 51% -> 73% (Walking back left) */
         51.0%     { transform: translateY(0px) rotate(0deg); }
@@ -457,13 +460,16 @@
         76%, 96%  { transform: rotate(-2deg); }
       }
 
-      /* 8. Anatomical Leg Motion Cycles with Knee Flexion */
+      /* 8. Anatomical Leg Motion Cycles with 90-Degree Chair Sitting Flexion */
       @keyframes thighFrontWalk {
         0%, 6%, 12%, 18%       { transform: rotate(-24deg); }
         1.5%, 7.5%, 13.5%, 19.5% { transform: rotate(-3deg); }
         3%, 9%, 15%, 21%       { transform: rotate(20deg); }
         4.5%, 10.5%, 16.5%, 22.5% { transform: rotate(-8deg); }
-        25%, 48%               { transform: rotate(-4deg); }
+        24.2%                  { transform: rotate(-12deg); }
+        /* Seated on Cyber-Noir Chair (Thigh Horizontal Forward on Cushion) */
+        25.5%, 47.0%           { transform: rotate(-72deg); }
+        48.2%, 49.5%           { transform: rotate(-4deg); }
         51%, 57%, 63%, 69%     { transform: rotate(-24deg); }
         52.5%, 58.5%, 64.5%    { transform: rotate(-3deg); }
         54%, 60%, 66%, 72%     { transform: rotate(20deg); }
@@ -476,7 +482,10 @@
         1.5%, 7.5%, 13.5%, 19.5% { transform: rotate(8deg); }
         3%, 9%, 15%, 21%       { transform: rotate(16deg); }
         4.5%, 10.5%, 16.5%, 22.5% { transform: rotate(38deg); }
-        25%, 48%               { transform: rotate(6deg); }
+        24.2%                  { transform: rotate(14deg); }
+        /* Seated 90-Degree Knee Bend (Sneaker Planted on Floor at Stage Y=232.2) */
+        25.5%, 47.0%           { transform: rotate(68deg); }
+        48.2%, 49.5%           { transform: rotate(6deg); }
         51%, 57%, 63%, 69%     { transform: rotate(4deg); }
         52.5%, 58.5%, 64.5%    { transform: rotate(8deg); }
         54%, 60%, 66%, 72%     { transform: rotate(16deg); }
@@ -489,7 +498,10 @@
         1.5%, 7.5%, 13.5%, 19.5% { transform: rotate(-8deg); }
         3%, 9%, 15%, 21%       { transform: rotate(-24deg); }
         4.5%, 10.5%, 16.5%, 22.5% { transform: rotate(-3deg); }
-        25%, 48%               { transform: rotate(6deg); }
+        24.2%                  { transform: rotate(-6deg); }
+        /* Seated Back Thigh Forward on Chair Cushion */
+        25.5%, 47.0%           { transform: rotate(-66deg); }
+        48.2%, 49.5%           { transform: rotate(6deg); }
         51%, 57%, 63%, 69%     { transform: rotate(20deg); }
         52.5%, 58.5%, 64.5%    { transform: rotate(-8deg); }
         54%, 60%, 66%, 72%     { transform: rotate(-24deg); }
@@ -502,13 +514,22 @@
         1.5%, 7.5%, 13.5%, 19.5% { transform: rotate(38deg); }
         3%, 9%, 15%, 21%       { transform: rotate(4deg); }
         4.5%, 10.5%, 16.5%, 22.5% { transform: rotate(8deg); }
-        25%, 48%               { transform: rotate(4deg); }
+        24.2%                  { transform: rotate(12deg); }
+        /* Seated Back Knee Bend */
+        25.5%, 47.0%           { transform: rotate(62deg); }
+        48.2%, 49.5%           { transform: rotate(4deg); }
         51%, 57%, 63%, 69%     { transform: rotate(16deg); }
         52.5%, 58.5%, 64.5%    { transform: rotate(38deg); }
         54%, 60%, 66%, 72%     { transform: rotate(4deg); }
         55.5%, 61.5%, 67.5%    { transform: rotate(8deg); }
         74%, 97%               { transform: rotate(4deg); }
         100%                   { transform: rotate(16deg); }
+      }
+      @keyframes chairSeatRecoil {
+        0%, 24.4%              { transform: translateY(0px) rotate(0deg); }
+        25.6%                  { transform: translateY(1.8px) rotate(-2.6deg); }
+        27.0%, 46.8%           { transform: translateY(1.2px) rotate(-1.8deg); }
+        48.2%, 100%            { transform: translateY(0px) rotate(0deg); }
       }
 
       /* 9. Front Arm (Rapid Laptop Keyboard Typing at 25%–47% + Spotlight Gesture at 75%–96%) */
@@ -1077,35 +1098,81 @@
   </g>
 
   <!-- =================================================================== -->
-  <!-- CYBER-NOIR STANDING WORK DESK & LAPTOP KEYBOARD BASE (x=803..850)   -->
-  <!-- (Rendered before Chibi so Chibi's hands rest ON TOP of the keys!)   -->
+  <!-- CYBER-NOIR ERGONOMIC DEVELOPER CHAIR (NOIR-CHAIR // ERGO-X)         -->
+  <!-- (Positioned at x=765..803 so Chibi sits flush on cushion at 25%–47%) -->
+  <!-- =================================================================== -->
+  <g>
+    <!-- 1. Chair Floor Shadow, 5-Star Swivel Spider Base & Dual Glowing Caster Wheels -->
+    <ellipse cx="786" cy="233.5" rx="18" ry="2.8" fill="#040609" fill-opacity="0.85" />
+    <!-- Pneumatic Hydraulic Gas-Lift Column -->
+    <rect x="783.5" y="206" width="5" height="22" rx="1.2" fill="#0E1422" stroke="#3B4D70" stroke-width="0.85" />
+    <line x1="786" y1="208" x2="786" y2="226" stroke="#38BDF8" stroke-width="1" opacity="0.8" />
+    <!-- 5-Star Brushed Aluminum Base Legs -->
+    <path d="M 770 232.2 L 781 227.2 H 791 L 802 232.2 Z" fill="#161F33" stroke="#475980" stroke-width="0.85" />
+    <!-- 3 Dual-Wheel Cyber Casters with Glowing Cyan Rims -->
+    <circle cx="771" cy="233" r="2.5" fill="#0B0F19" stroke="#64748B" stroke-width="0.8" />
+    <circle cx="771" cy="233" r="0.95" fill="#38BDF8" />
+    <circle cx="786" cy="233.2" r="2.5" fill="#0B0F19" stroke="#64748B" stroke-width="0.8" />
+    <circle cx="786" cy="233.2" r="0.95" fill="#E5484D" />
+    <circle cx="801" cy="233" r="2.5" fill="#0B0F19" stroke="#64748B" stroke-width="0.8" />
+    <circle cx="801" cy="233" r="0.95" fill="#38BDF8" />
+
+    <!-- 2. Chair Seat Pan, High-Back Spine, Lumbar Cushion & 4D Armrest (Compresses on Sit!) -->
+    <g class="chair-seat-recoil">
+      <!-- Rear Exoskeleton Spine Bar -->
+      <path d="M 774 205 L 767 176 L 771 151" fill="none" stroke="#3B4D70" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- High-Back Ergonomic Bucket Shell (Tilted Behind Seated Chibi) -->
+      <path d="M 770 150 C 764 165, 765 186, 770 204 L 779 204 C 776 186, 775 165, 778 150 Z" fill="#141C2E" stroke="#475980" stroke-width="0.95" stroke-linejoin="round" />
+      <!-- Crimson & Cyan Racing Stitch Trim Along Backrest -->
+      <path d="M 772.5 153 C 768 167, 768.5 185, 772.5 201" fill="none" stroke="#E5484D" stroke-width="1.2" stroke-linecap="round" />
+      <!-- Winged Memory-Foam Headrest Pillow (y=146..156) -->
+      <rect x="767.5" y="146.5" width="12" height="8.5" rx="3.2" transform="rotate(-6 773.5 150.5)" fill="#1E293B" stroke="#64748B" stroke-width="0.85" />
+      <line x1="770" y1="150.5" x2="777" y2="149.8" stroke="#38BDF8" stroke-width="1.1" stroke-linecap="round" />
+      <!-- Contoured Cyber Lumbar Support Pillow (y=186..198) -->
+      <rect x="772" y="186.5" width="8.5" height="11" rx="3.5" fill="#1E293B" stroke="#38BDF8" stroke-width="0.85" />
+      <circle cx="776.2" cy="192" r="1.4" fill="#38BDF8" />
+
+      <!-- Plush Waterfall Bucket Seat Cushion (x=769..803, y=202..207) -->
+      <rect x="769" y="202" width="34" height="5.2" rx="2.5" fill="#172136" stroke="#475980" stroke-width="0.95" />
+      <line x1="772" y1="204.6" x2="800" y2="204.6" stroke="#38BDF8" stroke-width="1.15" stroke-linecap="round" />
+      <circle cx="774" cy="204.6" r="1.1" fill="#E5484D" />
+
+      <!-- 4D T-Armrest Post & Padded Armrest (x=780..795, y=190.5..203) -->
+      <rect x="785.5" y="192.5" width="3" height="10" rx="1" fill="#0F172A" stroke="#475980" stroke-width="0.75" />
+      <rect x="780" y="190.5" width="14" height="2.8" rx="1.3" fill="#1E293B" stroke="#38BDF8" stroke-width="0.8" />
+    </g>
+  </g>
+
+  <!-- =================================================================== -->
+  <!-- CYBER-NOIR SEATED WORK DESK & LAPTOP KEYBOARD BASE (x=802..850)     -->
+  <!-- (Ergonomic Seated Height y=198..202.2 so hands type at y=193.5!)    -->
   <!-- =================================================================== -->
   <g>
     <!-- Under-Desk Ambient Cyan Neon Cast Glow -->
-    <ellipse cx="827" cy="195" rx="22" ry="4.5" fill="#38BDF8" fill-opacity="0.18" />
+    <ellipse cx="827" cy="205" rx="22" ry="4" fill="#38BDF8" fill-opacity="0.18" />
     <ellipse cx="828" cy="233.5" rx="18" ry="3" fill="#040609" fill-opacity="0.85" />
 
-    <!-- Telescopic Smart Desk Pillar Leg & Stabilizer Foot (x=814..842, y=192..234.5) -->
+    <!-- Telescopic Smart Desk Pillar Leg & Stabilizer Foot (x=814..842, y=202..234.5) -->
     <path d="M 813 234 L 819 229.5 H 837 L 843 234 Z" fill="#161F33" stroke="#3B4D70" stroke-width="0.9" />
-    <rect x="823.5" y="191.5" width="9" height="38.5" rx="1.5" fill="#0E1422" stroke="#2A3957" stroke-width="0.95" />
+    <rect x="823.5" y="201.5" width="9" height="28.5" rx="1.5" fill="#0E1422" stroke="#2A3957" stroke-width="0.95" />
     <!-- Vertical RGB Telemetry Strip Inside Desk Leg -->
-    <line x1="828" y1="194" x2="828" y2="227" stroke="#38BDF8" stroke-width="1.3" stroke-linecap="round" opacity="0.85" />
-    <circle cx="828" cy="202" r="1.1" fill="#E5484D" />
+    <line x1="828" y1="204" x2="828" y2="227" stroke="#38BDF8" stroke-width="1.3" stroke-linecap="round" opacity="0.85" />
+    <circle cx="828" cy="210" r="1.1" fill="#E5484D" />
 
-    <!-- Beveled Carbon-Titanium Standing Desk Tabletop (x=802..850, y=187.5..192) -->
-    <rect x="802" y="187.5" width="48" height="4.5" rx="2" fill="#172136" stroke="#475980" stroke-width="0.95" />
-    <line x1="804" y1="189.8" x2="848" y2="189.8" stroke="url(#termBorderGrad)" stroke-width="1.2" stroke-linecap="round" />
+    <!-- Beveled Carbon-Titanium Seated Desk Tabletop (x=802..850, y=198..202.2) -->
+    <rect x="802" y="198" width="48" height="4.2" rx="2" fill="#172136" stroke="#475980" stroke-width="0.95" />
+    <line x1="804" y1="200.1" x2="848" y2="200.1" stroke="url(#termBorderGrad)" stroke-width="1.2" stroke-linecap="round" />
 
-    <!-- Laptop Aluminum Keyboard Base Deck on Tabletop (x=806..827, y=184.5..187.8) -->
-    <rect x="806" y="184.8" width="21.5" height="3.0" rx="1.2" fill="#28354E" stroke="#94A3B8" stroke-width="0.75" />
-    <!-- Individual Illuminated Mechanical Keycaps Under Chibi's Fingers -->
-    <rect x="808.5" y="183.6" width="3.2" height="1.3" rx="0.4" fill="#38BDF8" />
-    <rect x="812.8" y="183.6" width="3.2" height="1.3" rx="0.4" fill="#E2E8F0" />
-    <rect x="817.1" y="183.6" width="3.2" height="1.3" rx="0.4" fill="#38BDF8" />
-    <rect x="821.4" y="183.6" width="3.2" height="1.3" rx="0.4" fill="#10B981" />
+    <!-- Laptop Aluminum Keyboard Base Deck on Tabletop (x=806..827.5, y=195.2..198.2) -->
+    <rect x="806" y="195.2" width="21.5" height="3.0" rx="1.2" fill="#28354E" stroke="#94A3B8" stroke-width="0.75" />
+    <!-- Individual Illuminated Mechanical Keycaps Under Seated Chibi's Fingers -->
+    <rect x="808.5" y="194.0" width="3.2" height="1.3" rx="0.4" fill="#38BDF8" />
+    <rect x="812.8" y="194.0" width="3.2" height="1.3" rx="0.4" fill="#E2E8F0" />
+    <rect x="817.1" y="194.0" width="3.2" height="1.3" rx="0.4" fill="#38BDF8" />
+    <rect x="821.4" y="194.0" width="3.2" height="1.3" rx="0.4" fill="#10B981" />
 
-    <!-- Steaming Developer Espresso Mug on Front Corner of Work Desk (x=842, y=186) -->
-    <g transform="translate(842.5, 186.2)">
+    <!-- Steaming Developer Espresso Mug on Front Corner of Seated Work Desk (x=842.5, y=196.6) -->
+    <g transform="translate(842.5, 196.6)">
       <ellipse cx="0" cy="1.2" rx="5.2" ry="1.4" fill="#0B1324" stroke="#38BDF8" stroke-width="0.7" />
       <path d="M 3.2 -4.8 C 5.4 -4.8, 5.4 -1.0, 3.2 -1.0" fill="none" stroke="#E5484D" stroke-width="1.05" stroke-linecap="round" />
       <path d="M -3.6 -6.5 H 3.6 L 2.9 1.0 C 2.7 1.6, -2.7 1.6, -2.9 1.0 Z" fill="#161C2B" stroke="#64748B" stroke-width="0.75" stroke-linejoin="round" />
@@ -1481,38 +1548,38 @@
   <!-- ===================================================================== -->
   <!-- LAPTOP DISPLAY LID, KEYSTROKE SPARKS & HOLOGRAPHIC PROJECTION CONE    -->
   <!-- ===================================================================== -->
-  <!-- 1. Open Dev Laptop / MacBook Display Lid (x=825.5..836, y=166..187) -->
+  <!-- 1. Open Dev Laptop / MacBook Display Lid on Seated Desk (x=825.5..836, y=177..197) -->
   <g>
-    <!-- Ambient Cyan Screen Light Cast Toward Chibi's Face & Hands When Typing -->
-    <polygon points="826,185 804,174 808,187" fill="#38BDF8" fill-opacity="0.18" class="laptop-screen-glow" />
+    <!-- Ambient Cyan Screen Light Cast Toward Seated Chibi's Face & Hands When Typing -->
+    <polygon points="826,195 802,182 808,197" fill="#38BDF8" fill-opacity="0.18" class="laptop-screen-glow" />
     <!-- Tilted Metallic Display Housing -->
-    <polygon points="825.5,186.8 828.2,186.8 836.2,166.5 833.5,166.5" fill="#28354E" stroke="#94A3B8" stroke-width="0.8" stroke-linejoin="round" />
+    <polygon points="825.5,197.2 828.2,197.2 836.2,176.9 833.5,176.9" fill="#28354E" stroke="#94A3B8" stroke-width="0.8" stroke-linejoin="round" />
     <!-- Glowing Retina Display Inner Edge -->
-    <line x1="825.3" y1="185.8" x2="833.0" y2="167.2" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" filter="url(#crimsonBloom)" class="laptop-screen-glow" />
+    <line x1="825.3" y1="196.2" x2="833.0" y2="177.6" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" filter="url(#crimsonBloom)" class="laptop-screen-glow" />
     <!-- Glowing Core Emblem on Back of Laptop Lid -->
-    <circle cx="831.2" cy="176.5" r="1.5" fill="#38BDF8" filter="url(#crimsonBloom)" class="laptop-screen-glow" />
-    <circle cx="831.2" cy="176.5" r="0.8" fill="#FFFFFF" />
+    <circle cx="831.2" cy="186.9" r="1.5" fill="#38BDF8" filter="url(#crimsonBloom)" class="laptop-screen-glow" />
+    <circle cx="831.2" cy="186.9" r="0.8" fill="#FFFFFF" />
   </g>
 
-  <!-- 2. Animated Keystroke Sparks Bursting Above Keyboard During Typing (25.5%–47.5%) -->
+  <!-- 2. Animated Keystroke Sparks Bursting Above Seated Keyboard During Typing (25.5%–47.5%) -->
   <g class="typing-sparks">
-    <circle cx="811" cy="179" r="1.3" fill="#38BDF8" filter="url(#crimsonBloom)" />
-    <circle cx="819" cy="176.5" r="1.4" fill="#10B981" filter="url(#crimsonBloom)" />
-    <circle cx="815" cy="174" r="1.1" fill="#E5484D" />
-    <path d="M 807.5 175.5 H 810.5 M 809 174 V 177" stroke="#38BDF8" stroke-width="0.9" stroke-linecap="round" />
-    <path d="M 821.5 179.5 H 824.5 M 823 178 V 181" stroke="#34D399" stroke-width="0.9" stroke-linecap="round" />
+    <circle cx="811" cy="189.4" r="1.3" fill="#38BDF8" filter="url(#crimsonBloom)" />
+    <circle cx="819" cy="186.9" r="1.4" fill="#10B981" filter="url(#crimsonBloom)" />
+    <circle cx="815" cy="184.4" r="1.1" fill="#E5484D" />
+    <path d="M 807.5 185.9 H 810.5 M 809 184.4 V 187.4" stroke="#38BDF8" stroke-width="0.9" stroke-linecap="round" />
+    <path d="M 821.5 189.9 H 824.5 M 823 188.4 V 191.4" stroke="#34D399" stroke-width="0.9" stroke-linecap="round" />
   </g>
 
-  <!-- 3. Holographic Projection Cone Shooting From Laptop Screen (834, 175) -> Terminal -->
+  <!-- 3. Holographic Projection Cone Shooting From Seated Laptop Screen (834, 186) -> Terminal -->
   <g class="laptop-holo-beam">
-    <polygon points="834,175 852,82 852,242" fill="url(#scanBeamRight)" opacity="0.85" />
-    <polygon points="834,175 852,115 852,210" fill="url(#scanBeamRight)" />
-    <line x1="834" y1="175" x2="852" y2="86" stroke="#38BDF8" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.75" />
-    <line x1="834" y1="175" x2="852" y2="162" stroke="#38BDF8" stroke-width="1.7" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
-    <line x1="834" y1="175" x2="852" y2="238" stroke="#10B981" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.75" />
+    <polygon points="834,186 852,82 852,242" fill="url(#scanBeamRight)" opacity="0.85" />
+    <polygon points="834,186 852,115 852,210" fill="url(#scanBeamRight)" />
+    <line x1="834" y1="186" x2="852" y2="86" stroke="#38BDF8" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.75" />
+    <line x1="834" y1="186" x2="852" y2="162" stroke="#38BDF8" stroke-width="1.7" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
+    <line x1="834" y1="186" x2="852" y2="238" stroke="#10B981" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.75" />
     <!-- Holographic Projector Lens Ring at Laptop Screen -->
-    <ellipse cx="834" cy="175" rx="2.4" ry="5.2" transform="rotate(20 834 175)" fill="none" stroke="#38BDF8" stroke-width="1.3" filter="url(#crimsonBloom)" />
-    <circle cx="834" cy="175" r="2.2" fill="#FFFFFF" filter="url(#crimsonBloom)" />
+    <ellipse cx="834" cy="186" rx="2.4" ry="5.2" transform="rotate(20 834 186)" fill="none" stroke="#38BDF8" stroke-width="1.3" filter="url(#crimsonBloom)" />
+    <circle cx="834" cy="186" r="2.2" fill="#FFFFFF" filter="url(#crimsonBloom)" />
   </g>
 
   <!-- LEFT INTERACTION: WIDE SPOTLIGHT CONE & BLAZING FRAME ON "TRAN TAN PHAT" -->
