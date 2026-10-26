@@ -34,10 +34,10 @@
         font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
       .pulse { animation: pulseAnim 2.2s infinite ease-in-out; }
-      .radar-spin { animation: radarSpinAnim 6s infinite linear; transform-origin: 126px 80px; }
-      .packet-flow-1 { animation: packetFlowAnim 3.2s infinite cubic-bezier(0.4, 0, 0.2, 1); }
-      .packet-flow-2 { animation: packetFlowAnim 3.2s infinite cubic-bezier(0.4, 0, 0.2, 1) 1.6s; }
-      .beacon-ring { animation: beaconRingAnim 2.4s infinite ease-out; transform-origin: 878px 62px; }
+      .radar-spin { animation: radarSpinAnim 6s infinite linear; transform-origin: 126px 80px; will-change: transform; }
+      .packet-flow-1 { animation: packetFlowAnim 3.2s infinite cubic-bezier(0.4, 0, 0.2, 1); will-change: transform, opacity; }
+      .packet-flow-2 { animation: packetFlowAnim 3.2s infinite cubic-bezier(0.4, 0, 0.2, 1) 1.6s; will-change: transform, opacity; }
+      .beacon-ring { animation: beaconRingAnim 2.4s infinite ease-out; transform-origin: 878px 61px; will-change: transform, opacity; }
       @keyframes pulseAnim {
         0%, 100% { opacity: 1; }
         50% { opacity: 0.35; }

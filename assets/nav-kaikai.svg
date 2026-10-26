@@ -28,8 +28,8 @@
         font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
       .pulse { animation: pulseAnim 2.4s infinite ease-in-out; }
-      .keycap-press { animation: keycapWavePress 4.2s infinite cubic-bezier(0.22, 1, 0.36, 1) 0.55s; }
-      .rgb-underglow { animation: rgbWaveGlow 4.2s infinite ease-in-out 0.55s; }
+      .keycap-press { animation: keycapWavePress 4.2s infinite cubic-bezier(0.22, 1, 0.36, 1) 0.55s; will-change: transform; }
+      .rgb-underglow { animation: rgbWaveGlow 4.2s infinite ease-in-out 0.55s; will-change: opacity; }
       @keyframes pulseAnim {
         0%, 100% { opacity: 1; }
         50% { opacity: 0.35; }

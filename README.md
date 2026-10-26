@@ -2,18 +2,18 @@
 
 <!-- 01–04 // MASTER ATELIER NOIR ARCHITECTURAL MONOLITH -->
 <a href="https://ttanphat.vercel.app/">
-  <img src="./assets/atelier-noir.svg" width="100%" alt="Trần Tấn Phát — Full-Stack Developer · Atelier Noir Architecture" />
+  <img src="./assets/atelier-noir.svg" width="100%" decoding="async" fetchpriority="high" alt="Trần Tấn Phát — Full-Stack Developer · Atelier Noir Architecture" />
 </a>
 
 <!-- 05 // CYBERNETIC BRIDGE & 3D MECHANICAL KEYCAP COMMAND DOCK -->
-<img src="./assets/launchpad-header.svg" width="100%" alt="05 // Interactive Command Dock — Select Any Module to Deploy" />
+<img src="./assets/launchpad-header.svg" width="100%" loading="lazy" decoding="async" alt="05 // Interactive Command Dock — Select Any Module to Deploy" />
 
 <p align="center">
-  <a href="https://ttanphat.vercel.app/"><img src="./assets/nav-portfolio.svg" width="172" height="50" alt="01 // Portfolio — ttanphat.vercel.app" /></a>&nbsp;
-  <a href="https://website-kaikai.vercel.app/"><img src="./assets/nav-kaikai.svg" width="172" height="50" alt="02 // SaaS Core — KAIKAI Platform" /></a>&nbsp;
-  <a href="https://murmur-voice.vercel.app/"><img src="./assets/nav-murmur.svg" width="172" height="50" alt="03 // Voice AI — MurMur Voice AI" /></a>&nbsp;
-  <a href="https://ttanphat.vercel.app/projects"><img src="./assets/nav-projects.svg" width="172" height="50" alt="04 // Archive — 4 Case Studies" /></a>&nbsp;
-  <a href="mailto:ttanphat.work@gmail.com"><img src="./assets/nav-email.svg" width="172" height="50" alt="05 // Contact — ttanphat.work@gmail.com" /></a>
+  <a href="https://ttanphat.vercel.app/"><img src="./assets/nav-portfolio.svg" width="172" height="50" loading="lazy" decoding="async" alt="01 // Portfolio — ttanphat.vercel.app" /></a>&nbsp;
+  <a href="https://website-kaikai.vercel.app/"><img src="./assets/nav-kaikai.svg" width="172" height="50" loading="lazy" decoding="async" alt="02 // SaaS Core — KAIKAI Platform" /></a>&nbsp;
+  <a href="https://murmur-voice.vercel.app/"><img src="./assets/nav-murmur.svg" width="172" height="50" loading="lazy" decoding="async" alt="03 // Voice AI — MurMur Voice AI" /></a>&nbsp;
+  <a href="https://ttanphat.vercel.app/projects"><img src="./assets/nav-projects.svg" width="172" height="50" loading="lazy" decoding="async" alt="04 // Archive — 4 Case Studies" /></a>&nbsp;
+  <a href="mailto:ttanphat.work@gmail.com"><img src="./assets/nav-email.svg" width="172" height="50" loading="lazy" decoding="async" alt="05 // Contact — ttanphat.work@gmail.com" /></a>
 </p>
 
 <!-- MOBILE-FIRST & KEYBOARD QUICK-JUMP ACTION BAR -->
@@ -28,7 +28,7 @@
 </p>
 
 <!-- 06 // LIVE SKILL RADAR, CI/CD PIPELINE CONVEYOR & SAIGON TELEMETRY HUD -->
-<img src="./assets/engineering-hud.svg" width="100%" alt="06 // Skill Radar, CI/CD Pipeline Conveyor & Saigon Base Station Telemetry" />
+<img src="./assets/engineering-hud.svg" width="100%" loading="lazy" decoding="async" alt="06 // Skill Radar, CI/CD Pipeline Conveyor & Saigon Base Station Telemetry" />
 
 <!-- 07A // INTERACTIVE SYSTEM ARCHITECTURE & DATA-FLOW TOPOLOGY (MERMAID ENGINE) -->
 <details>
@@ -102,6 +102,6 @@ flowchart LR
 </details>
 
 <!-- 08 // TELEMETRY CLOSING RAIL -->
-<img src="./assets/telemetry-footer.svg" width="100%" alt="NOIR-OS v4.2 — All 4 Production Systems Online" />
+<img src="./assets/telemetry-footer.svg" width="100%" loading="lazy" decoding="async" alt="NOIR-OS v4.2 — All 4 Production Systems Online" />
 
 </div>
