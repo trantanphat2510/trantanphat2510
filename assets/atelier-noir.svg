@@ -68,12 +68,18 @@
       <stop offset="100%" stop-color="#0D121D" stop-opacity="0.98" />
     </linearGradient>
 
-    <!-- Streetwear Hoodie Chibi Boy Shaders (Matching Reference Image) -->
+    <!-- Streetwear Hoodie Chibi Boy Shaders (Pro Kindchenschema & Mochi Aesthetics) -->
     <linearGradient id="chibiSkin" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFF5F0" />
-      <stop offset="55%" stop-color="#FDECE6" />
-      <stop offset="100%" stop-color="#F5CEBF" />
+      <stop offset="0%" stop-color="#FFF7F3" />
+      <stop offset="55%" stop-color="#FDECE5" />
+      <stop offset="100%" stop-color="#F5CBB9" />
     </linearGradient>
+
+    <radialGradient id="mochiBlushGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF758F" stop-opacity="0.65" />
+      <stop offset="60%" stop-color="#FF8DA1" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#FDECE5" stop-opacity="0" />
+    </radialGradient>
 
     <linearGradient id="chibiHairDark" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#221A16" />
@@ -214,7 +220,7 @@
       .coding-chip { animation: codingChipFloat 12s infinite ease-in-out; }
       .heart-float { animation: heartRisePulse 2.4s infinite ease-in-out; transform-origin: 15px 42px; }
       .crown-tuft { animation: crownTuftBreeze 3s infinite ease-in-out; transform-origin: 2px 43px; }
-      .bot-eyes { animation: eyeBlinkNatural 4.2s infinite ease-in-out; transform-origin: 0px 78.5px; }
+      .bot-eyes { animation: eyeBlinkNatural 4.2s infinite ease-in-out; transform-origin: 0px 79.5px; }
       .holo-scanline { animation: scanSweep 3.6s infinite ease-in-out; }
       .cursor-blink { animation: blinkCursor 1s infinite steps(2, start); }
 
@@ -865,315 +871,355 @@
     <g class="bot-patrol">
       <!-- Dynamic Ground Contact Shadow + Dual Cyber Floor Aura -->
       <g class="bot-shadow">
-        <ellipse cx="0" cy="193" rx="25" ry="4.2" fill="#040609" fill-opacity="0.9" />
-        <ellipse cx="0" cy="193" rx="17" ry="2.4" fill="#E5484D" fill-opacity="0.35" filter="url(#crimsonBloom)" />
+        <ellipse cx="0" cy="193" rx="26" ry="4.4" fill="#040609" fill-opacity="0.9" />
+        <ellipse cx="0" cy="193" rx="17.5" ry="2.5" fill="#E5484D" fill-opacity="0.36" filter="url(#crimsonBloom)" />
       </g>
 
       <g class="bot-turn">
         <g class="bot-gait-bob">
           <!-- =============================================================== -->
-          <!-- LAYER 1: BACK ARM (MOUNTED AT RIGHT SHOULDER x=8, y=117)        -->
+          <!-- LAYER 1: BACK ARM (PUFFY OVERSIZED SLEEVE AT RIGHT SHOULDER)    -->
           <!-- =============================================================== -->
           <g class="arm-back">
-            <path d="M 4 115 C 9 114, 13.5 118, 13.5 133 C 13.5 136, 5 136, 4.5 133 Z" fill="url(#hoodieBlack)" stroke="#47423E" stroke-width="0.85" />
+            <path d="M 4 114 C 9.5 113, 14.5 118, 14.5 133 C 14.5 136.5, 5 136.5, 4.5 133 Z" fill="url(#hoodieBlack)" stroke="#47423E" stroke-width="0.95" />
             <g class="forearm-back">
-              <rect x="5" y="131" width="7.8" height="17" rx="3.9" fill="url(#hoodieBlack)" stroke="#47423E" stroke-width="0.85" />
-              <rect x="5.2" y="145.5" width="7.2" height="3.8" rx="1.4" fill="#181615" stroke="#36322F" stroke-width="0.6" />
-              <!-- Cute Rounded Back Hand & Thumb -->
-              <circle cx="8.8" cy="152.5" r="3.8" fill="url(#chibiSkin)" stroke="#E5B5A3" stroke-width="0.65" />
-              <circle cx="11.2" cy="151.5" r="1.5" fill="url(#chibiSkin)" stroke="#E5B5A3" stroke-width="0.5" />
+              <rect x="5" y="131" width="8.5" height="17" rx="4.2" fill="url(#hoodieBlack)" stroke="#47423E" stroke-width="0.95" />
+              <rect x="5.4" y="145.5" width="7.6" height="3.8" rx="1.5" fill="#181615" stroke="#36322F" stroke-width="0.65" />
+              <!-- Cute Stubby Chibi Hand with Pinkish Warmth & Color-Linework -->
+              <circle cx="9.2" cy="152.2" r="4.0" fill="url(#chibiSkin)" stroke="#C68670" stroke-width="0.75" />
+              <circle cx="11.6" cy="151.2" r="1.6" fill="url(#chibiSkin)" stroke="#C68670" stroke-width="0.6" />
+              <ellipse cx="9.5" cy="153.2" rx="1.8" ry="1.1" fill="url(#mochiBlushGrad)" />
             </g>
           </g>
 
           <!-- =============================================================== -->
-          <!-- LAYER 2: BACK LEG (BAGGY CARGO PANTS & AF1 SNEAKER AT x=3)      -->
+          <!-- LAYER 2: BACK LEG (PLUSH BAGGY CARGO & CHUNKY AF1 SNEAKER)      -->
           <!-- =============================================================== -->
           <g class="thigh-back">
-            <!-- Baggy Cargo Thigh with Rim-Lit Seam & Rounded Knee Overlap -->
-            <path d="M -2.5 145 L 9.5 145 C 11.2 154, 11.2 164, 9.5 171 C 6 173, 0 173, -2 170 C -3 163, -3 154, -2.5 145 Z" fill="url(#cargoBlack)" stroke="#3D3835" stroke-width="0.85" />
+            <!-- Extra-Puffy Baggy Cargo Thigh with Rounded Knee Overlap -->
+            <path d="M -2.5 144 L 10.5 144 C 12.2 153, 12.2 164, 10.2 171 C 6.5 173.2, 0 173.2, -2 170 C -3.2 163, -3.2 153, -2.5 144 Z" fill="url(#cargoBlack)" stroke="#3D3835" stroke-width="0.95" />
             <g class="shin-back">
-              <!-- Baggy Lower Pant Leg with Stacked Hem Folds -->
-              <path d="M -2 166 C 1 164, 7 164, 9.5 166 C 11.2 173, 11.8 181, 10.2 186 L -2.5 186 C -3.8 180, -3.5 172, -2 166 Z" fill="url(#cargoBlack)" stroke="#3D3835" stroke-width="0.85" />
-              <path d="M -1 182 Q 4 184 9 182" fill="none" stroke="#453F3C" stroke-width="1" stroke-linecap="round" />
-              <!-- White Streetwear Sneaker (Back Foot - Air Force 1) -->
-              <path d="M -2.5 184.5 L 8.5 184.5 C 13.5 184.5, 17.5 188, 17.5 192 L -3.5 192 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="0.9" />
+              <!-- Puffy Lower Pant Leg Stacking Over Chunky Sneaker -->
+              <path d="M -2 166 C 1 164, 7.5 164, 10.2 166 C 12 173, 12.6 181, 10.8 186 L -2.8 186 C -4.2 180, -3.8 172, -2 166 Z" fill="url(#cargoBlack)" stroke="#3D3835" stroke-width="0.95" />
+              <path d="M -1 182 Q 4.5 184.2 9.5 182" fill="none" stroke="#4A4440" stroke-width="1.1" stroke-linecap="round" />
+              <!-- Chunky Chibi Sneaker (Back Foot - Rounded Toy-Like AF1) -->
+              <path d="M -3 184 L 9 184 C 14.5 184, 18.8 187.5, 18.8 192 L -4 192 Z" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1" />
               <!-- Iconic Black Swoosh -->
-              <path d="M 1.5 187.5 Q 6.5 189.2 11.8 186.5 Q 8 190.8 1.5 188.6 Z" fill="#111111" />
-              <!-- Chunky Midsole & Outsole -->
-              <rect x="-3.5" y="190.5" width="21" height="2.8" rx="1.1" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="0.6" />
-              <line x1="-3" y1="193.2" x2="17" y2="193.2" stroke="#111111" stroke-width="1.2" stroke-linecap="round" />
+              <path d="M 1.5 187.2 Q 6.8 189.2 12.5 186.2 Q 8.5 190.8 1.5 188.5 Z" fill="#111111" />
+              <!-- Extra-Chunky Midsole & Outsole -->
+              <rect x="-4" y="190.2" width="22.8" height="3.1" rx="1.4" fill="#F8FAFC" stroke="#94A3B8" stroke-width="0.7" />
+              <line x1="-3.2" y1="193.3" x2="18" y2="193.3" stroke="#0F172A" stroke-width="1.3" stroke-linecap="round" />
             </g>
           </g>
 
           <!-- =============================================================== -->
-          <!-- LAYER 3: FRONT LEG (BAGGY CARGO PANTS WITH 3D FLAP POCKET x=-3) -->
+          <!-- LAYER 3: FRONT LEG (BAGGY CARGO PANTS WITH 3D FLAP POCKET)      -->
           <!-- =============================================================== -->
           <g class="thigh-front">
-            <!-- Wide Baggy Thigh with Rim Highlight & Rounded Knee Cap -->
-            <path d="M -9.8 145 L 3.5 145 C 4.6 154, 4.6 164, 3.2 171 C -0.5 173.5, -6.5 173.5, -9.2 170.5 C -11 163, -11 154, -9.8 145 Z" fill="url(#cargoBlack)" stroke="#47413E" stroke-width="0.9" />
+            <!-- Wide Puffy Baggy Thigh with Rim Highlight & Rounded Knee Cap -->
+            <path d="M -10.8 144 L 3.8 144 C 5 153, 5 164, 3.5 171 C -0.5 173.8, -7 173.8, -10 170.5 C -12 163, -12 153, -10.8 144 Z" fill="url(#cargoBlack)" stroke="#4A4440" stroke-width="1" />
             <!-- Left Rim-Light Highlight on Baggy Cargo Outer Seam -->
-            <path d="M -9.2 147 C -10.3 154, -10.3 162, -8.8 169" fill="none" stroke="#645D58" stroke-width="0.75" stroke-linecap="round" opacity="0.7" />
-            <!-- 3D Side Cargo Pocket with Beveled Flap (Matching Reference Photo) -->
-            <rect x="-8.4" y="152" width="7.4" height="10.5" rx="1.5" fill="#211E1C" stroke="#4A4440" stroke-width="0.75" />
-            <path d="M -8.4 152 L -1 152 L -1 155.2 L -4.7 156.5 L -8.4 155.2 Z" fill="#2C2826" stroke="#57504B" stroke-width="0.7" />
-            <line x1="-7" y1="153.2" x2="-2.2" y2="153.2" stroke="#6E655F" stroke-width="0.65" stroke-linecap="round" />
+            <path d="M -10 146.5 C -11.2 154, -11.2 162, -9.5 169" fill="none" stroke="#6E655F" stroke-width="0.85" stroke-linecap="round" opacity="0.75" />
+            <!-- 3D Side Cargo Pocket with Beveled Flap -->
+            <rect x="-9.2" y="151.5" width="7.8" height="10.8" rx="1.6" fill="#211E1C" stroke="#524B46" stroke-width="0.8" />
+            <path d="M -9.2 151.5 L -1.4 151.5 L -1.4 154.8 L -5.3 156.2 L -9.2 154.8 Z" fill="#2E2A27" stroke="#645C56" stroke-width="0.75" />
+            <line x1="-7.6" y1="152.8" x2="-2.8" y2="152.8" stroke="#786E67" stroke-width="0.7" stroke-linecap="round" />
 
             <g class="shin-front">
               <!-- Baggy Calf & Stacked Ankle Cuff Over Sneaker -->
-              <path d="M -9.2 166 C -6 164, 0.5 164, 3.2 166 C 4.8 173, 5.2 181, 3.8 186.2 L -9.4 186.2 C -11 180, -10.7 172, -9.2 166 Z" fill="url(#cargoBlack)" stroke="#47413E" stroke-width="0.9" />
+              <path d="M -10 166 C -6.5 164, 0.5 164, 3.5 166 C 5.2 173, 5.8 181, 4.2 186.2 L -10.2 186.2 C -12 180, -11.6 172, -10 166 Z" fill="url(#cargoBlack)" stroke="#4A4440" stroke-width="1" />
               <!-- Fabric Creases at Knee & Ankle -->
-              <path d="M -7.5 169 Q -3 171.2 1.5 169" fill="none" stroke="#453F3C" stroke-width="0.9" stroke-linecap="round" />
-              <path d="M -8 182.5 Q -2.5 184.5 2.5 182.5" fill="none" stroke="#4A4440" stroke-width="1.1" stroke-linecap="round" />
+              <path d="M -8.2 169 Q -3 171.4 1.8 169" fill="none" stroke="#4A4440" stroke-width="0.95" stroke-linecap="round" />
+              <path d="M -8.6 182.5 Q -2.8 184.8 2.8 182.5" fill="none" stroke="#524B46" stroke-width="1.15" stroke-linecap="round" />
 
-              <!-- White Streetwear Sneaker (Front Foot - Detailed Air Force 1) -->
-              <path d="M -9 184.2 L 3 184.2 C 8.5 184.2, 12.8 187.5, 12.8 192 L -10 192 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="0.9" />
+              <!-- Chunky Chibi Sneaker (Front Foot - Rounded Toy-Like Air Force 1) -->
+              <path d="M -9.8 183.8 L 3.5 183.8 C 9.5 183.8, 14.2 187.2, 14.2 192 L -10.8 192 Z" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1" />
               <!-- Black Swoosh Accent -->
-              <path d="M -4.2 187 Q 1 189.2 7 186 Q 3 190.6 -4.2 188.5 Z" fill="#111111" />
-              <!-- Crisp White Laces -->
-              <line x1="-0.5" y1="184.2" x2="3.2" y2="185.6" stroke="#E2E8F0" stroke-width="1.2" stroke-linecap="round" />
-              <line x1="1" y1="186.2" x2="4.8" y2="187.6" stroke="#E2E8F0" stroke-width="1.2" stroke-linecap="round" />
+              <path d="M -4.5 186.8 Q 1.2 189.2 7.6 185.8 Q 3.4 190.6 -4.5 188.4 Z" fill="#111111" />
+              <!-- Crisp White Chunky Laces -->
+              <line x1="-0.5" y1="184" x2="3.6" y2="185.5" stroke="#CBD5E1" stroke-width="1.35" stroke-linecap="round" />
+              <line x1="1.2" y1="186" x2="5.2" y2="187.5" stroke="#CBD5E1" stroke-width="1.35" stroke-linecap="round" />
               <!-- Chunky AF1 Midsole & Outsole -->
-              <rect x="-10" y="190.5" width="23" height="3" rx="1.2" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="0.8" />
-              <line x1="-9.5" y1="193.2" x2="12.2" y2="193.2" stroke="#111111" stroke-width="1.2" stroke-linecap="round" />
+              <rect x="-10.8" y="190.2" width="25" height="3.2" rx="1.4" fill="#F8FAFC" stroke="#94A3B8" stroke-width="0.85" />
+              <line x1="-10" y1="193.3" x2="13.5" y2="193.3" stroke="#0F172A" stroke-width="1.3" stroke-linecap="round" />
               <!-- Toe Box Perforation Dots -->
-              <circle cx="8.2" cy="188.8" r="0.55" fill="#94A3B8" />
-              <circle cx="9.8" cy="189.2" r="0.55" fill="#94A3B8" />
+              <circle cx="9.2" cy="188.6" r="0.6" fill="#94A3B8" />
+              <circle cx="11.0" cy="189.0" r="0.6" fill="#94A3B8" />
             </g>
           </g>
 
           <!-- =============================================================== -->
-          <!-- LAYER 4: TORSO — OVERSIZED BLACK HOODIE, NECK, CROWN & STRINGS  -->
+          <!-- LAYER 4: TORSO — PLUSH BEAN-SHAPED OVERSIZED HOODIE & CROWN     -->
           <!-- =============================================================== -->
-          <!-- 4.1. Plush Hood Back Cushion with Rim-Lit Outer Edge -->
-          <path d="M -18.5 108 C -21.5 97.5, 21.5 97.5, 18.5 108 C 21.5 116, 16.5 122, 12 122 L -12 122 C -16.5 122, -21.5 116, -18.5 108 Z" fill="#181615" stroke="#4A4440" stroke-width="1" />
-          <!-- Inner Hood Cavity Shadow -->
-          <path d="M -14 106 C -16 100, 16 100, 14 106 C 14 112, -14 112, -14 106 Z" fill="#0B0A09" />
+          <!-- 4.1. Plush Hood Back Cushion with Bold Outer Silhouette -->
+          <path d="M -19.5 107.5 C -23 96.5, 23 96.5, 19.5 107.5 C 22.5 116, 17.5 122, 12.5 122 L -12.5 122 C -17.5 122, -22.5 116, -19.5 107.5 Z" fill="#181615" stroke="#524B46" stroke-width="1.15" />
+          <path d="M -14.5 105.5 C -16.5 99.5, 16.5 99.5, 14.5 105.5 C 14.5 111.5, -14.5 111.5, -14.5 105.5 Z" fill="#0B0A09" />
 
-          <!-- 4.2. Warm Anatomical Chibi Neck & Under-Chin Shadow -->
-          <path d="M -5.5 99 L 5.5 99 L 6.5 113 L -6.5 113 Z" fill="url(#chibiSkin)" stroke="#E5B5A3" stroke-width="0.6" />
-          <path d="M -5.5 101 Q 0 105.5 5.5 101" fill="none" stroke="#E2A48E" stroke-width="1.6" stroke-linecap="round" opacity="0.8" />
+          <!-- 4.2. Short Compact Chibi Neck with Warm Color-Linework -->
+          <path d="M -5.2 98.5 L 5.2 98.5 L 6.2 112 L -6.2 112 Z" fill="url(#chibiSkin)" stroke="#C68670" stroke-width="0.7" />
+          <path d="M -5.2 100.5 Q 0 104.8 5.2 100.5" fill="none" stroke="#D9957E" stroke-width="1.8" stroke-linecap="round" opacity="0.85" />
 
-          <!-- 4.3. Crisp White Undershirt Crewneck Collar (Visible V-Triangle) -->
-          <path d="M -6.5 109.5 Q 0 112.5 6.5 109.5 L 4 117.5 L 0 119.5 L -4 117.5 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="0.6" />
+          <!-- 4.3. Crisp White Undershirt Crewneck Collar -->
+          <path d="M -6.5 108.8 Q 0 112 6.5 108.8 L 4 117 L 0 119 L -4 117 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="0.65" />
 
-          <!-- 4.4. Oversized Black Hoodie Body with Rim-Lit Seams & Kangaroo Pocket -->
-          <path d="M -15.2 111 C -18.8 123, -17.8 140, -14.2 147.5 L 14.2 147.5 C 17.8 140, 18.8 123, 15.2 111 Z" fill="url(#hoodieBlack)" stroke="#4A4440" stroke-width="1" />
-          <!-- Subtle Rim Highlight on Right & Left Chest Folds -->
-          <path d="M 14.2 113 C 16.8 123, 16.2 136, 13.5 144" fill="none" stroke="#645D58" stroke-width="0.8" stroke-linecap="round" opacity="0.65" />
-          <path d="M -9.5 137 L -7 145 M 9.5 137 L 7 145 M -7.5 137 L 7.5 137" fill="none" stroke="#3D3835" stroke-width="0.85" stroke-linecap="round" />
-          <!-- Ribbed Hem with Stitch Ridges -->
-          <rect x="-14.2" y="144.5" width="28.4" height="4.8" rx="1.6" fill="#1C1918" stroke="#423D3A" stroke-width="0.75" />
-          <line x1="-9" y1="145.2" x2="-9" y2="148.6" stroke="#332F2C" stroke-width="0.7" />
-          <line x1="-3" y1="145.2" x2="-3" y2="148.6" stroke="#332F2C" stroke-width="0.7" />
-          <line x1="3" y1="145.2" x2="3" y2="148.6" stroke="#332F2C" stroke-width="0.7" />
-          <line x1="9" y1="145.2" x2="9" y2="148.6" stroke="#332F2C" stroke-width="0.7" />
+          <!-- 4.4. Bean-Shaped Oversized Black Hoodie Body (Puffy & Cute Silhouette!) -->
+          <path d="M -15.5 110 C -19.8 122, -19 139, -14.8 146.5 L 14.8 146.5 C 19 139, 19.8 122, 15.5 110 Z" fill="url(#hoodieBlack)" stroke="#524B46" stroke-width="1.15" />
+          <!-- Studio Rim-Light on Hoodie Puff & Kangaroo Pocket -->
+          <path d="M 14.8 112.5 C 17.8 122, 17.2 135, 14 143.5" fill="none" stroke="#736A63" stroke-width="0.9" stroke-linecap="round" opacity="0.7" />
+          <path d="M -14.8 112.5 C -17.8 122, -17.2 135, -14 143.5" fill="none" stroke="#57504B" stroke-width="0.8" stroke-linecap="round" opacity="0.6" />
+          <path d="M -9.8 136.5 L -7.2 144.5 M 9.8 136.5 L 7.2 144.5 M -7.8 136.5 L 7.8 136.5" fill="none" stroke="#423D3A" stroke-width="0.9" stroke-linecap="round" />
+          <!-- Ribbed Waistband Hem -->
+          <rect x="-14.8" y="143.8" width="29.6" height="4.8" rx="1.8" fill="#1C1918" stroke="#47413E" stroke-width="0.8" />
+          <line x1="-9.5" y1="144.5" x2="-9.5" y2="147.8" stroke="#36322F" stroke-width="0.75" />
+          <line x1="-3.2" y1="144.5" x2="-3.2" y2="147.8" stroke="#36322F" stroke-width="0.75" />
+          <line x1="3.2" y1="144.5" x2="3.2" y2="147.8" stroke="#36322F" stroke-width="0.75" />
+          <line x1="9.5" y1="144.5" x2="9.5" y2="147.8" stroke="#36322F" stroke-width="0.75" />
 
-          <!-- 4.5. Overlapping Hood Collar Lapels (V-Placket ON TOP of Body!) -->
-          <path d="M -15 108 C -12 115, -5 119, 0 120.5 C 5 119, 12 115, 15 108" fill="none" stroke="#3D3835" stroke-width="2.2" stroke-linecap="round" />
-          <!-- Metallic Drawstring Eyelets -->
-          <circle cx="-5" cy="115" r="1.35" fill="#0E0D0C" stroke="#CBD5E1" stroke-width="0.65" />
-          <circle cx="5" cy="115" r="1.35" fill="#0E0D0C" stroke="#CBD5E1" stroke-width="0.65" />
+          <!-- 4.5. Overlapping Hood Collar Lapels & Metallic Eyelets -->
+          <path d="M -15.5 107.5 C -12.5 114.5, -5 118.5, 0 120 C 5 118.5, 12.5 114.5, 15.5 107.5" fill="none" stroke="#47413E" stroke-width="2.3" stroke-linecap="round" />
+          <circle cx="-5.2" cy="114.5" r="1.4" fill="#0E0D0C" stroke="#E2E8F0" stroke-width="0.7" />
+          <circle cx="5.2" cy="114.5" r="1.4" fill="#0E0D0C" stroke="#E2E8F0" stroke-width="0.7" />
 
-          <!-- 4.6. WHITE CROWN LOGO (Unobstructed Center Chest - Exact Reference Match) -->
-          <g transform="translate(0, 1.5)">
-            <polygon points="-4.8,131.5 -3.8,126.5 -1.5,128.8 0,124.8 1.5,128.8 3.8,126.5 4.8,131.5" fill="none" stroke="#FFFFFF" stroke-width="1.3" stroke-linejoin="round" />
-            <circle cx="-3.8" cy="125.8" r="0.85" fill="#FFFFFF" />
-            <circle cx="0" cy="124" r="0.95" fill="#FFFFFF" />
-            <circle cx="3.8" cy="125.8" r="0.85" fill="#FFFFFF" />
-            <line x1="-4.8" y1="133.2" x2="4.8" y2="133.2" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round" />
+          <!-- 4.6. WHITE CROWN LOGO (Crisp Center Chest Emblem) -->
+          <g transform="translate(0, 1)">
+            <polygon points="-5.0,131.2 -4.0,126.0 -1.6,128.5 0,124.2 1.6,128.5 4.0,126.0 5.0,131.2" fill="none" stroke="#FFFFFF" stroke-width="1.35" stroke-linejoin="round" />
+            <circle cx="-4.0" cy="125.2" r="0.9" fill="#FFFFFF" />
+            <circle cx="0" cy="123.3" r="1.0" fill="#FFFFFF" />
+            <circle cx="4.0" cy="125.2" r="0.9" fill="#FFFFFF" />
+            <line x1="-5.0" y1="133.0" x2="5.0" y2="133.0" stroke="#FFFFFF" stroke-width="1.35" stroke-linecap="round" />
           </g>
 
           <!-- 4.7. Hoodie Drawstrings with Silver Metal Aglets (ON TOP OF TORSO!) -->
           <g class="hoodie-string-left">
-            <path d="M -5 115 Q -5.8 125 -5.2 135" fill="none" stroke="#090808" stroke-width="2.2" stroke-linecap="round" />
-            <path d="M -5 115 Q -5.8 125 -5.2 135" fill="none" stroke="#3B3633" stroke-width="1.35" stroke-linecap="round" />
-            <rect x="-6.1" y="134" width="1.8" height="4.2" rx="0.7" fill="#F1F5F9" stroke="#475569" stroke-width="0.4" />
+            <path d="M -5.2 114.5 Q -6.0 124.5 -5.4 134.5" fill="none" stroke="#090808" stroke-width="2.3" stroke-linecap="round" />
+            <path d="M -5.2 114.5 Q -6.0 124.5 -5.4 134.5" fill="none" stroke="#453F3C" stroke-width="1.4" stroke-linecap="round" />
+            <rect x="-6.3" y="133.5" width="1.8" height="4.2" rx="0.75" fill="#F8FAFC" stroke="#475569" stroke-width="0.45" />
           </g>
           <g class="hoodie-string-right">
-            <path d="M 5 115 Q 5.8 124 5.2 133" fill="none" stroke="#090808" stroke-width="2.2" stroke-linecap="round" />
-            <path d="M 5 115 Q 5.8 124 5.2 133" fill="none" stroke="#3B3633" stroke-width="1.35" stroke-linecap="round" />
-            <rect x="4.3" y="132" width="1.8" height="4.2" rx="0.7" fill="#F1F5F9" stroke="#475569" stroke-width="0.4" />
+            <path d="M 5.2 114.5 Q 6.0 123.5 5.4 132.5" fill="none" stroke="#090808" stroke-width="2.3" stroke-linecap="round" />
+            <path d="M 5.2 114.5 Q 6.0 123.5 5.4 132.5" fill="none" stroke="#453F3C" stroke-width="1.4" stroke-linecap="round" />
+            <rect x="4.5" y="131.5" width="1.8" height="4.2" rx="0.75" fill="#F8FAFC" stroke="#475569" stroke-width="0.45" />
           </g>
 
           <!-- =============================================================== -->
-          <!-- LAYER 5: HEAD — CEL-SHADED FACE, 3-STATE EXPRESSIONS & HAIR     -->
+          <!-- LAYER 5: HEAD — PRO KINDCHENSCHEMA, MOCHI CHEEKS & JEWEL EYES   -->
+          <!-- (2.25-Head Ratio: Lush Cloud Hair + Lower-Third Features!)      -->
           <!-- =============================================================== -->
           <g class="bot-head">
-            <!-- 5.1. Deep Back Hair Silhouette & Tousled Outer Spikes -->
-            <ellipse cx="0" cy="69" rx="28.5" ry="26.5" fill="url(#chibiHairDark)" stroke="#42332B" stroke-width="0.6" />
+            <!-- 5.1. Lush Cloud-Volume Back Hair Mass (Expanded Cranium rx=30.5, ry=27.5) -->
+            <ellipse cx="0" cy="67.5" rx="30.5" ry="27.5" fill="url(#chibiHairDark)" stroke="#4E3C32" stroke-width="0.8" />
             <g class="hair-fluff">
-              <!-- Left & Right Layered Side Flicks (Matching Reference Silhouette) -->
-              <path d="M -23 50 Q -32 58 -27 71 Q -22 66 -24 56 Z" fill="url(#chibiHairBrown)" stroke="#120D0A" stroke-width="0.7" />
-              <path d="M 23 50 Q 32 58 27 71 Q 22 66 24 56 Z" fill="url(#chibiHairBrown)" stroke="#120D0A" stroke-width="0.7" />
-              <path d="M -26 67 Q -33 80 -25 90 Q -21 83 -22 73 Z" fill="url(#chibiHairBrown)" stroke="#120D0A" stroke-width="0.7" />
-              <path d="M 26 67 Q 33 80 25 90 Q 21 83 22 73 Z" fill="url(#chibiHairBrown)" stroke="#120D0A" stroke-width="0.7" />
-              <!-- Animated Crown Feathered Tuft (Playful Cowlick Breeze!) -->
+              <!-- Outer Fluffy Side Curls with Bold Silhouette Line Weight (1.1px) -->
+              <path d="M -24 47 Q -34.5 56 -29 70 Q -23.5 64 -25 54 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="1.05" stroke-linejoin="round" />
+              <path d="M 24 47 Q 34.5 56 29 70 Q 23.5 64 25 54 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="1.05" stroke-linejoin="round" />
+              <path d="M -27.5 65 Q -35.5 79 -26.5 90 Q -22 82 -23 72 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="1.05" stroke-linejoin="round" />
+              <path d="M 27.5 65 Q 35.5 79 26.5 90 Q 22 82 23 72 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="1.05" stroke-linejoin="round" />
+              <!-- Upper Crown Volume Locks -->
+              <path d="M -20 42 Q -10 34 2 38 Q -6 43 -14 45 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="0.9" />
+              <path d="M 0 38 Q 14 34 22 43 Q 13 45 5 42 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="0.9" />
+              <!-- Animated Crown Feathered Tuft (Playful Ahoge Cowlicks!) -->
               <g class="crown-tuft">
-                <path d="M -6 43 Q -2 32 6 37 Q 2 43 -2 45 Z" fill="url(#chibiHairBrown)" stroke="#120D0A" stroke-width="0.7" />
-                <path d="M 3 41 Q 14 34 20 43 Q 12 46 7 43 Z" fill="url(#chibiHairBrown)" stroke="#120D0A" stroke-width="0.7" />
+                <path d="M -6.5 40 Q -2 29 6.5 34.5 Q 2 40 -2.5 42 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="0.95" stroke-linejoin="round" />
+                <path d="M 3 38.5 Q 15 31.5 21 41 Q 13 43.5 7 40.5 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="0.95" stroke-linejoin="round" />
               </g>
             </g>
 
-            <!-- 5.2. Cute Rounded Ears with Warm Inner Blush & Cartilage Line -->
-            <circle cx="-22.5" cy="80.5" r="4.5" fill="url(#chibiSkin)" stroke="#E5B5A3" stroke-width="0.7" />
-            <ellipse cx="-22.5" cy="80.5" rx="2.6" ry="2.1" fill="#F3B09E" />
-            <path d="M -23.5 79.5 Q -21.8 80.5 -22.8 82" fill="none" stroke="#D98B76" stroke-width="0.6" stroke-linecap="round" />
+            <!-- 5.2. Low-Set Chibi Ears with Subsurface Pink Glow & Color-Linework -->
+            <circle cx="-23.8" cy="81.5" r="4.8" fill="url(#chibiSkin)" stroke="#C68670" stroke-width="0.9" />
+            <ellipse cx="-24.2" cy="81.5" rx="3.0" ry="2.5" fill="url(#mochiBlushGrad)" />
+            <path d="M -24.8 80.2 Q -22.8 81.5 -24.0 83.2" fill="none" stroke="#C68670" stroke-width="0.7" stroke-linecap="round" />
 
-            <circle cx="22.5" cy="80.5" r="4.5" fill="url(#chibiSkin)" stroke="#E5B5A3" stroke-width="0.7" />
-            <ellipse cx="22.5" cy="80.5" rx="2.6" ry="2.1" fill="#F3B09E" />
-            <path d="M 23.5 79.5 Q 21.8 80.5 22.8 82" fill="none" stroke="#D98B76" stroke-width="0.6" stroke-linecap="round" />
+            <circle cx="23.8" cy="81.5" r="4.8" fill="url(#chibiSkin)" stroke="#C68670" stroke-width="0.9" />
+            <ellipse cx="24.2" cy="81.5" rx="3.0" ry="2.5" fill="url(#mochiBlushGrad)" />
+            <path d="M 24.8 80.2 Q 22.8 81.5 24.0 83.2" fill="none" stroke="#C68670" stroke-width="0.7" stroke-linecap="round" />
 
-            <!-- 5.3. Fair Chibi Face Base + Soft Cel-Shaded Forehead Shadow Under Bangs -->
-            <path d="M -22 66 C -24 82, -20 95.5, -8 102 C -3 104.5, 3 104.5, 8 102 C 20 95.5, 24 82, 22 66 C 20 51, -20 51, -22 66 Z" fill="url(#chibiSkin)" stroke="#EBBEAD" stroke-width="0.85" />
-            <!-- Soft Anime Forehead Cast Shadow Under Bangs for 3D Depth -->
-            <path d="M -20 65 Q -10 70 -1 66 Q 3 62 7 66 Q 15 69 20 65 C 18 55, -18 55, -20 65 Z" fill="#E8B8A4" fill-opacity="0.45" />
+            <!-- 5.3. True "MOCHI CHEEKS" Squircle Cranium (Wide Pillowy Lower Cheeks + Compact Rounded Chin y=101.2!) -->
+            <path d="M -22.8 64 C -25.8 78, -25.2 92.5, -12.5 99.2 C -5 101.8, 5 101.8, 12.5 99.2 C 25.2 92.5, 25.8 78, 22.8 64 C 21 49, -21 49, -22.8 64 Z" fill="url(#chibiSkin)" stroke="#C68670" stroke-width="1.05" stroke-linejoin="round" />
 
-            <!-- 5.4. Soft Warm Cheek Blush with Glossy White Anime Highlights & Cute Button Nose -->
-            <ellipse cx="-13.8" cy="86.8" rx="4.5" ry="2.2" fill="#FF8A9E" fill-opacity="0.46" />
-            <ellipse cx="-14.6" cy="86.2" rx="1.2" ry="0.55" fill="#FFFFFF" fill-opacity="0.65" />
-            <ellipse cx="13.8" cy="86.8" rx="4.5" ry="2.2" fill="#FF8A9E" fill-opacity="0.46" />
-            <ellipse cx="13.0" cy="86.2" rx="1.2" ry="0.55" fill="#FFFFFF" fill-opacity="0.65" />
-            <path d="M -0.8 84 Q 0 85.2 0.8 84" fill="none" stroke="#D98E7A" stroke-width="1.2" stroke-linecap="round" />
+            <!-- Soft Anime Forehead Cast Shadow Under Bangs -->
+            <path d="M -21 64 Q -11 69.5 -1 65.5 Q 3.5 61.5 7.5 65.5 Q 16 68.5 21 64 C 19 53, -19 53, -21 64 Z" fill="#E6B19C" fill-opacity="0.45" />
 
-            <!-- 5.5. Separated 3-State Mouth & Emote Overlays (Never Squashed by Eye Blink!) -->
-            <!-- State 1 (Walk): Charming Asymmetric Smirk + Lower Lip Contour -->
+            <!-- 5.4. Pillowy Mochi Cheek Blushes + Glossy White Mochi Pinpoints + Minimalist Cute Nose -->
+            <ellipse cx="-15.2" cy="86.5" rx="5.6" ry="3.2" fill="url(#mochiBlushGrad)" />
+            <ellipse cx="-16.2" cy="85.6" rx="1.35" ry="0.65" transform="rotate(-12 -16.2 85.6)" fill="#FFFFFF" fill-opacity="0.75" />
+            <circle cx="-13.8" cy="86.2" r="0.45" fill="#FFFFFF" fill-opacity="0.65" />
+
+            <ellipse cx="15.2" cy="86.5" rx="5.6" ry="3.2" fill="url(#mochiBlushGrad)" />
+            <ellipse cx="14.2" cy="85.6" rx="1.35" ry="0.65" transform="rotate(12 14.2 85.6)" fill="#FFFFFF" fill-opacity="0.75" />
+            <circle cx="16.6" cy="86.2" r="0.45" fill="#FFFFFF" fill-opacity="0.65" />
+
+            <!-- Minimalist Cute Nose Placed High on the Eye-Bottom Horizon (y=84.8) -->
+            <path d="M -0.7 84.6 Q 0 85.6 0.7 84.6" fill="none" stroke="#C6806A" stroke-width="1.15" stroke-linecap="round" />
+
+            <!-- 5.5. Separated 3-State Mouth & Emote Overlays (High-Set Compact Chibi Mouth y=89.2) -->
+            <!-- State 1 (Walk): Charming Asymmetric Chibi Smirk + Soft Lower Lip Cushion -->
             <g class="eyes-normal">
-              <path d="M -3.5 90.2 Q 0.5 92.4 4.2 89.2" fill="none" stroke="#8C2D19" stroke-width="1.35" stroke-linecap="round" />
-              <path d="M -1.2 92.8 Q 0.5 93.4 2.2 92.8" fill="none" stroke="#E2A48E" stroke-width="0.8" stroke-linecap="round" />
+              <path d="M -3.4 89.2 Q 0.5 91.5 4.2 88.3" fill="none" stroke="#7C2816" stroke-width="1.3" stroke-linecap="round" />
+              <path d="M -1.0 91.6 Q 0.4 92.2 1.8 91.6" fill="none" stroke="#DE9E88" stroke-width="0.75" stroke-linecap="round" />
             </g>
 
-            <!-- State 2 (Terminal Coding 27%–48%): Focused Tech-Lead Smile & Floating Holo Code Badge -->
+            <!-- State 2 (Terminal Coding 27%–48%): Confident Tech-Lead Smile & Floating Holo Code Badge -->
             <g class="eyes-coding">
-              <path d="M -2.8 90.2 Q 0.8 92.6 4.5 88.8" fill="none" stroke="#8C2D19" stroke-width="1.4" stroke-linecap="round" />
+              <path d="M -2.8 89.2 Q 0.8 91.8 4.5 88.0" fill="none" stroke="#7C2816" stroke-width="1.35" stroke-linecap="round" />
               <g class="coding-chip">
-                <rect x="13" y="36" width="22" height="12" rx="4" fill="#0F172A" stroke="#38BDF8" stroke-width="1" />
-                <text x="24" y="44.5" text-anchor="middle" fill="#38BDF8" font-size="6.8" font-weight="800" class="mono">&lt;/&gt;</text>
+                <rect x="14" y="34" width="23" height="12.5" rx="4" fill="#0F172A" stroke="#38BDF8" stroke-width="1.05" />
+                <text x="25.5" y="42.6" text-anchor="middle" fill="#38BDF8" font-size="6.8" font-weight="800" class="mono">&lt;/&gt;</text>
               </g>
             </g>
 
-            <!-- State 3 (Spotlight TRAN TAN PHAT 76%–97%): Joyful Open Smile, Rosy Blush & Rising Heart + Sparkle -->
+            <!-- State 3 (Spotlight TRAN TAN PHAT 76%–97%): Joyful Open Chibi Laugh, Rosy Mochi Glow & Rising Heart -->
             <g class="eyes-happy">
-              <ellipse cx="-13.8" cy="86.5" rx="5.2" ry="2.8" fill="#FF4D55" fill-opacity="0.72" />
-              <ellipse cx="13.8" cy="86.5" rx="5.2" ry="2.8" fill="#FF4D55" fill-opacity="0.72" />
-              <path d="M -3.8 89.2 Q 0 90.5 3.8 89.2 C 3.5 94.8, -3.5 94.8, -3.8 89.2 Z" fill="#991B1B" stroke="#7F1D1D" stroke-width="0.8" />
-              <path d="M -2.4 91.8 Q 0 90.8 2.4 91.8 C 1.8 93.8, -1.8 93.8, -2.4 91.8 Z" fill="#FB7185" />
+              <ellipse cx="-15.2" cy="86.5" rx="6.0" ry="3.4" fill="#FF4D55" fill-opacity="0.55" />
+              <ellipse cx="15.2" cy="86.5" rx="6.0" ry="3.4" fill="#FF4D55" fill-opacity="0.55" />
+              <path d="M -4.0 88.4 Q 0 89.8 4.0 88.4 C 3.8 94.2, -3.8 94.2, -4.0 88.4 Z" fill="#991B1B" stroke="#7F1D1D" stroke-width="0.8" stroke-linejoin="round" />
+              <path d="M -2.6 91.0 Q 0 90.0 2.6 91.0 C 2.0 93.2, -2.0 93.2, -2.6 91.0 Z" fill="#FB7185" />
               <g class="heart-float">
-                <path d="M 19 42 C 19 38.8, 14.8 38.8, 14.8 42 C 14.8 38.8, 10.6 38.8, 10.6 42 C 10.6 45.2, 14.8 48.2, 14.8 50.5 C 14.8 48.2, 19 45.2, 19 42 Z" fill="#E5484D" filter="url(#crimsonBloom)" />
-                <polygon points="23,35 23.8,37.2 26,38 23.8,38.8 23,41 22.2,38.8 20,38 22.2,37.2" fill="#FDE047" />
+                <path d="M 20 40 C 20 36.8, 15.8 36.8, 15.8 40 C 15.8 36.8, 11.6 36.8, 11.6 40 C 11.6 43.2, 15.8 46.2, 15.8 48.5 C 15.8 46.2, 20 43.2, 20 40 Z" fill="#E5484D" filter="url(#crimsonBloom)" />
+                <polygon points="24,33 24.8,35.2 27,36 24.8,36.8 24,39 23.2,36.8 21,36 23.2,35.2" fill="#FDE047" />
               </g>
             </g>
 
-            <!-- 5.6. Pure Eye Blinking Group (Only Scales the Eyes around y=78.5!) -->
+            <!-- 5.6. 5-LAYER ANIME JEWEL EYES (Wide-Set at x=±11, Lower-Third Horizon cy=79.5!) -->
             <g class="bot-eyes">
-              <!-- STATE 1: BIG SPARKLING CHOCOLATE-BROWN ANIME EYES -->
+              <!-- STATE 1: BIG SPARKLING 5-LAYER CHOCOLATE-AMBER JEWEL EYES -->
               <g class="eyes-normal">
                 <!-- Left Eye -->
-                <ellipse cx="-10.5" cy="78.5" rx="5.6" ry="6.1" fill="#FFFFFF" />
-                <ellipse cx="-10" cy="78.8" rx="4.5" ry="5.3" fill="url(#chibiEyeBrown)" />
-                <ellipse cx="-10" cy="79.2" rx="2.3" ry="2.9" fill="#140D09" />
-                <path d="M -12.8 80.8 Q -10 83.5 -7.2 80.8" fill="none" stroke="#E09F67" stroke-width="1.1" stroke-linecap="round" />
-                <circle cx="-11.9" cy="76.3" r="1.95" fill="#FFFFFF" />
-                <circle cx="-8.1" cy="81.2" r="0.95" fill="#FFFFFF" />
-                <circle cx="-12.2" cy="80.5" r="0.45" fill="#FFFFFF" />
-                <path d="M -16.2 74.2 Q -10.5 71.5 -4.8 74.2" fill="none" stroke="#16110E" stroke-width="2.1" stroke-linecap="round" />
-                <path d="M -14.5 71.2 Q -10.5 69.6 -6.2 71.4" fill="none" stroke="#CFA089" stroke-width="0.7" stroke-linecap="round" />
+                <!-- 1. Sclera Base & Soft Upper Eyelid Cast Shadow -->
+                <ellipse cx="-11.0" cy="79.5" rx="6.0" ry="6.3" fill="#FFFFFF" />
+                <path d="M -16.8 78 C -16.5 74, -5.5 74, -5.2 78 C -8 76.2, -14 76.2, -16.8 78 Z" fill="#E8D3CE" />
+                <!-- 2. Outer Limbal Ring & Rich Chocolate Iris -->
+                <ellipse cx="-10.5" cy="79.8" rx="4.9" ry="5.5" fill="#23140D" />
+                <ellipse cx="-10.5" cy="80.0" rx="4.4" ry="5.0" fill="url(#chibiEyeBrown)" />
+                <!-- 3. Luminous Amber-Gold Lower Crescent -->
+                <path d="M -13.6 81.5 Q -10.5 84.6 -7.4 81.5" fill="none" stroke="#F59E0B" stroke-width="1.35" stroke-linecap="round" opacity="0.85" />
+                <!-- 4. Deep Velvet Pupil + Warm Ruby Center Core -->
+                <ellipse cx="-10.5" cy="80.0" rx="2.4" ry="3.0" fill="#120B07" />
+                <circle cx="-10.5" cy="80.2" r="0.8" fill="#5C2818" />
+                <!-- 5. Triple Starlight Catchlights -->
+                <circle cx="-12.6" cy="77.2" r="2.1" fill="#FFFFFF" />
+                <circle cx="-8.4" cy="82.2" r="1.05" fill="#FFFFFF" />
+                <circle cx="-12.9" cy="81.6" r="0.5" fill="#FFFFFF" />
+                <!-- Winged Upper Eyelash & Delicate Double-Lid Crease -->
+                <path d="M -17.2 75.5 Q -11.0 72.0 -4.8 75.0" fill="none" stroke="#18100C" stroke-width="2.35" stroke-linecap="round" />
+                <path d="M -17.2 75.5 L -18.2 74.6" fill="none" stroke="#18100C" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M -15.2 72.0 Q -11.0 70.2 -6.4 72.0" fill="none" stroke="#C68670" stroke-width="0.7" stroke-linecap="round" />
 
                 <!-- Right Eye -->
-                <ellipse cx="10.5" cy="78.5" rx="5.6" ry="6.1" fill="#FFFFFF" />
-                <ellipse cx="10" cy="78.8" rx="4.5" ry="5.3" fill="url(#chibiEyeBrown)" />
-                <ellipse cx="10" cy="79.2" rx="2.3" ry="2.9" fill="#140D09" />
-                <path d="M 7.2 80.8 Q 10 83.5 12.8 80.8" fill="none" stroke="#E09F67" stroke-width="1.1" stroke-linecap="round" />
-                <circle cx="8.1" cy="76.3" r="1.95" fill="#FFFFFF" />
-                <circle cx="11.9" cy="81.2" r="0.95" fill="#FFFFFF" />
-                <circle cx="7.8" cy="80.5" r="0.45" fill="#FFFFFF" />
-                <path d="M 4.8 74.2 Q 10.5 71.5 16.2 74.2" fill="none" stroke="#16110E" stroke-width="2.1" stroke-linecap="round" />
-                <path d="M 6.2 71.4 Q 10.5 69.6 14.5 71.2" fill="none" stroke="#CFA089" stroke-width="0.7" stroke-linecap="round" />
+                <!-- 1. Sclera Base & Soft Upper Eyelid Cast Shadow -->
+                <ellipse cx="11.0" cy="79.5" rx="6.0" ry="6.3" fill="#FFFFFF" />
+                <path d="M 5.2 78 C 5.5 74, 16.5 74, 16.8 78 C 14 76.2, 8 76.2, 5.2 78 Z" fill="#E8D3CE" />
+                <!-- 2. Outer Limbal Ring & Rich Chocolate Iris -->
+                <ellipse cx="10.5" cy="79.8" rx="4.9" ry="5.5" fill="#23140D" />
+                <ellipse cx="10.5" cy="80.0" rx="4.4" ry="5.0" fill="url(#chibiEyeBrown)" />
+                <!-- 3. Luminous Amber-Gold Lower Crescent -->
+                <path d="M 7.4 81.5 Q 10.5 84.6 13.6 81.5" fill="none" stroke="#F59E0B" stroke-width="1.35" stroke-linecap="round" opacity="0.85" />
+                <!-- 4. Deep Velvet Pupil + Warm Ruby Center Core -->
+                <ellipse cx="10.5" cy="80.0" rx="2.4" ry="3.0" fill="#120B07" />
+                <circle cx="10.5" cy="80.2" r="0.8" fill="#5C2818" />
+                <!-- 5. Triple Starlight Catchlights -->
+                <circle cx="8.4" cy="77.2" r="2.1" fill="#FFFFFF" />
+                <circle cx="12.6" cy="82.2" r="1.05" fill="#FFFFFF" />
+                <circle cx="8.1" cy="81.6" r="0.5" fill="#FFFFFF" />
+                <!-- Winged Upper Eyelash & Delicate Double-Lid Crease -->
+                <path d="M 4.8 75.0 Q 11.0 72.0 17.2 75.5" fill="none" stroke="#18100C" stroke-width="2.35" stroke-linecap="round" />
+                <path d="M 17.2 75.5 L 18.2 74.6" fill="none" stroke="#18100C" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M 6.4 72.0 Q 11.0 70.2 15.2 72.0" fill="none" stroke="#C68670" stroke-width="0.7" stroke-linecap="round" />
               </g>
 
-              <!-- STATE 2: CODING FOCUS EYES (Looking Slightly Right at Terminal with Cyan Screen Reflection!) -->
+              <!-- STATE 2: CODING FOCUS JEWEL EYES (Glancing Right at Terminal with Cyan Screen Glint!) -->
               <g class="eyes-coding">
                 <!-- Left Eye Looking Right -->
-                <ellipse cx="-10.5" cy="78.5" rx="5.6" ry="6.1" fill="#FFFFFF" />
-                <ellipse cx="-9.3" cy="78.8" rx="4.5" ry="5.3" fill="url(#chibiEyeBrown)" />
-                <ellipse cx="-9.1" cy="79.2" rx="2.3" ry="2.9" fill="#140D09" />
-                <path d="M -12 80.8 Q -9.2 83.5 -6.5 80.8" fill="none" stroke="#38BDF8" stroke-width="1.15" stroke-linecap="round" />
-                <circle cx="-11.1" cy="76.2" r="1.95" fill="#FFFFFF" />
-                <circle cx="-7.4" cy="80.8" r="1.0" fill="#BAE6FD" />
-                <path d="M -16.2 74.2 Q -10.5 71.5 -4.8 74.2" fill="none" stroke="#16110E" stroke-width="2.1" stroke-linecap="round" />
+                <ellipse cx="-11.0" cy="79.5" rx="6.0" ry="6.3" fill="#FFFFFF" />
+                <path d="M -16.8 78 C -16.5 74, -5.5 74, -5.2 78 C -8 76.2, -14 76.2, -16.8 78 Z" fill="#E8D3CE" />
+                <ellipse cx="-9.6" cy="79.8" rx="4.9" ry="5.5" fill="#23140D" />
+                <ellipse cx="-9.6" cy="80.0" rx="4.4" ry="5.0" fill="url(#chibiEyeBrown)" />
+                <path d="M -12.6 81.6 Q -9.6 84.6 -6.6 81.6" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" />
+                <ellipse cx="-9.4" cy="80.0" rx="2.4" ry="3.0" fill="#120B07" />
+                <circle cx="-11.5" cy="77.2" r="2.1" fill="#FFFFFF" />
+                <circle cx="-7.5" cy="81.8" r="1.1" fill="#BAE6FD" />
+                <path d="M -17.2 75.5 Q -11.0 72.0 -4.8 75.0" fill="none" stroke="#18100C" stroke-width="2.35" stroke-linecap="round" />
 
                 <!-- Right Eye Looking Right -->
-                <ellipse cx="10.5" cy="78.5" rx="5.6" ry="6.1" fill="#FFFFFF" />
-                <ellipse cx="11.2" cy="78.8" rx="4.5" ry="5.3" fill="url(#chibiEyeBrown)" />
-                <ellipse cx="11.4" cy="79.2" rx="2.3" ry="2.9" fill="#140D09" />
-                <path d="M 8.5 80.8 Q 11.2 83.5 13.8 80.8" fill="none" stroke="#38BDF8" stroke-width="1.15" stroke-linecap="round" />
-                <circle cx="9.1" cy="76.2" r="1.95" fill="#FFFFFF" />
-                <circle cx="12.8" cy="80.8" r="1.0" fill="#BAE6FD" />
-                <path d="M 4.8 74.2 Q 10.5 71.5 16.2 74.2" fill="none" stroke="#16110E" stroke-width="2.1" stroke-linecap="round" />
+                <ellipse cx="11.0" cy="79.5" rx="6.0" ry="6.3" fill="#FFFFFF" />
+                <path d="M 5.2 78 C 5.5 74, 16.5 74, 16.8 78 C 14 76.2, 8 76.2, 5.2 78 Z" fill="#E8D3CE" />
+                <ellipse cx="11.8" cy="79.8" rx="4.9" ry="5.5" fill="#23140D" />
+                <ellipse cx="11.8" cy="80.0" rx="4.4" ry="5.0" fill="url(#chibiEyeBrown)" />
+                <path d="M 8.8 81.6 Q 11.8 84.6 14.8 81.6" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" />
+                <ellipse cx="12.0" cy="80.0" rx="2.4" ry="3.0" fill="#120B07" />
+                <circle cx="9.8" cy="77.2" r="2.1" fill="#FFFFFF" />
+                <circle cx="13.8" cy="81.8" r="1.1" fill="#BAE6FD" />
+                <path d="M 4.8 75.0 Q 11.0 72.0 17.2 75.5" fill="none" stroke="#18100C" stroke-width="2.35" stroke-linecap="round" />
               </g>
 
-              <!-- STATE 3: HAPPY ^ ^ ARCHED EYES -->
+              <!-- STATE 3: HAPPY ^ ^ ARCHED EYES WITH LASH WING -->
               <g class="eyes-happy">
-                <path d="M -15.5 79 Q -10.5 72.2 -5.5 79" fill="none" stroke="#16110E" stroke-width="2.5" stroke-linecap="round" />
-                <path d="M 5.5 79 Q 10.5 72.2 15.5 79" fill="none" stroke="#16110E" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M -16.5 79.8 Q -11.0 72.5 -5.5 79.8" fill="none" stroke="#18100C" stroke-width="2.6" stroke-linecap="round" />
+                <path d="M 5.5 79.8 Q 11.0 72.5 16.5 79.8" fill="none" stroke="#18100C" stroke-width="2.6" stroke-linecap="round" />
               </g>
             </g>
 
-            <!-- 5.7. FRONT LAYER: M-PARTED FLUFFY WAVY BANGS (Revealing Forehead & Eyebrows!) -->
+            <!-- 5.7. FRONT LAYER: CLOUD-LAYERED WAVY BANGS WITH FLOW LINES & ANGEL HALO SHEEN -->
             <g class="hair-fluff">
-              <!-- Left Side Temple Lock Framing Face -->
-              <path d="M -22 57 Q -27 71 -19.5 79 Q -17.5 70 -19 59 Z" fill="url(#chibiHairBrown)" stroke="#140E0B" stroke-width="0.65" />
-              <!-- Left Swept Bangs (Curving gently above left eyebrow, ending at y=67) -->
-              <path d="M -19 49 Q -17 64 -10.5 68.5 Q -12 59 -12.5 50 Z" fill="url(#chibiHairBrown)" stroke="#140E0B" stroke-width="0.65" />
-              <!-- Center-Left Comma Lock (Parting to reveal forehead at x=1..6!) -->
-              <path d="M -9 46 Q -5 63 -0.5 68.5 Q -1.5 57 -2 46 Z" fill="url(#chibiHairBrown)" stroke="#140E0B" stroke-width="0.65" />
-              <!-- Right Parted Sweep (Arches over x=3..14, leaving forehead peek open!) -->
-              <path d="M 3.5 47 Q 10 59 14.5 66.5 Q 12 56 9.5 47 Z" fill="url(#chibiHairBrown)" stroke="#140E0B" stroke-width="0.65" />
-              <path d="M 10 50 Q 18 62 19.5 70 Q 17 59 15 51 Z" fill="url(#chibiHairBrown)" stroke="#140E0B" stroke-width="0.65" />
-              <!-- Right Side Temple Lock -->
-              <path d="M 16.5 57 Q 25 70 19.5 79 Q 17.5 70 17 59 Z" fill="url(#chibiHairBrown)" stroke="#140E0B" stroke-width="0.65" />
+              <!-- Left Side Framing Lock -->
+              <path d="M -23 56 Q -28.5 71 -20.5 79.5 Q -18.2 70 -19.8 58 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="0.9" stroke-linejoin="round" />
+              <!-- Left Swept Bang Clump -->
+              <path d="M -20 47.5 Q -18 64 -11 69 Q -12.5 58.5 -13 49 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="0.85" stroke-linejoin="round" />
+              <!-- Center-Left Comma Lock (Parting to reveal warm forehead at x=0..4) -->
+              <path d="M -9.5 44.5 Q -5.5 63 -0.5 69 Q -1.5 56.5 -2 45 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="0.85" stroke-linejoin="round" />
+              <!-- Right Parted Sweep Lock -->
+              <path d="M 3.5 45.5 Q 10.5 59 15 67 Q 12.5 55.5 9.8 46 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="0.85" stroke-linejoin="round" />
+              <path d="M 10.5 48.5 Q 19 62 20.5 70.5 Q 17.8 58.5 15.5 50 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="0.85" stroke-linejoin="round" />
+              <!-- Right Side Framing Lock -->
+              <path d="M 17.5 56 Q 26.5 70 20.5 79.5 Q 18.2 70 18 58 Z" fill="url(#chibiHairBrown)" stroke="#140D09" stroke-width="0.9" stroke-linejoin="round" />
 
-              <!-- Expressive Anime Eyebrows -->
-              <path d="M -16 66.8 Q -10.5 63.8 -5.5 65.8" fill="none" stroke="#1F1612" stroke-width="2" stroke-linecap="round" />
-              <path d="M 5.5 65.8 Q 10.5 63.8 16 66.8" fill="none" stroke="#1F1612" stroke-width="2" stroke-linecap="round" />
+              <!-- Internal Hair Strand Flow Lines (Matching Hand-Drawn Reference Texture!) -->
+              <path d="M -4 45 Q -11 53 -13.5 63" fill="none" stroke="#18110D" stroke-width="0.75" stroke-linecap="round" opacity="0.8" />
+              <path d="M -1 45 Q -5 55 -3.5 64" fill="none" stroke="#18110D" stroke-width="0.75" stroke-linecap="round" opacity="0.8" />
+              <path d="M 6 46 Q 11 54 13.5 62" fill="none" stroke="#18110D" stroke-width="0.75" stroke-linecap="round" opacity="0.8" />
 
-              <!-- Multi-Strand Glossy Hair Sheen & Crown Swirl Highlights -->
-              <path d="M -17 53 Q -7 46 2 50" fill="none" stroke="url(#chibiHairSheen)" stroke-width="2.5" stroke-linecap="round" />
-              <path d="M 5 50 Q 13 46 19 54" fill="none" stroke="url(#chibiHairSheen)" stroke-width="2.2" stroke-linecap="round" />
-              <path d="M -11 58 Q -6 55 -2 58" fill="none" stroke="url(#chibiHairSheen)" stroke-width="1.3" stroke-linecap="round" opacity="0.75" />
+              <!-- Expressive Anime Eyebrows (Softly Visible Through Bangs!) -->
+              <path d="M -16.5 67.5 Q -11.0 64.2 -5.8 66.4" fill="none" stroke="#1E1410" stroke-width="2.1" stroke-linecap="round" />
+              <path d="M 5.8 66.4 Q 11.0 64.2 16.5 67.5" fill="none" stroke="#1E1410" stroke-width="2.1" stroke-linecap="round" />
+
+              <!-- Angel Halo Glossy Hair Highlights -->
+              <path d="M -18 52 Q -7 44.5 2.5 48.5" fill="none" stroke="url(#chibiHairSheen)" stroke-width="2.8" stroke-linecap="round" />
+              <path d="M 5.5 48.5 Q 14 45 20.5 53.5" fill="none" stroke="url(#chibiHairSheen)" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M -12 57.5 Q -6.5 54 -1.5 57.5" fill="none" stroke="url(#chibiHairSheen)" stroke-width="1.4" stroke-linecap="round" opacity="0.8" />
             </g>
           </g>
 
           <!-- =============================================================== -->
-          <!-- LAYER 6: FRONT ARM (MOUNTED AT LEFT SHOULDER x=-8, y=117)       -->
+          <!-- LAYER 6: FRONT ARM (PUFFY SLEEVE, SPORTS WATCH & STYLUS GRIP)   -->
           <!-- =============================================================== -->
           <g class="arm-front">
-            <!-- Baggy Upper Sleeve with Rim-Lit Seam -->
-            <path d="M -12.5 115 C -13.8 122, -13.2 130, -12 134 L -4 134 C -3.5 128, -3.5 120, -4.5 115 Z" fill="url(#hoodieBlack)" stroke="#4A4440" stroke-width="0.9" />
-            <path d="M -10.5 123 Q -8 125 -5.5 123" fill="none" stroke="#3D3835" stroke-width="0.8" stroke-linecap="round" />
+            <!-- Puffy Baggy Upper Sleeve with Bold Outer Contour -->
+            <path d="M -13 114.5 C -14.5 122, -13.8 130, -12.5 134 L -4 134 C -3.5 128, -3.5 120, -4.5 114.5 Z" fill="url(#hoodieBlack)" stroke="#524B46" stroke-width="1" />
+            <path d="M -11 123 Q -8.2 125.2 -5.5 123" fill="none" stroke="#423D3A" stroke-width="0.85" stroke-linecap="round" />
 
             <g class="forearm-front">
-              <!-- Baggy Forearm Sleeve -->
-              <rect x="-12.2" y="131" width="8.4" height="17.5" rx="4.2" fill="url(#hoodieBlack)" stroke="#4A4440" stroke-width="0.9" />
+              <!-- Puffy Forearm Sleeve -->
+              <rect x="-12.6" y="131" width="9.0" height="17.5" rx="4.5" fill="url(#hoodieBlack)" stroke="#524B46" stroke-width="1" />
               <!-- Ribbed Wrist Cuff -->
-              <rect x="-11.8" y="145.5" width="7.6" height="3.8" rx="1.5" fill="#1C1918" stroke="#423D3A" stroke-width="0.6" />
+              <rect x="-12.0" y="145.5" width="7.8" height="3.8" rx="1.5" fill="#1C1918" stroke="#47413E" stroke-width="0.65" />
 
               <!-- BLACK SPORTS WRISTWATCH (Crisp Dial & Hands on Wrist y=149.5) -->
-              <rect x="-11.4" y="148" width="6.8" height="3" rx="0.9" fill="#0F0E0E" />
-              <circle cx="-8" cy="149.5" r="3" fill="#1C1A18" stroke="#475569" stroke-width="0.7" />
-              <circle cx="-8" cy="149.5" r="2" fill="#2B2825" />
-              <line x1="-8" y1="149.5" x2="-8" y2="148.1" stroke="#F8FAFC" stroke-width="0.55" stroke-linecap="round" />
-              <line x1="-8" y1="149.5" x2="-6.8" y2="149.5" stroke="#E5484D" stroke-width="0.55" stroke-linecap="round" />
+              <rect x="-11.5" y="148" width="7.0" height="3" rx="0.9" fill="#0F0E0E" />
+              <circle cx="-8" cy="149.5" r="3.1" fill="#1C1A18" stroke="#64748B" stroke-width="0.7" />
+              <circle cx="-8" cy="149.5" r="2.1" fill="#2B2825" />
+              <line x1="-8" y1="149.5" x2="-8" y2="148.0" stroke="#F8FAFC" stroke-width="0.6" stroke-linecap="round" />
+              <line x1="-8" y1="149.5" x2="-6.7" y2="149.5" stroke="#E5484D" stroke-width="0.6" stroke-linecap="round" />
 
-              <!-- Cute Chibi Hand Properly Gripping the Laser Stylus Wand! -->
-              <!-- 1. Palm Base (Behind Stylus) -->
-              <circle cx="-8" cy="154.5" r="4.1" fill="url(#chibiSkin)" stroke="#E5B5A3" stroke-width="0.65" />
+              <!-- Cute Stubby Chibi Hand Properly Gripping the Laser Stylus Wand! -->
+              <!-- 1. Palm Base with Mochi Warmth (Behind Stylus) -->
+              <circle cx="-8" cy="154.5" r="4.3" fill="url(#chibiSkin)" stroke="#C68670" stroke-width="0.75" />
+              <ellipse cx="-8" cy="155.2" rx="2.2" ry="1.3" fill="url(#mochiBlushGrad)" />
               <!-- 2. Laser Pointer Stylus Wand (Held Inside Hand) -->
-              <rect x="-9.3" y="152" width="2.8" height="11.5" rx="1.4" fill="#1E1C1B" stroke="#E5484D" stroke-width="0.8" />
-              <circle cx="-7.9" cy="163.5" r="2.3" fill="#E5484D" filter="url(#crimsonBloom)" />
-              <circle cx="-7.9" cy="163.5" r="1.1" fill="#FFFFFF" />
-              <!-- 3. Curled Fingers & Thumb Wrapping OVER the Stylus Body! -->
-              <ellipse cx="-6.2" cy="154.8" rx="2.1" ry="1.5" transform="rotate(-18 -6.2 154.8)" fill="url(#chibiSkin)" stroke="#E2A48E" stroke-width="0.6" />
-              <ellipse cx="-9.5" cy="155.2" rx="1.7" ry="1.3" transform="rotate(15 -9.5 155.2)" fill="url(#chibiSkin)" stroke="#E2A48E" stroke-width="0.6" />
+              <rect x="-9.3" y="152" width="2.8" height="11.5" rx="1.4" fill="#1E1C1B" stroke="#E5484D" stroke-width="0.85" />
+              <circle cx="-7.9" cy="163.5" r="2.4" fill="#E5484D" filter="url(#crimsonBloom)" />
+              <circle cx="-7.9" cy="163.5" r="1.15" fill="#FFFFFF" />
+              <!-- 3. Curled Chubby Fingers & Thumb Wrapping OVER the Stylus Body! -->
+              <ellipse cx="-6.1" cy="154.8" rx="2.2" ry="1.55" transform="rotate(-18 -6.1 154.8)" fill="url(#chibiSkin)" stroke="#C68670" stroke-width="0.7" />
+              <ellipse cx="-9.6" cy="155.2" rx="1.8" ry="1.35" transform="rotate(15 -9.6 155.2)" fill="url(#chibiSkin)" stroke="#C68670" stroke-width="0.7" />
             </g>
           </g>
         </g>
