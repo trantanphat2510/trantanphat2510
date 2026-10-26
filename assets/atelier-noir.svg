@@ -571,7 +571,7 @@
         98%, 100%  { opacity: 0; }
       }
 
-      /* 12. Laptop Screen Blaze & Keystroke Sparks During Typing (25.5%–48%) */
+      /* 12. Laptop Screen Blaze and Keystroke Sparks During Typing (25.5%–48%) */
       @keyframes laptopScreenBlaze {
         0%, 24.5%  { opacity: 0.35; }
         26%, 47.5% { opacity: 1; }
@@ -583,7 +583,7 @@
         48.5%, 100% { opacity: 0; transform: translateY(2px); }
       }
 
-      /* 13. Holographic Projection Cone & Terminal Pop-Out From Laptop Screen */
+      /* 13. Holographic Projection Cone and Terminal Pop-Out From Laptop Screen */
       @keyframes laptopBeamProject {
         0%, 25%    { opacity: 0; }
         26.5%, 62% { opacity: 0.95; }
@@ -597,7 +597,7 @@
         65.5%, 100% { opacity: 0; transform: scale(0.08); }
       }
 
-      /* 14. Sequential Command Typing & Execution Inside Projected Terminal */
+      /* 14. Sequential Command Typing and Execution Inside Projected Terminal */
       @keyframes termCmd1Show {
         0%, 27.2%  { opacity: 0; transform: translateX(-4px); }
         28.5%, 63% { opacity: 1; transform: translateX(0px); }
