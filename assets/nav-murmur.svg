@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 54" width="164" height="41">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161E30" />
+      <stop offset="100%" stop-color="#0D121E" />
+    </linearGradient>
+    <radialGradient id="glow" cx="90%" cy="15%" r="65%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#0D121E" stop-opacity="0" />
+    </radialGradient>
+    <style>
+      .mono {
+        font-family: 'Geist Mono', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+      .sans {
+        font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .pulse {
+        animation: pulseAnim 2.4s infinite ease-in-out;
+      }
+      @keyframes pulseAnim {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.35; }
+      }
+    </style>
+  </defs>
+
+  <!-- Card Surface -->
+  <rect width="216" height="54" rx="10" fill="url(#bg)" />
+  <rect width="216" height="54" rx="10" fill="url(#glow)" />
+  <rect x="0.7" y="0.7" width="214.6" height="52.6" rx="9.3" fill="none" stroke="#384666" stroke-opacity="1" stroke-width="1.3" />
+  <line x1="12" y1="1.2" x2="204" y2="1.2" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="0.9" />
+
+  <!-- Left Spine Accent Bar -->
+  <rect x="0" y="11" width="3" height="32" rx="1.5" fill="#38BDF8" />
+
+  <!-- Top Row: Category Label & Launch Arrow -->
+  <circle cx="15" cy="17.5" r="2.8" fill="#38BDF8" />
+  <text x="23" y="20.5" fill="#38BDF8" font-size="8.5" font-weight="800" class="mono">03 // VOICE AI P2P</text>
+
+  <rect x="188" y="9" width="18" height="17" rx="5" fill="#14263B" stroke="#38BDF8" stroke-opacity="0.45" stroke-width="0.9" />
+  <text x="197" y="20.5" text-anchor="middle" fill="#F8FAFC" font-size="10" font-weight="700" class="sans">↗</text>
+
+  <!-- Bottom Row: Destination Title -->
+  <text x="13" y="41" fill="#FFFFFF" font-size="13.5" font-weight="800" letter-spacing="-0.01em" class="sans">MurMur Voice AI</text>
+</svg>

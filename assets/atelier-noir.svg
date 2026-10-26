@@ -184,11 +184,9 @@
       .bot-gait-bob { animation: humanBob 12s infinite ease-in-out; }
       .bot-head { animation: humanHeadNod 12s infinite ease-in-out; transform-origin: 0px 104px; }
       .bot-shadow { animation: humanShadow 12s infinite ease-in-out; transform-origin: 0px 193px; }
-      .hair-ahoge { animation: ahogeSway 2.4s infinite ease-in-out; transform-origin: 0px 54px; }
       .hair-fluff { animation: hairFluffFloat 12s infinite ease-in-out; transform-origin: 0px 58px; }
       .hoodie-string-left { animation: stringSwingLeft 12s infinite ease-in-out; transform-origin: -4px 120px; }
       .hoodie-string-right { animation: stringSwingRight 12s infinite ease-in-out; transform-origin: 4px 120px; }
-      .bot-drone { animation: droneHover 2.2s infinite ease-in-out; }
       .thigh-front { animation: thighFrontWalk 12s infinite ease-in-out; transform-origin: 0px 148px; }
       .shin-front { animation: shinFrontWalk 12s infinite ease-in-out; transform-origin: 0px 168px; }
       .thigh-back { animation: thighBackWalk 12s infinite ease-in-out; transform-origin: 0px 148px; }
@@ -198,12 +196,13 @@
       .arm-back { animation: armBackWalk 12s infinite ease-in-out; transform-origin: 1px 119px; }
       .forearm-back { animation: forearmBackWalk 12s infinite ease-in-out; transform-origin: 1px 135px; }
 
-      .point-beam { animation: pointLaserShow 12s infinite ease-in-out; }
+      .point-beam-row1 { animation: pointLaserRow1 12s infinite ease-in-out; }
+      .point-beam-row2 { animation: pointLaserRow2 12s infinite ease-in-out; }
       .term-highlight { animation: termRowHighlight 12s infinite ease-in-out; }
       .phat-spotlight { animation: phatSpotlightShow 12s infinite ease-in-out; }
       .phat-name-blaze { animation: phatNameBlazeAnim 12s infinite ease-in-out; transform-origin: 325px 112px; }
       .phat-name-sweep { animation: phatNameSweepAnim 12s infinite ease-in-out; }
-      .phat-speech { animation: phatSpeechPop 12s infinite ease-in-out; transform-origin: 640px 80px; }
+      .phat-speech { animation: phatSpeechPop 12s infinite ease-in-out; transform-origin: 700px 85px; }
       .eyes-normal { animation: eyesNormalToggle 12s infinite steps(1, end); }
       .eyes-happy { animation: eyesHappyToggle 12s infinite steps(1, end); }
       .bot-eyes { animation: eyeBlinkNatural 4.2s infinite ease-in-out; transform-origin: 0px 78.5px; }
@@ -227,14 +226,6 @@
       @keyframes wave {
         0%, 100% { opacity: 0.35; }
         50% { opacity: 1; }
-      }
-      @keyframes ahogeSway {
-        0%, 100% { transform: rotate(0deg); }
-        50% { transform: rotate(8deg); }
-      }
-      @keyframes droneHover {
-        0%, 100% { transform: translateY(0px) rotate(-2deg); }
-        50% { transform: translateY(-5px) rotate(3deg); }
       }
 
       /* 1. Master Smooth Patrol Translation (Ease-In / Ease-Out Kinematics) */
@@ -501,12 +492,15 @@
         99%, 100%              { transform: rotate(-24deg); }
       }
 
-      @keyframes pointLaserShow {
-        0%, 26%  { opacity: 0; transform: translateY(0px); }
-        28%, 37% { opacity: 1; transform: translateY(0px); }
-        38%      { opacity: 0.9; transform: translateY(10px); }
-        39%, 47% { opacity: 1; transform: translateY(20px); }
-        49%, 100% { opacity: 0; transform: translateY(20px); }
+      @keyframes pointLaserRow1 {
+        0%, 26.5% { opacity: 0; }
+        28%, 37%  { opacity: 1; }
+        38.5%, 100% { opacity: 0; }
+      }
+      @keyframes pointLaserRow2 {
+        0%, 37.5% { opacity: 0; }
+        39%, 47%  { opacity: 1; }
+        48.5%, 100% { opacity: 0; }
       }
       @keyframes termRowHighlight {
         0%, 26%  { opacity: 0; transform: translateY(0px); }
@@ -1045,20 +1039,29 @@
   </g>
 
   <!-- RIGHT INTERACTION: TACTICAL HOLOGRAM SCAN CONE & LASER RETICLE AT TERMINAL -->
-  <g class="point-beam">
-    <polygon points="832,146 862,120 862,144" fill="url(#scanBeamRight)" />
-    <line x1="832" y1="146" x2="862" y2="132" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
-    <circle cx="832" cy="146" r="3" fill="#FFFFFF" filter="url(#crimsonBloom)" />
-    <circle cx="862" cy="132" r="5" fill="none" stroke="#38BDF8" stroke-width="1.4" />
-    <circle cx="862" cy="132" r="2" fill="#E5484D" />
+  <!-- Row 1 Scan: Stylus Tip (835, 152) -> Terminal Command 1 (860, 132) -->
+  <g class="point-beam-row1">
+    <polygon points="835,152 860,122 860,142" fill="url(#scanBeamRight)" />
+    <line x1="835" y1="152" x2="860" y2="132" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
+    <circle cx="835" cy="152" r="3" fill="#FFFFFF" filter="url(#crimsonBloom)" />
+    <circle cx="860" cy="132" r="5" fill="none" stroke="#38BDF8" stroke-width="1.4" />
+    <circle cx="860" cy="132" r="2" fill="#E5484D" />
+  </g>
+  <!-- Row 2 Scan: Stylus Tip (834, 165) -> Terminal Command 2 (860, 172) -->
+  <g class="point-beam-row2">
+    <polygon points="834,165 860,162 860,182" fill="url(#scanBeamRight)" />
+    <line x1="834" y1="165" x2="860" y2="172" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
+    <circle cx="834" cy="165" r="3" fill="#FFFFFF" filter="url(#crimsonBloom)" />
+    <circle cx="860" cy="172" r="5" fill="none" stroke="#38BDF8" stroke-width="1.4" />
+    <circle cx="860" cy="172" r="2" fill="#E5484D" />
   </g>
 
   <!-- LEFT INTERACTION: WIDE SPOTLIGHT CONE & BLAZING FRAME ON "TRAN TAN PHAT" -->
   <g class="phat-spotlight">
-    <polygon points="628,142 88,74 88,148" fill="url(#holoBeamGrad)" opacity="0.45" />
-    <polygon points="628,142 562,82 562,144" fill="url(#holoBeamGrad)" />
-    <line x1="628" y1="142" x2="564" y2="116" stroke="#E5484D" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
-    <circle cx="628" cy="142" r="3" fill="#F5F2EB" filter="url(#crimsonBloom)" />
+    <polygon points="625,144 88,74 88,148" fill="url(#holoBeamGrad)" opacity="0.45" />
+    <polygon points="625,144 562,82 562,144" fill="url(#holoBeamGrad)" />
+    <line x1="625" y1="144" x2="564" y2="116" stroke="#E5484D" stroke-width="1.8" stroke-dasharray="3 2" filter="url(#crimsonBloom)" />
+    <circle cx="625" cy="144" r="3" fill="#F5F2EB" filter="url(#crimsonBloom)" />
     <circle cx="564" cy="116" r="4.5" fill="none" stroke="#E5484D" stroke-width="1.5" />
     <circle cx="564" cy="116" r="2" fill="#E5484D" />
 
@@ -1075,13 +1078,12 @@
     <polygon points="552,66 553,69.5 556.5,70.5 553,71.5 552,75 551,71.5 547.5,70.5 551,69.5" fill="#10B981" />
   </g>
 
-  <!-- Floating Holographic Speech Bubble Inside Co-Pilot Stage -->
+  <!-- Floating Holographic Speech Bubble Inside Co-Pilot Stage (Zero Hair Overlap, Seamless Path) -->
   <g class="phat-speech">
-    <g transform="translate(642, 68)">
-      <rect width="186" height="22" rx="11" fill="#121824" stroke="#10B981" stroke-width="1.2" />
-      <polygon points="36,22 44,22 38,30" fill="#121824" stroke="#10B981" stroke-width="1" />
-      <circle cx="13" cy="11" r="3" fill="#10B981" class="pulse-dot" />
-      <text x="22" y="14.5" fill="#F5F2EB" font-size="8" font-weight="700" class="mono">✓ ALL SYSTEMS LIVE, PHAT!</text>
+    <g transform="translate(700, 74)">
+      <path d="M 11 0 H 137 A 11 11 0 0 1 148 11 A 11 11 0 0 1 137 22 H 11 A 11 11 0 0 1 0.5 14.5 L -6.5 11 L 0.5 7.5 A 11 11 0 0 1 11 0 Z" fill="#121824" stroke="#10B981" stroke-width="1.2" stroke-linejoin="round" />
+      <circle cx="12" cy="11" r="3" fill="#10B981" class="pulse-dot" />
+      <text x="21" y="14.2" fill="#F5F2EB" font-size="7.6" font-weight="700" class="mono">✓ ALL SYSTEMS LIVE, PHAT!</text>
     </g>
   </g>
 
@@ -1513,12 +1515,16 @@
   <!-- ===================================================================== -->
   <g transform="translate(64, 1116)">
     <rect width="1096" height="62" rx="12" fill="url(#deckBg)" stroke="#2E3A54" stroke-width="1.4" />
-    <text x="24" y="37" fill="#FFFFFF" font-size="17.5" font-weight="700" letter-spacing="-0.015em" class="sans">
-      &quot;Good engineering is not just about writing code — it&apos;s about building something that <tspan fill="#FF6B72" font-size="20" class="serif-italic">matters.</tspan>&quot;
+    <text x="24" y="37" fill="#FFFFFF" font-size="15.5" font-weight="700" letter-spacing="-0.015em" class="sans">
+      &quot;Good engineering is not just about writing code — it&apos;s about building something that <tspan fill="#FF6B72" font-size="18.5" class="serif-italic">matters.</tspan>&quot;
     </text>
-    <circle cx="826" cy="31" r="3.5" fill="#10B981" class="pulse-dot" />
-    <text x="1072" y="35" text-anchor="end" fill="#E2E8F0" font-size="10.5" font-weight="700" class="mono">
-      TTANPHAT.WORK@GMAIL.COM · TTANPHAT.VERCEL.APP
-    </text>
+    <g transform="translate(718, 15)">
+      <rect width="356" height="32" rx="16" fill="#101624" stroke="#283550" stroke-width="1.1" />
+      <circle cx="16" cy="16" r="3.5" fill="#10B981" class="pulse-ring" />
+      <circle cx="16" cy="16" r="3.5" fill="#10B981" class="pulse-dot" />
+      <text x="28" y="19.5" fill="#E2E8F0" font-size="9.5" font-weight="700" class="mono">
+        TTANPHAT.WORK@GMAIL.COM · TTANPHAT.VERCEL.APP
+      </text>
+    </g>
   </g>
 </svg>
