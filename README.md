@@ -5,7 +5,7 @@
   <img src="./assets/atelier-noir.svg" width="100%" alt="Trần Tấn Phát — Full-Stack Developer · Atelier Noir Architecture" />
 </a>
 
-<!-- 05 // CYBERNETIC BRIDGE & INTERACTIVE COMMAND DOCK -->
+<!-- 05 // CYBERNETIC BRIDGE & 3D MECHANICAL KEYCAP COMMAND DOCK -->
 <img src="./assets/launchpad-header.svg" width="100%" alt="05 // Interactive Command Dock — Select Any Module to Deploy" />
 
 <p align="center">
@@ -16,9 +16,63 @@
   <a href="mailto:ttanphat.work@gmail.com"><img src="./assets/nav-email.svg" width="172" height="50" alt="05 // Contact — ttanphat.work@gmail.com" /></a>
 </p>
 
-<!-- 06 // EXPANDABLE SYSTEM SPECIFICATIONS & CLI QUICK-VERIFY CONSOLE -->
+<!-- MOBILE-FIRST & KEYBOARD QUICK-JUMP ACTION BAR -->
+<p align="center">
+  <sub>
+    <kbd>⌘1</kbd> <a href="https://ttanphat.vercel.app/"><b>Portfolio</b></a> &nbsp;·&nbsp;
+    <kbd>⌘2</kbd> <a href="https://website-kaikai.vercel.app/"><b>KAIKAI SaaS</b></a> &nbsp;·&nbsp;
+    <kbd>⌘3</kbd> <a href="https://murmur-voice.vercel.app/"><b>MurMur Voice AI</b></a> &nbsp;·&nbsp;
+    <kbd>⌘4</kbd> <a href="https://ttanphat.vercel.app/projects"><b>4 Case Studies</b></a> &nbsp;·&nbsp;
+    <kbd>⌘5</kbd> <a href="mailto:ttanphat.work@gmail.com"><b>ttanphat.work@gmail.com</b></a>
+  </sub>
+</p>
+
+<!-- 06 // LIVE SKILL RADAR, CI/CD PIPELINE CONVEYOR & SAIGON TELEMETRY HUD -->
+<img src="./assets/engineering-hud.svg" width="100%" alt="06 // Skill Radar, CI/CD Pipeline Conveyor & Saigon Base Station Telemetry" />
+
+<!-- 07A // INTERACTIVE SYSTEM ARCHITECTURE & DATA-FLOW TOPOLOGY (MERMAID ENGINE) -->
 <details>
-  <summary><code>⚡ NOIR-OS // SYSTEM SPECIFICATIONS, SLA METRICS &amp; CLI QUICK-VERIFY</code> <sub><i>(Click to expand interactive terminal &amp; architecture index)</i></sub></summary>
+  <summary><code>🕸️ NOIR-OS // 07A · LIVE SYSTEM ARCHITECTURE &amp; DATA-FLOW TOPOLOGY</code> <sub><i>(Click to inspect full-stack request &amp; WebRTC pipeline)</i></sub></summary>
+  <br />
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#131C2E', 'primaryTextColor': '#F8FAFC', 'primaryBorderColor': '#38BDF8', 'lineColor': '#38BDF8', 'secondaryColor': '#1F1421', 'tertiaryColor': '#0B0F17'}}}%%
+flowchart LR
+  subgraph Client["01 // CLIENT & MOTION TIER"]
+    UI["React 19 · Next.js 16<br/>60fps Motion · Tailwind v4"]
+    RTC["WebRTC P2P Mesh<br/>Sub-100ms Audio Stream"]
+  end
+
+  subgraph Edge["02 // GATEWAY & CACHE"]
+    SFC["Single-Flight Cache<br/>Stampede Protection"]
+    RBAC["3-Layer RBAC Guards<br/>JWT · Tenant Context"]
+  end
+
+  subgraph Core["03 // APPLICATION & AI CORE"]
+    NEST["NestJS 11 Micro-Core<br/>10+ SaaS Modules (KAIKAI)"]
+    FAST["Python FastAPI Engine<br/>ElevenLabs Voice AI (MurMur)"]
+  end
+
+  subgraph Data["04 // DATA & QUALITY GATE"]
+    PG[("PostgreSQL 16 + Prisma<br/>Row-Level Security (RLS)")]
+    SUPA[("Supabase Realtime<br/>Optimistic Graph Sync")]
+    E2E["Playwright E2E Suite<br/>100/100 Lighthouse Gate"]
+  end
+
+  UI ==>|"SSR / ISR"| SFC
+  SFC ==>|"Validated"| RBAC
+  RBAC ==>|"Tenant Scoped"| NEST
+  NEST ==>|"RLS Policy"| PG
+  UI -.->|"Optimistic UI"| SUPA
+  RTC <==>|"P2P + SFU"| FAST
+  FAST ==>|"Verified"| E2E
+```
+
+</details>
+
+<!-- 07B // EXPANDABLE SYSTEM SPECIFICATIONS, SLA BENCHMARKS & CLI QUICK-VERIFY -->
+<details>
+  <summary><code>⚡ NOIR-OS // 07B · SLA BENCHMARKS, CORE WEB VITALS &amp; CLI QUICK-VERIFY</code> <sub><i>(Click to expand interactive terminal &amp; architecture index)</i></sub></summary>
   <br />
 
   <div align="left">
@@ -47,7 +101,7 @@
   </p>
 </details>
 
-<!-- 07 // TELEMETRY CLOSING RAIL -->
+<!-- 08 // TELEMETRY CLOSING RAIL -->
 <img src="./assets/telemetry-footer.svg" width="100%" alt="NOIR-OS v4.2 — All 4 Production Systems Online" />
 
 </div>
