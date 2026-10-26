@@ -29,8 +29,14 @@
     </linearGradient>
 
     <linearGradient id="techBadgeBg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#202A42" />
-      <stop offset="100%" stop-color="#161E31" />
+      <stop offset="0%" stop-color="#1B2439" />
+      <stop offset="100%" stop-color="#121828" />
+    </linearGradient>
+
+    <linearGradient id="coreBadgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#263352" />
+      <stop offset="55%" stop-color="#1D2740" />
+      <stop offset="100%" stop-color="#161F33" />
     </linearGradient>
 
     <!-- Atmospheric Lighting -->
@@ -804,26 +810,35 @@
   <rect x="0.75" y="0.75" width="1198.5" height="1202.5" rx="19.25" fill="none" stroke="#263046" stroke-width="1.5" />
 
   <!-- ===================================================================== -->
-  <!-- CONTINUOUS ARCHITECTURAL SPINE (x=36, connects 01 -> 02 -> 03 -> 04)      -->
+  <!-- CONTINUOUS ARCHITECTURAL SPINE (x=36, Tactical HUD Telemetry Bus)     -->
   <!-- ===================================================================== -->
-  <line x1="36" y1="56" x2="36" y2="1147" stroke="#28334A" stroke-width="1.5" />
+  <line x1="32" y1="56" x2="32" y2="1147" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="4 4" />
+  <line x1="36" y1="56" x2="36" y2="1147" stroke="#2E3C59" stroke-width="1.6" />
   <rect x="34.75" y="0" width="2.5" height="90" fill="url(#spinePulseGrad)" class="spine-signal" />
 
-  <!-- Node 01: Hero Command Deck -->
-  <circle cx="36" cy="56" r="5" fill="#E5484D" />
-  <line x1="36" y1="56" x2="64" y2="56" stroke="#E5484D" stroke-width="1.8" />
+  <!-- Node 01: Hero Command Deck (y=56) -->
+  <circle cx="36" cy="56" r="8" fill="#0B0F17" stroke="#E5484D" stroke-opacity="0.65" stroke-width="1.2" />
+  <circle cx="36" cy="56" r="3.6" fill="#E5484D" filter="url(#crimsonBloom)" />
+  <line x1="44" y1="56" x2="61" y2="56" stroke="#E5484D" stroke-width="1.8" />
+  <circle cx="61" cy="56" r="2.2" fill="#FF6B72" />
 
-  <!-- Node 02: Tech Stack Matrix -->
-  <circle cx="36" cy="322" r="5" fill="#E5484D" />
-  <line x1="36" y1="322" x2="64" y2="322" stroke="#E5484D" stroke-width="1.8" />
+  <!-- Node 02: Tech Stack Matrix (y=322) -->
+  <circle cx="36" cy="322" r="8" fill="#0B0F17" stroke="#38BDF8" stroke-opacity="0.65" stroke-width="1.2" />
+  <circle cx="36" cy="322" r="3.6" fill="#38BDF8" />
+  <line x1="44" y1="322" x2="58" y2="322" stroke="#38BDF8" stroke-width="1.8" />
+  <circle cx="58" cy="322" r="2.2" fill="#38BDF8" />
 
-  <!-- Node 03: Selected Systems -->
-  <circle cx="36" cy="700" r="5" fill="#E5484D" />
-  <line x1="36" y1="700" x2="64" y2="700" stroke="#E5484D" stroke-width="1.8" />
+  <!-- Node 03: Selected Systems (y=700) -->
+  <circle cx="36" cy="700" r="8" fill="#0B0F17" stroke="#E5484D" stroke-opacity="0.65" stroke-width="1.2" />
+  <circle cx="36" cy="700" r="3.6" fill="#E5484D" filter="url(#crimsonBloom)" />
+  <line x1="44" y1="700" x2="58" y2="700" stroke="#E5484D" stroke-width="1.8" />
+  <circle cx="58" cy="700" r="2.2" fill="#FF6B72" />
 
-  <!-- Node 04: Signature Footer -->
-  <circle cx="36" cy="1147" r="5" fill="#E5484D" />
-  <line x1="36" y1="1147" x2="64" y2="1147" stroke="#E5484D" stroke-width="1.8" />
+  <!-- Node 04: Signature Footer (y=1147) -->
+  <circle cx="36" cy="1147" r="8" fill="#0B0F17" stroke="#10B981" stroke-opacity="0.65" stroke-width="1.2" />
+  <circle cx="36" cy="1147" r="3.6" fill="#10B981" />
+  <line x1="44" y1="1147" x2="61" y2="1147" stroke="#10B981" stroke-width="1.8" />
+  <circle cx="61" cy="1147" r="2.2" fill="#34D399" />
 
   <!-- ===================================================================== -->
   <!-- 01 // EXECUTIVE HERO & INTERACTIVE AI CO-PILOT COMMAND DECK           -->
@@ -893,13 +908,18 @@
     <text x="26" y="15.5" fill="#FFFFFF" font-size="9" font-weight="700" class="mono">AVAILABLE FOR WORK</text>
   </g>
 
-  <!-- Stage Cyber Floor Runway & Energy Nodes -->
-  <ellipse cx="739" cy="234" rx="90" ry="6" fill="#E5484D" fill-opacity="0.1" />
-  <line x1="646" y1="233" x2="832" y2="233" stroke="#364666" stroke-width="1.6" />
-  <line x1="656" y1="238" x2="822" y2="238" stroke="#243048" stroke-width="1" stroke-dasharray="5 3" />
-  <circle cx="646" cy="233" r="3" fill="#E5484D" filter="url(#crimsonBloom)" />
-  <circle cx="739" cy="233" r="2" fill="#38BDF8" />
-  <circle cx="832" cy="233" r="3" fill="#38BDF8" filter="url(#crimsonBloom)" />
+  <!-- Stage 3D Cyber Floor Runway & Circuit Trace Bridge to Terminal Pedestal -->
+  <polygon points="650,229 820,229 834,240 638,240" fill="#0D1422" fill-opacity="0.75" stroke="#23314B" stroke-width="0.9" />
+  <ellipse cx="734" cy="234" rx="88" ry="5.5" fill="#E5484D" fill-opacity="0.11" />
+  <line x1="644" y1="233" x2="824" y2="233" stroke="#3B4D70" stroke-width="1.6" />
+  <line x1="652" y1="237.5" x2="818" y2="237.5" stroke="#26344F" stroke-width="1" stroke-dasharray="5 3" />
+  <!-- Cyber Circuit Trace Bridging Chibi Runway (y=233) -> Terminal Holo-Emitter Pedestal (y=255) -->
+  <path d="M 824 233 L 836 233 L 854 255 L 906 255" fill="none" stroke="#38BDF8" stroke-opacity="0.6" stroke-width="1.25" stroke-dasharray="3 2" />
+  <path d="M 818 237.5 L 833 237.5 L 850 258 L 906 258" fill="none" stroke="#1E293B" stroke-width="0.95" />
+  <circle cx="644" cy="233" r="3" fill="#E5484D" filter="url(#crimsonBloom)" />
+  <circle cx="734" cy="233" r="2.2" fill="#38BDF8" />
+  <circle cx="824" cy="233" r="3" fill="#38BDF8" filter="url(#crimsonBloom)" />
+  <circle cx="854" cy="255" r="2" fill="#38BDF8" />
 
   <!-- PATROLLING STREETWEAR HOODIE CHIBI BOY (STUDIO-GRADE ANIME ART & KINEMATICS) -->
   <g transform="translate(730, 40)">
@@ -1302,12 +1322,12 @@
     <polygon points="552,66 553,69.5 556.5,70.5 553,71.5 552,75 551,71.5 547.5,70.5 551,69.5" fill="#10B981" />
   </g>
 
-  <!-- Floating Holographic Speech Bubble Inside Co-Pilot Stage (Zero Hair Overlap, Seamless Path) -->
+  <!-- Floating Holographic Speech Bubble Inside Co-Pilot Stage (13.5px Clear Gap Before Terminal HUD) -->
   <g class="phat-speech">
     <g transform="translate(696, 72)">
-      <path d="M 11 0 H 137 A 11 11 0 0 1 148 11 A 11 11 0 0 1 137 22 H 11 A 11 11 0 0 1 0.5 14.5 L -6.5 11 L 0.5 7.5 A 11 11 0 0 1 11 0 Z" fill="#121824" stroke="#10B981" stroke-width="1.2" stroke-linejoin="round" />
-      <circle cx="12" cy="11" r="3" fill="#10B981" class="pulse-dot" />
-      <text x="21" y="14.2" fill="#F5F2EB" font-size="7.6" font-weight="700" class="mono">✓ ALL SYSTEMS LIVE, PHAT!</text>
+      <path d="M 10 0 H 126 A 10 10 0 0 1 136 10.5 A 10 10 0 0 1 126 21 H 10 A 10 10 0 0 1 0.5 14 L -6 10.5 L 0.5 7 A 10 10 0 0 1 10 0 Z" fill="#121824" stroke="#10B981" stroke-width="1.2" stroke-linejoin="round" />
+      <circle cx="10.5" cy="10.5" r="2.8" fill="#10B981" class="pulse-dot" />
+      <text x="18.5" y="13.6" fill="#F5F2EB" font-size="7.1" font-weight="700" class="mono">✓ ALL SYSTEMS LIVE, PHAT!</text>
     </g>
   </g>
 
@@ -1465,224 +1485,264 @@
   </g>
 
   <!-- ===================================================================== -->
-  <!-- 02 // ARCHITECTURE & TECH STACK (Official Brand Logos, 2x2 Bento Grid)-->
+  <!-- 02 // ARCHITECTURE & TECH STACK (2-Tier Hierarchy: Core vs Ecosystem) -->
   <!-- ===================================================================== -->
   <text x="64" y="326" fill="#FF6B72" font-size="13" font-weight="800" class="mono">02 // ARCHITECTURE &amp; TECH STACK</text>
   <text x="356" y="326" fill="#4B566E" font-size="13" class="mono">—</text>
-  <text x="376" y="326" fill="#CBD5E1" font-size="12" font-weight="600" class="mono">32 CORE PRODUCTION TECHNOLOGIES BY LAYER</text>
+  <text x="376" y="326" fill="#CBD5E1" font-size="12" font-weight="600" class="mono">16 PRIMARY CORE WEAPONS &amp; 16 ECOSYSTEM TOOLS</text>
 
-  <!-- Grid Connectors -->
+  <!-- 4-Way Cybernetic Bento Grid Junction (Center x=612, y=504) -->
   <line x1="604" y1="419" x2="620" y2="419" stroke="#E5484D" stroke-width="2" />
-  <line x1="604" y1="589" x2="620" y2="589" stroke="#E5484D" stroke-width="2" />
-  <circle cx="612" cy="504" r="4" fill="#151B28" stroke="#E5484D" stroke-width="2" />
+  <line x1="604" y1="589" x2="620" y2="589" stroke="#38BDF8" stroke-width="2" />
+  <line x1="612" y1="419" x2="612" y2="589" stroke="#26344F" stroke-width="1.4" stroke-dasharray="4 3" />
+  <circle cx="612" cy="504" r="6" fill="#0B0F17" stroke="#E5484D" stroke-width="1.6" />
+  <circle cx="612" cy="504" r="2.2" fill="#38BDF8" />
 
   <!-- STACK LAYER 01: FRONTEND & UI ENGINEERING (x=64, y=342, w=540, h=154) -->
   <g transform="translate(64, 342)">
     <rect width="540" height="154" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
+    <rect x="20" y="0" width="500" height="2.5" rx="1.25" fill="#E5484D" opacity="0.85" />
     <text x="24" y="30" fill="#FF6B72" font-size="11" font-weight="800" class="mono">01 // CLIENT, STATE &amp; MOTION ARCHITECTURE</text>
-    <text x="516" y="30" text-anchor="end" fill="#94A3B8" font-size="10" font-weight="700" class="mono">FRONTEND LAYER</text>
+    <rect x="404" y="15" width="112" height="20" rx="10" fill="#1F1520" stroke="#E5484D" stroke-opacity="0.55" stroke-width="1" />
+    <circle cx="416" cy="25" r="2.5" fill="#E5484D" />
+    <text x="466" y="28.5" text-anchor="middle" fill="#FECDD3" font-size="8.5" font-weight="700" class="mono">FRONTEND CORE</text>
 
+    <!-- Row 1: Primary Flagship Core Technologies (Highlighted with #coreBadgeBg & Top Rim Bar) -->
     <g transform="translate(24, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="1.2" />
       <use href="#logo-react" xlink:href="#logo-react" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">React 19</text>
+      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">React 19</text>
     </g>
     <g transform="translate(149, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="1.2" />
       <use href="#logo-nextjs" xlink:href="#logo-nextjs" x="10" y="10" width="18" height="18" />
-      <text x="34" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Next.js 16</text>
+      <text x="34" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">Next.js 16</text>
     </g>
     <g transform="translate(274, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="1.2" />
       <use href="#logo-ts" xlink:href="#logo-ts" x="10" y="10" width="18" height="18" />
-      <text x="34" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">TypeScript</text>
+      <text x="34" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">TypeScript</text>
     </g>
     <g transform="translate(399, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#FBBF24" stroke-opacity="0.45" stroke-width="1.2" />
       <use href="#logo-js" xlink:href="#logo-js" x="10" y="10" width="18" height="18" />
-      <text x="34" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">JavaScript</text>
+      <text x="34" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">JavaScript</text>
     </g>
 
+    <!-- Row 2: Ecosystem & State / Motion Layer -->
     <g transform="translate(24, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-tailwind" xlink:href="#logo-tailwind" x="10" y="10" width="18" height="18" />
-      <text x="34" y="24" fill="#FFFFFF" font-size="13" font-weight="700" class="sans">Tailwind v4</text>
+      <text x="34" y="24" fill="#E2E8F0" font-size="13" font-weight="700" class="sans">Tailwind v4</text>
     </g>
     <g transform="translate(149, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-redux" xlink:href="#logo-redux" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Redux</text>
+      <text x="35" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">Redux</text>
     </g>
     <g transform="translate(274, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-zustand" xlink:href="#logo-zustand" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Zustand</text>
+      <text x="35" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">Zustand</text>
     </g>
     <g transform="translate(399, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-framer" xlink:href="#logo-framer" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Motion</text>
+      <text x="35" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">Motion</text>
     </g>
   </g>
 
   <!-- STACK LAYER 02: BACKEND, AI & REALTIME (x=620, y=342, w=540, h=154) -->
   <g transform="translate(620, 342)">
     <rect width="540" height="154" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
-    <text x="24" y="30" fill="#FF6B72" font-size="11" font-weight="800" class="mono">02 // BACKEND SERVICES, AI &amp; REALTIME VOICE</text>
-    <text x="516" y="30" text-anchor="end" fill="#94A3B8" font-size="10" font-weight="700" class="mono">SERVER LAYER</text>
+    <rect x="20" y="0" width="500" height="2.5" rx="1.25" fill="#38BDF8" opacity="0.85" />
+    <text x="24" y="30" fill="#38BDF8" font-size="11" font-weight="800" class="mono">02 // BACKEND SERVICES, AI &amp; REALTIME VOICE</text>
+    <rect x="410" y="15" width="106" height="20" rx="10" fill="#102033" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="1" />
+    <circle cx="422" cy="25" r="2.5" fill="#38BDF8" />
+    <text x="469" y="28.5" text-anchor="middle" fill="#BAE6FD" font-size="8.5" font-weight="700" class="mono">SERVER CORE</text>
 
+    <!-- Row 1: Primary Flagship Backend Stack -->
     <g transform="translate(24, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#E5484D" stroke-opacity="0.55" stroke-width="1.2" />
       <use href="#logo-nestjs" xlink:href="#logo-nestjs" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">NestJS 11</text>
+      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">NestJS 11</text>
     </g>
     <g transform="translate(149, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="1.2" />
       <use href="#logo-python" xlink:href="#logo-python" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Python</text>
+      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">Python</text>
     </g>
     <g transform="translate(274, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#10B981" stroke-opacity="0.55" stroke-width="1.2" />
       <use href="#logo-fastapi" xlink:href="#logo-fastapi" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">FastAPI</text>
+      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">FastAPI</text>
     </g>
     <g transform="translate(399, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#10B981" stroke-opacity="0.55" stroke-width="1.2" />
       <use href="#logo-nodejs" xlink:href="#logo-nodejs" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Node.js</text>
+      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">Node.js</text>
     </g>
 
+    <!-- Row 2: Ecosystem & Realtime Voice Services -->
     <g transform="translate(24, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-express" xlink:href="#logo-express" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Express</text>
+      <text x="35" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">Express</text>
     </g>
     <g transform="translate(149, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-php" xlink:href="#logo-php" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">PHP</text>
+      <text x="35" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">PHP</text>
     </g>
     <g transform="translate(274, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-webrtc" xlink:href="#logo-webrtc" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">WebRTC</text>
+      <text x="35" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">WebRTC</text>
     </g>
     <g transform="translate(399, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-elevenlabs" xlink:href="#logo-elevenlabs" x="10" y="10" width="18" height="18" />
-      <text x="33" y="24" fill="#FFFFFF" font-size="13" font-weight="700" class="sans">ElevenLabs</text>
+      <text x="33" y="24" fill="#E2E8F0" font-size="13" font-weight="700" class="sans">ElevenLabs</text>
     </g>
   </g>
 
   <!-- STACK LAYER 03: DATA LAYER & SECURITY (x=64, y=512, w=540, h=154) -->
   <g transform="translate(64, 512)">
     <rect width="540" height="154" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
-    <text x="24" y="30" fill="#FF6B72" font-size="11" font-weight="800" class="mono">03 // RELATIONAL DATA, ORMS &amp; SECURITY</text>
-    <text x="516" y="30" text-anchor="end" fill="#94A3B8" font-size="10" font-weight="700" class="mono">DATA LAYER</text>
+    <rect x="20" y="0" width="500" height="2.5" rx="1.25" fill="#A855F7" opacity="0.85" />
+    <text x="24" y="30" fill="#C084FC" font-size="11" font-weight="800" class="mono">03 // RELATIONAL DATA, ORMS &amp; SECURITY</text>
+    <rect x="416" y="15" width="100" height="20" rx="10" fill="#1D1430" stroke="#A855F7" stroke-opacity="0.55" stroke-width="1" />
+    <circle cx="428" cy="25" r="2.5" fill="#A855F7" />
+    <text x="472" y="28.5" text-anchor="middle" fill="#E9D5FF" font-size="8.5" font-weight="700" class="mono">DATA CORE</text>
 
+    <!-- Row 1: Primary Relational & ORM Stack -->
     <g transform="translate(24, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="1.2" />
       <use href="#logo-postgresql" xlink:href="#logo-postgresql" x="10" y="10" width="18" height="18" />
-      <text x="33" y="24" fill="#FFFFFF" font-size="13" font-weight="700" class="sans">PostgreSQL</text>
+      <text x="33" y="24" fill="#FFFFFF" font-size="13" font-weight="800" class="sans">PostgreSQL</text>
     </g>
     <g transform="translate(149, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#10B981" stroke-opacity="0.55" stroke-width="1.2" />
       <use href="#logo-supabase" xlink:href="#logo-supabase" x="10" y="10" width="18" height="18" />
-      <text x="34" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Supabase</text>
+      <text x="34" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">Supabase</text>
     </g>
     <g transform="translate(274, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#CBD5E1" stroke-opacity="0.45" stroke-width="1.2" />
       <use href="#logo-prisma" xlink:href="#logo-prisma" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Prisma</text>
+      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">Prisma</text>
     </g>
     <g transform="translate(399, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#A3E635" stroke-opacity="0.45" stroke-width="1.2" />
       <use href="#logo-drizzle" xlink:href="#logo-drizzle" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Drizzle</text>
+      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">Drizzle</text>
     </g>
 
+    <!-- Row 2: Secondary Stores, Validation & Auth -->
     <g transform="translate(24, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-mongodb" xlink:href="#logo-mongodb" x="10" y="10" width="18" height="18" />
-      <text x="34" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">MongoDB</text>
+      <text x="34" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">MongoDB</text>
     </g>
     <g transform="translate(149, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-sqlite" xlink:href="#logo-sqlite" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">SQLite</text>
+      <text x="35" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">SQLite</text>
     </g>
     <g transform="translate(274, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-zod" xlink:href="#logo-zod" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Zod</text>
+      <text x="35" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">Zod</text>
     </g>
     <g transform="translate(399, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-jwt" xlink:href="#logo-jwt" x="10" y="10" width="18" height="18" />
-      <text x="33" y="24" fill="#FFFFFF" font-size="13" font-weight="700" class="sans">JWT · RBAC</text>
+      <text x="33" y="24" fill="#E2E8F0" font-size="13" font-weight="700" class="sans">JWT · RBAC</text>
     </g>
   </g>
 
   <!-- STACK LAYER 04: DEVOPS, TESTING & DESIGN (x=620, y=512, w=540, h=154) -->
   <g transform="translate(620, 512)">
     <rect width="540" height="154" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
-    <text x="24" y="30" fill="#FF6B72" font-size="11" font-weight="800" class="mono">04 // DELIVERY, E2E QUALITY &amp; TOOLING</text>
-    <text x="516" y="30" text-anchor="end" fill="#94A3B8" font-size="10" font-weight="700" class="mono">DEVOPS LAYER</text>
+    <rect x="20" y="0" width="500" height="2.5" rx="1.25" fill="#10B981" opacity="0.85" />
+    <text x="24" y="30" fill="#34D399" font-size="11" font-weight="800" class="mono">04 // DELIVERY, E2E QUALITY &amp; TOOLING</text>
+    <rect x="408" y="15" width="108" height="20" rx="10" fill="#0E241D" stroke="#10B981" stroke-opacity="0.55" stroke-width="1" />
+    <circle cx="420" cy="25" r="2.5" fill="#10B981" />
+    <text x="468" y="28.5" text-anchor="middle" fill="#6EE7B7" font-size="8.5" font-weight="700" class="mono">DEVOPS CORE</text>
 
+    <!-- Row 1: Primary Cloud, Containers & E2E Quality -->
     <g transform="translate(24, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="1.2" />
       <use href="#logo-docker" xlink:href="#logo-docker" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Docker</text>
+      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">Docker</text>
     </g>
     <g transform="translate(149, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="1.2" />
       <use href="#logo-vercel" xlink:href="#logo-vercel" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Vercel</text>
+      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="800" class="sans">Vercel</text>
     </g>
     <g transform="translate(274, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#10B981" stroke-opacity="0.55" stroke-width="1.2" />
       <use href="#logo-playwright" xlink:href="#logo-playwright" x="10" y="10" width="18" height="18" />
-      <text x="33" y="24" fill="#FFFFFF" font-size="13" font-weight="700" class="sans">Playwright</text>
+      <text x="33" y="24" fill="#FFFFFF" font-size="13" font-weight="800" class="sans">Playwright</text>
     </g>
     <g transform="translate(399, 46)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#3E4E73" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#coreBadgeBg)" stroke="#526B9E" stroke-width="1.3" />
+      <line x1="12" y1="1" x2="105" y2="1" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="1.2" />
       <use href="#logo-githubactions" xlink:href="#logo-githubactions" x="10" y="10" width="18" height="18" />
-      <text x="33" y="24" fill="#FFFFFF" font-size="13" font-weight="700" class="sans">GitHub CI</text>
+      <text x="33" y="24" fill="#FFFFFF" font-size="13" font-weight="800" class="sans">GitHub CI</text>
     </g>
 
+    <!-- Row 2: Workflow, Design & Data Fetching -->
     <g transform="translate(24, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-git" xlink:href="#logo-git" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Git Flow</text>
+      <text x="35" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">Git Flow</text>
     </g>
     <g transform="translate(149, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-figma" xlink:href="#logo-figma" x="10" y="10" width="18" height="18" />
-      <text x="34" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">Figma UI</text>
+      <text x="34" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">Figma UI</text>
     </g>
     <g transform="translate(274, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-reactquery" xlink:href="#logo-reactquery" x="10" y="10" width="18" height="18" />
-      <text x="34" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">TanStack</text>
+      <text x="34" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">TanStack</text>
     </g>
     <g transform="translate(399, 94)">
-      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#354463" stroke-width="1.2" />
+      <rect width="117" height="38" rx="8" fill="url(#techBadgeBg)" stroke="#33415E" stroke-width="1.1" />
       <use href="#logo-pnpm" xlink:href="#logo-pnpm" x="10" y="10" width="18" height="18" />
-      <text x="35" y="24" fill="#FFFFFF" font-size="13.5" font-weight="700" class="sans">pnpm</text>
+      <text x="35" y="24" fill="#E2E8F0" font-size="13.5" font-weight="700" class="sans">pnpm</text>
     </g>
   </g>
 
   <!-- ===================================================================== -->
-  <!-- 03 // SELECTED PRODUCTION SYSTEMS (With Official Brand Logos)         -->
+  <!-- 03 // SELECTED PRODUCTION SYSTEMS (Keyword Highlighted & Symmetrical) -->
   <!-- ===================================================================== -->
   <text x="64" y="704" fill="#FF6B72" font-size="13" font-weight="800" class="mono">03 // SELECTED ENGINEERING WORK</text>
   <text x="358" y="704" fill="#4B566E" font-size="13" class="mono">—</text>
   <text x="378" y="704" fill="#CBD5E1" font-size="12" font-weight="600" class="mono">4 END-TO-END PRODUCTION ARCHITECTURES</text>
 
-  <!-- Grid Center Node & Crossbars -->
+  <!-- 4-Way Cybernetic Bento Grid Junction (Center x=612, y=906) -->
   <line x1="604" y1="810" x2="620" y2="810" stroke="#E5484D" stroke-width="2" />
-  <line x1="604" y1="1002" x2="620" y2="1002" stroke="#E5484D" stroke-width="2" />
-  <circle cx="612" cy="906" r="4.5" fill="#151B28" stroke="#E5484D" stroke-width="2" />
+  <line x1="604" y1="1002" x2="620" y2="1002" stroke="#10B981" stroke-width="2" />
+  <line x1="612" y1="810" x2="612" y2="1002" stroke="#26344F" stroke-width="1.4" stroke-dasharray="4 3" />
+  <circle cx="612" cy="906" r="6" fill="#0B0F17" stroke="#E5484D" stroke-width="1.6" />
+  <circle cx="612" cy="906" r="2.2" fill="#10B981" />
 
   <!-- PROJECT 01: KAIKAI (x=64, y=722, w=540, h=176) -->
   <g transform="translate(64, 722)">
@@ -1690,14 +1750,15 @@
     <rect x="18" y="0" width="504" height="3" rx="1.5" fill="#E5484D" />
 
     <text x="24" y="32" fill="#FF6B72" font-size="10.5" font-weight="800" class="mono">01 // FLAGSHIP SAAS · MULTI-TENANT</text>
-    <rect x="356" y="14" width="160" height="25" rx="12.5" fill="#2A1319" stroke="#E5484D" stroke-width="1.2" />
-    <text x="436" y="30" text-anchor="middle" fill="#FECDD3" font-size="9.5" font-weight="700" class="mono">10+ MODULES · PG RLS</text>
+    <rect x="348" y="14" width="168" height="25" rx="12.5" fill="#2A1319" stroke="#E5484D" stroke-width="1.2" />
+    <circle cx="362" cy="26.5" r="2.8" fill="#E5484D" class="pulse-dot" />
+    <text x="439" y="30" text-anchor="middle" fill="#FECDD3" font-size="9.2" font-weight="700" class="mono">10+ MODULES · PG RLS</text>
 
     <text x="24" y="66" fill="#FFFFFF" font-size="26" font-weight="800" letter-spacing="-0.02em" class="sans">KAIKAI</text>
     <text x="122" y="66" fill="#CBD5E1" font-size="15" font-weight="600" class="sans">— Multi-Branch Salon Booking &amp; CMS</text>
 
-    <text x="24" y="92" fill="#E2E8F0" font-size="13" font-weight="500" class="sans">• Single-flight cache stampede protection &amp; strict RBAC security guards.</text>
-    <text x="24" y="112" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• Multi-tenant PostgreSQL Row-Level Security (RLS) across 10+ core modules.</text>
+    <text x="24" y="92" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• <tspan fill="#FFFFFF" font-weight="700">Single-flight cache</tspan> stampede protection &amp; strict <tspan fill="#FECDD3" font-weight="700">3-layer RBAC</tspan> guards.</text>
+    <text x="24" y="112" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• Multi-tenant <tspan fill="#FFFFFF" font-weight="700">PostgreSQL Row-Level Security (RLS)</tspan> across 10+ modules.</text>
 
     <line x1="24" y1="125" x2="516" y2="125" stroke="#28334A" stroke-width="1" />
     <g transform="translate(24, 135)">
@@ -1733,14 +1794,15 @@
     <rect x="18" y="0" width="504" height="3" rx="1.5" fill="#38BDF8" />
 
     <text x="24" y="32" fill="#38BDF8" font-size="10.5" font-weight="800" class="mono">02 // AI &amp; REALTIME VOICE PLATFORM</text>
-    <rect x="366" y="14" width="150" height="25" rx="12.5" fill="#132235" stroke="#38BDF8" stroke-opacity="0.65" stroke-width="1.2" />
-    <text x="441" y="30" text-anchor="middle" fill="#BAE6FD" font-size="9.5" font-weight="700" class="mono">&lt;100MS P2P AUDIO</text>
+    <rect x="358" y="14" width="158" height="25" rx="12.5" fill="#132235" stroke="#38BDF8" stroke-opacity="0.65" stroke-width="1.2" />
+    <circle cx="372" cy="26.5" r="2.8" fill="#38BDF8" class="pulse-dot" />
+    <text x="444" y="30" text-anchor="middle" fill="#BAE6FD" font-size="9.2" font-weight="700" class="mono">&lt;100MS P2P AUDIO</text>
 
     <text x="24" y="66" fill="#FFFFFF" font-size="26" font-weight="800" letter-spacing="-0.02em" class="sans">MurMur</text>
     <text x="128" y="66" fill="#CBD5E1" font-size="15" font-weight="600" class="sans">— Voice-First English Practice Platform</text>
 
-    <text x="24" y="92" fill="#E2E8F0" font-size="13" font-weight="500" class="sans">• Low-latency WebRTC peer-to-peer voice rooms with sub-100ms audio routing.</text>
-    <text x="24" y="112" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• Python FastAPI backend integrated with ElevenLabs conversational AI voice.</text>
+    <text x="24" y="92" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• Low-latency <tspan fill="#FFFFFF" font-weight="700">WebRTC peer-to-peer</tspan> voice rooms with <tspan fill="#7DD3FC" font-weight="700">sub-100ms</tspan> audio routing.</text>
+    <text x="24" y="112" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• <tspan fill="#FFFFFF" font-weight="700">Python FastAPI</tspan> backend integrated with <tspan fill="#FFFFFF" font-weight="700">ElevenLabs</tspan> conversational AI voice.</text>
 
     <line x1="24" y1="125" x2="516" y2="125" stroke="#28334A" stroke-width="1" />
     <g transform="translate(24, 135)">
@@ -1776,14 +1838,15 @@
     <rect x="18" y="0" width="504" height="3" rx="1.5" fill="#A855F7" />
 
     <text x="24" y="32" fill="#C084FC" font-size="10.5" font-weight="800" class="mono">03 // REALTIME SOCIAL LEARNING GRAPH</text>
-    <rect x="372" y="14" width="144" height="25" rx="12.5" fill="#1F1633" stroke="#A855F7" stroke-opacity="0.65" stroke-width="1.2" />
-    <text x="444" y="30" text-anchor="middle" fill="#E9D5FF" font-size="9.5" font-weight="700" class="mono">OPTIMISTIC SYNC</text>
+    <rect x="364" y="14" width="152" height="25" rx="12.5" fill="#1F1633" stroke="#A855F7" stroke-opacity="0.65" stroke-width="1.2" />
+    <circle cx="378" cy="26.5" r="2.8" fill="#C084FC" class="pulse-dot" />
+    <text x="447" y="30" text-anchor="middle" fill="#E9D5FF" font-size="9.2" font-weight="700" class="mono">OPTIMISTIC SYNC</text>
 
     <text x="24" y="66" fill="#FFFFFF" font-size="26" font-weight="800" letter-spacing="-0.02em" class="sans">Social Learning</text>
     <text x="216" y="66" fill="#CBD5E1" font-size="15" font-weight="600" class="sans">— Academic Collaboration Network</text>
 
-    <text x="24" y="92" fill="#E2E8F0" font-size="13" font-weight="500" class="sans">• Instant optimistic UI feed mutations with TanStack React Query caching.</text>
-    <text x="24" y="112" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• Live academic study channels powered by Supabase Realtime &amp; RLS policies.</text>
+    <text x="24" y="92" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• Instant <tspan fill="#FFFFFF" font-weight="700">optimistic UI</tspan> feed mutations with <tspan fill="#E9D5FF" font-weight="700">TanStack React Query</tspan> caching.</text>
+    <text x="24" y="112" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• Live academic study channels powered by <tspan fill="#FFFFFF" font-weight="700">Supabase Realtime &amp; RLS</tspan> policies.</text>
 
     <line x1="24" y1="125" x2="516" y2="125" stroke="#28334A" stroke-width="1" />
     <g transform="translate(24, 135)">
@@ -1813,41 +1876,47 @@
     </g>
   </g>
 
-  <!-- PROJECT 04: ATELIER NOIR (x=620, y=914, w=540, h=176) -->
+  <!-- PROJECT 04: ATELIER NOIR (x=620, y=914, w=540, h=176 — Full 5-Badge Symmetry!) -->
   <g transform="translate(620, 914)">
     <rect width="540" height="176" rx="14" fill="url(#cardBg)" stroke="#384666" stroke-width="1.4" />
     <rect x="18" y="0" width="504" height="3" rx="1.5" fill="#10B981" />
 
     <text x="24" y="32" fill="#34D399" font-size="10.5" font-weight="800" class="mono">04 // DESIGN ENGINEERING &amp; PORTFOLIO</text>
-    <rect x="356" y="14" width="160" height="25" rx="12.5" fill="#0F261E" stroke="#10B981" stroke-width="1.2" />
-    <text x="436" y="30" text-anchor="middle" fill="#6EE7B7" font-size="9.5" font-weight="700" class="mono">100 / 100 LIGHTHOUSE</text>
+    <rect x="348" y="14" width="168" height="25" rx="12.5" fill="#0F261E" stroke="#10B981" stroke-width="1.2" />
+    <circle cx="362" cy="26.5" r="2.8" fill="#10B981" class="pulse-dot" />
+    <text x="439" y="30" text-anchor="middle" fill="#6EE7B7" font-size="9.2" font-weight="700" class="mono">100 / 100 LIGHTHOUSE</text>
 
     <text x="24" y="66" fill="#FFFFFF" font-size="26" font-weight="800" letter-spacing="-0.02em" class="sans">Atelier Noir</text>
     <text x="174" y="66" fill="#CBD5E1" font-size="15" font-weight="600" class="sans">— Interactive Design System</text>
 
-    <text x="24" y="92" fill="#E2E8F0" font-size="13" font-weight="500" class="sans">• 60fps spring-physics interactions, Lenis smooth scroll &amp; zero layout shift.</text>
-    <text x="24" y="112" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• Verified 100/100 Core Web Vitals with automated Playwright E2E test suite.</text>
+    <text x="24" y="92" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• <tspan fill="#FFFFFF" font-weight="700">60fps spring-physics</tspan> interactions, Lenis smooth scroll &amp; zero layout shift.</text>
+    <text x="24" y="112" fill="#CBD5E1" font-size="13" font-weight="500" class="sans">• Verified <tspan fill="#6EE7B7" font-weight="700">100/100 Core Web Vitals</tspan> with automated <tspan fill="#FFFFFF" font-weight="700">Playwright E2E</tspan> test suite.</text>
 
     <line x1="24" y1="125" x2="516" y2="125" stroke="#28334A" stroke-width="1" />
     <g transform="translate(24, 135)">
-      <rect width="96" height="28" rx="6" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
+      <rect width="92" height="28" rx="6" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
       <use href="#logo-react" xlink:href="#logo-react" x="8" y="6.5" width="15" height="15" />
       <text x="28" y="18.5" fill="#FFFFFF" font-size="11.5" font-weight="700" class="sans">React 19</text>
     </g>
-    <g transform="translate(128, 135)">
-      <rect width="108" height="28" rx="6" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
+    <g transform="translate(124, 135)">
+      <rect width="98" height="28" rx="6" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
+      <use href="#logo-ts" xlink:href="#logo-ts" x="8" y="6.5" width="15" height="15" />
+      <text x="28" y="18.5" fill="#FFFFFF" font-size="11.5" font-weight="700" class="sans">TypeScript</text>
+    </g>
+    <g transform="translate(230, 135)">
+      <rect width="102" height="28" rx="6" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
       <use href="#logo-tailwind" xlink:href="#logo-tailwind" x="8" y="6.5" width="15" height="15" />
       <text x="28" y="18.5" fill="#FFFFFF" font-size="11.5" font-weight="700" class="sans">Tailwind v4</text>
     </g>
-    <g transform="translate(244, 135)">
-      <rect width="86" height="28" rx="6" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
+    <g transform="translate(340, 135)">
+      <rect width="78" height="28" rx="6" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
       <use href="#logo-framer" xlink:href="#logo-framer" x="8" y="6.5" width="15" height="15" />
       <text x="28" y="18.5" fill="#FFFFFF" font-size="11.5" font-weight="700" class="sans">Motion</text>
     </g>
-    <g transform="translate(338, 135)">
-      <rect width="104" height="28" rx="6" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
+    <g transform="translate(426, 135)">
+      <rect width="90" height="28" rx="6" fill="url(#techBadgeBg)" stroke="#3B4A6B" stroke-width="1.2" />
       <use href="#logo-playwright" xlink:href="#logo-playwright" x="8" y="6.5" width="15" height="15" />
-      <text x="28" y="18.5" fill="#FFFFFF" font-size="11.5" font-weight="700" class="sans">Playwright</text>
+      <text x="27" y="18.5" fill="#FFFFFF" font-size="11.2" font-weight="700" class="sans">Playwright</text>
     </g>
   </g>
 
