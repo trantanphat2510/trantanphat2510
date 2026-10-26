@@ -16,10 +16,21 @@
   <a href="mailto:ttanphat.work@gmail.com"><img src="./assets/nav-email.svg" width="172" height="50" alt="05 // Contact — ttanphat.work@gmail.com" /></a>
 </p>
 
-<!-- 06 // EXPANDABLE SYSTEM SPECIFICATIONS & MOBILE COMMAND MATRIX -->
+<!-- 06 // EXPANDABLE SYSTEM SPECIFICATIONS & CLI QUICK-VERIFY CONSOLE -->
 <details>
-  <summary><code>⚡ NOIR-OS // SYSTEM SPECIFICATIONS, SLA METRICS &amp; DIRECT REPOSITORY MATRIX</code> <sub><i>(Click to expand interactive terminal index)</i></sub></summary>
+  <summary><code>⚡ NOIR-OS // SYSTEM SPECIFICATIONS, SLA METRICS &amp; CLI QUICK-VERIFY</code> <sub><i>(Click to expand interactive terminal &amp; architecture index)</i></sub></summary>
   <br />
+
+  <div align="left">
+
+  ```bash
+  # ⚡ 01 // Quick-Verify Live Production Endpoints & Edge TLS Headers
+  curl -ILs https://ttanphat.vercel.app/       | grep -E "HTTP/|server|x-vercel-cache"
+  curl -ILs https://website-kaikai.vercel.app/ | grep -E "HTTP/|server|x-vercel-cache"
+  curl -ILs https://murmur-voice.vercel.app/   | grep -E "HTTP/|server|x-vercel-cache"
+  ```
+
+  </div>
 
   | ID | Production System | Domain &amp; SLA Metric | Architectural Engineering Highlights | Primary Core Stack | Live Endpoint |
   | :---: | :--- | :---: | :--- | :--- | :---: |

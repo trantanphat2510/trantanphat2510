@@ -261,6 +261,12 @@
       .bot-eyes { animation: eyeBlinkNatural 4.2s infinite ease-in-out; transform-origin: 0px 79.5px; }
       .holo-scanline { animation: scanSweep 3.6s infinite ease-in-out; }
       .cursor-blink { animation: blinkCursor 1s infinite steps(2, start); }
+      .particle-drift-1 { animation: particleFloat1 4.8s infinite ease-in-out; }
+      .particle-drift-2 { animation: particleFloat2 5.6s infinite ease-in-out 1.2s; }
+      .particle-drift-3 { animation: particleFloat3 4.2s infinite ease-in-out 2.1s; }
+      .steam-wisp-1 { animation: steamRise1 2.8s infinite ease-in-out; }
+      .steam-wisp-2 { animation: steamRise2 2.8s infinite ease-in-out 1.4s; }
+      .holo-cube-float { animation: holoCubeHover 3.4s infinite ease-in-out; transform-origin: 874px 58px; }
 
       @keyframes pulse {
         0%, 100% { opacity: 1; }
@@ -633,6 +639,32 @@
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
       }
+      @keyframes particleFloat1 {
+        0%, 100% { transform: translateY(0px) scale(0.9); opacity: 0.25; }
+        50%      { transform: translateY(-9px) scale(1.25); opacity: 0.9; }
+      }
+      @keyframes particleFloat2 {
+        0%, 100% { transform: translate(0px, 0px); opacity: 0.2; }
+        50%      { transform: translate(3px, -11px); opacity: 0.85; }
+      }
+      @keyframes particleFloat3 {
+        0%, 100% { transform: translateY(0px); opacity: 0.3; }
+        50%      { transform: translateY(-7px); opacity: 0.95; }
+      }
+      @keyframes steamRise1 {
+        0%   { transform: translateY(2px) scaleX(0.9); opacity: 0; }
+        45%  { opacity: 0.65; }
+        100% { transform: translateY(-7px) scaleX(1.15); opacity: 0; }
+      }
+      @keyframes steamRise2 {
+        0%   { transform: translateY(2px) scaleX(1.1); opacity: 0; }
+        45%  { opacity: 0.55; }
+        100% { transform: translateY(-8px) scaleX(0.85); opacity: 0; }
+      }
+      @keyframes holoCubeHover {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50%      { transform: translateY(-2.5px) rotate(4deg); }
+      }
     </style>
 
     <!-- =================================================================== -->
@@ -901,11 +933,40 @@
   <rect x="628" y="40" width="514" height="226" rx="12" fill="url(#stageBg)" stroke="#26324B" stroke-width="1.2" />
 
   <text x="646" y="62" fill="#94A3B8" font-size="9.5" font-weight="700" class="mono">CO-PILOT STAGE // CHIBI CO-PILOT</text>
+
+  <!-- Floating Isometric AI Telemetry Cube Pod (x=858..936, y=46..70) -->
+  <rect x="858" y="46" width="78" height="24" rx="8" fill="#0F172A" stroke="#263552" stroke-width="1" />
+  <g class="holo-cube-float">
+    <polygon points="874,50.5 881,54.2 874,58 867,54.2" fill="#38BDF8" fill-opacity="0.85" />
+    <polygon points="867,54.2 874,58 874,65.2 867,61.5" fill="#0284C7" />
+    <polygon points="881,54.2 874,58 874,65.2 881,61.5" fill="#0369A1" />
+    <circle cx="874" cy="58" r="1.3" fill="#FFFFFF" />
+  </g>
+  <text x="887" y="56.5" fill="#38BDF8" font-size="6.8" font-weight="800" class="mono">AI CORE</text>
+  <text x="887" y="65" fill="#94A3B8" font-size="6.4" font-weight="700" class="mono">60FPS · ON</text>
+
   <g transform="translate(946, 46)">
     <rect width="184" height="24" rx="12" fill="#131B2A" stroke="#10B981" stroke-opacity="0.6" stroke-width="1.1" />
     <circle cx="14" cy="12" r="3.5" fill="#10B981" class="pulse-ring" />
     <circle cx="14" cy="12" r="3.5" fill="#10B981" class="pulse-dot" />
     <text x="26" y="15.5" fill="#FFFFFF" font-size="9" font-weight="700" class="mono">AVAILABLE FOR WORK</text>
+  </g>
+
+  <!-- Ambient Cyber Particles & Tactical Micro-Crosshairs Drifting in Stage -->
+  <g class="particle-drift-1">
+    <circle cx="654" cy="112" r="1.6" fill="#38BDF8" filter="url(#crimsonBloom)" />
+    <circle cx="814" cy="108" r="1.4" fill="#10B981" />
+    <path d="M 676 178 H 681 M 678.5 175.5 V 180.5" stroke="#38BDF8" stroke-width="0.9" stroke-linecap="round" opacity="0.7" />
+  </g>
+  <g class="particle-drift-2">
+    <circle cx="644" cy="162" r="1.8" fill="#E5484D" filter="url(#crimsonBloom)" />
+    <circle cx="776" cy="118" r="1.3" fill="#38BDF8" />
+    <path d="M 822 196 H 827 M 824.5 193.5 V 198.5" stroke="#E5484D" stroke-width="0.9" stroke-linecap="round" opacity="0.7" />
+  </g>
+  <g class="particle-drift-3">
+    <circle cx="688" cy="126" r="1.3" fill="#FBBF24" />
+    <circle cx="836" cy="96" r="1.5" fill="#38BDF8" filter="url(#crimsonBloom)" />
+    <path d="M 646 86 H 651 M 648.5 83.5 V 88.5" stroke="#10B981" stroke-width="0.9" stroke-linecap="round" opacity="0.7" />
   </g>
 
   <!-- Stage 3D Cyber Floor Runway & Circuit Trace Bridge to Terminal Pedestal -->
@@ -920,6 +981,30 @@
   <circle cx="734" cy="233" r="2.2" fill="#38BDF8" />
   <circle cx="824" cy="233" r="3" fill="#38BDF8" filter="url(#crimsonBloom)" />
   <circle cx="854" cy="255" r="2" fill="#38BDF8" />
+
+  <!-- Developer Espresso Mug on Glowing Cyan Warming Coaster + Rising Steam (x=826..843, y=214..235) -->
+  <g transform="translate(833, 232)">
+    <!-- Glowing Holo Warming Pad -->
+    <ellipse cx="0" cy="2.2" rx="7.5" ry="2.2" fill="#0B1324" stroke="#38BDF8" stroke-width="0.85" />
+    <ellipse cx="0" cy="2.2" rx="4.8" ry="1.1" fill="#38BDF8" fill-opacity="0.45" />
+    <!-- Cup Handle -->
+    <path d="M 4.2 -6.2 C 7.2 -6.2, 7.2 -1.5, 4.2 -1.5" fill="none" stroke="#E5484D" stroke-width="1.3" stroke-linecap="round" />
+    <!-- Matte Obsidian Cup Body with Crimson Rim -->
+    <path d="M -4.8 -8.5 H 4.8 L 3.8 1.5 C 3.6 2.3, -3.6 2.3, -3.8 1.5 Z" fill="#161C2B" stroke="#64748B" stroke-width="0.85" stroke-linejoin="round" />
+    <line x1="-4.5" y1="-6.8" x2="4.5" y2="-6.8" stroke="#E5484D" stroke-width="1.1" />
+    <!-- Animated Rising Coffee Steam Wisps -->
+    <path d="M -1.6 -10.5 Q -3.0 -13.5 -0.8 -16.2" fill="none" stroke="#CBD5E1" stroke-width="0.95" stroke-linecap="round" class="steam-wisp-1" />
+    <path d="M 1.6 -10.0 Q 3.0 -13.0 0.8 -15.8" fill="none" stroke="#CBD5E1" stroke-width="0.95" stroke-linecap="round" class="steam-wisp-2" />
+  </g>
+
+  <!-- Right-Side Mini Macro-Pad / Status Dock Beside Terminal Pedestal (x=1080..1122, y=249..259) -->
+  <g transform="translate(1080, 250)">
+    <rect width="42" height="7" rx="2.5" fill="#0F172A" stroke="#263552" stroke-width="0.85" />
+    <rect x="4" y="1.8" width="6" height="3.4" rx="1" fill="#E5484D" />
+    <rect x="12.5" y="1.8" width="6" height="3.4" rx="1" fill="#38BDF8" />
+    <rect x="21" y="1.8" width="6" height="3.4" rx="1" fill="#10B981" />
+    <rect x="29.5" y="1.8" width="8.5" height="3.4" rx="1" fill="#334155" />
+  </g>
 
   <!-- PATROLLING STREETWEAR HOODIE CHIBI BOY (STUDIO-GRADE ANIME ART & KINEMATICS) -->
   <g transform="translate(730, 40)">
