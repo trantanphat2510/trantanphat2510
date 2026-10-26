@@ -297,7 +297,7 @@
       .phat-spotlight { animation: phatSpotlightShow 12s infinite ease-in-out; }
       .phat-name-blaze { animation: phatNameBlazeAnim 12s infinite ease-in-out; transform-origin: 325px 112px; }
       .phat-name-sweep { animation: phatNameSweepAnim 12s infinite ease-in-out; }
-      .phat-speech { animation: phatSpeechPop 12s infinite ease-in-out; transform-origin: 700px 85px; }
+      .phat-speech { animation: phatSpeechPop 12s infinite ease-in-out; transform-origin: -6px 10.5px; }
       .eyes-normal { animation: eyesNormalToggle 12s infinite steps(1, end); }
       .eyes-coding { animation: eyesCodingToggle 12s infinite steps(1, end); }
       .eyes-happy { animation: eyesHappyToggle 12s infinite steps(1, end); }
@@ -1140,8 +1140,8 @@
   <!-- ===================================================================== -->
   <!-- CONTINUOUS ARCHITECTURAL SPINE (x=36, Tactical HUD Telemetry Bus)     -->
   <!-- ===================================================================== -->
-  <line x1="32" y1="56" x2="32" y2="1147" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="4 4" />
-  <line x1="36" y1="56" x2="36" y2="1147" stroke="#2E3C59" stroke-width="1.6" />
+  <line x1="32" y1="56" x2="32" y2="1204" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="4 4" />
+  <line x1="36" y1="56" x2="36" y2="1204" stroke="#2E3C59" stroke-width="1.6" />
   <rect x="34.75" y="0" width="2.5" height="90" fill="url(#spinePulseGrad)" class="spine-signal" />
 
   <!-- Node 01: Hero Command Deck (y=56) -->
@@ -1844,8 +1844,8 @@
   </g>
 
   <!-- Floating Holographic Speech Bubble Inside Co-Pilot Stage (13.5px Clear Gap Before Terminal HUD) -->
-  <g class="phat-speech">
-    <g transform="translate(696, 72)">
+  <g transform="translate(696, 72)">
+    <g class="phat-speech">
       <path d="M 10 0 H 126 A 10 10 0 0 1 136 10.5 A 10 10 0 0 1 126 21 H 10 A 10 10 0 0 1 0.5 14 L -6 10.5 L 0.5 7 A 10 10 0 0 1 10 0 Z" fill="#121824" stroke="#10B981" stroke-width="1.2" stroke-linejoin="round" />
       <circle cx="10.5" cy="10.5" r="2.8" fill="#10B981" class="pulse-dot" />
       <text x="18.5" y="13.6" fill="#F5F2EB" font-size="7.1" font-weight="700" class="mono">✓ ALL SYSTEMS LIVE, PHAT!</text>

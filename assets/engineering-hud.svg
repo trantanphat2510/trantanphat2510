@@ -63,7 +63,8 @@
   <rect width="1200" height="144" rx="14" fill="url(#canvasBg)" />
   <rect x="0.75" y="0.75" width="1198.5" height="142.5" rx="13.25" fill="none" stroke="#263046" stroke-width="1.5" />
 
-  <!-- Continuous Architectural Spine Node at x=36 -->
+  <!-- Continuous Architectural Spine Node 06 at x=36 -->
+  <line x1="32" y1="0" x2="32" y2="144" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="4 4" />
   <line x1="36" y1="0" x2="36" y2="144" stroke="#2E3C59" stroke-width="1.6" />
   <circle cx="36" cy="72" r="6.5" fill="#0B0F17" stroke="#38BDF8" stroke-opacity="0.75" stroke-width="1.2" />
   <circle cx="36" cy="72" r="2.8" fill="#38BDF8" class="pulse" />
@@ -71,12 +72,12 @@
   <circle cx="61" cy="72" r="2" fill="#7DD3FC" />
 
   <!-- ===================================================================== -->
-  <!-- CHAMBER 01 // SKILL RADAR & CORE COMPETENCY HUD (x=64..414, w=350)    -->
+  <!-- CHAMBER 06.A // SKILL RADAR & CORE COMPETENCY HUD (x=64..414, w=350)  -->
   <!-- ===================================================================== -->
   <rect x="64" y="10" width="350" height="124" rx="10" fill="url(#cardBg)" stroke="#2A3957" stroke-width="1.2" />
   <rect x="78" y="10" width="90" height="2.2" rx="1.1" fill="#E5484D" />
   <circle cx="80" cy="25" r="2.5" fill="#E5484D" class="pulse" />
-  <text x="88" y="28" fill="#FF6B72" font-size="8.8" font-weight="800" class="mono">01 // SKILL RADAR HUD</text>
+  <text x="88" y="28" fill="#FF6B72" font-size="8.8" font-weight="800" class="mono">06.A // SKILL RADAR HUD</text>
   <rect x="342" y="16" width="60" height="15" rx="4" fill="#0F172A" stroke="#38BDF8" stroke-opacity="0.6" stroke-width="0.8" />
   <text x="372" y="26" text-anchor="middle" fill="#38BDF8" font-size="7.2" font-weight="800" class="mono">96% AVG</text>
 
@@ -138,12 +139,12 @@
   <rect x="180" y="118" width="202" height="4" rx="2" fill="#A855F7" />
 
   <!-- ===================================================================== -->
-  <!-- CHAMBER 02 // LIVE CI/CD & E2E DEPLOYMENT CONVEYOR (x=428..834, w=406)-->
+  <!-- CHAMBER 06.B // LIVE CI/CD & E2E DEPLOYMENT CONVEYOR (x=428..834, w=406)-->
   <!-- ===================================================================== -->
   <rect x="428" y="10" width="406" height="124" rx="10" fill="url(#cardBg)" stroke="#2A3957" stroke-width="1.2" />
   <rect x="442" y="10" width="110" height="2.2" rx="1.1" fill="#38BDF8" />
   <circle cx="444" cy="25" r="2.5" fill="#38BDF8" class="pulse" />
-  <text x="452" y="28" fill="#7DD3FC" font-size="8.8" font-weight="800" class="mono">02 // CI/CD &amp; E2E PIPELINE</text>
+  <text x="452" y="28" fill="#7DD3FC" font-size="8.8" font-weight="800" class="mono">06.B // CI/CD &amp; E2E PIPELINE</text>
   <rect x="728" y="16" width="92" height="15" rx="4" fill="#064E3B" stroke="#10B981" stroke-width="0.8" />
   <text x="774" y="26" text-anchor="middle" fill="#34D399" font-size="7.0" font-weight="800" class="mono">✔ 4/4 PASSED</text>
 
@@ -197,12 +198,12 @@
   <text x="452" y="115.5" fill="#94A3B8" font-size="7.2" font-weight="700" class="mono">⚡ AVG DEPLOY: <tspan fill="#FFFFFF">34s</tspan> · ZERO-DOWNTIME EDGE · <tspan fill="#34D399">4 PRODUCTION CLUSTERS</tspan></text>
 
   <!-- ===================================================================== -->
-  <!-- CHAMBER 03 // SAIGON (UTC+7) TELEMETRY & AVAILABILITY (x=848..1160)   -->
+  <!-- CHAMBER 06.C // SAIGON (UTC+7) TELEMETRY & AVAILABILITY (x=848..1160) -->
   <!-- ===================================================================== -->
   <rect x="848" y="10" width="312" height="124" rx="10" fill="url(#cardBg)" stroke="#2A3957" stroke-width="1.2" />
   <rect x="862" y="10" width="96" height="2.2" rx="1.1" fill="#10B981" />
   <circle cx="864" cy="25" r="2.5" fill="#10B981" class="pulse" />
-  <text x="872" y="28" fill="#34D399" font-size="8.8" font-weight="800" class="mono">03 // BASE STATION &amp; SLA</text>
+  <text x="872" y="28" fill="#34D399" font-size="8.8" font-weight="800" class="mono">06.C // BASE STATION &amp; SLA</text>
   <rect x="1084" y="16" width="62" height="15" rx="4" fill="#0F172A" stroke="#10B981" stroke-opacity="0.6" stroke-width="0.8" />
   <text x="1115" y="26" text-anchor="middle" fill="#34D399" font-size="7.0" font-weight="800" class="mono">UTC+07</text>
 

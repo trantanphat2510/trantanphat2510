@@ -49,12 +49,12 @@ flowchart LR
   end
 
   subgraph Core["03 // APPLICATION & AI CORE"]
-    NEST["NestJS 11 Micro-Core<br/>10+ SaaS Modules (KAIKAI)"]
-    FAST["Python FastAPI Engine<br/>ElevenLabs Voice AI (MurMur)"]
+    NEST["NestJS 11 Micro-Core<br/>10+ SaaS Modules · KAIKAI"]
+    FAST["Python FastAPI Engine<br/>ElevenLabs Voice AI · MurMur"]
   end
 
   subgraph Data["04 // DATA & QUALITY GATE"]
-    PG[("PostgreSQL 16 + Prisma<br/>Row-Level Security (RLS)")]
+    PG[("PostgreSQL 16 · Prisma<br/>Row-Level Security — RLS")]
     SUPA[("Supabase Realtime<br/>Optimistic Graph Sync")]
     E2E["Playwright E2E Suite<br/>100/100 Lighthouse Gate"]
   end
@@ -64,7 +64,7 @@ flowchart LR
   RBAC ==>|"Tenant Scoped"| NEST
   NEST ==>|"RLS Policy"| PG
   UI -.->|"Optimistic UI"| SUPA
-  RTC <==>|"P2P + SFU"| FAST
+  RTC <-->|"P2P · SFU"| FAST
   FAST ==>|"Verified"| E2E
 ```
 
