@@ -5,34 +5,26 @@
   <img src="./assets/atelier-noir.svg" width="100%" decoding="async" fetchpriority="high" alt="Trần Tấn Phát — Full-Stack Developer · Atelier Noir Architecture" />
 </a>
 
-<!-- 05 // CYBERNETIC BRIDGE & 3D MECHANICAL KEYCAP COMMAND DOCK -->
-<img src="./assets/launchpad-header.svg" width="100%" loading="lazy" decoding="async" alt="05 // Interactive Command Dock — Select Any Module to Deploy" />
+<!-- 05 // LIVE SKILL RADAR, CI/CD PIPELINE CONVEYOR & SAIGON BASE STATION HUD -->
+<img src="./assets/engineering-hud.svg" width="100%" loading="lazy" decoding="async" alt="05 // Skill Radar, CI/CD Pipeline Conveyor & Saigon Base Station Telemetry" />
+
+<!-- 06 // INTERACTIVE 3D MECHANICAL KEYCAP COMMAND DOCK -->
+<img src="./assets/launchpad-header.svg" width="100%" loading="lazy" decoding="async" alt="06 // Interactive Command Dock — Click Any Keycap Below to Launch" />
 
 <p align="center">
-  <a href="https://ttanphat.vercel.app/"><img src="./assets/nav-portfolio.svg" width="172" height="50" loading="lazy" decoding="async" alt="01 // Portfolio — ttanphat.vercel.app" /></a>&nbsp;
-  <a href="https://website-kaikai.vercel.app/"><img src="./assets/nav-kaikai.svg" width="172" height="50" loading="lazy" decoding="async" alt="02 // SaaS Core — KAIKAI Platform" /></a>&nbsp;
-  <a href="https://murmur-voice.vercel.app/"><img src="./assets/nav-murmur.svg" width="172" height="50" loading="lazy" decoding="async" alt="03 // Voice AI — MurMur Voice AI" /></a>&nbsp;
-  <a href="https://ttanphat.vercel.app/projects"><img src="./assets/nav-projects.svg" width="172" height="50" loading="lazy" decoding="async" alt="04 // Archive — 4 Case Studies" /></a>&nbsp;
-  <a href="mailto:ttanphat.work@gmail.com"><img src="./assets/nav-email.svg" width="172" height="50" loading="lazy" decoding="async" alt="05 // Contact — ttanphat.work@gmail.com" /></a>
+  <a href="https://ttanphat.vercel.app/"><img src="./assets/nav-portfolio.svg" width="19.2%" loading="lazy" decoding="async" alt="⌘1 Portfolio — ttanphat.vercel.app" /></a>
+  <a href="https://website-kaikai.vercel.app/"><img src="./assets/nav-kaikai.svg" width="19.2%" loading="lazy" decoding="async" alt="⌘2 KAIKAI SaaS — website-kaikai.vercel.app" /></a>
+  <a href="https://murmur-voice.vercel.app/"><img src="./assets/nav-murmur.svg" width="19.2%" loading="lazy" decoding="async" alt="⌘3 MurMur AI — murmur-voice.vercel.app" /></a>
+  <a href="https://ttanphat.vercel.app/projects"><img src="./assets/nav-projects.svg" width="19.2%" loading="lazy" decoding="async" alt="⌘4 Case Studies — ttanphat.vercel.app/projects" /></a>
+  <a href="mailto:ttanphat.work@gmail.com"><img src="./assets/nav-email.svg" width="19.2%" loading="lazy" decoding="async" alt="⌘5 Direct Email — ttanphat.work@gmail.com" /></a>
 </p>
 
-<!-- MOBILE-FIRST & KEYBOARD QUICK-JUMP ACTION BAR -->
-<p align="center">
-  <sub>
-    <kbd>⌘1</kbd> <a href="https://ttanphat.vercel.app/"><b>Portfolio</b></a> &nbsp;·&nbsp;
-    <kbd>⌘2</kbd> <a href="https://website-kaikai.vercel.app/"><b>KAIKAI SaaS</b></a> &nbsp;·&nbsp;
-    <kbd>⌘3</kbd> <a href="https://murmur-voice.vercel.app/"><b>MurMur Voice AI</b></a> &nbsp;·&nbsp;
-    <kbd>⌘4</kbd> <a href="https://ttanphat.vercel.app/projects"><b>4 Case Studies</b></a> &nbsp;·&nbsp;
-    <kbd>⌘5</kbd> <a href="mailto:ttanphat.work@gmail.com"><b>ttanphat.work@gmail.com</b></a>
-  </sub>
-</p>
+<!-- 07 // TELEMETRY CLOSING RAIL (COMPLETES THE CONTINUOUS ARCHITECTURAL SPINE) -->
+<img src="./assets/telemetry-footer.svg" width="100%" loading="lazy" decoding="async" alt="NOIR-OS v4.2 — All 4 Production Systems Online" />
 
-<!-- 06 // LIVE SKILL RADAR, CI/CD PIPELINE CONVEYOR & SAIGON TELEMETRY HUD -->
-<img src="./assets/engineering-hud.svg" width="100%" loading="lazy" decoding="async" alt="06 // Skill Radar, CI/CD Pipeline Conveyor & Saigon Base Station Telemetry" />
-
-<!-- 07A // INTERACTIVE SYSTEM ARCHITECTURE & DATA-FLOW TOPOLOGY (MERMAID ENGINE) -->
+<!-- 08 // UNIFIED EXECUTIVE TECHNICAL DOSSIER (SINGLE EXPANDABLE DRAWER) -->
 <details>
-  <summary><code>🕸️ NOIR-OS // 07A · LIVE SYSTEM ARCHITECTURE &amp; DATA-FLOW TOPOLOGY</code> <sub><i>(Click to inspect full-stack request &amp; WebRTC pipeline)</i></sub></summary>
+  <summary><code>08 // SYSTEM ARCHITECTURE TOPOLOGY, PRODUCTION SLA &amp; CLI VERIFICATION</code> &nbsp;<sub><b>[EXPAND DOSSIER ▾]</b></sub></summary>
   <br />
 
 ```mermaid
@@ -68,24 +60,6 @@ flowchart LR
   FAST ==>|"Verified"| E2E
 ```
 
-</details>
-
-<!-- 07B // EXPANDABLE SYSTEM SPECIFICATIONS, SLA BENCHMARKS & CLI QUICK-VERIFY -->
-<details>
-  <summary><code>⚡ NOIR-OS // 07B · SLA BENCHMARKS, CORE WEB VITALS &amp; CLI QUICK-VERIFY</code> <sub><i>(Click to expand interactive terminal &amp; architecture index)</i></sub></summary>
-  <br />
-
-  <div align="left">
-
-  ```bash
-  # ⚡ 01 // Quick-Verify Live Production Endpoints & Edge TLS Headers
-  curl -ILs https://ttanphat.vercel.app/       | grep -E "HTTP/|server|x-vercel-cache"
-  curl -ILs https://website-kaikai.vercel.app/ | grep -E "HTTP/|server|x-vercel-cache"
-  curl -ILs https://murmur-voice.vercel.app/   | grep -E "HTTP/|server|x-vercel-cache"
-  ```
-
-  </div>
-
   | ID | Production System | Domain &amp; SLA Metric | Architectural Engineering Highlights | Primary Core Stack | Live Endpoint |
   | :---: | :--- | :---: | :--- | :--- | :---: |
   | `01` | **KAIKAI** | `Multi-Tenant SaaS`<br/>**10+ Modules · PG RLS** | • **Single-flight cache** stampede protection on high-concurrency booking reads<br/>• **3-layer RBAC** guards &amp; **PostgreSQL 16 Row-Level Security (RLS)** isolation | `Next.js 16` `NestJS 11` `PostgreSQL` `Prisma` `Supabase` | [**Launch App ↗**](https://website-kaikai.vercel.app/) |
@@ -93,15 +67,14 @@ flowchart LR
   | `03` | **Social Learning** | `Academic Graph`<br/>**Optimistic Sync** | • Instant **optimistic UI** feed mutations &amp; cache invalidation via **TanStack Query**<br/>• Live collaborative study channels powered by **Supabase Realtime** &amp; RLS | `React 19` `TypeScript` `Supabase` `Zustand` `Docker` | [**Case Study ↗**](https://ttanphat.vercel.app/projects) |
   | `04` | **Atelier Noir** | `Design Engineering`<br/>**100/100 Lighthouse** | • **60fps spring-physics** motion system, Lenis smooth scroll &amp; zero layout shift<br/>• Verified **100/100 Core Web Vitals** with automated **Playwright E2E** CI suite | `React 19` `TypeScript` `Tailwind v4` `Motion` `Playwright` | [**Launch App ↗**](https://ttanphat.vercel.app/) |
 
-  <p align="center">
-    <code>IDENTITY: Trần Tấn Phát</code> &nbsp;·&nbsp;
-    <code>ROLE: Full-Stack Developer</code> &nbsp;·&nbsp;
-    <code>EDUCATION: B.S. in IT @ HUTECH (2021–2025)</code> &nbsp;·&nbsp;
-    <a href="mailto:ttanphat.work@gmail.com"><code>ttanphat.work@gmail.com</code></a>
-  </p>
-</details>
+  <div align="left">
 
-<!-- 08 // TELEMETRY CLOSING RAIL -->
-<img src="./assets/telemetry-footer.svg" width="100%" loading="lazy" decoding="async" alt="NOIR-OS v4.2 — All 4 Production Systems Online" />
+  ```bash
+  # Quick-Verify Live Production Endpoints & Edge TLS Headers
+  curl -ILs https://ttanphat.vercel.app/ https://website-kaikai.vercel.app/ https://murmur-voice.vercel.app/ | grep -E "HTTP/|server|x-vercel-cache"
+  ```
+
+  </div>
+</details>
 
 </div>
